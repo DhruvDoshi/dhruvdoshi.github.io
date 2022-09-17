@@ -2,10 +2,10 @@ const nonformal = [
   {
     company: 'TUMO Labs',
     link: 'https://tumolabs.am/en/',
-    daterange: 'August 2021 - Present',
+    daterange: 'Aug 2021 - Aug 2022',
     points: [
-      'Studying Machine Learning and Mathematics',
-      'Working with local and international scientists; designing 3D biomechanical foot prostheses',
+      'Studied Machine Learning and Mathematics',
+      'Worked with local and international scientists; designing 3D biomechanical foot prostheses',
     ],
   },
 
@@ -13,7 +13,7 @@ const nonformal = [
     company: 'EducationUSA Armenia - ',
     position: 'Competitive college club member',
     link: 'https://www.facebook.com/EducationUSAArmenia/',
-    daterange: 'August 2021 - May 2022',
+    daterange: 'Aug 2021 - May 2022',
     points: [
       '8 hours weekly learning about the U.S. education system, research project writing, public speaking, blog post writing',
       'Held 2 sessions about "How to find opportunities" for CCC members and FLEX alumni',
@@ -26,7 +26,7 @@ const nonformal = [
   {
     company: 'Tumo Center for Creative Technologies',
     link: 'https://tumo.org/',
-    daterange: 'January 2017 - Present',
+    daterange: 'Jan 2017 - Jan 2022',
     points: [
       'Participated in 34 workshops and STEM-related labs held by Microsoft, Google employees, Berkeley, MIT, Stanford, and Princeton graduates',
       'Web development workshop leader\'s assistant (September 2019 - January 2019)',
@@ -36,7 +36,7 @@ const nonformal = [
 
   {
     company: 'Engineering City',
-    daterange: 'June 2021 - August 2021',
+    daterange: 'June 2021 - Aug 2021',
     points: [
       'Participated in courses on Radioelectronics and Robotics.',
       'Implemented real projects, built real, working devices, and tested them',
@@ -47,7 +47,7 @@ const nonformal = [
   {
     company: 'Epi.School ',
     link: 'https://www.epi.school/',
-    daterange: 'June 2021 - August 2021',
+    daterange: 'June 2021 - Aug 2021',
     points: [
       'As the best participant of Justice Accelerator, got a full scholarship for EpiSchool.',
       'The program included 3-months of hands-on technology skills training, Silicon Valley founder coaching, learning with an awesome group of entrepreneurial peers and studying Python programming language.  ',
@@ -57,7 +57,7 @@ const nonformal = [
     company: 'American Councils, ',
     position: 'STEM IT OUT program ',
     link: 'https://armenia.americancouncils.org/',
-    daterange: 'February 2021 - April 2021',
+    daterange: 'Feb 2021 - Apr 2021',
     points: [
       'Completed all 6 course modules: STEM Jobs and Careers, Public Speaking, Environmental Justice, Data Analysis, Project Management, DevOps/Engineering.',
       'Created a startup for transportation of the regions of Armenia.',
@@ -67,7 +67,7 @@ const nonformal = [
   {
     company: 'UNDP ImpactAim Accelerator #5',
     link: 'https://impactaim.com/en/',
-    daterange: 'April 2020 - February 2021',
+    daterange: 'Apr 2020 - Feb 2021',
     points: [
       'Learned HTML, CSS, JavaScript. Built the Landing Page of ISTC.',
       'Implemented courses about entrepreneurship and project management.',
