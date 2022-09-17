@@ -1,9 +1,9 @@
 const degrees = [
   {
-    school: 'Number 107 school',
-    degree: 'High school',
-    link: '',
-    year: 2022,
+    school: 'University of Pennsylvania',
+    degree: 'School of Engineering and Applied Science: Bachelor of Science in Computer Science',
+    link: 'https://www.upenn.edu/',
+    year: 2026,
   },
 ];
 
