@@ -6,7 +6,7 @@ const data = [
     date: '2023-08-15',
     link: 'https://goo.gl/maps/pPjfSkwFQC8uCysb7',
     desc:
-      '',
+      'The Banff Gondola offers stunning views of the Rocky Mountains and Banff National Park.',
   },
   {
     title: 'Lake Lousie',
@@ -14,23 +14,7 @@ const data = [
     date: '2023-08-15',
     link: 'https://goo.gl/maps/FXgmGFBhPVnLPvyF7',
     desc:
-      '',
-  },
-  {
-    title: 'Birthday - Turning 24',
-    image: 'images/pictures/bitrthday.jpeg',
-    date: '2023-07-25',
-    link: 'https://doshidhruv.com',
-    desc:
-      '',
-  },
-  {
-    title: 'Cousins!',
-    image: 'images/pictures/cousins.gif',
-    date: '2023-07-25',
-    link: 'https://goo.gl/maps/2qGazEoxC66XLXga7',
-    desc:
-      '',
+      'Lake Louise is stunning with turquoise waters surrounded by mountains.',
   },
   {
     title: 'Cipilano Suspension Bridge Park',
@@ -38,7 +22,39 @@ const data = [
     date: '2023-08-12',
     link: 'https://goo.gl/maps/HNG4unfVBE6NcsCq8',
     desc:
-      '',
+      'Capilano Suspension Bridge Park offers thrilling suspension bridges, treetop adventures, and nature walks in a stunning rainforest setting near Vancouver.',
+  },
+  {
+    title: 'Stanley Park',
+    image: 'images/pictures/dhruv_vancouver.jpg',
+    date: '2023-08-12',
+    link: 'https://goo.gl/maps/wGw2WNNEXwfcnURE6',
+    desc:
+      'Stanley Park, located in Vancouver, is a renowned urban park known for its lush forests, scenic seawall, diverse wildlife, and attractions.',
+  },
+  {
+    title: 'Birthday - Turning 24',
+    image: 'images/pictures/bitrthday.jpeg',
+    date: '2023-07-25',
+    link: 'https://doshidhruv.com',
+    desc:
+      'Picture at home, turning 24!!',
+  },
+  {
+    title: 'Cousins!',
+    image: 'images/pictures/cousins.gif',
+    date: '2023-07-25',
+    link: 'https://goo.gl/maps/2qGazEoxC66XLXga7',
+    desc:
+      'Toronto Islands a trip with cousins!',
+  },
+  {
+    title: 'Beach Day in Toronto',
+    image: 'images/pictures/Dhurv Cabana.jpeg',
+    date: '2023-07-20',
+    link: 'https://goo.gl/maps/7GSpktBa9SLMQZcD6',
+    desc:
+      'A beach day in toronto, Trying the shorts!!',
   },
   {
     title: 'Édifice Ernest-Cormier',
@@ -46,7 +62,7 @@ const data = [
     date: '2023-06-21',
     link: 'https://goo.gl/maps/Yj2NGjm1aRZ3qMN4A',
     desc:
-      '',
+      'Édifice Ernest-Cormier is an iconic Art Deco building in Montreal, known for its architectural elegance and historical significance.',
   },
   {
     title: 'La Ronde',
@@ -54,7 +70,7 @@ const data = [
     date: '2023-06-22',
     link: 'https://goo.gl/maps/cMcteBMGpf21kTnf7',
     desc:
-      '',
+      'La Ronde is a thrilling amusement park in Montreal, featuring roller coasters, entertainment, and family-friendly attractions on Île Sainte-Hélène.',
   },
   {
     title: 'Mont-Royal',
@@ -62,7 +78,7 @@ const data = [
     date: '2023-06-21',
     link: 'https://goo.gl/maps/4MxixLnzxwNQ8tCc6',
     desc:
-      '',
+      'Mount Royal offers a natural escape in Montreal, with hiking trails, city views, and the iconic illuminated cross.',
   },
   {
     title: 'Sammed Shikharji Jain Tirth',
@@ -70,7 +86,23 @@ const data = [
     date: '2023-03-26',
     link: 'https://goo.gl/maps/V4TfdzdWQyWNaZRQA',
     desc:
-      '',
+      'Sammed Shikharji Jain Tirth is a revered pilgrimage site in India. It holds significance in Jainism, featuring sacred hills and temples visited by followers seeking spiritual enlightenment.',
+  },
+  {
+    title: 'Playing with niece',
+    image: '/images/pictures/dhruv_with_jia.jpeg',
+    date: '2023-04-01',
+    link: 'https://goo.gl/maps/DCrBHAVK6Grjgc7eA',
+    desc:
+      'Meeting my niece after long time, she has grown a lot since I met her!!',
+  },
+  {
+    title: 'Family!',
+    image: 'images/pictures/india_visit_family.jpeg',
+    date: '2023-04-01',
+    link: 'https://goo.gl/maps/DCrBHAVK6Grjgc7eA',
+    desc:
+      'Whole family in a single picture; visiting India after 2 years!!',
   },
   {
     title: 'Peggys Cove ',
@@ -177,5 +209,14 @@ const data = [
       'Laser Games with Friends at first Tech Fest in SilverOak College',
   },
 ];
+
+// {
+//   title: '',
+//   image: '',
+//   date: '',
+//   link: '',
+//   desc:
+//     '',
+// },
 
 export default data;
