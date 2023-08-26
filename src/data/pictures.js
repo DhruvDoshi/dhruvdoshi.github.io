@@ -1,6 +1,78 @@
 // TODO Add a couple lines about each project
 const data = [
   {
+    title: 'Banff Gandola Trip ',
+    image: '/images/pictures/all_banff_gandola.jpeg',
+    date: '2023-08-15',
+    link: 'https://goo.gl/maps/pPjfSkwFQC8uCysb7',
+    desc:
+      '',
+  },
+  {
+    title: 'Lake Lousie',
+    image: '/images/pictures/Banff.jpeg',
+    date: '2023-08-15',
+    link: 'https://goo.gl/maps/FXgmGFBhPVnLPvyF7',
+    desc:
+      '',
+  },
+  {
+    title: 'Birthday - Turning 24',
+    image: 'images/pictures/bitrthday.jpeg',
+    date: '2023-07-25',
+    link: 'https://doshidhruv.com',
+    desc:
+      '',
+  },
+  {
+    title: 'Cousins!',
+    image: 'images/pictures/cousins.gif',
+    date: '2023-07-25',
+    link: 'https://goo.gl/maps/2qGazEoxC66XLXga7',
+    desc:
+      '',
+  },
+  {
+    title: 'Cipilano Suspension Bridge Park',
+    image: 'images/pictures/dhruv_cipilano_park.jpeg',
+    date: '2023-08-12',
+    link: 'https://goo.gl/maps/HNG4unfVBE6NcsCq8',
+    desc:
+      '',
+  },
+  {
+    title: 'Édifice Ernest-Cormier',
+    image: 'images/pictures/dhruv_montreal_court.jpeg',
+    date: '2023-06-21',
+    link: 'https://goo.gl/maps/Yj2NGjm1aRZ3qMN4A',
+    desc:
+      '',
+  },
+  {
+    title: 'La Ronde',
+    image: 'images/pictures/dhruv_montreal_park.jpeg',
+    date: '2023-06-22',
+    link: 'https://goo.gl/maps/cMcteBMGpf21kTnf7',
+    desc:
+      '',
+  },
+  {
+    title: 'Mont-Royal',
+    image: 'images/pictures/dhruv_montreal_stairs.jpeg',
+    date: '2023-06-21',
+    link: 'https://goo.gl/maps/4MxixLnzxwNQ8tCc6',
+    desc:
+      '',
+  },
+  {
+    title: 'Sammed Shikharji Jain Tirth',
+    image: 'images/pictures/dhruv_samet_shikharji.jpg',
+    date: '2023-03-26',
+    link: 'https://goo.gl/maps/V4TfdzdWQyWNaZRQA',
+    desc:
+      '',
+  },
+  {
     title: 'Peggys Cove ',
     image: '/images/pictures/dhruv_peggys_cove.jpg',
     date: '2022-11-11',
