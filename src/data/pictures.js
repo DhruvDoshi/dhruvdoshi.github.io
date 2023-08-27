@@ -1,12 +1,20 @@
 // TODO Add a couple lines about each project
 const data = [
   {
-    title: 'Banff Gandola Trip ',
-    image: '/images/pictures/all_banff_gandola.jpeg',
-    date: '2023-08-15',
-    link: 'https://goo.gl/maps/pPjfSkwFQC8uCysb7',
+    title: 'Birthday - Turning 24',
+    image: 'images/pictures/bitrthday.jpeg',
+    date: '2023-07-25',
+    link: 'https://doshidhruv.com',
     desc:
-      'The Banff Gondola offers stunning views of the Rocky Mountains and Banff National Park.',
+      'Picture at home, turning 24!!',
+  },
+  {
+    title: 'Stanley Park',
+    image: 'images/pictures/dhruv_vancouver.jpg',
+    date: '2023-08-12',
+    link: 'https://goo.gl/maps/wGw2WNNEXwfcnURE6',
+    desc:
+      'Stanley Park, located in Vancouver, is a renowned urban park known for its lush forests, scenic seawall, diverse wildlife, and attractions.',
   },
   {
     title: 'Lake Lousie',
@@ -25,20 +33,12 @@ const data = [
       'Capilano Suspension Bridge Park offers thrilling suspension bridges, treetop adventures, and nature walks in a stunning rainforest setting near Vancouver.',
   },
   {
-    title: 'Stanley Park',
-    image: 'images/pictures/dhruv_vancouver.jpg',
-    date: '2023-08-12',
-    link: 'https://goo.gl/maps/wGw2WNNEXwfcnURE6',
+    title: 'Banff Gandola Trip ',
+    image: '/images/pictures/all_banff_gandola.jpeg',
+    date: '2023-08-15',
+    link: 'https://goo.gl/maps/pPjfSkwFQC8uCysb7',
     desc:
-      'Stanley Park, located in Vancouver, is a renowned urban park known for its lush forests, scenic seawall, diverse wildlife, and attractions.',
-  },
-  {
-    title: 'Birthday - Turning 24',
-    image: 'images/pictures/bitrthday.jpeg',
-    date: '2023-07-25',
-    link: 'https://doshidhruv.com',
-    desc:
-      'Picture at home, turning 24!!',
+      'The Banff Gondola offers stunning views of the Rocky Mountains and Banff National Park.',
   },
   {
     title: 'Cousins!',
