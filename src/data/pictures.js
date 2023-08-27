@@ -17,6 +17,14 @@ const data = [
       'Stanley Park, located in Vancouver, is a renowned urban park known for its lush forests, scenic seawall, diverse wildlife, and attractions.',
   },
   {
+    title: 'Banff Gandola Trip ',
+    image: '/images/pictures/all_banff_gandola.jpeg',
+    date: '2023-08-15',
+    link: 'https://goo.gl/maps/pPjfSkwFQC8uCysb7',
+    desc:
+      'The Banff Gondola offers stunning views of the Rocky Mountains and Banff National Park.',
+  },
+  {
     title: 'Lake Lousie',
     image: '/images/pictures/Banff.jpeg',
     date: '2023-08-15',
@@ -31,14 +39,6 @@ const data = [
     link: 'https://goo.gl/maps/HNG4unfVBE6NcsCq8',
     desc:
       'Capilano Suspension Bridge Park offers thrilling suspension bridges, treetop adventures, and nature walks in a stunning rainforest setting near Vancouver.',
-  },
-  {
-    title: 'Banff Gandola Trip ',
-    image: '/images/pictures/all_banff_gandola.jpeg',
-    date: '2023-08-15',
-    link: 'https://goo.gl/maps/pPjfSkwFQC8uCysb7',
-    desc:
-      'The Banff Gondola offers stunning views of the Rocky Mountains and Banff National Park.',
   },
   {
     title: 'Cousins!',
