@@ -8,11 +8,11 @@
     "url": "https://github.com/mldangelo/personal-site.git"
   },
   "engines": {
-    "node": ">=14.x"
+    "node": ">=18.x"
   },
   "scripts": {
     "build": "rimraf ./build && react-scripts build && echo '/* /index.html 200' | cat >build/_redirects ",
-    "predeploy": "npm run build && react-snap",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "lint": "eslint $(git ls-files '*.js')",
@@ -25,7 +25,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "0.1.18",
     "dayjs": "^1.11.3",
-    "gh-pages": "^4.0.0",
+    "gh-pages": "^6.0.0",
     "prop-types": "^15.8.1",
     "raw.macro": "^0.4.2",
     "react": "^17.0.1",
@@ -36,18 +36,17 @@
     "react-markdown": "^5.0.3",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^5.0.1",
-    "react-snap": "^1.23.0",
     "rimraf": "^3.0.2"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^11.2.3",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.19.0",
+    "@babel/eslint-parser": "^7.23.0",
+    "eslint": "^8.56.0",
     "eslint-config-airbnb": "^19.0.4",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jsx-a11y": "6.5.1",
-    "eslint-plugin-react": "^7.30.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-react": "^7.33.0",
     "sass": "^1.52.3",
     "source-map-explorer": "^2.5.2"
   },

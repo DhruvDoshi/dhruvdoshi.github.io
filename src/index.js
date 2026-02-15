@@ -1,5 +1,5 @@
 import React from 'react';
-import { hydrate, render } from 'react-dom';
+import { render } from 'react-dom';
 import App from './App';
 
 // See https://reactjs.org/docs/strict-mode.html
@@ -10,10 +10,4 @@ const StrictApp = () => (
 );
 
 const rootElement = document.getElementById('root');
-
-// hydrate is required by react-snap.
-if (rootElement.hasChildNodes()) {
-  hydrate(<StrictApp />, rootElement);
-} else {
-  render(<StrictApp />, rootElement);
-}
+render(<StrictApp />, rootElement);
