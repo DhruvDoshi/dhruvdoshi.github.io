@@ -8,7 +8,7 @@
     "url": "https://github.com/mldangelo/personal-site.git"
   },
   "engines": {
-    "node": ">=18.x"
+    "node": ">=24.x"
   },
   "scripts": {
     "build": "rimraf ./build && react-scripts build && echo '/* /index.html 200' | cat >build/_redirects ",
