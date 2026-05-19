@@ -8,7 +8,7 @@
     "url": "https://github.com/DhruvDoshi/dhruvdoshi.github.io.git"
   },
   "engines": {
-    "node": ">=24.x"
+    "node": ">=22.x"
   },
   "scripts": {
     "build": "rimraf ./build && react-scripts build && echo '/* /index.html 200' | cat >build/_redirects ",
