@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#ffffff" />
     <meta name="description" content="Dhruv Doshi is a staff software developer and enterprise architect building reliable platforms, developer tools, and observable systems." />
     <link rel="apple-touch-icon" href="/images/favicon/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png" />
@@ -20,9 +19,7 @@
           sessionStorage.removeItem('spa-redirect');
           history.replaceState(null, '', redirectedPath);
         }
-        const stored = localStorage.getItem('theme');
-        const theme = stored || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        document.documentElement.dataset.theme = theme;
+        document.documentElement.dataset.theme = localStorage.getItem('theme') || 'light';
       })();
     </script>
     <title>Dhruv Doshi | Staff Software Developer and Enterprise Architect</title>

@@ -8,6 +8,10 @@ const ThemeToggle = () => {
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
     localStorage.setItem('theme', theme);
+    document.querySelector('meta[name="theme-color"]')?.setAttribute(
+      'content',
+      theme === 'dark' ? '#111111' : '#ffffff',
+    );
   }, [theme]);
 
   const nextTheme = theme === 'dark' ? 'light' : 'dark';
