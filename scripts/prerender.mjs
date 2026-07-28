@@ -31,7 +31,7 @@ const notes = (await Promise.all(files.map(async (file) => {
 }))).sort((a, b) => b.date.localeCompare(a.date));
 
 const renderDocument = ({ title, description, pathname, content, type = 'WebPage', datePublished }) => {
-  const canonical = `${origin}${pathname === '/' ? '' : pathname}`;
+  const canonical = `${origin}${pathname === '/' ? '/' : `${pathname.replace(/\/$/, '')}/`}`;
   const pageTitle = title ? `${title} | Dhruv Doshi` : 'Dhruv Doshi | Staff Software Developer and Enterprise Architect';
   const schema = type === 'TechArticle'
     ? { '@context': 'https://schema.org', '@type': type, headline: title, description, datePublished, dateModified: datePublished, mainEntityOfPage: canonical, author: { '@type': 'Person', name: 'Dhruv Doshi', url: origin } }

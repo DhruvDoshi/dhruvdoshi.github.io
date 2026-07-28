@@ -9,6 +9,7 @@ const publicDir = path.join(root, 'public');
 const notesDir = path.join(root, 'src/content/notes');
 const origin = 'https://doshidhruv.com';
 const generatedDate = new Date().toISOString().slice(0, 10);
+const pageUrl = (pathname) => `${origin}${pathname === '/' ? '/' : `${pathname.replace(/\/$/, '')}/`}`;
 
 const xml = (value) => String(value)
   .replaceAll('&', '&amp;')
@@ -38,7 +39,7 @@ const pages = [
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${pages.map(([pathname, lastmod, changefreq, priority]) => `  <url>
-    <loc>${origin}${pathname}</loc>
+    <loc>${pageUrl(pathname)}</loc>
     <lastmod>${lastmod}</lastmod>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
@@ -50,15 +51,15 @@ const feed = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Dhruv Doshi — Technical Notes</title>
-    <link>${origin}/notes</link>
+    <link>${pageUrl('/notes')}</link>
     <description>Technical notes on cloud architecture, blockchain systems, artificial intelligence, and machine learning.</description>
     <language>en-ca</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="${origin}/feed.xml" rel="self" type="application/rss+xml" />
 ${notes.map((note) => `    <item>
       <title>${xml(note.title)}</title>
-      <link>${origin}/notes/${note.slug}</link>
-      <guid isPermaLink="true">${origin}/notes/${note.slug}</guid>
+      <link>${pageUrl(`/notes/${note.slug}`)}</link>
+      <guid isPermaLink="true">${pageUrl(`/notes/${note.slug}`)}</guid>
       <pubDate>${new Date(`${note.date}T12:00:00Z`).toUTCString()}</pubDate>
       <category>${xml(note.topic)}</category>
       <description>${xml(note.excerpt)}</description>
@@ -67,7 +68,7 @@ ${notes.map((note) => `    <item>
 </rss>
 `;
 
-const noteDirectory = notes.map((note) => `- [${note.title}](${origin}/notes/${note.slug}): ${note.excerpt}`).join('\n');
+const noteDirectory = notes.map((note) => `- [${note.title}](${pageUrl(`/notes/${note.slug}`)}): ${note.excerpt}`).join('\n');
 const llms = `# Dhruv Doshi
 
 > Staff Software Developer and Enterprise Architect in Toronto, Canada. This site documents professional experience, selected engineering work, published research, and technical writing.
@@ -75,13 +76,13 @@ const llms = `# Dhruv Doshi
 ## Primary pages
 
 - [Home](${origin}/): Profile and current scope
-- [Selected work](${origin}/projects): Platform engineering, observability, healthcare, and independent projects
-- [Resume](${origin}/resume): Resume PDF, professional experience, education, and engineering scope
+- [Selected work](${pageUrl('/projects')}): Platform engineering, observability, healthcare, and independent projects
+- [Resume](${pageUrl('/resume')}): Resume PDF, professional experience, education, and engineering scope
 - [Resume PDF](${origin}/resume/Dhruv-Doshi-Resume.pdf): Downloadable one-page resume
-- [Technical notes](${origin}/notes): Searchable writing archive
-- [Research](${origin}/research): Published work on decentralized cloud storage
-- [About](${origin}/about): Background and working principles
-- [Contact](${origin}/contact): Contact information
+- [Technical notes](${pageUrl('/notes')}): Searchable writing archive
+- [Research](${pageUrl('/research')}): Published work on decentralized cloud storage
+- [About](${pageUrl('/about')}): Background and working principles
+- [Contact](${pageUrl('/contact')}): Contact information
 
 ## Machine-readable resources
 
@@ -120,6 +121,47 @@ Discovery:
 Preferred attribution: Dhruv Doshi, followed by the canonical page URL.
 `;
 
+const robots = `# All search engines, AI crawlers, and user-directed agents may crawl this site.
+User-agent: *
+Allow: /
+
+# Explicit AI discovery and citation crawlers.
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: ${origin}/sitemap.xml
+`;
+
 await mkdir(publicDir, { recursive: true });
 await Promise.all([
   writeFile(path.join(publicDir, 'sitemap.xml'), sitemap),
@@ -127,4 +169,5 @@ await Promise.all([
   writeFile(path.join(publicDir, 'llms.txt'), llms),
   writeFile(path.join(publicDir, 'llms-full.txt'), llmsFull),
   writeFile(path.join(publicDir, 'agents.txt'), agents),
+  writeFile(path.join(publicDir, 'robots.txt'), robots),
 ]);

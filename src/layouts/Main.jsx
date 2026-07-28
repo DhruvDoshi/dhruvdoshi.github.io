@@ -9,7 +9,7 @@ import ScrollToTop from '../components/Template/ScrollToTop';
 
 const Main = ({ children, description, published, title, type }) => {
   const { pathname } = useLocation();
-  const canonical = `https://doshidhruv.com${pathname === '/' ? '' : pathname.replace(/\/$/, '')}`;
+  const canonical = `https://doshidhruv.com${pathname === '/' ? '/' : `${pathname.replace(/\/$/, '')}/`}`;
   const pageTitle = title ? `${title} | Dhruv Doshi` : 'Dhruv Doshi | Staff Software Developer and Enterprise Architect';
   const structuredData = type === 'article'
     ? {
@@ -44,7 +44,7 @@ const Main = ({ children, description, published, title, type }) => {
           author: { '@id': 'https://doshidhruv.com/#person' },
           potentialAction: {
             '@type': 'SearchAction',
-            target: 'https://doshidhruv.com/notes?q={search_term_string}',
+            target: 'https://doshidhruv.com/notes/?q={search_term_string}',
             'query-input': 'required name=search_term_string',
           },
         },
