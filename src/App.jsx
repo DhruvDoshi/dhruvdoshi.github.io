@@ -1,9 +1,7 @@
 import React, { Suspense, lazy } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Main from './layouts/Main'; // fallback for lazy pages
 import './static/css/main.scss'; // All of our styles
-
-const { PUBLIC_URL } = process.env;
 
 // Every route - we lazy load so that each page can be chunked
 // NOTE that some of these chunks are very small. We should optimize
@@ -20,20 +18,20 @@ const Research = lazy(() => import('./pages/Research'));
 const Pictures = lazy(() => import('./pages/Pictures'));
 
 const App = () => (
-  <BrowserRouter basename={PUBLIC_URL}>
+  <BrowserRouter basename={import.meta.env.BASE_URL}>
     <Suspense fallback={<Main />}>
-      <Switch>
-        <Route exact path="/" component={Index} />
-        <Route path="/about" component={About} />
-        <Route path="/projects" component={Projects} />
-        <Route path="/contact" component={Contact} />
-        <Route path="/resume" component={Resume} />
-        <Route path="/research" component={Research} />
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/resume" element={<Resume />} />
+        <Route path="/research" element={<Research />} />
         {/* <Route path="/blogs/" component={Blogs} /> */}
-        <Route path="/pictures/" component={Pictures} />
+        <Route path="/pictures" element={<Pictures />} />
         {/* <Route path="/travel/" component={Travel} /> */}
-        <Route component={NotFound} status={404} />
-      </Switch>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </Suspense>
   </BrowserRouter>
 );

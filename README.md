@@ -7,7 +7,7 @@
 
 See: [doshidhruv.com](https://doshidhruv.com) and [dhruvdoshi.github.io](https://dhruvdoshi.github.io/).
 
-Personal website built with React (Create React App), React Router, and SCSS. Deploys automatically to **GitHub Pages** (via GitHub Actions) and **Netlify** (on push to `main`).
+Personal website built with React, Vite, React Router, and SCSS. Deploys automatically to **GitHub Pages** (via GitHub Actions) and **Netlify** (on push to `main`).
 
 ## Development
 
@@ -15,18 +15,23 @@ Personal website built with React (Create React App), React Router, and SCSS. De
 nvm use          # Node 22 (see .nvmrc)
 npm ci
 npm start
+
+# Run the same lint, test, build, and critical-vulnerability checks as CI
+npm run check
 ```
 
 ## Deployment
 
 | Host | Trigger | Output |
 |------|---------|--------|
-| GitHub Pages | Push to `main` or manual workflow run | `gh-pages` branch |
-| Netlify | Push to `main` | `build/` directory |
+| GitHub Pages | Push to `main` or manual workflow run | GitHub Pages artifact from `dist/` |
+| Netlify | Push to `main` | `dist/` directory |
 
 **Netlify:** If builds still use Node 20, open Site configuration → Environment variables and set `NODE_VERSION` to `22`, or remove any dashboard override so `netlify.toml` is used.
 
-**GitHub Pages:** Settings → Pages → source should be the `gh-pages` branch at `/ (root)`.
+**GitHub Pages:** Settings → Pages → source must be **GitHub Actions**. The workflow uses GitHub's artifact-based Pages deployment and does not write generated files back to the repository.
+
+**Analytics:** Define an Actions repository variable named `GA_TRACKING_ID` with a GA4 measurement ID (for example, `G-XXXXXXXXXX`). Netlify can use a `VITE_GA_TRACKING_ID` environment variable. Analytics stays disabled when the value is absent.
 
 ## Detach from fork network
 

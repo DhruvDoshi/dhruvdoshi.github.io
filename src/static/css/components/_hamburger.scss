@@ -1,3 +1,5 @@
+@use "../libs/functions";
+
 // Not found page
 
 .bm-item-list {
@@ -23,7 +25,7 @@
   }
 
   li a h3:hover {
-    color: _palette(accent);
+    color: functions.palette(accent);
   }
 
   li {

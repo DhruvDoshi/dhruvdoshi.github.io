@@ -1,19 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
-import raw from 'raw.macro';
 
 import Main from '../layouts/Main';
-
-// uses babel to load contents of file
-const markdown = raw('../data/about.md');
+import markdown from '../data/about.md?raw';
 
 const count = markdown.split(/\s+/)
   .map((s) => s.replace(/\W/g, ''))
   .filter((s) => s.length).length;
 
-// Make all hrefs react router links
-const LinkRenderer = ({ ...children }) => <Link {...children} />;
+const LinkRenderer = ({ href, ...props }) => {
+  if (href?.startsWith('/')) {
+    return <Link to={href} {...props} />;
+  }
+
+  return <a href={href} {...props} />;
+};
 
 const About = () => (
   <Main
@@ -28,12 +30,12 @@ const About = () => (
         </div>
       </header>
       <ReactMarkdown
-        source={markdown}
-        renderers={{
-          Link: LinkRenderer,
+        components={{
+          a: LinkRenderer,
         }}
-        escapeHtml={false}
-      />
+      >
+        {markdown}
+      </ReactMarkdown>
     </article>
   </Main>
 );

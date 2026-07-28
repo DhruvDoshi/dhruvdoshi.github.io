@@ -1,9 +1,8 @@
-@import-normalize;
-
-@import 'libs/vars';
-@import 'libs/functions';
-@import 'libs/mixins';
-@import 'libs/skel';
+@use "sass:meta";
+@use 'libs/vars';
+@use 'libs/functions';
+@use 'libs/mixins';
+@use 'libs/skel';
 
 // NOTE: This import was moved into index.html template
 // @import url('//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Raleway:400,800,900');
@@ -14,7 +13,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-	@include skel-breakpoints((
+	@include skel.skel-breakpoints((
 		xlarge: '(max-width: 1680px)',
 		large: '(max-width: 1280px)',
 		medium: '(max-width: 980px)',
@@ -22,7 +21,7 @@
 		xsmall: '(max-width: 480px)'
 	));
 
-	@include skel-layout((
+	@include skel.skel-layout((
 		reset: 'full',
 		boxModel: 'border',
 		grid: ( gutters: 1em )
@@ -30,38 +29,38 @@
 
 // Base.
 
-	@import 'base/page';
-	@import 'base/typography';
+	@include meta.load-css('base/page');
+	@include meta.load-css('base/typography');
 
 // Component.
 
-	@import 'components/author';
-	@import 'components/blurb';
-	@import 'components/box';
-	@import 'components/button';
-	@import 'components/form';
-	@import 'components/icon';
-	@import 'components/image';
-	@import 'components/list';
-	@import 'components/mini-post';
-	@import 'components/post';
-	@import 'components/section';
-	@import 'components/table';
-	@import 'components/hamburger';
-	@import 'components/markdown';
+	@include meta.load-css('components/author');
+	@include meta.load-css('components/blurb');
+	@include meta.load-css('components/box');
+	@include meta.load-css('components/button');
+	@include meta.load-css('components/form');
+	@include meta.load-css('components/icon');
+	@include meta.load-css('components/image');
+	@include meta.load-css('components/list');
+	@include meta.load-css('components/mini-post');
+	@include meta.load-css('components/post');
+	@include meta.load-css('components/section');
+	@include meta.load-css('components/table');
+	@include meta.load-css('components/hamburger');
+	@include meta.load-css('components/markdown');
 
 
 // Layout.
 
-	@import 'layout/header';
-	@import 'layout/wrapper';
-	@import 'layout/main';
-	@import 'layout/sidebar';
-	@import 'layout/intro';
-	@import 'layout/footer';
-	@import 'layout/menu';
+	@include meta.load-css('layout/header');
+	@include meta.load-css('layout/wrapper');
+	@include meta.load-css('layout/main');
+	@include meta.load-css('layout/sidebar');
+	@include meta.load-css('layout/intro');
+	@include meta.load-css('layout/footer');
+	@include meta.load-css('layout/menu');
 
-	@import 'pages/contact';
-	@import 'pages/notFound';
-	@import 'pages/resume';
-	@import 'pages/skills';
+	@include meta.load-css('pages/contact');
+	@include meta.load-css('pages/notFound');
+	@include meta.load-css('pages/resume');
+	@include meta.load-css('pages/skills');

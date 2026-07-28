@@ -8,9 +8,9 @@ const Certidegree = ({ data }) => (
         <li key={point}>{point}</li>
       ))}
     </ul> */}
-    <li style={{ listStyleType: 'square' }}>
+    <p>
       <a href={data.link}>{data.certidegree} </a>by {data.university}
-    </li>
+    </p>
   </article>
 );
 

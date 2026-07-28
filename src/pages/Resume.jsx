@@ -5,7 +5,7 @@ import Main from '../layouts/Main';
 
 import Education from '../components/Resume/Education';
 import Experience from '../components/Resume/Experience';
-import Cerification from '../components/Resume/Certification';
+import Certification from '../components/Resume/Certification';
 import Skills from '../components/Resume/Skills';
 import Courses from '../components/Resume/Courses';
 import References from '../components/Resume/References';
@@ -45,7 +45,7 @@ const Resume = () => (
       </header>
       <Education data={degrees} />
       <Experience data={positions} />
-      <Cerification data={certidegree} />
+      <Certification data={certidegree} />
       <Skills skills={skills} categories={categories} />
       <Courses data={courses} />
       <References />

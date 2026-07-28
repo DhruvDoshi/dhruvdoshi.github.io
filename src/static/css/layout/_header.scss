@@ -1,3 +1,7 @@
+@use "../libs/functions";
+@use "../libs/mixins";
+@use "../libs/skel";
+
 ///
 /// Future Imperfect by HTML5 UP
 /// html5up.net | @ajlkn
@@ -11,17 +15,17 @@
 	}
 
 	#header {
-		@include vendor('display', 'flex');
-		@include vendor('justify-content', 'space-between');
-		background-color: _palette(bg);
-		border-bottom: solid 1px _palette(border);
+		@include skel.vendor('display', 'flex');
+		@include skel.vendor('justify-content', 'space-between');
+		background-color: functions.palette(bg);
+		border-bottom: solid 1px functions.palette(border);
 		height: 3.5em;
 		left: 0;
 		line-height: 3.5em;
 		position: fixed;
 		top: 0;
 		width: 100%;
-		z-index: _misc(z-index-base);
+		z-index: functions.misc(z-index-base);
 
 		a {
 			color: inherit;
@@ -51,8 +55,8 @@
 		}
 
 		.links {
-			@include vendor('flex', '1');
-			border-left: solid 1px _palette(border);
+			@include skel.vendor('flex', '1');
+			border-left: solid 1px functions.palette(border);
 			height: inherit;
 			line-height: inherit;
 			margin-left: 1.5em;
@@ -61,7 +65,7 @@
 
 			ul {
 				li {
-					border-left: solid 1px _palette(border);
+					border-left: solid 1px functions.palette(border);
 					line-height: 1;
 					margin-left: 1em;
 					padding-left: 1em;
@@ -74,10 +78,10 @@
 
 					a {
 						border-bottom: 0;
-						font-family: _font(family-heading);
+						font-family: functions.font(family-heading);
 						font-size: 0.7em;
-						font-weight: _font(weight-heading);
-						letter-spacing: _font(kerning-heading);
+						font-weight: functions.font(weight-heading);
+						letter-spacing: functions.font(kerning-heading);
 						text-transform: uppercase;
 					}
 				}
@@ -94,7 +98,7 @@
 				line-height: inherit;
 
 				li {
-					border-left: solid 1px _palette(border);
+					border-left: solid 1px functions.palette(border);
 					height: inherit;
 					line-height: inherit;
 					white-space: nowrap;
@@ -114,9 +118,9 @@
 					}
 
 					> a {
-						@include icon;
+						@include mixins.icon;
 						border-bottom: 0;
-						color: _palette(fg-light);
+						color: functions.palette(fg-light);
 						overflow: hidden;
 						position: relative;
 						text-indent: 4em;
@@ -138,13 +142,13 @@
 			}
 		}
 
-		@include breakpoint(medium) {
+		@include skel.breakpoint(medium) {
 			.links {
 				display: none;
 			}
 		}
 
-		@include breakpoint(small) {
+		@include skel.breakpoint(small) {
 			height: 2.75em;
 			line-height: 2.75em;
 
@@ -182,14 +186,14 @@
 
 	/* General sidebar styles */
 	.bm-menu {
-	  background: _palette(bg);
+	  background: functions.palette(bg);
 	  padding: 2.5em 1.5em 0;
 	  font-size: 1.15em;
 	}
 
 	/* Wrapper for item list */
 	.bm-item-list {
-	  color: _palette(fg-bold);
+	  color: functions.palette(fg-bold);
 	  padding: 0.8em;
 		font-family: "Raleway", Helvetica, sans-serif;
 	}
@@ -228,7 +232,7 @@
 	display: none;
 }
 
-@include breakpoint(medium) {
+@include skel.breakpoint(medium) {
 	.hamburger-container  {
 		display: initial;
 	}

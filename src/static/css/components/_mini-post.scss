@@ -1,3 +1,7 @@
+@use "../libs/functions";
+@use "../libs/mixins";
+@use "../libs/skel";
+
 .cell-container {
   position: relative;
 
@@ -5,7 +9,7 @@
     position: absolute;
     padding: 0;
     bottom: 0;
-    border-top: solid 1px _palette(border);
+    border-top: solid 1px functions.palette(border);
 
     p {
       font-size: 0.9rem;
@@ -34,34 +38,34 @@
 }
 
 .mini-post {
-  @include vendor( 'display', 'flex');
-  @include vendor( 'flex-direction', 'column');
-  background: _palette(bg);
-  border: solid 1px _palette(border);
-  margin: 0 0 _size(element-margin);
+  @include skel.vendor( 'display', 'flex');
+  @include skel.vendor( 'flex-direction', 'column');
+  background: functions.palette(bg);
+  border: solid 1px functions.palette(border);
+  margin: 0 0 functions.size(element-margin);
 
   .image {
     overflow: hidden;
     width: 100%;
 
     img {
-      @include vendor( 'transition', 'transform #{_duration(transition)} ease-out');
+      @include skel.vendor( 'transition', 'transform #{functions.duration(transition)} ease-out');
       width: 100%;
     }
 
     &:hover {
       img {
-        @include vendor( 'transform', 'scale(1.05)');
+        @include skel.vendor( 'transform', 'scale(1.05)');
       }
     }
   }
 
   header {
     z-index: 2;
-    @include padding(1.25em, 1.25em, (0, 3em, 0, 0));
+    @include mixins.padding(1.25em, 1.25em, (0, 3em, 0, 0));
     min-height: 4em;
     position: relative;
-    @include vendor( 'flex-grow', '1');
+    @include skel.vendor( 'flex-grow', '1');
 
     h3 {
       font-size: 0.7em;
@@ -69,11 +73,11 @@
 
     .published {
       display: block;
-      font-family: _font(family-heading);
+      font-family: functions.font(family-heading);
       font-size: 0.6em;
-      font-weight: _font(weight-heading);
-      letter-spacing: _font(kerning-heading);
-      margin: -0.625em 0 (_size(element-margin) * 0.85) 0;
+      font-weight: functions.font(weight-heading);
+      letter-spacing: functions.font(kerning-heading);
+      margin: -0.625em 0 (functions.size(element-margin) * 0.85) 0;
       text-transform: uppercase;
     }
 
@@ -86,27 +90,27 @@
 }
 
 .mini-posts {
-  margin: 0 0 _size(element-margin);
-  @include breakpoint(large) {
-     @include vendor( 'display', 'flex');
-    @include vendor( 'flex-wrap', 'wrap');
-    width: calc(100% + #{_size(element-margin)});
+  margin: 0 0 functions.size(element-margin);
+  @include skel.breakpoint(large) {
+     @include skel.vendor( 'display', 'flex');
+    @include skel.vendor( 'flex-wrap', 'wrap');
+    width: calc(100% + #{functions.size(element-margin)});
 
     > * {
-      margin: _size(element-margin) _size(element-margin) 0 0;
-      width: calc(50% - #{_size(element-margin)});
+      margin: functions.size(element-margin) functions.size(element-margin) 0 0;
+      width: calc(50% - #{functions.size(element-margin)});
     }
 
     > :nth-child(-n + 2) {
       margin-top: 0;
     }
   }
-  @include breakpoint(xsmall) {
+  @include skel.breakpoint(xsmall) {
     display: block;
     width: 100%;
 
     > * {
-      margin: 0 0 _size(element-margin);
+      margin: 0 0 functions.size(element-margin);
       width: 100%;
     }
   }

@@ -1,9 +1,5 @@
-// jest-dom adds custom jest matchers for asserting on DOM nodes.
-// allows you to do things like:
-// expect(element).toHaveTextContent(/react/i)
-// learn more: https://github.com/testing-library/jest-dom
-import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
+import { expect, test } from 'vitest';
 
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
@@ -18,7 +14,7 @@ import Resume from '../pages/Resume';
 const pages = [
   {
     route: '/',
-    heading: 'About this site',
+    heading: 'What are you looking for?',
     component: Index,
   },
   {
@@ -57,12 +53,11 @@ test('Renders 404 Page Component', () => {
   expect(linkElement).toBeInTheDocument();
 });
 
-const checkPageComponent = async (page) => {
+const checkPageComponent = (page) => {
   test(`Renders ${page.route} Component`, () => {
     window.scrollTo = () => {}; // TODO mock this later
     renderWithRouter(<page.component />, { route: page.route });
-    // const linkElement = screen.getByTestId('heading');
-    // expect(linkElement).toHaveTextContent(page.heading);
+    expect(screen.getByTestId('heading')).toHaveTextContent(page.heading);
   });
 };
 

@@ -1,3 +1,7 @@
+@use "../libs/functions";
+@use "../libs/mixins";
+@use "../libs/skel";
+
 ///
 /// Future Imperfect by HTML5 UP
 /// html5up.net | @ajlkn
@@ -7,19 +11,19 @@
 /* Form */
 
 	form {
-		margin: 0 0 _size(element-margin) 0;
+		margin: 0 0 functions.size(element-margin) 0;
 
 		&.search {
-			@include icon;
+			@include mixins.icon;
 			position: relative;
 
 			&:before {
-				color: _palette(fg-light);
+				color: functions.palette(fg-light);
 				content: '\f002';
 				display: block;
-				height: _size(element-height);
+				height: functions.size(element-height);
 				left: 0;
-				line-height: _size(element-height);
+				line-height: functions.size(element-height);
 				position: absolute;
 				text-align: center;
 				top: 0;
@@ -33,11 +37,11 @@
 	}
 
 	label {
-		color: _palette(fg-bold);
+		color: functions.palette(fg-bold);
 		display: block;
 		font-size: 0.9em;
-		font-weight: _font(weight-bold);
-		margin: 0 0 (_size(element-margin) * 0.5) 0;
+		font-weight: functions.font(weight-bold);
+		margin: 0 0 (functions.size(element-margin) * 0.5) 0;
 	}
 
 	input[type="text"],
@@ -46,10 +50,10 @@
 	input[type="tel"],
 	select,
 	textarea {
-		@include vendor('appearance', 'none');
-		background: _palette(border-bg);
+		@include skel.vendor('appearance', 'none');
+		background: functions.palette(border-bg);
 		border: none;
-		border: solid 1px _palette(border);
+		border: solid 1px functions.palette(border);
 		border-radius: 0;
 		color: inherit;
 		display: block;
@@ -63,28 +67,28 @@
 		}
 
 		&:focus {
-			border-color: _palette(accent);
-			box-shadow: inset 0 0 0 1px _palette(accent);
+			border-color: functions.palette(accent);
+			box-shadow: inset 0 0 0 1px functions.palette(accent);
 		}
 	}
 
 	.select-wrapper {
-		@include icon;
+		@include mixins.icon;
 		display: block;
 		position: relative;
 
 		&:before {
-			color: _palette(border);
+			color: functions.palette(border);
 			content: '\f078';
 			display: block;
-			height: _size(element-height);
-			line-height: _size(element-height);
+			height: functions.size(element-height);
+			line-height: functions.size(element-height);
 			pointer-events: none;
 			position: absolute;
 			right: 0;
 			text-align: center;
 			top: 0;
-			width: _size(element-height);
+			width: functions.size(element-height);
 		}
 
 		select::-ms-expand {
@@ -96,7 +100,7 @@
 	input[type="password"],
 	input[type="email"],
 	select {
-		height: _size(element-height);
+		height: functions.size(element-height);
 	}
 
 	textarea {
@@ -105,7 +109,7 @@
 
 	input[type="checkbox"],
 	input[type="radio"], {
-		@include vendor('appearance', 'none');
+		@include skel.vendor('appearance', 'none');
 		display: block;
 		float: left;
 		margin-right: -2em;
@@ -114,44 +118,44 @@
 		z-index: -1;
 
 		& + label {
-			@include icon;
-			color: _palette(fg);
+			@include mixins.icon;
+			color: functions.palette(fg);
 			cursor: pointer;
 			display: inline-block;
 			font-size: 1em;
-			font-weight: _font(weight);
-			padding-left: (_size(element-height) * 0.6) + 0.75em;
+			font-weight: functions.font(weight);
+			padding-left: (functions.size(element-height) * 0.6) + 0.75em;
 			padding-right: 0.75em;
 			position: relative;
 
 			&:before {
-				background: _palette(border-bg);
-				border: solid 1px _palette(border);
+				background: functions.palette(border-bg);
+				border: solid 1px functions.palette(border);
 				content: '';
 				display: inline-block;
-				height: (_size(element-height) * 0.6);
+				height: (functions.size(element-height) * 0.6);
 				left: 0;
-				line-height: (_size(element-height) * 0.575);
+				line-height: (functions.size(element-height) * 0.575);
 				position: absolute;
 				text-align: center;
 				top: 0;
-				width: (_size(element-height) * 0.6);
+				width: (functions.size(element-height) * 0.6);
 			}
 		}
 
 		&:checked + label {
 			&:before {
-				background: _palette(fg-bold);
-				border-color: _palette(fg-bold);
-				color: _palette(bg);
+				background: functions.palette(fg-bold);
+				border-color: functions.palette(fg-bold);
+				color: functions.palette(bg);
 				content: '\f00c';
 			}
 		}
 
 		&:focus + label {
 			&:before {
-				border-color: _palette(accent);
-				box-shadow: 0 0 0 1px _palette(accent);
+				border-color: functions.palette(accent);
+				box-shadow: 0 0 0 1px functions.palette(accent);
 			}
 		}
 	}
@@ -172,26 +176,26 @@
 	}
 
 	::-webkit-input-placeholder {
-		color: _palette(fg-light) !important;
+		color: functions.palette(fg-light) !important;
 		opacity: 1.0;
 	}
 
 	:-moz-placeholder {
-		color: _palette(fg-light) !important;
+		color: functions.palette(fg-light) !important;
 		opacity: 1.0;
 	}
 
 	::-moz-placeholder {
-		color: _palette(fg-light) !important;
+		color: functions.palette(fg-light) !important;
 		opacity: 1.0;
 	}
 
 	:-ms-input-placeholder {
-		color: _palette(fg-light) !important;
+		color: functions.palette(fg-light) !important;
 		opacity: 1.0;
 	}
 
 	.formerize-placeholder {
-		color: _palette(fg-light) !important;
+		color: functions.palette(fg-light) !important;
 		opacity: 1.0;
 	}

@@ -1,3 +1,5 @@
+@use "../libs/skel";
+
 /* Resume */
 
 #resume {
@@ -125,7 +127,7 @@
 	// display: none;
 }
 
-@include breakpoint(small) {
+@include skel.breakpoint(small) {
 	.course-dot {
 		display: none;
 	}

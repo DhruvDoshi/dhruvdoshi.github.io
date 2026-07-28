@@ -1,3 +1,6 @@
+@use "../libs/functions";
+@use "../libs/skel";
+
 ///
 /// Future Imperfect by HTML5 UP
 /// html5up.net | @ajlkn
@@ -7,29 +10,29 @@
 /* Wrapper */
 
 	#wrapper {
-		@include vendor('display', 'flex');
-		@include vendor('flex-direction', 'row-reverse');
-		@include vendor('transition', 'opacity #{_duration(menu)} ease');
+		@include skel.vendor('display', 'flex');
+		@include skel.vendor('flex-direction', 'row-reverse');
+		@include skel.vendor('transition', 'opacity #{functions.duration(menu)} ease');
 		margin: 0 auto;
 		max-width: 100%;
 		opacity: 1;
-		padding: (_size(section-spacing) * 1.5);
+		padding: (functions.size(section-spacing) * 1.5);
 		width: 90em;
 
 		body.is-menu-visible & {
 			opacity: 0.15;
 		}
 
-		@include breakpoint(xlarge) {
-			padding: _size(section-spacing);
+		@include skel.breakpoint(xlarge) {
+			padding: functions.size(section-spacing);
 		}
 
-		@include breakpoint(large) {
+		@include skel.breakpoint(large) {
 			display: block;
 		}
 
-		@include breakpoint(small) {
-			padding: _size(section-spacing-small);
+		@include skel.breakpoint(small) {
+			padding: functions.size(section-spacing-small);
 		}
 
 		body.single & {

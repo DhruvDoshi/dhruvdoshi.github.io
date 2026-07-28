@@ -5,31 +5,50 @@ on:
     branches: [main]
   workflow_dispatch:
 
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
-  deployment:
+  build:
+    name: Build site
     runs-on: ubuntu-latest
-    environment: production
-    permissions:
-      contents: write
+    timeout-minutes: 10
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          persist-credentials: false
+        uses: actions/checkout@v7
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
-          node-version-file: '.nvmrc'
+          node-version-file: .nvmrc
           cache: npm
-      - name: Install
+      - name: Configure Pages
+        uses: actions/configure-pages@v6
+      - name: Install dependencies
         run: npm ci
-      - name: Build and Deploy
+      - name: Build
         env:
-          NODE_ENV: production
-          REACT_APP_GA_TRACKING_ID: UA-68649021-1
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/DhruvDoshi/dhruvdoshi.github.io.git
-          npm run deploy
+          VITE_GA_TRACKING_ID: ${{ vars.GA_TRACKING_ID }}
+        run: npm run build
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist
+
+  deploy:
+    name: Deploy site
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

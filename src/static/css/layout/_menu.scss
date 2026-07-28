@@ -1,3 +1,6 @@
+@use "../libs/functions";
+@use "../libs/skel";
+
 ///
 /// Future Imperfect by HTML5 UP
 /// html5up.net | @ajlkn
@@ -7,14 +10,14 @@
 /* Menu */
 
 	#menu {
-		@include vendor('transform', 'translateX(#{_size(menu)})');
-		@include vendor('transition', (
-			'transform #{_duration(menu)} ease',
-			'visibility #{_duration(menu)}'
+		@include skel.vendor('transform', 'translateX(#{functions.size(menu)})');
+		@include skel.vendor('transition', (
+			'transform #{functions.duration(menu)} ease',
+			'visibility #{functions.duration(menu)}'
 		));
 		-webkit-overflow-scrolling: touch;
-		background: _palette(bg);
-		border-left: solid 1px _palette(border);
+		background: functions.palette(bg);
+		border-left: solid 1px functions.palette(border);
 		box-shadow: none;
 		height: 100%;
 		max-width: 80%;
@@ -23,12 +26,12 @@
 		right: 0;
 		top: 0;
 		visibility: hidden;
-		width: _size(menu);
-		z-index: _misc(z-index-base) + 2;
+		width: functions.size(menu);
+		z-index: functions.misc(z-index-base) + 2;
 
 		> * {
-			border-top: solid 1px _palette(border);
-			padding: _size(section-spacing);
+			border-top: solid 1px functions.palette(border);
+			padding: functions.size(section-spacing);
 
 			> :last-child {
 				margin-bottom: 0;
@@ -45,7 +48,7 @@
 
 			> li {
 				border: 0;
-				border-top: dotted 1px _palette(border);
+				border-top: dotted 1px functions.palette(border);
 				margin: 1.5em 0 0 0;
 				padding: 1.5em 0 0 0;
 
@@ -54,16 +57,16 @@
 					border-bottom: 0;
 
 					h3 {
-						@include vendor('transition', 'color #{_duration(transition)} ease');
+						@include skel.vendor('transition', 'color #{functions.duration(transition)} ease');
 						font-size: 0.7em;
 					}
 
 					p {
-						font-family: _font(family-heading);
+						font-family: functions.font(family-heading);
 						font-size: 0.6em;
-						font-weight: _font(weight-heading);
-						letter-spacing: _font(kerning-heading);
-						letter-spacing: _size(letter-spacing-alt);
+						font-weight: functions.font(weight-heading);
+						letter-spacing: functions.font(kerning-heading);
+						letter-spacing: functions.size(letter-spacing-alt);
 						margin-bottom: 0;
 						text-decoration: none;
 						text-transform: uppercase;
@@ -71,7 +74,7 @@
 
 					&:hover {
 						h3 {
-							color: _palette(accent);
+							color: functions.palette(accent);
 						}
 					}
 				}
@@ -85,13 +88,13 @@
 		}
 
 		body.is-menu-visible & {
-			@include vendor('transform', 'translateX(0)');
+			@include skel.vendor('transform', 'translateX(0)');
 			visibility: visible;
 		}
 
-		@include breakpoint(small) {
+		@include skel.breakpoint(small) {
 			> * {
-				padding: _size(section-spacing-small);
+				padding: functions.size(section-spacing-small);
 			}
 		}
 	}
