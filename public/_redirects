@@ -1,1 +1,3 @@
+https://blog.doshidhruv.com/posts/* https://doshidhruv.com/notes/:splat 301!
+https://blog.doshidhruv.com/* https://doshidhruv.com/notes 301!
 /* /index.html 200
