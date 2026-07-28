@@ -1,4 +1,5 @@
 import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -7,6 +8,7 @@ import { normalizeNote } from '../src/data/note-utils.js';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const publicDir = path.join(root, 'public');
 const notesDir = path.join(root, 'src/content/notes');
+const websiteContentSkillPath = path.join(publicDir, '.well-known/agent-skills/website-content/SKILL.md');
 const origin = 'https://doshidhruv.com';
 const generatedDate = new Date().toISOString().slice(0, 10);
 const pageUrl = (pathname) => `${origin}${pathname === '/' ? '/' : `${pathname.replace(/\/$/, '')}/`}`;
@@ -121,6 +123,19 @@ Discovery:
 Preferred attribution: Dhruv Doshi, followed by the canonical page URL.
 `;
 
+const websiteContentSkill = await readFile(websiteContentSkillPath);
+const websiteContentSkillDigest = createHash('sha256').update(websiteContentSkill).digest('hex');
+const agentSkillsIndex = `${JSON.stringify({
+  $schema: 'https://schemas.agentskills.io/discovery/0.2.0/schema.json',
+  skills: [{
+    name: 'website-content',
+    type: 'skill-md',
+    description: 'Find and cite authoritative information about Dhruv Doshi\'s professional experience, engineering work, research, and technical notes.',
+    url: '/.well-known/agent-skills/website-content/SKILL.md',
+    digest: `sha256:${websiteContentSkillDigest}`,
+  }],
+}, null, 2)}\n`;
+
 const robots = `# All search engines, AI crawlers, and user-directed agents may crawl this site.
 User-agent: *
 Allow: /
@@ -170,4 +185,5 @@ await Promise.all([
   writeFile(path.join(publicDir, 'llms-full.txt'), llmsFull),
   writeFile(path.join(publicDir, 'agents.txt'), agents),
   writeFile(path.join(publicDir, 'robots.txt'), robots),
+  writeFile(path.join(publicDir, '.well-known/agent-skills/index.json'), agentSkillsIndex),
 ]);
