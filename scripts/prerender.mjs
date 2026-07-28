@@ -90,6 +90,9 @@ await writeRoute('/notes', {
 
 for (const note of notes) {
   const markdown = renderToStaticMarkup(React.createElement(ReactMarkdown, { remarkPlugins: [remarkGfm], rehypePlugins: [rehypeRaw] }, note.body));
+  const relatedGuides = guides.filter((guide) => guide.relatedNotes.includes(note.slug));
+  const relatedNotes = notes.filter((candidate) => candidate.slug !== note.slug && candidate.topic === note.topic).slice(0, 4);
+  const relatedContent = [...relatedGuides.map((guide) => `<a href="/guides/${guide.slug}">${escapeHtml(guide.title)}</a> · Guide`), ...relatedNotes.map((candidate) => `<a href="/notes/${candidate.slug}">${escapeHtml(candidate.title)}</a> · Note`)];
   await writeRoute(`/notes/${note.slug}`, {
     title: note.title,
     description: note.excerpt,
@@ -97,7 +100,7 @@ for (const note of notes) {
     datePublished: note.date,
     dateModified: note.reviewed || note.date,
     breadcrumbs: [{ name: 'Notes', path: '/notes' }, { name: note.title, path: `/notes/${note.slug}` }],
-    content: `<main class="page-shell note-page"><article><header class="note-header"><p><a href="/notes">All notes</a></p><p class="note-topic"><a href="/topics/${slugify(note.topic)}">${escapeHtml(note.topic)}</a></p><h1>${escapeHtml(note.title)}</h1><p><time datetime="${note.date}">${note.date}</time> · ${note.readTime} minute read</p></header><div class="note-layout"><div class="article-prose">${markdown}</div></div></article></main>`,
+    content: `<main class="page-shell note-page"><article><header class="note-header"><p><a href="/notes">All notes</a></p><p class="note-topic"><a href="/topics/${slugify(note.topic)}">${escapeHtml(note.topic)}</a></p><h1>${escapeHtml(note.title)}</h1><p><time datetime="${note.date}">${note.date}</time> · ${note.readTime} minute read</p></header><div class="note-layout"><div class="article-prose">${markdown}</div></div>${relatedContent.length ? `<section><h2>Continue reading</h2>${list(relatedContent)}</section>` : ''}</article></main>`,
   });
 }
 
