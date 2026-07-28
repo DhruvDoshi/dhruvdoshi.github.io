@@ -17,7 +17,7 @@ const data = [
       'Stanley Park, located in Vancouver, is a renowned urban park known for its lush forests, scenic seawall, diverse wildlife, and attractions.',
   },
   {
-    title: 'Banff Gandola Trip ',
+    title: 'Banff Gondola Trip',
     image: '/images/pictures/all_banff_gandola.jpeg',
     date: '2023-08-15',
     link: 'https://goo.gl/maps/pPjfSkwFQC8uCysb7',
@@ -25,7 +25,7 @@ const data = [
       'The Banff Gondola offers stunning views of the Rocky Mountains and Banff National Park.',
   },
   {
-    title: 'Lake Lousie',
+    title: 'Lake Louise',
     image: '/images/pictures/Banff.jpeg',
     date: '2023-08-15',
     link: 'https://goo.gl/maps/FXgmGFBhPVnLPvyF7',
@@ -33,7 +33,7 @@ const data = [
       'Lake Louise is stunning with turquoise waters surrounded by mountains.',
   },
   {
-    title: 'Cipilano Suspension Bridge Park',
+    title: 'Capilano Suspension Bridge Park',
     image: 'images/pictures/dhruv_cipilano_park.jpeg',
     date: '2023-08-12',
     link: 'https://goo.gl/maps/HNG4unfVBE6NcsCq8',
@@ -54,7 +54,7 @@ const data = [
     date: '2023-07-20',
     link: 'https://goo.gl/maps/7GSpktBa9SLMQZcD6',
     desc:
-      'A beach day in toronto, Trying the shorts!!',
+      'A beach day in Toronto.',
   },
   {
     title: 'Édifice Ernest-Cormier',
@@ -105,12 +105,12 @@ const data = [
       'Whole family in a single picture; visiting India after 2 years!!',
   },
   {
-    title: 'Peggys Cove ',
+    title: 'Peggy’s Cove',
     image: '/images/pictures/dhruv_peggys_cove.jpg',
     date: '2022-11-11',
     link: 'https://goo.gl/maps/NZzPEVoLRmKER4jF7',
     desc:
-      'One day trip to the lighthouse near Halifax, Most photographed lighthouse in Canada.',
+      'A day trip to one of Canada’s most photographed lighthouses, near Halifax.',
   },
   {
     title: 'Albro Lake - Halifax',
@@ -137,7 +137,7 @@ const data = [
       'Picture after 16 Km of Trek in isolated McNab Islands',
   },
   {
-    title: 'Cabbot Trail - Cape Breton Islands',
+    title: 'Cabot Trail — Cape Breton Island',
     image: '/images/pictures/dhruv_capebreton_1.jpeg',
     date: '2022-08-01',
     link: 'https://goo.gl/maps/mkBs6PgSeF5DJCxk9',
@@ -150,7 +150,7 @@ const data = [
     date: '2022-10-15',
     link: 'https://goo.gl/maps/T9BPQYvH9VeSsajA8',
     desc:
-      'A random shot with roommates on streets of Halifax',
+      'A candid shot with roommates on the streets of Halifax.',
   },
   {
     title: 'Putting Edge ',

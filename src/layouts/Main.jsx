@@ -1,45 +1,39 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 import Analytics from '../components/Template/Analytics';
+import Footer from '../components/Template/Footer';
 import Navigation from '../components/Template/Navigation';
-import SideBar from '../components/Template/SideBar';
 import ScrollToTop from '../components/Template/ScrollToTop';
 
-const Main = (props) => (
+const Main = ({ children, description, title }) => (
   <HelmetProvider>
     <Analytics />
     <ScrollToTop />
-    <Helmet titleTemplate="%s | Dhruv Doshi" defaultTitle="Dhruv Doshi" defer={false}>
-      {props.title && <title>{props.title}</title>}
-      <meta name="description" content={props.description} />
+    <Helmet titleTemplate="%s | Dhruv Doshi" defaultTitle="Dhruv Doshi — Staff Software Developer" defer={false}>
+      {title && <title>{title}</title>}
+      <meta name="description" content={description} />
+      <meta property="og:title" content={title ? `${title} | Dhruv Doshi` : 'Dhruv Doshi — Staff Software Developer'} />
+      <meta property="og:description" content={description} />
+      <meta property="og:type" content="website" />
     </Helmet>
-    <div id="wrapper">
-      <Navigation />
-      <div id="main">
-        {props.children}
-      </div>
-      {props.fullPage ? null : <SideBar />}
-    </div>
+    <a className="skip-link" href="#main-content">Skip to content</a>
+    <Navigation />
+    <main id="main-content">{children}</main>
+    <Footer />
   </HelmetProvider>
 );
 
 Main.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]),
-  fullPage: PropTypes.bool,
+  children: PropTypes.node,
   title: PropTypes.string,
   description: PropTypes.string,
 };
 
 Main.defaultProps = {
   children: null,
-  fullPage: false,
   title: null,
-  description: "Dhruv Doshi's personal website.",
+  description: 'Dhruv Doshi is a staff software developer and enterprise architect building platforms, distributed systems, and observability infrastructure.',
 };
 
 export default Main;

@@ -1,17 +1,16 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+
+import Main from '../layouts/Main';
 
 const PageNotFound = () => (
-  <HelmetProvider>
-    <div className="not-found">
-      <Helmet title="404 Not Found">
-        <meta name="description" content="The content you are looking for cannot be found." />
-      </Helmet>
-      <h1 data-testid="heading">Page Not Found</h1>
-      <p>Return <Link to="/">home</Link>.</p>
-    </div>
-  </HelmetProvider>
+  <Main title="Page not found" description="The requested page could not be found.">
+    <section className="not-found page-shell">
+      <p className="eyebrow">404 · Route not found</p>
+      <h1 data-testid="heading">This path does not lead to a system.</h1>
+      <p>The page may have moved, or the address may be incorrect.</p>
+      <Link className="button button--primary" to="/">Return home</Link>
+    </section>
+  </Main>
 );
 
 export default PageNotFound;

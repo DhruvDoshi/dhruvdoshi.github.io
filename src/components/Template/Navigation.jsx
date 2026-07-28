@@ -1,31 +1,54 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 
-import Hamburger from './Hamburger';
 import routes from '../../data/routes';
 
-// Websites Navbar, displays routes defined in 'src/data/routes'
-const Navigation = () => (
-  <header id="header">
-    <h1 className="index-link">
-      {routes.filter((l) => l.index).map((l) => (
-        <Link key={l.label} to={l.path}>{l.label}</Link>
-      ))}
-    </h1>
-    <nav className="links">
-      <ul>
-        {routes.filter((l) => !l.index).map((l) => (
-          <li key={l.label}>
-            <Link to={l.path}>{l.label}</Link>
-          </li>
-        ))}
-        <li> <a href="https://travel.doshidhruv.com" rel="noreferrer" target="_blank">Travel </a> </li>
-        <li> <a href="https://blog.doshidhruv.com" rel="noreferrer" target="_blank">BLOGS </a> </li>
-        <li> <Link to="/contact">CONTACT</Link> </li>
-      </ul>
-    </nav>
-    <Hamburger />
-  </header>
-);
+const Navigation = () => {
+  const [open, setOpen] = useState(false);
+  const closeMenu = () => setOpen(false);
+
+  return (
+    <header className="site-header">
+      <div className="site-header__inner page-shell">
+        <Link className="wordmark" to="/" aria-label="Dhruv Doshi, home" onClick={closeMenu}>
+          <span className="wordmark__mark" aria-hidden="true">DD</span>
+          <span className="wordmark__name">Dhruv Doshi</span>
+        </Link>
+
+        <button
+          className="menu-toggle"
+          type="button"
+          aria-expanded={open}
+          aria-controls="site-navigation"
+          onClick={() => setOpen((current) => !current)}
+        >
+          <span>{open ? 'Close' : 'Menu'}</span>
+          <span className="menu-toggle__icon" aria-hidden="true">
+            <i />
+            <i />
+          </span>
+        </button>
+
+        <nav
+          className={`site-navigation${open ? ' site-navigation--open' : ''}`}
+          id="site-navigation"
+          aria-label="Primary navigation"
+        >
+          {routes.map((route) => (
+            <NavLink
+              key={route.path}
+              to={route.path}
+              className={({ isActive }) => (isActive ? 'is-active' : undefined)}
+              onClick={closeMenu}
+            >
+              {route.label}
+            </NavLink>
+          ))}
+          <Link className="nav-contact" to="/contact" onClick={closeMenu}>Start a conversation</Link>
+        </nav>
+      </div>
+    </header>
+  );
+};
 
 export default Navigation;
