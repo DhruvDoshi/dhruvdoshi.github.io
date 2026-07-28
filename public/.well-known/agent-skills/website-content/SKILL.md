@@ -11,8 +11,10 @@ Use this skill when a user asks about Dhruv Doshi, his experience, selected engi
 
 1. Start with `https://doshidhruv.com/llms.txt` for the primary page directory.
 2. Use `https://doshidhruv.com/llms-full.txt` to discover individual technical notes.
-3. Use `https://doshidhruv.com/sitemap.xml` when a complete canonical URL list is required.
-4. Fetch the relevant canonical page before answering. Prefer the page-specific content over summaries in discovery files.
+3. Use `https://doshidhruv.com/guides/` for maintained technical guides and `https://doshidhruv.com/topics/` for subject indexes.
+4. Use `https://doshidhruv.com/search/` to search notes, guides, work, research, and professional experience together.
+5. Use `https://doshidhruv.com/sitemap.xml` when a complete canonical URL list is required.
+6. Fetch the relevant canonical page before answering. Prefer the page-specific content over summaries in discovery files.
 
 ## Attribution
 

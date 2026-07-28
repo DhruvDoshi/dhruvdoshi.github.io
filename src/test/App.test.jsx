@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
 
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router';
 
 import About from '../pages/About';
 import Contact from '../pages/Contact';
@@ -12,6 +12,9 @@ import Notes from '../pages/Notes';
 import NotFound from '../pages/NotFound';
 import Projects from '../pages/Projects';
 import Resume from '../pages/Resume';
+import Search from '../pages/Search';
+import Guide from '../pages/Guide';
+import Topic from '../pages/Topic';
 
 const pages = [
   {
@@ -101,4 +104,36 @@ test('Provides the authored resume PDF instead of a print action', () => {
     '/resume/Dhruv-Doshi-Resume.pdf',
   );
   expect(screen.queryByText('Print or save as PDF')).not.toBeInTheDocument();
+});
+
+test('Searches notes, guides, projects, research, and experience from one field', () => {
+  renderWithRouter(<Search />, { route: '/search' });
+  fireEvent.change(screen.getByRole('searchbox', { name: 'Search notes, guides, work, research, and experience' }), {
+    target: { value: 'OpenTelemetry' },
+  });
+
+  expect(screen.getByText('Vendor-neutral observability platform')).toBeInTheDocument();
+  expect(screen.getByText(/result.*for “OpenTelemetry”/)).toBeInTheDocument();
+});
+
+test('Renders a maintained guide with review and source-note links', () => {
+  renderWithRouter(
+    <Routes><Route path="/guides/:slug" element={<Guide />} /></Routes>,
+    { route: '/guides/platform-architecture' },
+  );
+
+  expect(screen.getByTestId('heading')).toHaveTextContent('Platform architecture');
+  expect(screen.getByText(/Last reviewed/)).toBeInTheDocument();
+  expect(screen.getByRole('heading', { name: 'Notes behind this guide' })).toBeInTheDocument();
+});
+
+test('Exposes static topic indexes across content types', () => {
+  renderWithRouter(
+    <Routes><Route path="/topics/:slug" element={<Topic />} /></Routes>,
+    { route: '/topics/platform-architecture' },
+  );
+
+  expect(screen.getByTestId('heading')).toHaveTextContent('Platform architecture');
+  expect(screen.getByText('Architecture Solution Blueprint platform')).toBeInTheDocument();
+  expect(screen.getByText('Platform architecture: from standards to a usable product')).toBeInTheDocument();
 });

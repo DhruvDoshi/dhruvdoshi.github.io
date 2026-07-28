@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 
 import Main from '../layouts/Main';
 import { profile } from '../data/profile';
@@ -6,6 +6,7 @@ import { profile } from '../data/profile';
 const About = () => (
   <Main
     title="About"
+    pageType="ProfilePage"
     description="About Dhruv Doshi, a Toronto-based Staff Software Developer and Enterprise Architect."
   >
     <header className="about-hero page-shell">

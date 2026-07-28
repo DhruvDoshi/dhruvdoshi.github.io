@@ -1,5 +1,4 @@
-import { useEffect, useRef } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router';
 
 import Main from '../layouts/Main';
 import { notes, topics } from '../data/notes';
@@ -12,20 +11,8 @@ const formatDate = (date) => new Intl.DateTimeFormat('en-CA', {
 
 const Notes = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const searchRef = useRef(null);
   const query = searchParams.get('q') || '';
   const topic = searchParams.get('topic') || 'All';
-
-  useEffect(() => {
-    const focusSearch = (event) => {
-      if (event.key === '/' && !['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName)) {
-        event.preventDefault();
-        searchRef.current?.focus();
-      }
-    };
-    window.addEventListener('keydown', focusSearch);
-    return () => window.removeEventListener('keydown', focusSearch);
-  }, []);
 
   const filteredNotes = notes.filter((note) => {
     const matchesTopic = topic === 'All' || note.topic === topic;
@@ -44,6 +31,7 @@ const Notes = () => {
     <Main
       title="Notes"
       description="Dhruv Doshi's technical notes on cloud architecture, blockchain systems, artificial intelligence, and machine learning."
+      pageType="CollectionPage"
     >
       <section className="notes-index page-shell" aria-labelledby="notes-title">
         <div className="notes-toolbar">
@@ -51,15 +39,19 @@ const Notes = () => {
           <label className="notes-search">
             <span className="sr-only">Search notes</span>
             <input
-              ref={searchRef}
               type="search"
               value={query}
               placeholder="Search 35 notes"
               onChange={(event) => updateParam('q', event.target.value)}
             />
-            <kbd aria-hidden="true">/</kbd>
           </label>
         </div>
+
+        <nav className="collection-links" aria-label="Related technical writing">
+          <Link to="/guides">Technical guides</Link>
+          <Link to="/topics">Browse topics</Link>
+          <Link to="/search">Search the whole site</Link>
+        </nav>
 
         <div className="topic-filter" aria-label="Filter notes by topic">
           {['All', ...topics].map((item) => (

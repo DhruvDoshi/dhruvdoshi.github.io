@@ -1,9 +1,23 @@
-import { Link, NavLink } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Link, NavLink, useNavigate } from 'react-router';
 
 import routes from '../../data/routes';
 import ThemeToggle from './ThemeToggle';
 
 const Navigation = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const openSearch = (event) => {
+      if (event.key === '/' && !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName)) {
+        event.preventDefault();
+        navigate('/search');
+      }
+    };
+    window.addEventListener('keydown', openSearch);
+    return () => window.removeEventListener('keydown', openSearch);
+  }, [navigate]);
+
   return (
     <header className="site-header">
       <div className="site-header__inner page-shell">
@@ -21,6 +35,9 @@ const Navigation = () => {
               {route.label}
             </NavLink>
           ))}
+          <button className="site-search-link" type="button" onClick={() => navigate('/search')} aria-label="Search the site" aria-keyshortcuts="/">
+            Search <kbd aria-hidden="true">/</kbd>
+          </button>
           <ThemeToggle />
         </nav>
       </div>

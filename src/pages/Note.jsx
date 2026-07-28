@@ -1,11 +1,12 @@
 import { useMemo, useState } from 'react';
-import { Link, Navigate, useParams } from 'react-router-dom';
+import { Link, Navigate, useParams } from 'react-router';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
 
 import Main from '../layouts/Main';
-import { findNote, notes, slugify } from '../data/notes';
+import { findNote, guidesForNote, notes, relatedNotes, slugify } from '../data/notes';
+import { topicSlug } from '../data/search';
 
 const formatDate = (date) => new Intl.DateTimeFormat('en-CA', {
   day: 'numeric',
@@ -33,6 +34,8 @@ const Note = () => {
   const noteIndex = notes.findIndex((candidate) => candidate.slug === note.slug);
   const newer = noteIndex > 0 ? notes[noteIndex - 1] : null;
   const older = noteIndex < notes.length - 1 ? notes[noteIndex + 1] : null;
+  const related = relatedNotes(note);
+  const relatedGuides = guidesForNote(note);
 
   const copyLink = async () => {
     if (!navigator.clipboard?.writeText) return;
@@ -42,14 +45,25 @@ const Note = () => {
   };
 
   return (
-    <Main title={note.title} description={note.excerpt} type="article" published={note.date}>
+    <Main
+      title={note.title}
+      description={note.excerpt}
+      type="article"
+      published={note.date}
+      modified={note.reviewed || note.date}
+      breadcrumbs={[
+        { name: 'Notes', path: '/notes' },
+        { name: note.title, path: `/notes/${note.slug}` },
+      ]}
+    >
       <article className="note-page page-shell">
         <header className="note-header">
           <Link className="note-back" to="/notes">← All notes</Link>
-          <p className="note-topic">{note.topic}</p>
+          <p className="note-topic"><Link to={`/topics/${topicSlug(note.topic)}`}>{note.topic}</Link></p>
           <h1 data-testid="heading">{note.title}</h1>
           <div className="note-meta">
             <time dateTime={note.date}>{formatDate(note.date)}</time>
+            {note.reviewed && <span>Reviewed <time dateTime={note.reviewed}>{formatDate(note.reviewed)}</time></span>}
             <span>{note.readTime} min read</span>
             <button type="button" onClick={copyLink}>{copied ? 'Copied' : 'Copy link'}</button>
           </div>
@@ -81,6 +95,26 @@ const Note = () => {
             </ReactMarkdown>
           </div>
         </div>
+
+        {(relatedGuides.length > 0 || related.length > 0) && (
+          <section className="related-content" aria-labelledby="related-content-title">
+            <h2 id="related-content-title">Continue reading</h2>
+            <div className="related-link-list">
+              {relatedGuides.map((guide) => (
+                <Link to={`/guides/${guide.slug}`} key={guide.slug}>
+                  <strong>{guide.title}</strong>
+                  <span>Guide · reviewed {guide.reviewed}</span>
+                </Link>
+              ))}
+              {related.map((item) => (
+                <Link to={`/notes/${item.slug}`} key={item.slug}>
+                  <strong>{item.title}</strong>
+                  <span>Note · {item.readTime} min</span>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
 
         <nav className="note-pagination" aria-label="Adjacent notes">
           {newer ? <Link to={`/notes/${newer.slug}`}><span>Newer</span><strong>{newer.title}</strong></Link> : <span />}

@@ -2,11 +2,12 @@ import React from 'react';
 import Main from '../layouts/Main';
 import Cell from '../components/Pictures/Cell';
 import data from '../data/pictures';
-// import { Link } from 'react-router-dom';
+// import { Link } from 'react-router';
 
 const Pictures = () => (
   <Main
     title="Pictures"
+    pageType="CollectionPage"
     description="See more of Dhruv Doshi's Pictures."
   >
     <>

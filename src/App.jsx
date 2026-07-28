@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router';
 import './static/css/main.scss'; // All of our styles
 
 // Every route - we lazy load so that each page can be chunked
@@ -11,6 +11,11 @@ const Index = lazy(() => import('./pages/Index'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 const Note = lazy(() => import('./pages/Note'));
 const Notes = lazy(() => import('./pages/Notes'));
+const Search = lazy(() => import('./pages/Search'));
+const Guides = lazy(() => import('./pages/Guides'));
+const Guide = lazy(() => import('./pages/Guide'));
+const Topics = lazy(() => import('./pages/Topics'));
+const Topic = lazy(() => import('./pages/Topic'));
 const LegacyPostRedirect = lazy(() => import('./pages/LegacyPostRedirect'));
 const Projects = lazy(() => import('./pages/Projects'));
 const Resume = lazy(() => import('./pages/Resume'));
@@ -29,6 +34,11 @@ const App = () => (
         <Route path="/research" element={<Research />} />
         <Route path="/notes" element={<Notes />} />
         <Route path="/notes/:slug" element={<Note />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/guides" element={<Guides />} />
+        <Route path="/guides/:slug" element={<Guide />} />
+        <Route path="/topics" element={<Topics />} />
+        <Route path="/topics/:slug" element={<Topic />} />
         <Route path="/posts/:slug" element={<LegacyPostRedirect />} />
         <Route path="/blog/*" element={<Notes />} />
         <Route path="/blogs/*" element={<Notes />} />

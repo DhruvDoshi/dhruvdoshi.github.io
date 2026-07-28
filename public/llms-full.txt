@@ -9,6 +9,9 @@
 - [Resume](https://doshidhruv.com/resume/): Resume PDF, professional experience, education, and engineering scope
 - [Resume PDF](https://doshidhruv.com/resume/Dhruv-Doshi-Resume.pdf): Downloadable one-page resume
 - [Technical notes](https://doshidhruv.com/notes/): Searchable writing archive
+- [Technical guides](https://doshidhruv.com/guides/): Maintained guides that connect engineering decisions to source notes and primary references
+- [Topics](https://doshidhruv.com/topics/): Subject index across notes, guides, work, research, and experience
+- [Site search](https://doshidhruv.com/search/): Search all public content
 - [Research](https://doshidhruv.com/research/): Published work on decentralized cloud storage
 - [About](https://doshidhruv.com/about/): Background and working principles
 - [Contact](https://doshidhruv.com/contact/): Contact information
@@ -19,6 +22,14 @@
 - [RSS feed](https://doshidhruv.com/feed.xml)
 - [Extended site context](https://doshidhruv.com/llms-full.txt)
 - [Agent guidance](https://doshidhruv.com/agents.txt)
+
+## Maintained technical guides
+
+- [Platform architecture: from standards to a usable product](https://doshidhruv.com/guides/platform-architecture/): A practical guide to turning architecture standards into paved roads, reusable contracts, and measurable platform outcomes. Last reviewed 2026-07-28.
+- [Observability systems: design the telemetry path before the dashboard](https://doshidhruv.com/guides/observability-systems/): A systems guide to telemetry contracts, collection, routing, storage boundaries, and operational feedback at scale. Last reviewed 2026-07-28.
+- [AI governance for software systems: controls that fit delivery](https://doshidhruv.com/guides/ai-governance/): A delivery-focused guide to AI inventories, risk boundaries, evaluation, human oversight, and operational evidence. Last reviewed 2026-07-28.
+- [Cloud migration: sequence decisions, not just workloads](https://doshidhruv.com/guides/cloud-migration/): A practical guide to cloud migration boundaries, dependency mapping, landing zones, observability, cutovers, and exit criteria. Last reviewed 2026-07-28.
+- [Staff engineering practice: create leverage through clear systems](https://doshidhruv.com/guides/staff-engineering-practice/): A practical guide to technical direction, decision records, cross-team delivery, mentoring, and operational credibility. Last reviewed 2026-07-28.
 
 ## Technical note directory
 

@@ -42,6 +42,8 @@ const caseStudies = [
       'Led five engineers through ADRs, reviews, delivery, and stakeholder alignment.',
     ],
     technologies: ['TypeScript', 'React', 'Node.js', 'Rules engine', 'Enterprise architecture'],
+    topics: ['Platform architecture', 'Staff engineering', 'AI governance'],
+    relatedNotes: ['platform-as-a-service-paas', 'what-is-cloud-computing', 'the-fundamentals-of-machine-learning'],
   },
   {
     slug: 'observability-platform',
@@ -57,6 +59,8 @@ const caseStudies = [
       'Designed Microsoft 365 audit-log repatriation with geolocation-aware data handling.',
     ],
     technologies: ['OpenTelemetry', 'Kafka', 'Vector', 'Fluent Bit', 'Logstash'],
+    topics: ['Observability', 'Platform architecture', 'Cloud architecture'],
+    relatedNotes: ['distributed-cloud', 'multi-cloud-architecture', 'serverless-computing-and-function-as-a-service'],
   },
   {
     slug: 'health-platform',
@@ -72,6 +76,8 @@ const caseStudies = [
       'Integrated document-classification models for medical record processing.',
     ],
     technologies: ['React', 'Node.js', 'AWS EKS', 'Hyperledger Fabric', 'Solidity'],
+    topics: ['Platform architecture', 'Cloud architecture', 'Blockchain systems'],
+    relatedNotes: ['what-is-blockchain', 'hybrid-cloud', 'infrastructure-as-a-service-iaas'],
   },
 ];
 
@@ -172,25 +178,34 @@ const education = [
 
 const selectedProjects = [
   {
+    slug: 'dcs-bbn',
     title: 'DCS-BBN',
     type: 'Published research · Distributed systems',
     description: 'A peer-to-peer archival storage network using Solidity smart contracts, Hyperledger Fabric, and privacy-preserving verification. Published by Springer.',
     link: 'https://link.springer.com/chapter/10.1007/978-3-030-49795-8_54',
     linkLabel: 'Read the publication',
+    topics: ['Distributed systems', 'Blockchain systems', 'Cloud architecture'],
+    relatedNotes: ['what-if-we-combine-blockchain-and-cloud-computing', 'what-is-blockchain', 'private-cloud'],
   },
   {
+    slug: 'automatic-trading-system',
     title: 'Automatic trading system',
     type: 'Personal project · Quantitative engineering',
     description: 'A low-latency trading system that combines live brokerage APIs, market-data streams, quantitative signals, position sizing, and automated risk controls.',
     link: null,
     linkLabel: null,
+    topics: ['Distributed systems'],
+    relatedNotes: ['what-are-cryptocurrency-exchanges', 'what-are-transaction-fees-in-blockchain'],
   },
   {
+    slug: 'asb-assist',
     title: 'ASB Assist',
     type: 'In development · Applied AI',
     description: 'A natural-language architecture workflow that uses LLM and RAG patterns to generate compliant diagrams and recommend enterprise services on top of the blueprint platform.',
     link: null,
     linkLabel: null,
+    topics: ['AI governance', 'Platform architecture'],
+    relatedNotes: ['the-fundamentals-of-machine-learning', 'deep-learning-explained-from-basics-to-advanced'],
   },
 ];
 

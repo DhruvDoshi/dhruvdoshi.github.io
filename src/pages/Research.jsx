@@ -1,9 +1,11 @@
 import Main from '../layouts/Main';
+import { Link } from 'react-router';
 
 const Research = () => (
   <Main
     title="Research"
     description="Published research by Dhruv Doshi in decentralised cloud storage, access control, and blockchain systems."
+    pageType="CollectionPage"
   >
     <header className="utility-page-header page-shell">
       <h1 data-testid="heading">Research</h1>
@@ -26,6 +28,7 @@ const Research = () => (
           <p>The paper presents a multi-user access-control model for data stored in an untrusted cloud environment. Attribute-based encryption protects the data while a decentralised ledger records security events such as key generation, policy changes, revocation, and access requests.</p>
           <p>The work included a functioning smart-contract prototype and protocols designed to keep private keys and sensitive operations off the ledger.</p>
           <a href="https://link.springer.com/chapter/10.1007/978-3-030-49795-8_54" target="_blank" rel="noreferrer">Read the paper on Springer</a>
+          <p className="publication__related">Related: <Link to="/guides/platform-architecture">Platform architecture guide</Link> · <Link to="/notes/what-if-we-combine-blockchain-and-cloud-computing">Blockchain and cloud note</Link> · <Link to="/topics/distributed-systems">Distributed systems topic</Link></p>
         </div>
       </div>
       <div className="publication__topics">

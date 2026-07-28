@@ -92,6 +92,7 @@ const normalizeNote = (sourceSlug, raw) => {
   const title = titleCorrections[originalTitle] || originalTitle;
   const categories = parseList(attributes.categories);
   const date = normalizeDate(attributes.date);
+  const reviewed = attributes.reviewed ? normalizeDate(attributes.reviewed) : null;
   const words = stripMarkup(cleanedBody).split(/\s+/).filter(Boolean).length;
   return {
     aliases: [...new Set([sourceSlug, slugify(originalTitle)])],
@@ -100,6 +101,7 @@ const normalizeNote = (sourceSlug, raw) => {
     date,
     excerpt: getExcerpt(cleanedBody),
     readTime: Math.max(2, Math.ceil(words / 220)),
+    reviewed,
     slug: slugify(title),
     title,
     topic: getTopic(categories),

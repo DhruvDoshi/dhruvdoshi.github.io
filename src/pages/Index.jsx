@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 
 import Main from '../layouts/Main';
 import {
@@ -8,6 +8,7 @@ import {
   profile,
 } from '../data/profile';
 import { notes } from '../data/notes';
+import { guides } from '../data/guides';
 
 const recentNotes = notes.slice(0, 6);
 
@@ -18,7 +19,7 @@ const formatNoteDate = (date) => new Intl.DateTimeFormat('en-CA', {
 }).format(new Date(`${date}T00:00:00Z`));
 
 const Index = () => (
-  <Main>
+  <Main pageType="ProfilePage">
     <header className="document-intro page-shell">
       <h1 data-testid="heading">Dhruv Doshi</h1>
       <p className="document-intro__role">Staff Software Developer and Enterprise Architect</p>
@@ -27,6 +28,7 @@ const Index = () => (
         <Link to="/resume">Experience</Link>
         <Link to="/projects">Selected work</Link>
         <Link to="/notes">Technical notes</Link>
+        <Link to="/guides">Technical guides</Link>
         <a href={`mailto:${profile.email}`}>Email</a>
       </p>
     </header>
@@ -61,6 +63,24 @@ const Index = () => (
             <Link className="case-row__link" to={`/projects#${study.slug}`} aria-label={`Read more about ${study.title}`}>Details</Link>
           </article>
         ))}
+      </div>
+    </section>
+
+    <section className="document-section page-shell">
+      <div className="home-notes__layout">
+        <header className="home-notes__intro">
+          <h2>Guides</h2>
+          <Link to="/topics">Browse topics</Link>
+        </header>
+        <div className="home-note-list">
+          {guides.map((guide) => (
+            <Link to={`/guides/${guide.slug}`} key={guide.slug}>
+              <strong>{guide.title}</strong>
+              <span>{guide.topics[0]}</span>
+              <time dateTime={guide.reviewed}>Reviewed {formatNoteDate(guide.reviewed)}</time>
+            </Link>
+          ))}
+        </div>
       </div>
     </section>
 

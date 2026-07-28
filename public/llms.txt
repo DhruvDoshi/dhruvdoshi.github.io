@@ -9,6 +9,9 @@
 - [Resume](https://doshidhruv.com/resume/): Resume PDF, professional experience, education, and engineering scope
 - [Resume PDF](https://doshidhruv.com/resume/Dhruv-Doshi-Resume.pdf): Downloadable one-page resume
 - [Technical notes](https://doshidhruv.com/notes/): Searchable writing archive
+- [Technical guides](https://doshidhruv.com/guides/): Maintained guides that connect engineering decisions to source notes and primary references
+- [Topics](https://doshidhruv.com/topics/): Subject index across notes, guides, work, research, and experience
+- [Site search](https://doshidhruv.com/search/): Search all public content
 - [Research](https://doshidhruv.com/research/): Published work on decentralized cloud storage
 - [About](https://doshidhruv.com/about/): Background and working principles
 - [Contact](https://doshidhruv.com/contact/): Contact information

@@ -3,7 +3,9 @@ import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { normalizeNote } from '../src/data/note-utils.js';
+import { guides } from '../src/data/guides.js';
+import { normalizeNote, slugify } from '../src/data/note-utils.js';
+import topicDescriptions from '../src/data/topic-definitions.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const publicDir = path.join(root, 'public');
@@ -25,17 +27,23 @@ const notes = (await Promise.all(files.map(async (file) => {
   const raw = await readFile(path.join(notesDir, file), 'utf8');
   return normalizeNote(file.replace(/\.md$/, ''), raw);
 }))).sort((a, b) => b.date.localeCompare(a.date));
+const topicPages = Object.keys(topicDescriptions).map((topic) => `/topics/${slugify(topic)}`);
 
 const pages = [
   ['/', generatedDate, 'weekly', '1.0'],
   ['/projects', generatedDate, 'monthly', '0.9'],
   ['/resume', generatedDate, 'monthly', '0.9'],
   ['/notes', notes[0]?.date || generatedDate, 'weekly', '0.9'],
+  ['/search', generatedDate, 'weekly', '0.8'],
+  ['/guides', generatedDate, 'monthly', '0.9'],
+  ['/topics', generatedDate, 'monthly', '0.8'],
   ['/research', generatedDate, 'yearly', '0.8'],
   ['/about', generatedDate, 'monthly', '0.7'],
   ['/contact', generatedDate, 'yearly', '0.6'],
   ['/pictures', generatedDate, 'yearly', '0.4'],
-  ...notes.map((note) => [`/notes/${note.slug}`, note.date, 'yearly', '0.7']),
+  ...guides.map((guide) => [`/guides/${guide.slug}`, guide.reviewed, 'monthly', '0.8']),
+  ...topicPages.map((pathname) => [pathname, generatedDate, 'monthly', '0.7']),
+  ...notes.map((note) => [`/notes/${note.slug}`, note.reviewed || note.date, note.reviewed ? 'monthly' : 'yearly', '0.7']),
 ];
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -49,28 +57,34 @@ ${pages.map(([pathname, lastmod, changefreq, priority]) => `  <url>
 </urlset>
 `;
 
+const feedItems = [
+  ...guides.map((guide) => ({ title: guide.title, pathname: `/guides/${guide.slug}`, date: guide.published, category: guide.topics.join(', '), description: guide.description })),
+  ...notes.map((note) => ({ title: note.title, pathname: `/notes/${note.slug}`, date: note.date, category: note.topic, description: note.excerpt })),
+].sort((a, b) => b.date.localeCompare(a.date));
+
 const feed = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Dhruv Doshi — Technical Notes</title>
     <link>${pageUrl('/notes')}</link>
-    <description>Technical notes on cloud architecture, blockchain systems, artificial intelligence, and machine learning.</description>
+    <description>Technical guides and notes on platform architecture, observability, cloud systems, artificial intelligence, machine learning, and distributed systems.</description>
     <language>en-ca</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="${origin}/feed.xml" rel="self" type="application/rss+xml" />
-${notes.map((note) => `    <item>
-      <title>${xml(note.title)}</title>
-      <link>${pageUrl(`/notes/${note.slug}`)}</link>
-      <guid isPermaLink="true">${pageUrl(`/notes/${note.slug}`)}</guid>
-      <pubDate>${new Date(`${note.date}T12:00:00Z`).toUTCString()}</pubDate>
-      <category>${xml(note.topic)}</category>
-      <description>${xml(note.excerpt)}</description>
+${feedItems.map((item) => `    <item>
+      <title>${xml(item.title)}</title>
+      <link>${pageUrl(item.pathname)}</link>
+      <guid isPermaLink="true">${pageUrl(item.pathname)}</guid>
+      <pubDate>${new Date(`${item.date}T12:00:00Z`).toUTCString()}</pubDate>
+      <category>${xml(item.category)}</category>
+      <description>${xml(item.description)}</description>
     </item>`).join('\n')}
   </channel>
 </rss>
 `;
 
 const noteDirectory = notes.map((note) => `- [${note.title}](${pageUrl(`/notes/${note.slug}`)}): ${note.excerpt}`).join('\n');
+const guideDirectory = guides.map((guide) => `- [${guide.title}](${pageUrl(`/guides/${guide.slug}`)}): ${guide.description} Last reviewed ${guide.reviewed}.`).join('\n');
 const llms = `# Dhruv Doshi
 
 > Staff Software Developer and Enterprise Architect in Toronto, Canada. This site documents professional experience, selected engineering work, published research, and technical writing.
@@ -82,6 +96,9 @@ const llms = `# Dhruv Doshi
 - [Resume](${pageUrl('/resume')}): Resume PDF, professional experience, education, and engineering scope
 - [Resume PDF](${origin}/resume/Dhruv-Doshi-Resume.pdf): Downloadable one-page resume
 - [Technical notes](${pageUrl('/notes')}): Searchable writing archive
+- [Technical guides](${pageUrl('/guides')}): Maintained guides that connect engineering decisions to source notes and primary references
+- [Topics](${pageUrl('/topics')}): Subject index across notes, guides, work, research, and experience
+- [Site search](${pageUrl('/search')}): Search all public content
 - [Research](${pageUrl('/research')}): Published work on decentralized cloud storage
 - [About](${pageUrl('/about')}): Background and working principles
 - [Contact](${pageUrl('/contact')}): Contact information
@@ -95,6 +112,10 @@ const llms = `# Dhruv Doshi
 `;
 
 const llmsFull = `${llms}
+## Maintained technical guides
+
+${guideDirectory}
+
 ## Technical note directory
 
 ${noteDirectory}
@@ -178,6 +199,32 @@ Allow: /
 Sitemap: ${origin}/sitemap.xml
 `;
 
+const unsupportedPaths = [
+  '/.well-known/api-catalog',
+  '/.well-known/http-message-signatures-directory',
+  '/.well-known/openid-configuration',
+  '/.well-known/oauth-authorization-server',
+  '/.well-known/oauth-protected-resource',
+  '/.well-known/ucp',
+  '/.well-known/acp.json',
+  '/.well-known/agent-card.json',
+  '/api',
+  '/api/v1',
+  '/auth.md',
+  '/openapi.json',
+];
+const noteRedirects = notes.flatMap((note) => note.aliases
+  .filter((alias) => alias !== note.slug)
+  .map((alias) => `/notes/${alias} /notes/${note.slug} 301!`));
+const redirects = [
+  'https://blog.doshidhruv.com/posts/* https://doshidhruv.com/notes/:splat 301!',
+  'https://blog.doshidhruv.com/* https://doshidhruv.com/notes 301!',
+  '/posts/:splat /notes/:splat 301!',
+  ...noteRedirects,
+  ...unsupportedPaths.map((pathname) => `${pathname} /agent-capability-not-found.txt 404!`),
+  '/* /index.html 200',
+].join('\n');
+
 await mkdir(publicDir, { recursive: true });
 await Promise.all([
   writeFile(path.join(publicDir, 'sitemap.xml'), sitemap),
@@ -186,5 +233,6 @@ await Promise.all([
   writeFile(path.join(publicDir, 'llms-full.txt'), llmsFull),
   writeFile(path.join(publicDir, 'agents.txt'), agents),
   writeFile(path.join(publicDir, 'robots.txt'), robots),
+  writeFile(path.join(publicDir, '_redirects'), `${redirects}\n`),
   writeFile(path.join(publicDir, '.well-known/agent-skills/index.json'), agentSkillsIndex),
 ]);

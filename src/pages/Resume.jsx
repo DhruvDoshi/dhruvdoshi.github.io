@@ -1,4 +1,5 @@
 import Main from '../layouts/Main';
+import { slugify } from '../data/note-utils';
 import {
   capabilities,
   education,
@@ -10,6 +11,7 @@ const Resume = () => (
   <Main
     title="Resume"
     description="Experience, education, and technical capabilities of Dhruv Doshi, Staff Software Developer and Enterprise Architect."
+    pageType="ProfilePage"
   >
     <header className="utility-page-header page-shell">
       <h1 data-testid="heading">Resume</h1>
@@ -25,7 +27,7 @@ const Resume = () => (
       <div className="experience-list">
         <h2 id="experience-title">Experience</h2>
         {experience.map((item) => (
-          <article className="experience-item" key={`${item.company}-${item.period}`}>
+          <article className="experience-item" id={`experience-${slugify(item.company)}`} key={`${item.company}-${item.period}`}>
             <div className="experience-item__rail">
               <span>{item.period}</span>
               <span>{item.location}</span>
