@@ -138,6 +138,7 @@ const agentSkillsIndex = `${JSON.stringify({
 
 const robots = `# All search engines, AI crawlers, and user-directed agents may crawl this site.
 User-agent: *
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
 Allow: /
 
 # Explicit AI discovery and citation crawlers.

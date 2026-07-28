@@ -7,6 +7,7 @@ https://blog.doshidhruv.com/* https://doshidhruv.com/notes 301!
 /.well-known/oauth-protected-resource /agent-capability-not-found.txt 404!
 /.well-known/ucp /agent-capability-not-found.txt 404!
 /.well-known/acp.json /agent-capability-not-found.txt 404!
+/.well-known/agent-card.json /agent-capability-not-found.txt 404!
 /api /agent-capability-not-found.txt 404!
 /api/v1 /agent-capability-not-found.txt 404!
 /auth.md /agent-capability-not-found.txt 404!

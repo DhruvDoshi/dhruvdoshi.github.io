@@ -14,6 +14,7 @@ const unsupportedDiscoveryPaths = new Set([
   '/.well-known/oauth-protected-resource',
   '/.well-known/ucp',
   '/.well-known/acp.json',
+  '/.well-known/agent-card.json',
   '/api',
   '/api/v1',
   '/auth.md',
