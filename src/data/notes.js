@@ -1,5 +1,6 @@
 import { normalizeNote, slugify } from './note-utils';
 import { guides } from './guides';
+import { caseStudies, selectedProjects } from './profile';
 
 const noteModules = import.meta.glob('../content/notes/*.md', {
   eager: true,
@@ -36,5 +37,7 @@ const relatedNotes = (note, limit = 4) => notes
   .sort((a, b) => b.relevance - a.relevance || b.date.localeCompare(a.date))
   .slice(0, limit);
 const guidesForNote = (note) => guides.filter((guide) => guide.relatedNotes.includes(note.slug));
+const projectsForNote = (note) => [...caseStudies, ...selectedProjects]
+  .filter((project) => project.relatedNotes.includes(note.slug));
 
-export { featuredNotes, findNote, guidesForNote, notes, relatedNotes, slugify, topics };
+export { featuredNotes, findNote, guidesForNote, notes, projectsForNote, relatedNotes, slugify, topics };

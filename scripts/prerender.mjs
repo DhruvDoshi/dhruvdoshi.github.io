@@ -91,8 +91,9 @@ await writeRoute('/notes', {
 for (const note of notes) {
   const markdown = renderToStaticMarkup(React.createElement(ReactMarkdown, { remarkPlugins: [remarkGfm], rehypePlugins: [rehypeRaw] }, note.body));
   const relatedGuides = guides.filter((guide) => guide.relatedNotes.includes(note.slug));
+  const relatedProjects = [...caseStudies, ...selectedProjects].filter((project) => project.relatedNotes.includes(note.slug));
   const relatedNotes = notes.filter((candidate) => candidate.slug !== note.slug && candidate.topic === note.topic).slice(0, 4);
-  const relatedContent = [...relatedGuides.map((guide) => `<a href="/guides/${guide.slug}">${escapeHtml(guide.title)}</a> · Guide`), ...relatedNotes.map((candidate) => `<a href="/notes/${candidate.slug}">${escapeHtml(candidate.title)}</a> · Note`)];
+  const relatedContent = [...relatedProjects.map((project) => `<a href="/projects#${project.slug}">${escapeHtml(project.title)}</a> · Selected work`), ...relatedGuides.map((guide) => `<a href="/guides/${guide.slug}">${escapeHtml(guide.title)}</a> · Guide`), ...relatedNotes.map((candidate) => `<a href="/notes/${candidate.slug}">${escapeHtml(candidate.title)}</a> · Note`)];
   await writeRoute(`/notes/${note.slug}`, {
     title: note.title,
     description: note.excerpt,

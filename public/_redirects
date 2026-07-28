@@ -1,7 +1,17 @@
 https://blog.doshidhruv.com/posts/* https://doshidhruv.com/notes/:splat 301!
 https://blog.doshidhruv.com/* https://doshidhruv.com/notes 301!
 /posts/:splat /notes/:splat 301!
+/notes/elastic-opentelemetry-support /notes/elastic-support-for-opentelemetry-and-managed-otlp-ingestion 301!
+/notes/dynatrace-opentelemetry-support /notes/dynatrace-support-for-opentelemetry-and-native-otlp 301!
 /notes/measuring-internal-platforms /notes/measure-whether-an-internal-platform-creates-leverage 301!
+/notes/datadog-opentelemetry-support /notes/datadog-support-for-opentelemetry-and-otlp-ingestion 301!
+/notes/splunk-opentelemetry-support /notes/splunk-support-for-opentelemetry-collection-and-otlp 301!
+/notes/aws-opentelemetry-support /notes/aws-support-for-opentelemetry-with-adot-and-cloudwatch 301!
+/notes/microsoft-365-audit-data-opentelemetry /notes/microsoft-365-audit-data-in-an-opentelemetry-pipeline 301!
+/notes/opentelemetry-pipeline-architecture /notes/opentelemetry-pipeline-architecture-for-vendor-neutral-observability 301!
+/notes/pattern-matching-algorithms-architecture-recommendations /notes/pattern-matching-algorithms-for-architecture-recommendations 301!
+/notes/production-rag-retrieval-evidence-control /notes/production-rag-requires-retrieval-evidence-and-control 301!
+/notes/finos-calm-architecture-as-code /notes/finos-calm-and-architecture-as-code 301!
 /notes/staff-engineering-through-leverage /notes/staff-engineering-is-measured-through-leverage 301!
 /notes/architecture-governance-through-evidence /notes/architecture-governance-should-operate-through-evidence 301!
 /notes/technical-roadmaps-with-options /notes/technical-roadmaps-should-preserve-options 301!

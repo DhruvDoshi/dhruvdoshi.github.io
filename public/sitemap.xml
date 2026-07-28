@@ -20,7 +20,7 @@
   </url>
   <url>
     <loc>https://doshidhruv.com/notes/</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -145,7 +145,67 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://doshidhruv.com/notes/elastic-support-for-opentelemetry-and-managed-otlp-ingestion/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/dynatrace-support-for-opentelemetry-and-native-otlp/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://doshidhruv.com/notes/measure-whether-an-internal-platform-creates-leverage/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/datadog-support-for-opentelemetry-and-otlp-ingestion/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/splunk-support-for-opentelemetry-collection-and-otlp/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/aws-support-for-opentelemetry-with-adot-and-cloudwatch/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/microsoft-365-audit-data-in-an-opentelemetry-pipeline/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/opentelemetry-pipeline-architecture-for-vendor-neutral-observability/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/pattern-matching-algorithms-for-architecture-recommendations/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/production-rag-requires-retrieval-evidence-and-control/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/finos-calm-and-architecture-as-code/</loc>
     <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

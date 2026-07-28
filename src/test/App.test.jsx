@@ -94,14 +94,38 @@ test('Filters notes from the first search control', () => {
     target: { value: 'cloud' },
   });
 
-  expect(screen.getByText(/of 59 notes$/)).toBeInTheDocument();
+  expect(screen.getByText(/of 69 notes$/)).toBeInTheDocument();
 });
 
 test('Publishes the historical note series while keeping scheduled content private', () => {
-  expect(notes).toHaveLength(59);
+  expect(notes).toHaveLength(69);
   expect(notes.some((note) => note.title === 'Design the platform as a product')).toBe(true);
   expect(notes.some((note) => note.title === 'Architecture decision records that remain useful')).toBe(true);
   expect(notes.every((note) => note.status === 'published')).toBe(true);
+});
+
+test('Links architecture and observability notes to selected work', () => {
+  renderWithRouter(
+    <Routes><Route path="/notes/:slug" element={<Note />} /></Routes>,
+    { route: '/notes/pattern-matching-algorithms-for-architecture-recommendations' },
+  );
+
+  expect(screen.getByRole('link', { name: /Architecture Solution Blueprint platform/ })).toHaveAttribute(
+    'href',
+    '/projects#architecture-blueprints',
+  );
+});
+
+test('Links OpenTelemetry notes back to the vendor-neutral observability platform', () => {
+  renderWithRouter(
+    <Routes><Route path="/notes/:slug" element={<Note />} /></Routes>,
+    { route: '/notes/opentelemetry-pipeline-architecture-for-vendor-neutral-observability' },
+  );
+
+  expect(screen.getByRole('link', { name: /Vendor-neutral observability platform/ })).toHaveAttribute(
+    'href',
+    '/projects#observability-platform',
+  );
 });
 
 test('Provides the authored resume PDF instead of a print action', () => {

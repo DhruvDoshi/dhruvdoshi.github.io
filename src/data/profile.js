@@ -43,7 +43,14 @@ const caseStudies = [
     ],
     technologies: ['TypeScript', 'React', 'Node.js', 'Rules engine', 'Enterprise architecture'],
     topics: ['Platform architecture', 'Staff engineering', 'AI governance'],
-    relatedNotes: ['platform-as-a-service-paas', 'what-is-cloud-computing', 'the-fundamentals-of-machine-learning'],
+    relatedNotes: [
+      'finos-calm-and-architecture-as-code',
+      'production-rag-requires-retrieval-evidence-and-control',
+      'pattern-matching-algorithms-for-architecture-recommendations',
+      'platform-as-a-service-paas',
+      'what-is-cloud-computing',
+      'the-fundamentals-of-machine-learning',
+    ],
   },
   {
     slug: 'observability-platform',
@@ -60,7 +67,18 @@ const caseStudies = [
     ],
     technologies: ['OpenTelemetry', 'Kafka', 'Vector', 'Fluent Bit', 'Logstash'],
     topics: ['Observability', 'Platform architecture', 'Cloud architecture'],
-    relatedNotes: ['distributed-cloud', 'multi-cloud-architecture', 'serverless-computing-and-function-as-a-service'],
+    relatedNotes: [
+      'opentelemetry-pipeline-architecture-for-vendor-neutral-observability',
+      'microsoft-365-audit-data-in-an-opentelemetry-pipeline',
+      'aws-support-for-opentelemetry-with-adot-and-cloudwatch',
+      'splunk-support-for-opentelemetry-collection-and-otlp',
+      'datadog-support-for-opentelemetry-and-otlp-ingestion',
+      'dynatrace-support-for-opentelemetry-and-native-otlp',
+      'elastic-support-for-opentelemetry-and-managed-otlp-ingestion',
+      'distributed-cloud',
+      'multi-cloud-architecture',
+      'serverless-computing-and-function-as-a-service',
+    ],
   },
   {
     slug: 'health-platform',
@@ -205,7 +223,11 @@ const selectedProjects = [
     link: null,
     linkLabel: null,
     topics: ['AI governance', 'Platform architecture'],
-    relatedNotes: ['the-fundamentals-of-machine-learning', 'deep-learning-explained-from-basics-to-advanced'],
+    relatedNotes: [
+      'production-rag-requires-retrieval-evidence-and-control',
+      'the-fundamentals-of-machine-learning',
+      'deep-learning-explained-from-basics-to-advanced',
+    ],
   },
 ];
 

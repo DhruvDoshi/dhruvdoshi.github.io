@@ -5,7 +5,7 @@
     <link>https://doshidhruv.com/notes/</link>
     <description>Technical guides and notes on platform architecture, observability, cloud systems, artificial intelligence, machine learning, and distributed systems.</description>
     <language>en-ca</language>
-    <lastBuildDate>Tue, 28 Jul 2026 18:04:19 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 28 Jul 2026 18:14:55 GMT</lastBuildDate>
     <atom:link href="https://doshidhruv.com/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Platform architecture: from standards to a usable product</title>
@@ -48,12 +48,92 @@
       <description>A practical guide to technical direction, decision records, cross-team delivery, mentoring, and operational credibility.</description>
     </item>
     <item>
+      <title>Elastic support for OpenTelemetry and managed OTLP ingestion</title>
+      <link>https://doshidhruv.com/notes/elastic-support-for-opentelemetry-and-managed-otlp-ingestion/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/elastic-support-for-opentelemetry-and-managed-otlp-ingestion/</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 GMT</pubDate>
+      <category>Observability</category>
+      <description>Elastic supports OpenTelemetry through managed OTLP ingestion, the Elastic Distribution of OpenTelemetry, and standard SDK or collector pipelines. Organisations can send traces,…</description>
+    </item>
+    <item>
+      <title>Dynatrace support for OpenTelemetry and native OTLP</title>
+      <link>https://doshidhruv.com/notes/dynatrace-support-for-opentelemetry-and-native-otlp/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/dynatrace-support-for-opentelemetry-and-native-otlp/</guid>
+      <pubDate>Wed, 01 Jul 2026 12:00:00 GMT</pubDate>
+      <category>Observability</category>
+      <description>Dynatrace supports OpenTelemetry through native OTLP API endpoints, the upstream OpenTelemetry Collector, and a Dynatrace collector distribution. It also supports mixed environments…</description>
+    </item>
+    <item>
       <title>Measure whether an internal platform creates leverage</title>
       <link>https://doshidhruv.com/notes/measure-whether-an-internal-platform-creates-leverage/</link>
       <guid isPermaLink="true">https://doshidhruv.com/notes/measure-whether-an-internal-platform-creates-leverage/</guid>
       <pubDate>Wed, 01 Jul 2026 12:00:00 GMT</pubDate>
       <category>Platform architecture</category>
       <description>An internal platform can look successful while moving work from one team to another. Repository count, portal visits, and cluster utilisation show activity, but they do not prove that…</description>
+    </item>
+    <item>
+      <title>Datadog support for OpenTelemetry and OTLP ingestion</title>
+      <link>https://doshidhruv.com/notes/datadog-support-for-opentelemetry-and-otlp-ingestion/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/datadog-support-for-opentelemetry-and-otlp-ingestion/</guid>
+      <pubDate>Mon, 15 Jun 2026 12:00:00 GMT</pubDate>
+      <category>Observability</category>
+      <description>Datadog accepts OpenTelemetry data through several integration paths, but the resulting product capabilities are not identical. A design should choose explicitly between the Datadog…</description>
+    </item>
+    <item>
+      <title>Splunk support for OpenTelemetry collection and OTLP</title>
+      <link>https://doshidhruv.com/notes/splunk-support-for-opentelemetry-collection-and-otlp/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/splunk-support-for-opentelemetry-collection-and-otlp/</guid>
+      <pubDate>Mon, 01 Jun 2026 12:00:00 GMT</pubDate>
+      <category>Observability</category>
+      <description>Splunk supports OpenTelemetry through the Splunk Distribution of the OpenTelemetry Collector, standard OTLP ingestion paths, and integrations with Splunk Observability Cloud and Splunk…</description>
+    </item>
+    <item>
+      <title>AWS support for OpenTelemetry with ADOT and CloudWatch</title>
+      <link>https://doshidhruv.com/notes/aws-support-for-opentelemetry-with-adot-and-cloudwatch/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/aws-support-for-opentelemetry-with-adot-and-cloudwatch/</guid>
+      <pubDate>Fri, 15 May 2026 12:00:00 GMT</pubDate>
+      <category>Observability</category>
+      <description>AWS supports OpenTelemetry through several paths: the AWS Distro for OpenTelemetry, the CloudWatch agent, upstream or custom collectors, and CloudWatch OTLP endpoints. The right choice…</description>
+    </item>
+    <item>
+      <title>Microsoft 365 audit data in an OpenTelemetry pipeline</title>
+      <link>https://doshidhruv.com/notes/microsoft-365-audit-data-in-an-opentelemetry-pipeline/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/microsoft-365-audit-data-in-an-opentelemetry-pipeline/</guid>
+      <pubDate>Fri, 01 May 2026 12:00:00 GMT</pubDate>
+      <category>Observability</category>
+      <description>Microsoft 365 audit data is valuable operational and security telemetry, but Microsoft 365 is not itself a general native OTLP source. The reliable architecture is to retrieve tenant…</description>
+    </item>
+    <item>
+      <title>OpenTelemetry pipeline architecture for vendor-neutral observability</title>
+      <link>https://doshidhruv.com/notes/opentelemetry-pipeline-architecture-for-vendor-neutral-observability/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/opentelemetry-pipeline-architecture-for-vendor-neutral-observability/</guid>
+      <pubDate>Wed, 15 Apr 2026 12:00:00 GMT</pubDate>
+      <category>Observability</category>
+      <description>OpenTelemetry standardises how applications produce and transmit traces, metrics, and logs. It does not make every backend identical, and it does not operate the telemetry path…</description>
+    </item>
+    <item>
+      <title>Pattern matching algorithms for architecture recommendations</title>
+      <link>https://doshidhruv.com/notes/pattern-matching-algorithms-for-architecture-recommendations/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/pattern-matching-algorithms-for-architecture-recommendations/</guid>
+      <pubDate>Sun, 15 Mar 2026 12:00:00 GMT</pubDate>
+      <category>Platform architecture</category>
+      <description>An architecture recommendation platform must translate incomplete requirements into a small set of compatible patterns and services while explaining why each result fits. This is not…</description>
+    </item>
+    <item>
+      <title>Production RAG requires retrieval evidence and control</title>
+      <link>https://doshidhruv.com/notes/production-rag-requires-retrieval-evidence-and-control/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/production-rag-requires-retrieval-evidence-and-control/</guid>
+      <pubDate>Sun, 15 Feb 2026 12:00:00 GMT</pubDate>
+      <category>AI governance</category>
+      <description>Retrieval augmented generation is often described as “search, then prompt.” A production RAG system is more accurately a governed information retrieval system connected to a…</description>
+    </item>
+    <item>
+      <title>FINOS CALM and architecture as code</title>
+      <link>https://doshidhruv.com/notes/finos-calm-and-architecture-as-code/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/finos-calm-and-architecture-as-code/</guid>
+      <pubDate>Thu, 15 Jan 2026 12:00:00 GMT</pubDate>
+      <category>Platform architecture</category>
+      <description>Architecture diagrams are useful for communication, but a diagram alone is difficult to validate, compare, or connect to delivery controls. The Common Architecture Language…</description>
     </item>
     <item>
       <title>Staff engineering is measured through leverage</title>

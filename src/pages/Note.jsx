@@ -5,7 +5,7 @@ import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
 
 import Main from '../layouts/Main';
-import { findNote, guidesForNote, notes, relatedNotes, slugify } from '../data/notes';
+import { findNote, guidesForNote, notes, projectsForNote, relatedNotes, slugify } from '../data/notes';
 import { topicSlug } from '../data/search';
 
 const formatDate = (date) => new Intl.DateTimeFormat('en-CA', {
@@ -36,6 +36,7 @@ const Note = () => {
   const older = noteIndex < notes.length - 1 ? notes[noteIndex + 1] : null;
   const related = relatedNotes(note);
   const relatedGuides = guidesForNote(note);
+  const relatedProjects = projectsForNote(note);
 
   const copyLink = async () => {
     if (!navigator.clipboard?.writeText) return;
@@ -96,10 +97,16 @@ const Note = () => {
           </div>
         </div>
 
-        {(relatedGuides.length > 0 || related.length > 0) && (
+        {(relatedProjects.length > 0 || relatedGuides.length > 0 || related.length > 0) && (
           <section className="related-content" aria-labelledby="related-content-title">
             <h2 id="related-content-title">Continue reading</h2>
             <div className="related-link-list">
+              {relatedProjects.map((project) => (
+                <Link to={`/projects#${project.slug}`} key={project.slug}>
+                  <strong>{project.title}</strong>
+                  <span>Selected work</span>
+                </Link>
+              ))}
               {relatedGuides.map((guide) => (
                 <Link to={`/guides/${guide.slug}`} key={guide.slug}>
                   <strong>{guide.title}</strong>

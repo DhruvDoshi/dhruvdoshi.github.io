@@ -8,6 +8,8 @@ const guides = [
     readTime: 7,
     topics: ['Platform architecture', 'Staff engineering'],
     relatedNotes: [
+      'finos-calm-and-architecture-as-code',
+      'pattern-matching-algorithms-for-architecture-recommendations',
       'what-is-cloud-computing',
       'infrastructure-as-a-service-iaas',
       'platform-as-a-service-paas',
@@ -81,6 +83,13 @@ The older notes on [cloud computing](/notes/what-is-cloud-computing/), [IaaS](/n
     readTime: 7,
     topics: ['Observability', 'Platform architecture'],
     relatedNotes: [
+      'opentelemetry-pipeline-architecture-for-vendor-neutral-observability',
+      'microsoft-365-audit-data-in-an-opentelemetry-pipeline',
+      'aws-support-for-opentelemetry-with-adot-and-cloudwatch',
+      'splunk-support-for-opentelemetry-collection-and-otlp',
+      'datadog-support-for-opentelemetry-and-otlp-ingestion',
+      'dynatrace-support-for-opentelemetry-and-native-otlp',
+      'elastic-support-for-opentelemetry-and-managed-otlp-ingestion',
       'what-is-cloud-computing',
       'distributed-cloud',
       'multi-cloud-architecture',
@@ -147,6 +156,7 @@ The related notes on [distributed cloud](/notes/distributed-cloud/), [multi-clou
     readTime: 8,
     topics: ['AI governance', 'Staff engineering'],
     relatedNotes: [
+      'production-rag-requires-retrieval-evidence-and-control',
       'introduction-to-artificial-intelligence-history-and-evolution',
       'the-fundamentals-of-machine-learning',
       'deep-learning-explained-from-basics-to-advanced',
