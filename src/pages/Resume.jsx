@@ -21,12 +21,6 @@ const Resume = () => (
       </div>
     </header>
 
-    <section className="resume-document page-shell" aria-label="Resume PDF">
-      <object data="/resume/Dhruv-Doshi-Resume.pdf" type="application/pdf">
-        <p>PDF preview is unavailable. <a href="/resume/Dhruv-Doshi-Resume.pdf">Open the resume PDF</a>.</p>
-      </object>
-    </section>
-
     <section className="resume-layout page-shell" aria-labelledby="experience-title">
       <div className="experience-list">
         <h2 id="experience-title">Experience</h2>
