@@ -14,7 +14,8 @@
   },
   "scripts": {
     "audit": "npm audit --audit-level=critical",
-    "build": "vite build",
+    "build": "node scripts/generate-seo.mjs && vite build && node scripts/prerender.mjs",
+    "generate:seo": "node scripts/generate-seo.mjs",
     "check": "npm run lint && npm test && npm run build && npm run audit",
     "dev": "vite",
     "lint": "eslint . --max-warnings=0",

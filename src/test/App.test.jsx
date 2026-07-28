@@ -16,32 +16,32 @@ import Resume from '../pages/Resume';
 const pages = [
   {
     route: '/',
-    heading: 'I make complex systems easier to ship.',
+    heading: 'Dhruv Doshi',
     component: Index,
   },
   {
     route: '/about',
-    heading: 'Engineer, architect, and persistent student.',
+    heading: 'About Dhruv Doshi',
     component: About,
   },
   {
     route: '/projects',
-    heading: 'Systems with consequences.',
+    heading: 'Selected software engineering work',
     component: Projects,
   },
   {
     route: '/contact',
-    heading: 'Let’s discuss a problem worth solving.',
+    heading: 'Contact Dhruv Doshi',
     component: Contact,
   },
   {
     route: '/resume',
-    heading: 'Staff-level scope. Builder’s mindset.',
+    heading: 'Professional experience',
     component: Resume,
   },
   {
     route: '/notes',
-    heading: 'Ideas made useful through writing.',
+    heading: 'Technical notes',
     component: Notes,
   },
 ];

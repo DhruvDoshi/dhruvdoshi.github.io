@@ -14,12 +14,12 @@ const Resume = () => (
     <header className="page-hero page-shell resume-hero">
       <div>
         <p className="eyebrow">Experience</p>
-        <h1 data-testid="heading">Staff-level scope. <em>Builder’s mindset.</em></h1>
+        <h1 data-testid="heading">Professional experience</h1>
         <p>{profile.summary}</p>
       </div>
       <div className="resume-actions">
-        <button className="button button--secondary" type="button" onClick={() => window.print()}>Print / save as PDF</button>
-        <a className="button button--text" href={`mailto:${profile.email}`}>Request a tailored résumé <span aria-hidden="true">↗</span></a>
+        <button type="button" onClick={() => window.print()}>Print or save as PDF</button>
+        <a href={`mailto:${profile.email}`}>Request a tailored résumé</a>
       </div>
     </header>
 

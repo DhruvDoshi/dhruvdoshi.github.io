@@ -9,7 +9,7 @@ import {
 } from '../data/profile';
 import { notes } from '../data/notes';
 
-const recentNotes = notes.slice(0, 4);
+const recentNotes = notes.slice(0, 6);
 
 const formatNoteDate = (date) => new Intl.DateTimeFormat('en-CA', {
   month: 'short',
@@ -19,117 +19,93 @@ const formatNoteDate = (date) => new Intl.DateTimeFormat('en-CA', {
 
 const Index = () => (
   <Main>
-    <section className="hero hero--compact page-shell">
-      <div className="hero__copy">
-        <div className="hero__status"><span /> Available for staff-level conversations</div>
-        <p className="eyebrow">Staff software developer · Enterprise architect · Toronto</p>
-        <h1 data-testid="heading">I make complex systems easier to <em>ship.</em></h1>
-        <p className="hero__lede">{profile.introduction}</p>
-        <div className="button-row">
-          <Link className="button button--primary" to="/projects">Explore selected work</Link>
-          <Link className="button button--text" to="/resume">View experience <span aria-hidden="true">↗</span></Link>
-        </div>
-      </div>
+    <header className="document-intro page-shell">
+      <p className="eyebrow">Toronto, Canada</p>
+      <h1 data-testid="heading">Dhruv Doshi</h1>
+      <p className="document-intro__role">Staff Software Developer and Enterprise Architect</p>
+      <p className="document-intro__summary">{profile.introduction}</p>
+      <p className="document-intro__links">
+        <Link to="/resume">Experience</Link>
+        <Link to="/projects">Selected work</Link>
+        <Link to="/notes">Technical notes</Link>
+        <a href={`mailto:${profile.email}`}>Email</a>
+      </p>
+    </header>
 
-      <aside className="signal-panel" aria-label="Current engineering focus">
-        <div className="signal-panel__header"><span>Current focus</span><span>2026</span></div>
-        <dl>
-          <div><dt>Building</dt><dd>Enterprise architecture platforms</dd></div>
-          <div><dt>Scaling</dt><dd>Observable, vendor-neutral systems</dd></div>
-          <div><dt>Exploring</dt><dd>Governed AI and RAG workflows</dd></div>
-          <div><dt>Working from</dt><dd>Toronto, Canada</dd></div>
-        </dl>
-        <Link to="/about">How I work <span aria-hidden="true">↗</span></Link>
-      </aside>
-    </section>
-
-    <section className="impact-strip" aria-label="Selected impact">
-      <div className="page-shell impact-strip__grid">
+    <section className="document-section page-shell" aria-labelledby="scope-heading">
+      <header className="section-index"><h2 id="scope-heading">Current scope</h2></header>
+      <dl className="impact-strip__grid">
         {impact.map((item) => (
           <div className="impact-item" key={item.value}>
-            <strong>{item.value}</strong>
-            <span>{item.label}</span>
+            <dt>{item.value}</dt>
+            <dd>{item.label}</dd>
           </div>
         ))}
-      </div>
+      </dl>
     </section>
 
-    <section className="section section--compact page-shell" id="selected-work">
-      <div className="compact-section-heading">
+    <section className="document-section page-shell" id="selected-work">
+      <header className="compact-section-heading">
         <div>
-          <p className="eyebrow">Selected work</p>
-          <h2>Systems built for real constraints</h2>
+          <h2>Selected work</h2>
+          <p>Representative platform, observability, and product engineering work.</p>
         </div>
-        <Link to="/projects">All case studies <span aria-hidden="true">↗</span></Link>
-      </div>
+        <Link to="/projects">All work</Link>
+      </header>
 
       <div className="case-list">
         {caseStudies.map((study, index) => (
           <article className="case-row" key={study.slug}>
-            <div className="case-row__index">0{index + 1}</div>
+            <div className="case-row__index">{index + 1}</div>
             <div className="case-row__content">
-              <div className="case-row__meta">
-                <span>{study.eyebrow}</span>
-                <span className="status-badge">{study.status}</span>
-              </div>
+              <p className="case-row__meta">{study.eyebrow} · {study.status}</p>
               <h3>{study.title}</h3>
               <p>{study.summary}</p>
-              <ul className="tag-list" aria-label={`${study.title} technologies`}>
-                {study.technologies.map((technology) => <li key={technology}>{technology}</li>)}
-              </ul>
+              <p className="case-row__tools"><strong>Technologies:</strong> {study.technologies.join(', ')}</p>
             </div>
-            <Link className="case-row__link" to={`/projects#${study.slug}`} aria-label={`Read more about ${study.title}`}>View case <span aria-hidden="true">↗</span></Link>
+            <Link className="case-row__link" to={`/projects#${study.slug}`} aria-label={`Read more about ${study.title}`}>Details</Link>
           </article>
         ))}
       </div>
     </section>
 
-    <section className="home-notes section--tinted">
-      <div className="page-shell home-notes__layout">
-        <div className="home-notes__intro">
-          <p className="eyebrow">Technical notes</p>
-          <h2>Writing is part of the engineering work.</h2>
-          <p>{notes.length} notes across cloud architecture, blockchain systems, and machine learning.</p>
-          <Link className="button button--secondary" to="/notes">Browse the archive</Link>
-        </div>
+    <section className="document-section page-shell">
+      <div className="home-notes__layout">
+        <header className="home-notes__intro">
+          <h2>Technical notes</h2>
+          <p>{notes.length} notes on cloud architecture, blockchain systems, artificial intelligence, and machine learning.</p>
+          <Link to="/notes">Browse all notes</Link>
+        </header>
         <div className="home-note-list">
           {recentNotes.map((note) => (
             <Link to={`/notes/${note.slug}`} key={note.slug}>
-              <span>{note.topic}</span>
               <strong>{note.title}</strong>
-              <small>{formatNoteDate(note.date)} · {note.readTime} min</small>
+              <span>{note.topic}</span>
+              <time dateTime={note.date}>{formatNoteDate(note.date)} · {note.readTime} min</time>
             </Link>
           ))}
         </div>
       </div>
     </section>
 
-    <section className="section section--compact">
-      <div className="page-shell">
-        <div className="compact-section-heading">
-          <div>
-            <p className="eyebrow">Technical range</p>
-            <h2>Range with a reason</h2>
-          </div>
-        </div>
-        <div className="capability-grid">
-          {capabilities.map((capability) => (
-            <article className="capability-card" key={capability.title}>
-              <h3>{capability.title}</h3>
-              <p>{capability.description}</p>
-              <p className="capability-card__tools">{capability.tools.join(' · ')}</p>
-            </article>
-          ))}
-        </div>
+    <section className="document-section page-shell">
+      <header className="compact-section-heading"><h2>Technical capabilities</h2></header>
+      <div className="capability-grid">
+        {capabilities.map((capability) => (
+          <article className="capability-card" key={capability.title}>
+            <h3>{capability.title}</h3>
+            <p>{capability.description}</p>
+            <p className="capability-card__tools"><strong>Tools:</strong> {capability.tools.join(', ')}</p>
+          </article>
+        ))}
       </div>
     </section>
 
-    <section className="contact-band page-shell">
-      <p className="eyebrow">The next problem</p>
-      <h2>Shape the architecture. Challenge the implementation.</h2>
+    <section className="document-section contact-band page-shell">
+      <h2>Contact</h2>
       <div>
         <p>{profile.availability}</p>
-        <Link className="button button--primary" to="/contact">Start a conversation</Link>
+        <Link to="/contact">Contact details</Link>
       </div>
     </section>
   </Main>

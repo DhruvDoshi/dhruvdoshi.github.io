@@ -1,0 +1,20 @@
+# Dhruv Doshi
+
+> Staff Software Developer and Enterprise Architect in Toronto, Canada. This site documents professional experience, selected engineering work, published research, and technical writing.
+
+## Primary pages
+
+- [Home](https://doshidhruv.com/): Profile and current scope
+- [Selected work](https://doshidhruv.com/projects): Platform engineering, observability, healthcare, and independent projects
+- [Experience](https://doshidhruv.com/resume): Professional experience, education, and technical capabilities
+- [Technical notes](https://doshidhruv.com/notes): Searchable writing archive
+- [Research](https://doshidhruv.com/research): Published work on decentralized cloud storage
+- [About](https://doshidhruv.com/about): Background and working principles
+- [Contact](https://doshidhruv.com/contact): Contact information
+
+## Machine-readable resources
+
+- [Sitemap](https://doshidhruv.com/sitemap.xml)
+- [RSS feed](https://doshidhruv.com/feed.xml)
+- [Extended site context](https://doshidhruv.com/llms-full.txt)
+- [Agent guidance](https://doshidhruv.com/agents.txt)

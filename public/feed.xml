@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dhruv Doshi — Technical Notes</title>
+    <link>https://doshidhruv.com/notes</link>
+    <description>Technical notes on cloud architecture, blockchain systems, artificial intelligence, and machine learning.</description>
+    <language>en-ca</language>
+    <lastBuildDate>Tue, 28 Jul 2026 13:10:37 GMT</lastBuildDate>
+    <atom:link href="https://doshidhruv.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deep Learning Explained - From Basics to Advanced</title>
+      <link>https://doshidhruv.com/notes/deep-learning-explained-from-basics-to-advanced</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/deep-learning-explained-from-basics-to-advanced</guid>
+      <pubDate>Tue, 01 Mar 2022 12:00:00 GMT</pubDate>
+      <category>AI &amp; machine learning</category>
+      <description>Deep Learning, a subset of machine learning, has revolutionized artificial intelligence by enabling computers to learn from vast amounts of data. Its applications range from image and…</description>
+    </item>
+    <item>
+      <title>The Fundamentals of Machine Learning</title>
+      <link>https://doshidhruv.com/notes/the-fundamentals-of-machine-learning</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/the-fundamentals-of-machine-learning</guid>
+      <pubDate>Tue, 01 Feb 2022 12:00:00 GMT</pubDate>
+      <category>AI &amp; machine learning</category>
+      <description>Machine Learning (ML) is a subset of artificial intelligence (AI) that enables systems to learn from data and improve their performance over time without being explicitly programmed.…</description>
+    </item>
+    <item>
+      <title>Introduction to Artificial Intelligence - History and Evolution</title>
+      <link>https://doshidhruv.com/notes/introduction-to-artificial-intelligence-history-and-evolution</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/introduction-to-artificial-intelligence-history-and-evolution</guid>
+      <pubDate>Sat, 01 Jan 2022 12:00:00 GMT</pubDate>
+      <category>AI &amp; machine learning</category>
+      <description>Artificial Intelligence (AI) has evolved from a niche field of study to a transformative technology influencing many facets of modern life. This blog delves into the history and…</description>
+    </item>
+    <item>
+      <title>What is cloud computing?</title>
+      <link>https://doshidhruv.com/notes/what-is-cloud-computing</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/what-is-cloud-computing</guid>
+      <pubDate>Thu, 30 Dec 2021 12:00:00 GMT</pubDate>
+      <category>Cloud architecture</category>
+      <description>Cloud computing is the on demand availability of computer system resources, especially data storage (cloud storage) and computing power, without direct active management by the user.…</description>
+    </item>
+    <item>
+      <title>Downtime with Cloud Computing</title>
+      <link>https://doshidhruv.com/notes/downtime-with-cloud-computing</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/downtime-with-cloud-computing</guid>
+      <pubDate>Mon, 20 Dec 2021 12:00:00 GMT</pubDate>
+      <category>Cloud architecture</category>
+      <description>Downtine in Cloud Computing Cloud Outage simply refers to the duration when the cloud infrastructure service is unavailable for use. The unavailability may also refer to performance…</description>
+    </item>
+    <item>
+      <title>High-performance computing in the cloud</title>
+      <link>https://doshidhruv.com/notes/high-performance-computing-in-the-cloud</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/high-performance-computing-in-the-cloud</guid>
+      <pubDate>Wed, 15 Dec 2021 12:00:00 GMT</pubDate>
+      <category>Cloud architecture</category>
+      <description>HPC stands for High Performance Computing, the name dictattes itslef. This is the vertical in which cloud computing offers extremenly high resources in the computation side. AWS is run…</description>
+    </item>
+    <item>
+      <title>Poly-cloud architecture</title>
+      <link>https://doshidhruv.com/notes/poly-cloud-architecture</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/poly-cloud-architecture</guid>
+      <pubDate>Fri, 10 Dec 2021 12:00:00 GMT</pubDate>
+      <category>Cloud architecture</category>
+      <description>A poly cloud is a cloud approach that uses different types of cloud services that are hosted onto various clouds. A poly cloud approach runs different kinds of cloud services on one…</description>
+    </item>
+    <item>
+      <title>Multi-cloud architecture</title>
+      <link>https://doshidhruv.com/notes/multi-cloud-architecture</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/multi-cloud-architecture</guid>
+      <pubDate>Wed, 01 Dec 2021 12:00:00 GMT</pubDate>
+      <category>Cloud architecture</category>
+      <description>Multi cloud is the use of two or more cloud computing services from any number of different cloud vendors. A multi cloud environment could be all private, all public or a combination of…</description>
+    </item>
+    <item>
+      <title>Distributed cloud</title>
+      <link>https://doshidhruv.com/notes/distributed-cloud</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/distributed-cloud</guid>
+      <pubDate>Mon, 01 Nov 2021 12:00:00 GMT</pubDate>
+      <category>Cloud architecture</category>
+      <description>DISTRIBUTED CLOUD Distributed cloud enables a geographically distributed, centrally managed distribution of public cloud services optimized for performance, compliance, and edge computing.</description>
+    </item>
+    <item>
+      <title>Community cloud</title>
+      <link>https://doshidhruv.com/notes/community-cloud</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/community-cloud</guid>
+      <pubDate>Fri, 01 Oct 2021 12:00:00 GMT</pubDate>
+      <category>Cloud architecture</category>
+      <description>Community cloud computing refers to a shared cloud computing service environment that is targeted to a limited set of organizations or employees (such as banks or heads of trading…</description>
+    </item>
+    <item>
+      <title>Hybrid cloud</title>
+      <link>https://doshidhruv.com/notes/hybrid-cloud</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/hybrid-cloud</guid>
+      <pubDate>Wed, 01 Sep 2021 12:00:00 GMT</pubDate>
+      <category>Cloud architecture</category>
+      <description>Hybrid cloud refers to a mixed computing, storage, and services environment made up of on premises infrastructure, private cloud services, and a public cloud—such as Amazon Web Services…</description>
+    </item>
+    <item>
+      <title>Private cloud</title>
+      <link>https://doshidhruv.com/notes/private-cloud</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/private-cloud</guid>
+      <pubDate>Sun, 01 Aug 2021 12:00:00 GMT</pubDate>
+      <category>Cloud architecture</category>
+      <description>Private cloud is a cloud computing environment dedicated to a single customer. It combines many of the benefits of cloud computing with the security and control of on premises IT…</description>
+    </item>
+    <item>
+      <title>Public cloud</title>
+      <link>https://doshidhruv.com/notes/public-cloud</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/public-cloud</guid>
+      <pubDate>Thu, 01 Jul 2021 12:00:00 GMT</pubDate>
+      <category>Cloud architecture</category>
+      <description>A public cloud is a type of cloud computing in which a third party service provider makes computing resources—which can include anything from ready to use software applications, to…</description>
+    </item>
+    <item>
+      <title>Serverless computing and Function as a Service</title>
+      <link>https://doshidhruv.com/notes/serverless-computing-and-function-as-a-service</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/serverless-computing-and-function-as-a-service</guid>
+      <pubDate>Tue, 01 Jun 2021 12:00:00 GMT</pubDate>
+      <category>Cloud architecture</category>
+      <description>Function as a Service (FaaS) is a serverless way to execute modular pieces of code on the edge. FaaS lets developers write and update a piece of code on the fly, which can then be…</description>
+    </item>
+    <item>
+      <title>Mobile Backend as a Service (MBaaS)</title>
+      <link>https://doshidhruv.com/notes/mobile-backend-as-a-service-mbaas</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/mobile-backend-as-a-service-mbaas</guid>
+      <pubDate>Sat, 01 May 2021 12:00:00 GMT</pubDate>
+      <category>Cloud architecture</category>
+      <description>Mobile backend as a service (MBaaS), also known as &quot;backend as a service&quot;, is a model for providing web app and mobile app developers with a way to link their applications to backend…</description>
+    </item>
+    <item>
+      <title>Platform as a Service (PaaS)</title>
+      <link>https://doshidhruv.com/notes/platform-as-a-service-paas</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/platform-as-a-service-paas</guid>
+      <pubDate>Thu, 01 Apr 2021 12:00:00 GMT</pubDate>
+      <category>Cloud architecture</category>
+      <description>Platform as a service (PaaS) or application platform as a service (aPaaS) or platform based service is a category of cloud computing services that allows customers to provision,…</description>
+    </item>
+    <item>
+      <title>Software as a Service (SaaS)</title>
+      <link>https://doshidhruv.com/notes/software-as-a-service-saas</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/software-as-a-service-saas</guid>
+      <pubDate>Mon, 01 Mar 2021 12:00:00 GMT</pubDate>
+      <category>Cloud architecture</category>
+      <description>SaaS stands for software as a service, which means software is hosted by a third party provider and delivered to customers over the internet as a service. While most SaaS products are…</description>
+    </item>
+    <item>
+      <title>Infrastructure as a Service (IaaS)</title>
+      <link>https://doshidhruv.com/notes/infrastructure-as-a-service-iaas</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/infrastructure-as-a-service-iaas</guid>
+      <pubDate>Mon, 01 Feb 2021 12:00:00 GMT</pubDate>
+      <category>Cloud architecture</category>
+      <description>Infrastructure as a service (IaaS) are online services that provide high level APIs used to dereference various low level details of underlying network infrastructure like physical…</description>
+    </item>
+    <item>
+      <title>What is cryptocurrency?</title>
+      <link>https://doshidhruv.com/notes/what-is-cryptocurrency</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/what-is-cryptocurrency</guid>
+      <pubDate>Sun, 31 Jan 2021 12:00:00 GMT</pubDate>
+      <category>Blockchain systems</category>
+      <description>A cryptocurrency, crypto currency, or crypto is a collection of binary data which is designed to work as a medium of exchange wherein individual coin ownership records are stored in a…</description>
+    </item>
+    <item>
+      <title>How banks could respond to blockchain</title>
+      <link>https://doshidhruv.com/notes/how-banks-could-respond-to-blockchain</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/how-banks-could-respond-to-blockchain</guid>
+      <pubDate>Thu, 31 Dec 2020 12:00:00 GMT</pubDate>
+      <category>Blockchain systems</category>
+      <description>As the financial service industry is moving from the exploration phase to the application phase for blockchain, banks need to understand the future role of blockchain and its impact on…</description>
+    </item>
+    <item>
+      <title>How blockchain could disrupt banking</title>
+      <link>https://doshidhruv.com/notes/how-blockchain-could-disrupt-banking</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/how-blockchain-could-disrupt-banking</guid>
+      <pubDate>Mon, 30 Nov 2020 12:00:00 GMT</pubDate>
+      <category>Blockchain systems</category>
+      <description>In today&apos;s day and age, banks are the most important key point in the whole finance ecosystem where they serve as the critical storehouses and transfer hubs of value. Now with the…</description>
+    </item>
+    <item>
+      <title>Where blockchain falls short</title>
+      <link>https://doshidhruv.com/notes/where-blockchain-falls-short</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/where-blockchain-falls-short</guid>
+      <pubDate>Sat, 30 Nov 2019 12:00:00 GMT</pubDate>
+      <category>Blockchain systems</category>
+      <description>1. There is no customer protection on the blockchain Blockchain technology operates as a push based settlement system. This means the individual holds power over the resource they want…</description>
+    </item>
+    <item>
+      <title>What if we combine Blockchain and Cloud Computing?</title>
+      <link>https://doshidhruv.com/notes/what-if-we-combine-blockchain-and-cloud-computing</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/what-if-we-combine-blockchain-and-cloud-computing</guid>
+      <pubDate>Thu, 31 Oct 2019 12:00:00 GMT</pubDate>
+      <category>Blockchain systems</category>
+      <description>Blockchain technology is distributed ledger with records of data containing all details of the transaction carried out and distributed among the nodes present in the network. All the…</description>
+    </item>
+    <item>
+      <title>Where could blockchain be used?</title>
+      <link>https://doshidhruv.com/notes/where-could-blockchain-be-used</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/where-could-blockchain-be-used</guid>
+      <pubDate>Mon, 30 Sep 2019 12:00:00 GMT</pubDate>
+      <category>Blockchain systems</category>
+      <description>Blockchain is freaking exciting and does have the potential to transform all of the business and how it operates, but that doesn’t mean it’s the right solution for every scenario.…</description>
+    </item>
+    <item>
+      <title>What is an initial coin offering?</title>
+      <link>https://doshidhruv.com/notes/what-is-an-initial-coin-offering</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/what-is-an-initial-coin-offering</guid>
+      <pubDate>Tue, 10 Sep 2019 12:00:00 GMT</pubDate>
+      <category>Blockchain systems</category>
+      <description>An initial coin offering (ICO) or initial currency offering is a type of funding using cryptocurrencies. It is often a form of crowdfunding, although a private ICO which does not seek…</description>
+    </item>
+    <item>
+      <title>What is Cryptocurrency ATM?</title>
+      <link>https://doshidhruv.com/notes/what-is-cryptocurrency-atm</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/what-is-cryptocurrency-atm</guid>
+      <pubDate>Mon, 09 Sep 2019 12:00:00 GMT</pubDate>
+      <category>Blockchain systems</category>
+      <description>Bitcoin ATMs (Automated Teller Machine) are kiosks that allows a person to purchase Bitcoin and other cryptocurrencies by using cash or debit card. Some Bitcoin ATMs offer bi…</description>
+    </item>
+    <item>
+      <title>What are atomic swaps?</title>
+      <link>https://doshidhruv.com/notes/what-are-atomic-swaps</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/what-are-atomic-swaps</guid>
+      <pubDate>Sun, 08 Sep 2019 12:00:00 GMT</pubDate>
+      <category>Blockchain systems</category>
+      <description>An atomic swap is a smart contract technology that enables the exchange of one cryptocurrency for another without using centralized intermediaries, such as exchanges.</description>
+    </item>
+    <item>
+      <title>What are cryptocurrency exchanges?</title>
+      <link>https://doshidhruv.com/notes/what-are-cryptocurrency-exchanges</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/what-are-cryptocurrency-exchanges</guid>
+      <pubDate>Sat, 07 Sep 2019 12:00:00 GMT</pubDate>
+      <category>Blockchain systems</category>
+      <description>A crypto exchange is a platform on which you can buy and sell cryptocurrency. You can use exchanges to trade one crypto for another — converting Bitcoin to Litecoin, for example — or to…</description>
+    </item>
+    <item>
+      <title>What are transaction fees in blockchain?</title>
+      <link>https://doshidhruv.com/notes/what-are-transaction-fees-in-blockchain</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/what-are-transaction-fees-in-blockchain</guid>
+      <pubDate>Fri, 06 Sep 2019 12:00:00 GMT</pubDate>
+      <category>Blockchain systems</category>
+      <description>The blockchain fee is a cryptocurrency transaction fee that is charged to users when performing crypto transactions. The fee is collected in order to process the transaction on the network.</description>
+    </item>
+    <item>
+      <title>What is anonymity in blockchain?</title>
+      <link>https://doshidhruv.com/notes/what-is-anonymity-in-blockchain</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/what-is-anonymity-in-blockchain</guid>
+      <pubDate>Thu, 05 Sep 2019 12:00:00 GMT</pubDate>
+      <category>Blockchain systems</category>
+      <description>Blockchain is public for all but the information saved in the Blockchain is not public for all the users as it comes up with SHA encryption, and the information is only accessed during…</description>
+    </item>
+    <item>
+      <title>What is a blockchain wallet?</title>
+      <link>https://doshidhruv.com/notes/what-is-a-blockchain-wallet</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/what-is-a-blockchain-wallet</guid>
+      <pubDate>Wed, 04 Sep 2019 12:00:00 GMT</pubDate>
+      <category>Blockchain systems</category>
+      <description>Crypto wallets keep your private keys – the passwords that give you access to your cryptocurrencies – safe and accessible, allowing you to send and receive cryptocurrencies like Bitcoin…</description>
+    </item>
+    <item>
+      <title>How mining works in blockchain</title>
+      <link>https://doshidhruv.com/notes/how-mining-works-in-blockchain</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/how-mining-works-in-blockchain</guid>
+      <pubDate>Tue, 03 Sep 2019 12:00:00 GMT</pubDate>
+      <category>Blockchain systems</category>
+      <description>What exactly is Blockchain mining? A peer to peer computer process, Blockchain mining is used to secure and verify Cryptocurrency transactions. Mining involves Blockchain miners who add…</description>
+    </item>
+    <item>
+      <title>Timestamping in blockchain and cryptocurrencies</title>
+      <link>https://doshidhruv.com/notes/timestamping-in-blockchain-and-cryptocurrencies</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/timestamping-in-blockchain-and-cryptocurrencies</guid>
+      <pubDate>Mon, 02 Sep 2019 12:00:00 GMT</pubDate>
+      <category>Blockchain systems</category>
+      <description>Trusted timestamping is the process of securely keeping track of the creation and modification time of a document. Security here means that no one—not even the owner of the…</description>
+    </item>
+    <item>
+      <title>What are nodes in blockchain?</title>
+      <link>https://doshidhruv.com/notes/what-are-nodes-in-blockchain</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/what-are-nodes-in-blockchain</guid>
+      <pubDate>Sun, 01 Sep 2019 12:00:00 GMT</pubDate>
+      <category>Blockchain systems</category>
+      <description>A Node is a part of cryptocurrency needed to make most of the popular tokens like Bitcoin or Dogecoin function. It&apos;s a fundamental part of the blockchain network, which is the…</description>
+    </item>
+    <item>
+      <title>What is Blockchain?</title>
+      <link>https://doshidhruv.com/notes/what-is-blockchain</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/what-is-blockchain</guid>
+      <pubDate>Thu, 08 Aug 2019 12:00:00 GMT</pubDate>
+      <category>Blockchain systems</category>
+      <description>Blockchain is the technology that allows the user to create a decentralized system of transaction and data transfers. For the naïve person, it is a method to create a people&apos;s bank…</description>
+    </item>
+  </channel>
+</rss>

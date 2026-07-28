@@ -7,7 +7,7 @@ const Research = () => (
   >
     <header className="page-hero page-shell">
       <p className="eyebrow">Published research</p>
-      <h1 data-testid="heading">Curiosity with a <em>working prototype.</em></h1>
+      <h1 data-testid="heading">Published research</h1>
       <p>My early research explored how decentralised ledgers and cryptographic access controls could make untrusted cloud storage more accountable.</p>
     </header>
 
@@ -26,7 +26,7 @@ const Research = () => (
         <div>
           <p>The paper presents a multi-user access-control model for data stored in an untrusted cloud environment. Attribute-based encryption protects the data while a decentralised ledger records security events such as key generation, policy changes, revocation, and access requests.</p>
           <p>The work included a functioning smart-contract prototype and protocols designed to keep private keys and sensitive operations off the ledger.</p>
-          <a className="button button--primary" href="https://link.springer.com/chapter/10.1007/978-3-030-49795-8_54" target="_blank" rel="noreferrer">Read on Springer <span aria-hidden="true">↗</span></a>
+          <a href="https://link.springer.com/chapter/10.1007/978-3-030-49795-8_54" target="_blank" rel="noreferrer">Read the paper on Springer</a>
         </div>
       </div>
       <div className="publication__topics">

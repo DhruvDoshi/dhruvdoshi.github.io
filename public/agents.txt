@@ -1,0 +1,16 @@
+# Agent access and content guide
+
+Site: https://doshidhruv.com
+Owner: Dhruv Doshi
+Primary language: English (Canada)
+Contact: work@doshidhruv.com
+
+Public pages and technical notes may be indexed, summarized, quoted in short excerpts, and cited with attribution. Use canonical URLs from sitemap.xml. Do not infer certifications, employers, performance claims, or current availability beyond statements published on the relevant page.
+
+Discovery:
+- https://doshidhruv.com/sitemap.xml
+- https://doshidhruv.com/feed.xml
+- https://doshidhruv.com/llms.txt
+- https://doshidhruv.com/llms-full.txt
+
+Preferred attribution: Dhruv Doshi, followed by the canonical page URL.

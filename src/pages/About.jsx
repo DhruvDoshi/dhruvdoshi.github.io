@@ -17,8 +17,8 @@ const About = () => (
       </div>
       <div className="about-hero__copy">
         <p className="eyebrow">About</p>
-        <h1 data-testid="heading">Engineer, architect, and persistent <em>student.</em></h1>
-        <p className="about-hero__lede">I’m Dhruv. I like the part of engineering where a fuzzy, high-stakes problem becomes a system people trust.</p>
+        <h1 data-testid="heading">About Dhruv Doshi</h1>
+        <p className="about-hero__lede">I am a software developer and enterprise architect based in Toronto.</p>
         <p>{profile.introduction}</p>
       </div>
     </header>
@@ -27,7 +27,7 @@ const About = () => (
       <div className="page-shell principles__grid">
         <div>
           <p className="eyebrow">How I work</p>
-          <h2>Architecture is a team sport.</h2>
+          <h2>How I work</h2>
         </div>
         <div className="principle-list">
           <article>
@@ -52,14 +52,14 @@ const About = () => (
     <section className="personal-note page-shell">
       <div>
         <p className="eyebrow">Away from the architecture diagrams</p>
-        <h2>I learn by building, writing, and following ideas further than necessary.</h2>
+        <h2>Background and interests</h2>
       </div>
       <div>
         <p>That has taken me from blockchain research and a Springer publication to graduate cloud-computing labs, enterprise observability, architecture automation, and applied AI.</p>
         <p>Outside work, you’ll usually find me writing, playing chess, collecting coins, planning travel, or trying to improve my swimming.</p>
         <div className="button-row">
-          <a className="button button--text" href="https://blog.doshidhruv.com" target="_blank" rel="noreferrer">Read my writing <span aria-hidden="true">↗</span></a>
-          <Link className="button button--text" to="/contact">Get in touch <span aria-hidden="true">↗</span></Link>
+          <Link to="/notes">Read technical notes</Link>
+          <Link to="/contact">Contact me</Link>
         </div>
       </div>
     </section>

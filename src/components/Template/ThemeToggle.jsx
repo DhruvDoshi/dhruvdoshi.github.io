@@ -20,8 +20,7 @@ const ThemeToggle = () => {
       title={`Use ${nextTheme} mode`}
       onClick={() => setTheme(nextTheme)}
     >
-      <span aria-hidden="true">{theme === 'dark' ? '☼' : '◐'}</span>
-      <span className="theme-toggle__label">{theme}</span>
+      <span className="theme-toggle__label">{nextTheme} mode</span>
     </button>
   );
 };

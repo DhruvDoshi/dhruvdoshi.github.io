@@ -2,7 +2,9 @@ const routes = [
   { label: 'Work', path: '/projects' },
   { label: 'Experience', path: '/resume' },
   { label: 'Notes', path: '/notes' },
+  { label: 'Research', path: '/research' },
   { label: 'About', path: '/about' },
+  { label: 'Contact', path: '/contact' },
 ];
 
 export default routes;

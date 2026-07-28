@@ -47,19 +47,19 @@ const Notes = () => {
     >
       <section className="notes-hero page-shell">
         <div>
-          <p className="eyebrow">Technical notes · 2019—2022 archive</p>
-          <h1 data-testid="heading">Ideas made useful through <em>writing.</em></h1>
+          <p className="eyebrow">2019—2022 archive</p>
+          <h1 data-testid="heading">Technical notes</h1>
         </div>
         <div className="notes-hero__summary">
           <strong>{notes.length} notes</strong>
-          <p>An early writing archive across cloud, distributed ledgers, and machine learning—preserved, searchable, and placed alongside the systems work it informed.</p>
+          <p>Articles about cloud computing, distributed ledgers, artificial intelligence, and machine learning. Search by title, subject, or description.</p>
         </div>
       </section>
 
       <section className="featured-notes page-shell" aria-labelledby="featured-notes-title">
         <div className="compact-section-heading">
-          <p className="eyebrow">Starting points</p>
-          <h2 id="featured-notes-title">Three longer reads</h2>
+          <p className="eyebrow">Featured</p>
+          <h2 id="featured-notes-title">Selected notes</h2>
         </div>
         <div className="featured-note-grid">
           {featuredNotes.map((note) => (
@@ -76,8 +76,7 @@ const Notes = () => {
       <section className="notes-index page-shell" aria-labelledby="all-notes-title">
         <div className="notes-toolbar">
           <div>
-            <p className="eyebrow">Index</p>
-            <h2 id="all-notes-title">All technical notes</h2>
+            <h2 id="all-notes-title">All notes</h2>
           </div>
           <label className="notes-search">
             <span className="sr-only">Search technical notes</span>

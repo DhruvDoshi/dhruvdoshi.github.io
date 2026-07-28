@@ -1,2 +1,5 @@
 User-agent: *
-Disallow: /api
+Allow: /
+
+Sitemap: https://doshidhruv.com/sitemap.xml
+Host: doshidhruv.com

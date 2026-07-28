@@ -7,21 +7,21 @@ const Projects = () => (
     description="Selected platform engineering, distributed systems, observability, and product work by Dhruv Doshi."
   >
     <header className="page-hero page-shell">
-      <p className="eyebrow">Selected work</p>
-      <h1 data-testid="heading">Systems with <em>consequences.</em></h1>
-      <p>Work where architecture, implementation, operations, and organisational constraints had to agree.</p>
+      <p className="eyebrow">Work</p>
+      <h1 data-testid="heading">Selected software engineering work</h1>
+      <p>Platform engineering, distributed systems, observability, product development, and applied research.</p>
     </header>
 
     <section className="case-study-stack page-shell">
       {caseStudies.map((study, index) => (
         <article className="case-study" id={study.slug} key={study.slug}>
           <header className="case-study__header">
-            <span className="case-study__number">Case 0{index + 1}</span>
+            <span className="case-study__number">Case study {index + 1}</span>
             <div>
               <p className="eyebrow">{study.eyebrow}</p>
               <h2>{study.title}</h2>
             </div>
-            <span className="status-badge">{study.status}</span>
+            <span>{study.status}</span>
           </header>
           <div className="case-study__body">
             <div>
@@ -39,9 +39,7 @@ const Projects = () => (
               <p>{study.outcome}</p>
             </aside>
           </div>
-          <ul className="tag-list" aria-label={`${study.title} technologies`}>
-            {study.technologies.map((technology) => <li key={technology}>{technology}</li>)}
-          </ul>
+          <p className="case-study__tools"><strong>Technologies:</strong> {study.technologies.join(', ')}</p>
         </article>
       ))}
     </section>
@@ -50,8 +48,8 @@ const Projects = () => (
       <div className="page-shell">
         <div className="section-heading">
           <div>
-            <p className="eyebrow">Research & experiments</p>
-            <h2>Side projects that sharpen the main work.</h2>
+            <p className="eyebrow">Additional work</p>
+            <h2>Research and independent projects</h2>
           </div>
         </div>
         <div className="project-grid">

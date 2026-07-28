@@ -47,13 +47,14 @@ const Note = () => {
   const older = noteIndex < notes.length - 1 ? notes[noteIndex + 1] : null;
 
   const copyLink = async () => {
+    if (!navigator.clipboard?.writeText) return;
     await navigator.clipboard.writeText(window.location.href);
     setCopied(true);
     window.setTimeout(() => setCopied(false), 1600);
   };
 
   return (
-    <Main title={note.title} description={note.excerpt} type="article">
+    <Main title={note.title} description={note.excerpt} type="article" published={note.date}>
       <div className="reading-progress" aria-hidden="true"><span style={{ width: `${progress}%` }} /></div>
       <article className="note-page page-shell">
         <header className="note-header">

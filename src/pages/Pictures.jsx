@@ -12,7 +12,7 @@ const Pictures = () => (
     <>
       <section className="page-hero page-shell">
         <p className="eyebrow">Away from the keyboard</p>
-        <h1 data-testid="heading">A life beyond the <em>architecture diagrams.</em></h1>
+        <h1 data-testid="heading">Photo archive</h1>
         <p>Travel, milestones, and the people and places that make the work meaningful.</p>
       </section>
       <section className="picture-grid page-shell" aria-label="Photo journal">
