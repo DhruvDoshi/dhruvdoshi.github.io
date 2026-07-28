@@ -1,6 +1,7 @@
 https://blog.doshidhruv.com/posts/* https://doshidhruv.com/notes/:splat 301!
 https://blog.doshidhruv.com/* https://doshidhruv.com/notes 301!
 /posts/:splat /notes/:splat 301!
+/notes/platform-as-a-product /notes/design-the-platform-as-a-product 301!
 /notes/deep-learning-explained-from-basic-to-advanced /notes/deep-learning-explained-from-basics-to-advanced 301!
 /notes/downtime-in-cloud-computing /notes/downtime-with-cloud-computing 301!
 /notes/hpc-cloud-in-cloud-computing /notes/high-performance-computing-in-the-cloud 301!

@@ -1,8 +1,8 @@
 ---
 title: Design the platform as a product
 author: Dhruv Doshi
-date: 2026-08-01
-status: scheduled
+date: 2026-07-28
+status: published
 topic: Platform architecture
 categories: [Platform Engineering, Developer Experience, Architecture]
 ---

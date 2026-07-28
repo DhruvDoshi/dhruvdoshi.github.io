@@ -1,12 +1,12 @@
 # Technical note publishing
 
-The site has a twelve-month editorial calendar with one technical note scheduled for the 1st and 16th of every month. Scheduled notes use `status: scheduled` and are excluded from the website, search, topic indexes, prerendered pages, RSS, sitemap, and LLM discovery files.
+The first note in the new series was published immediately on 2026-07-28. The remaining editorial calendar publishes one technical note on the 1st and 16th of each month. Scheduled notes use `status: scheduled` and are excluded from the website, search, topic indexes, prerendered pages, RSS, sitemap, and LLM discovery files.
 
 The `Publish scheduled notes` GitHub Actions workflow runs daily at 13:15 UTC. When a note is due, it:
 
 1. changes its status to `published`;
 2. runs the complete lint, test, build, site-validation, and dependency-audit suite;
-3. commits the publication to `main`;
+3. commits the publication and regenerated discovery files to `main`;
 4. deploys the generated site to GitHub Pages.
 
 The push to `main` is also observed by the existing Netlify Git integration, which rebuilds `doshidhruv.com` from the same commit.

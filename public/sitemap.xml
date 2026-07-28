@@ -20,7 +20,7 @@
   </url>
   <url>
     <loc>https://doshidhruv.com/notes/</loc>
-    <lastmod>2022-03-01</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -142,6 +142,12 @@
     <loc>https://doshidhruv.com/topics/staff-engineering/</loc>
     <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/design-the-platform-as-a-product/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
