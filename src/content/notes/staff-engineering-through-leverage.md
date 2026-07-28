@@ -1,8 +1,8 @@
 ---
 title: Staff engineering is measured through leverage
 author: Dhruv Doshi
-date: 2027-07-01
-status: scheduled
+date: 2025-12-01
+status: published
 topic: Staff engineering
 categories: [Staff Engineering, Technical Leadership, Organisational Design]
 ---

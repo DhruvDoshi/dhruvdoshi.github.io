@@ -1,8 +1,8 @@
 ---
 title: Technical roadmaps should preserve options
 author: Dhruv Doshi
-date: 2027-06-01
-status: scheduled
+date: 2025-08-01
+status: published
 topic: Staff engineering
 categories: [Technical Strategy, Roadmaps, Leadership]
 ---

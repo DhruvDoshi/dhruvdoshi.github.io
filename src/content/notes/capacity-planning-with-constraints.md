@@ -1,8 +1,8 @@
 ---
 title: Capacity planning begins with constraints
 author: Dhruv Doshi
-date: 2027-05-16
-status: scheduled
+date: 2025-06-01
+status: published
 topic: Observability
 categories: [Capacity Planning, Performance, Reliability]
 ---

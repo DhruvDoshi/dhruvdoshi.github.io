@@ -1,8 +1,8 @@
 ---
 title: Choose Kubernetes tenancy boundaries deliberately
 author: Dhruv Doshi
-date: 2026-12-01
-status: scheduled
+date: 2023-08-01
+status: published
 topic: Cloud architecture
 categories: [Kubernetes, Multi Tenancy, Platform Engineering]
 ---

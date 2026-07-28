@@ -1,8 +1,8 @@
 ---
 title: Architecture decision records that remain useful
 author: Dhruv Doshi
-date: 2026-08-16
-status: scheduled
+date: 2022-06-01
+status: published
 topic: Staff engineering
 categories: [Architecture, Decision Records, Technical Leadership]
 ---

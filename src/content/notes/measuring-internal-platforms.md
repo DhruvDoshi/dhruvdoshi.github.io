@@ -1,8 +1,8 @@
 ---
 title: Measure whether an internal platform creates leverage
 author: Dhruv Doshi
-date: 2027-07-16
-status: scheduled
+date: 2026-07-01
+status: published
 topic: Platform architecture
 categories: [Platform Engineering, Metrics, Developer Experience]
 ---

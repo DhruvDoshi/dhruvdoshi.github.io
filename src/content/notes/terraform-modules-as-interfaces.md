@@ -1,8 +1,8 @@
 ---
 title: Treat Terraform modules as versioned interfaces
 author: Dhruv Doshi
-date: 2026-12-16
-status: scheduled
+date: 2023-10-01
+status: published
 topic: Platform architecture
 categories: [Terraform, Infrastructure as Code, Platform Engineering]
 ---

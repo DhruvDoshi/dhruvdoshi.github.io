@@ -1,8 +1,8 @@
 ---
 title: Zero Trust begins with service identity
 author: Dhruv Doshi
-date: 2026-11-01
-status: scheduled
+date: 2023-04-01
+status: published
 topic: Platform architecture
 categories: [Zero Trust, Identity, Security Architecture]
 ---

@@ -41,7 +41,7 @@ const Notes = () => {
             <input
               type="search"
               value={query}
-              placeholder="Search 35 notes"
+              placeholder={`Search ${notes.length} notes`}
               onChange={(event) => updateParam('q', event.target.value)}
             />
           </label>

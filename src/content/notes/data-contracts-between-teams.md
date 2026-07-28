@@ -1,8 +1,8 @@
 ---
 title: Use data contracts to make ownership executable
 author: Dhruv Doshi
-date: 2027-04-01
-status: scheduled
+date: 2024-12-01
+status: published
 topic: Distributed systems
 categories: [Data Contracts, Data Platforms, Governance]
 ---

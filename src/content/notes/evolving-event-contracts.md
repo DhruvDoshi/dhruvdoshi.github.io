@@ -1,8 +1,8 @@
 ---
 title: Evolve event contracts without breaking consumers
 author: Dhruv Doshi
-date: 2026-10-16
-status: scheduled
+date: 2023-02-01
+status: published
 topic: Distributed systems
 categories: [Event Driven Architecture, Kafka, Schema Evolution]
 ---

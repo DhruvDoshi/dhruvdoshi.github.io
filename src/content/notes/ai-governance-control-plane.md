@@ -1,8 +1,8 @@
 ---
 title: Build AI governance into the delivery control plane
 author: Dhruv Doshi
-date: 2027-03-01
-status: scheduled
+date: 2024-08-01
+status: published
 topic: AI governance
 categories: [AI Governance, Platform Engineering, Risk Management]
 ---

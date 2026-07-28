@@ -1,8 +1,8 @@
 ---
 title: Design APIs for safe retries
 author: Dhruv Doshi
-date: 2026-10-01
-status: scheduled
+date: 2022-12-01
+status: published
 topic: Distributed systems
 categories: [API Design, Idempotency, Distributed Systems]
 ---

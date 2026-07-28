@@ -1,6 +1,6 @@
 # Technical note publishing
 
-The first note in the new series was published immediately on 2026-07-28. The remaining editorial calendar publishes one technical note on the 1st and 16th of each month. Scheduled notes use `status: scheduled` and are excluded from the website, search, topic indexes, prerendered pages, RSS, sitemap, and LLM discovery files.
+The first 24 notes in the renewed series form a historical archive from 2022 through 2026. They are all published and visible. Future notes can use `status: scheduled`; scheduled notes are excluded from the website, search, topic indexes, prerendered pages, RSS, sitemap, and LLM discovery files until their date arrives.
 
 The `Publish scheduled notes` GitHub Actions workflow runs daily at 13:15 UTC. When a note is due, it:
 

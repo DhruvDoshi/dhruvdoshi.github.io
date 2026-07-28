@@ -1,8 +1,8 @@
 ---
 title: Service-level objectives are decision tools
 author: Dhruv Doshi
-date: 2026-09-16
-status: scheduled
+date: 2022-10-01
+status: published
 topic: Observability
 categories: [SRE, SLO, Reliability]
 ---

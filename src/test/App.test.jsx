@@ -94,13 +94,14 @@ test('Filters notes from the first search control', () => {
     target: { value: 'cloud' },
   });
 
-  expect(screen.getByText('16 of 36 notes')).toBeInTheDocument();
+  expect(screen.getByText(/of 59 notes$/)).toBeInTheDocument();
 });
 
-test('Keeps scheduled notes out of public content', () => {
-  expect(notes).toHaveLength(36);
+test('Publishes the historical note series while keeping scheduled content private', () => {
+  expect(notes).toHaveLength(59);
   expect(notes.some((note) => note.title === 'Design the platform as a product')).toBe(true);
-  expect(notes.some((note) => note.title === 'Architecture decision records that remain useful')).toBe(false);
+  expect(notes.some((note) => note.title === 'Architecture decision records that remain useful')).toBe(true);
+  expect(notes.every((note) => note.status === 'published')).toBe(true);
 });
 
 test('Provides the authored resume PDF instead of a print action', () => {

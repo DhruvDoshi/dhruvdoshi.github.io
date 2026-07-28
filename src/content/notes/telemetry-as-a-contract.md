@@ -1,8 +1,8 @@
 ---
 title: Treat telemetry as a production contract
 author: Dhruv Doshi
-date: 2026-09-01
-status: scheduled
+date: 2022-08-01
+status: published
 topic: Observability
 categories: [OpenTelemetry, Observability, Platform Engineering]
 ---

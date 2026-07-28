@@ -1,8 +1,8 @@
 ---
 title: Manage secrets without creating secret sprawl
 author: Dhruv Doshi
-date: 2026-11-16
-status: scheduled
+date: 2023-06-01
+status: published
 topic: Platform architecture
 categories: [Secrets Management, IAM, Security]
 ---

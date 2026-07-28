@@ -1,8 +1,8 @@
 ---
 title: Use the strangler pattern for controlled cloud migration
 author: Dhruv Doshi
-date: 2027-01-01
-status: scheduled
+date: 2023-12-01
+status: published
 topic: Cloud architecture
 categories: [Cloud Migration, Modernization, Architecture]
 ---

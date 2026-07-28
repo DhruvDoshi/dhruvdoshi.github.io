@@ -1,8 +1,8 @@
 ---
 title: Define the boundaries of a production RAG system
 author: Dhruv Doshi
-date: 2027-02-01
-status: scheduled
+date: 2024-04-01
+status: published
 topic: AI governance
 categories: [RAG, LLM, AI Architecture]
 ---

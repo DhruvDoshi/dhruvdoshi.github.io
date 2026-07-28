@@ -1,8 +1,8 @@
 ---
 title: Incident command is a coordination system
 author: Dhruv Doshi
-date: 2027-05-01
-status: scheduled
+date: 2025-04-01
+status: published
 topic: Staff engineering
 categories: [Incident Management, Reliability, Leadership]
 ---

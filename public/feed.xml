@@ -5,7 +5,7 @@
     <link>https://doshidhruv.com/notes/</link>
     <description>Technical guides and notes on platform architecture, observability, cloud systems, artificial intelligence, machine learning, and distributed systems.</description>
     <language>en-ca</language>
-    <lastBuildDate>Tue, 28 Jul 2026 17:49:11 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 28 Jul 2026 17:53:01 GMT</lastBuildDate>
     <atom:link href="https://doshidhruv.com/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Platform architecture: from standards to a usable product</title>
@@ -48,10 +48,194 @@
       <description>A practical guide to technical direction, decision records, cross-team delivery, mentoring, and operational credibility.</description>
     </item>
     <item>
+      <title>Measure whether an internal platform creates leverage</title>
+      <link>https://doshidhruv.com/notes/measure-whether-an-internal-platform-creates-leverage/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/measure-whether-an-internal-platform-creates-leverage/</guid>
+      <pubDate>Wed, 01 Jul 2026 12:00:00 GMT</pubDate>
+      <category>Platform architecture</category>
+      <description>An internal platform can look successful while moving work from one team to another. Repository count, portal visits, and cluster utilisation show activity, but they do not prove that…</description>
+    </item>
+    <item>
+      <title>Staff engineering is measured through leverage</title>
+      <link>https://doshidhruv.com/notes/staff-engineering-is-measured-through-leverage/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/staff-engineering-is-measured-through-leverage/</guid>
+      <pubDate>Mon, 01 Dec 2025 12:00:00 GMT</pubDate>
+      <category>Staff engineering</category>
+      <description>Staff level engineering is not defined by taking the hardest ticket or writing the most code. Its impact appears through the decisions, systems, and people that enable many teams to…</description>
+    </item>
+    <item>
+      <title>Architecture governance should operate through evidence</title>
+      <link>https://doshidhruv.com/notes/architecture-governance-should-operate-through-evidence/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/architecture-governance-should-operate-through-evidence/</guid>
+      <pubDate>Wed, 01 Oct 2025 12:00:00 GMT</pubDate>
+      <category>Platform architecture</category>
+      <description>Architecture governance is useful when it improves decisions and makes system risk visible. It becomes harmful when every change waits for a central meeting that lacks the context to…</description>
+    </item>
+    <item>
+      <title>Technical roadmaps should preserve options</title>
+      <link>https://doshidhruv.com/notes/technical-roadmaps-should-preserve-options/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/technical-roadmaps-should-preserve-options/</guid>
+      <pubDate>Fri, 01 Aug 2025 12:00:00 GMT</pubDate>
+      <category>Staff engineering</category>
+      <description>A technical roadmap should explain how engineering investments change business capability and system risk. A list of technologies with quarterly dates is a delivery calendar, not a strategy.</description>
+    </item>
+    <item>
+      <title>Capacity planning begins with constraints</title>
+      <link>https://doshidhruv.com/notes/capacity-planning-begins-with-constraints/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/capacity-planning-begins-with-constraints/</guid>
+      <pubDate>Sun, 01 Jun 2025 12:00:00 GMT</pubDate>
+      <category>Observability</category>
+      <description>Capacity planning is not forecasting one traffic number and adding a fixed percentage. It is identifying which resource limits the user outcome, how demand approaches that limit, and…</description>
+    </item>
+    <item>
+      <title>Incident command is a coordination system</title>
+      <link>https://doshidhruv.com/notes/incident-command-is-a-coordination-system/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/incident-command-is-a-coordination-system/</guid>
+      <pubDate>Tue, 01 Apr 2025 12:00:00 GMT</pubDate>
+      <category>Staff engineering</category>
+      <description>During a serious incident, technical skill is necessary but insufficient. Many responders changing the system without shared priorities can increase risk. Incident command creates a…</description>
+    </item>
+    <item>
+      <title>Plan schema evolution as a production migration</title>
+      <link>https://doshidhruv.com/notes/plan-schema-evolution-as-a-production-migration/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/plan-schema-evolution-as-a-production-migration/</guid>
+      <pubDate>Sat, 01 Feb 2025 12:00:00 GMT</pubDate>
+      <category>Distributed systems</category>
+      <description>Database schema changes are distributed system changes. Application instances, background jobs, replicas, analytical consumers, and rollback versions rarely update at the same instant.…</description>
+    </item>
+    <item>
+      <title>Use data contracts to make ownership executable</title>
+      <link>https://doshidhruv.com/notes/use-data-contracts-to-make-ownership-executable/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/use-data-contracts-to-make-ownership-executable/</guid>
+      <pubDate>Sun, 01 Dec 2024 12:00:00 GMT</pubDate>
+      <category>Distributed systems</category>
+      <description>A data contract makes the expectations between a data producer and its consumers explicit. It covers more than column names: meaning, ownership, quality, timeliness, compatibility,…</description>
+    </item>
+    <item>
+      <title>Design safe tool use for AI agents</title>
+      <link>https://doshidhruv.com/notes/design-safe-tool-use-for-ai-agents/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/design-safe-tool-use-for-ai-agents/</guid>
+      <pubDate>Tue, 01 Oct 2024 12:00:00 GMT</pubDate>
+      <category>AI governance</category>
+      <description>An AI agent becomes materially different from a chatbot when it can read private data or change external systems. The central safety question is not whether the model produces good…</description>
+    </item>
+    <item>
+      <title>Build AI governance into the delivery control plane</title>
+      <link>https://doshidhruv.com/notes/build-ai-governance-into-the-delivery-control-plane/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/build-ai-governance-into-the-delivery-control-plane/</guid>
+      <pubDate>Thu, 01 Aug 2024 12:00:00 GMT</pubDate>
+      <category>AI governance</category>
+      <description>AI governance fails when it exists only as a policy document reviewed before launch. Controls must be attached to the same delivery path that versions models, prompts, data, tools,…</description>
+    </item>
+    <item>
+      <title>Evaluate LLM systems as systems</title>
+      <link>https://doshidhruv.com/notes/evaluate-llm-systems-as-systems/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/evaluate-llm-systems-as-systems/</guid>
+      <pubDate>Sat, 01 Jun 2024 12:00:00 GMT</pubDate>
+      <category>AI governance</category>
+      <description>A language model feature cannot be evaluated by trying a few prompts and deciding the answers look good. Its quality depends on the model, instructions, tools, retrieval, application…</description>
+    </item>
+    <item>
+      <title>Define the boundaries of a production RAG system</title>
+      <link>https://doshidhruv.com/notes/define-the-boundaries-of-a-production-rag-system/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/define-the-boundaries-of-a-production-rag-system/</guid>
+      <pubDate>Mon, 01 Apr 2024 12:00:00 GMT</pubDate>
+      <category>AI governance</category>
+      <description>Retrieval augmented generation connects a language model to external information, but it does not automatically make an answer correct, current, or authorised. A production design must…</description>
+    </item>
+    <item>
+      <title>Build portable boundaries, not lowest-common-denominator clouds</title>
+      <link>https://doshidhruv.com/notes/build-portable-boundaries-not-lowest-common-denominator-clouds/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/build-portable-boundaries-not-lowest-common-denominator-clouds/</guid>
+      <pubDate>Thu, 01 Feb 2024 12:00:00 GMT</pubDate>
+      <category>Cloud architecture</category>
+      <description>Multi cloud strategies often begin with a desire to avoid lock in and end with a platform that hides every useful provider capability. Portability is more effective when it is applied…</description>
+    </item>
+    <item>
+      <title>Use the strangler pattern for controlled cloud migration</title>
+      <link>https://doshidhruv.com/notes/use-the-strangler-pattern-for-controlled-cloud-migration/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/use-the-strangler-pattern-for-controlled-cloud-migration/</guid>
+      <pubDate>Fri, 01 Dec 2023 12:00:00 GMT</pubDate>
+      <category>Cloud architecture</category>
+      <description>Large migrations fail when “move the system” is treated as one indivisible project. The strangler pattern reduces risk by placing a controlled boundary around the existing system and…</description>
+    </item>
+    <item>
+      <title>Treat Terraform modules as versioned interfaces</title>
+      <link>https://doshidhruv.com/notes/treat-terraform-modules-as-versioned-interfaces/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/treat-terraform-modules-as-versioned-interfaces/</guid>
+      <pubDate>Sun, 01 Oct 2023 12:00:00 GMT</pubDate>
+      <category>Platform architecture</category>
+      <description>A reusable Terraform module is an internal product interface. Its inputs, outputs, defaults, provider constraints, state behavior, and upgrade path affect every stack that consumes it.…</description>
+    </item>
+    <item>
+      <title>Choose Kubernetes tenancy boundaries deliberately</title>
+      <link>https://doshidhruv.com/notes/choose-kubernetes-tenancy-boundaries-deliberately/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/choose-kubernetes-tenancy-boundaries-deliberately/</guid>
+      <pubDate>Tue, 01 Aug 2023 12:00:00 GMT</pubDate>
+      <category>Cloud architecture</category>
+      <description>Kubernetes can host many teams and workloads, but a namespace is not automatically a complete security, reliability, or cost boundary. Tenancy design should begin with the risks that…</description>
+    </item>
+    <item>
+      <title>Manage secrets without creating secret sprawl</title>
+      <link>https://doshidhruv.com/notes/manage-secrets-without-creating-secret-sprawl/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/manage-secrets-without-creating-secret-sprawl/</guid>
+      <pubDate>Thu, 01 Jun 2023 12:00:00 GMT</pubDate>
+      <category>Platform architecture</category>
+      <description>Secret management is not solved by moving passwords from source code into a central vault. The larger goal is to reduce the number, lifetime, reach, and human handling of credentials…</description>
+    </item>
+    <item>
+      <title>Zero Trust begins with service identity</title>
+      <link>https://doshidhruv.com/notes/zero-trust-begins-with-service-identity/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/zero-trust-begins-with-service-identity/</guid>
+      <pubDate>Sat, 01 Apr 2023 12:00:00 GMT</pubDate>
+      <category>Platform architecture</category>
+      <description>Network location is a weak security identity. A request originating inside a cluster, virtual network, or corporate boundary is not automatically trustworthy. A Zero Trust design…</description>
+    </item>
+    <item>
+      <title>Evolve event contracts without breaking consumers</title>
+      <link>https://doshidhruv.com/notes/evolve-event-contracts-without-breaking-consumers/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/evolve-event-contracts-without-breaking-consumers/</guid>
+      <pubDate>Wed, 01 Feb 2023 12:00:00 GMT</pubDate>
+      <category>Distributed systems</category>
+      <description>An event is a public record of something that happened. Once multiple consumers depend on it, its schema, meaning, ordering, and delivery behavior form a contract—even if the producer…</description>
+    </item>
+    <item>
+      <title>Design APIs for safe retries</title>
+      <link>https://doshidhruv.com/notes/design-apis-for-safe-retries/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/design-apis-for-safe-retries/</guid>
+      <pubDate>Thu, 01 Dec 2022 12:00:00 GMT</pubDate>
+      <category>Distributed systems</category>
+      <description>Networks fail in ambiguous ways. A client can time out after the server commits a change but before the response arrives. Retrying may be necessary, yet repeating the operation may…</description>
+    </item>
+    <item>
+      <title>Service-level objectives are decision tools</title>
+      <link>https://doshidhruv.com/notes/service-level-objectives-are-decision-tools/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/service-level-objectives-are-decision-tools/</guid>
+      <pubDate>Sat, 01 Oct 2022 12:00:00 GMT</pubDate>
+      <category>Observability</category>
+      <description>A service level objective is not a decorative percentage on a dashboard. It is an agreement about the reliability users need and a mechanism for deciding how engineering capacity should…</description>
+    </item>
+    <item>
+      <title>Treat telemetry as a production contract</title>
+      <link>https://doshidhruv.com/notes/treat-telemetry-as-a-production-contract/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/treat-telemetry-as-a-production-contract/</guid>
+      <pubDate>Mon, 01 Aug 2022 12:00:00 GMT</pubDate>
+      <category>Observability</category>
+      <description>Telemetry is often added after a service is built: a few logs, default metrics, and traces sampled when something fails. At scale, that creates inconsistent names, missing context,…</description>
+    </item>
+    <item>
+      <title>Architecture decision records that remain useful</title>
+      <link>https://doshidhruv.com/notes/architecture-decision-records-that-remain-useful/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/architecture-decision-records-that-remain-useful/</guid>
+      <pubDate>Wed, 01 Jun 2022 12:00:00 GMT</pubDate>
+      <category>Staff engineering</category>
+      <description>An architecture decision record is valuable only if a future engineer can understand what changed, why it changed, and when the decision should be reconsidered. Length is not the goal.…</description>
+    </item>
+    <item>
       <title>Design the platform as a product</title>
       <link>https://doshidhruv.com/notes/design-the-platform-as-a-product/</link>
       <guid isPermaLink="true">https://doshidhruv.com/notes/design-the-platform-as-a-product/</guid>
-      <pubDate>Tue, 28 Jul 2026 12:00:00 GMT</pubDate>
+      <pubDate>Fri, 01 Apr 2022 12:00:00 GMT</pubDate>
       <category>Platform architecture</category>
       <description>An internal platform is successful when product teams choose it because it removes work, not because governance forces them to use it. That changes the architecture question from “what…</description>
     </item>

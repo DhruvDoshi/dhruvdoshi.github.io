@@ -1,8 +1,8 @@
 ---
 title: Architecture governance should operate through evidence
 author: Dhruv Doshi
-date: 2027-06-16
-status: scheduled
+date: 2025-10-01
+status: published
 topic: Platform architecture
 categories: [Architecture Governance, Standards, Enterprise Architecture]
 ---

@@ -1,8 +1,8 @@
 ---
 title: Build portable boundaries, not lowest-common-denominator clouds
 author: Dhruv Doshi
-date: 2027-01-16
-status: scheduled
+date: 2024-02-01
+status: published
 topic: Cloud architecture
 categories: [Multi Cloud, Portability, Architecture]
 ---

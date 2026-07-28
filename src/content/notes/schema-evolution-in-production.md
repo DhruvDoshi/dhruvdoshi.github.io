@@ -1,8 +1,8 @@
 ---
 title: Plan schema evolution as a production migration
 author: Dhruv Doshi
-date: 2027-04-16
-status: scheduled
+date: 2025-02-01
+status: published
 topic: Distributed systems
 categories: [Database, Schema Evolution, Reliability]
 ---

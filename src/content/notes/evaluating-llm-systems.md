@@ -1,8 +1,8 @@
 ---
 title: Evaluate LLM systems as systems
 author: Dhruv Doshi
-date: 2027-02-16
-status: scheduled
+date: 2024-06-01
+status: published
 topic: AI governance
 categories: [LLM Evaluation, AI Quality, Applied AI]
 ---

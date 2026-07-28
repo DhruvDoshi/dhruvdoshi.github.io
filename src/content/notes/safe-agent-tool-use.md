@@ -1,8 +1,8 @@
 ---
 title: Design safe tool use for AI agents
 author: Dhruv Doshi
-date: 2027-03-16
-status: scheduled
+date: 2024-10-01
+status: published
 topic: AI governance
 categories: [AI Agents, Tool Use, Security]
 ---
