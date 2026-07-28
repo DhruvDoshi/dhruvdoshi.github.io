@@ -2,6 +2,7 @@
 title: Plan schema evolution as a production migration
 author: Dhruv Doshi
 date: 2025-02-01
+reviewed: 2026-07-28
 status: published
 topic: Distributed systems
 categories: [Database, Schema Evolution, Reliability]
@@ -40,3 +41,23 @@ Application rollback is unsafe once a new version writes data an old version can
 Remove old columns, indexes, triggers, and compatibility code only after all consumers and restore procedures have moved. A delayed cleanup is acceptable when it has an owner and date.
 
 Schema evolution succeeds when no single deployment must be perfectly timed. Compatibility creates the room to observe, correct, and proceed safely.
+
+## Analyse reads and writes separately
+
+List every application version, worker, export, replica, report, and recovery tool that reads or writes the structure. A writer adding a new enum value can break an older reader even when the column itself is unchanged. A rollback may restore old code that cannot parse data already written by the new release.
+
+Use feature flags to separate deployment from behavior change. Deploy compatibility code first, observe that all instances can read both forms, then enable new writes gradually. Keep the flag and old read path until rollback risk has passed.
+
+## Plan large-table operations
+
+Estimate row count, table size, write rate, index build time, log generation, replica capacity, and free storage. Prefer online or concurrent operations supported by the engine, but understand their remaining locks and failure behavior. Set conservative statement and lock timeouts so a migration fails rather than blocking production traffic indefinitely.
+
+For backfills, choose batch size from production measurements. Pause on elevated latency or replica lag. Record a durable high-water mark and make each batch safe to repeat. Validate continuously instead of waiting until the final row.
+
+## Handle removal as a release
+
+Before dropping old structure, prove that no supported code reads or writes it. Search application source, queries, dashboards, ETL, audit tools, and restore scripts. Disable access or add monitoring before deletion to reveal hidden consumers. Take a recoverable backup appropriate to the data and test restoration of the affected object.
+
+## Migration checklist
+
+Document compatibility matrix, lock behavior, capacity estimate, staged rollout, backfill controls, validation queries, rollback boundary, monitoring, owner, and cleanup date. Run the sequence in an environment with representative data volume; functional test fixtures alone cannot expose production migration risk.

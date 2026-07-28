@@ -2,6 +2,7 @@
 title: Evaluate LLM systems as systems
 author: Dhruv Doshi
 date: 2024-06-01
+reviewed: 2026-07-28
 status: published
 topic: AI governance
 categories: [LLM Evaluation, AI Quality, Applied AI]
@@ -34,3 +35,23 @@ Run a stable regression suite for changes to models, prompts, indexes, tools, an
 Version results with the complete system configuration. A model name alone is not reproducible evidence.
 
 The goal of evaluation is not to prove an AI feature is intelligent. It is to define where it is dependable, detect when that boundary changes, and prevent unacceptable failure from reaching users.
+
+## Create an evaluation specification
+
+For each task, define input population, expected behavior, unacceptable outcomes, scoring method, reviewer guidance, and release threshold. Include examples of partial credit and disagreement. This turns evaluation from a demo into a repeatable engineering artifact.
+
+Use exact checks where the answer is deterministic: JSON schema validation, allowed tool names, citation existence, permission boundaries, arithmetic, or known identifiers. Use rubric-based human review for relevance, clarity, supported reasoning, and contextual appropriateness. Keep safety and privacy as separate gates rather than averaging them into general quality.
+
+## Calibrate model graders
+
+If an LLM grades outputs, give it a narrow rubric and examples, randomise answer order for comparisons, and measure agreement against qualified human reviewers. Check whether the grader favors longer answers, familiar phrasing, or outputs from its own model family. Periodically resample graded cases for human audit.
+
+Model graders are useful for triage and scale; they are not independent proof. Preserve the grader model, prompt, temperature, and rubric with each result.
+
+## Test uncertainty and change
+
+Run repeated trials for non-deterministic paths and report distributions, not only a best result. Test model timeouts, truncated context, tool errors, missing retrieval, malformed output, and policy refusal. Compare a proposed version with the production baseline on the same holdout set and define the maximum acceptable regression per critical slice.
+
+## Release checklist
+
+Require representative test coverage, protected holdouts, calibrated graders, component and end-to-end results, risk-specific thresholds, latency and cost budgets, reproducible configuration, and an owner for production review. After release, turn confirmed failures into regression cases while watching for test-set contamination and changing user behavior.

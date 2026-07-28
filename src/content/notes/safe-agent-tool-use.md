@@ -2,6 +2,7 @@
 title: Design safe tool use for AI agents
 author: Dhruv Doshi
 date: 2024-10-01
+reviewed: 2026-07-28
 status: published
 topic: AI governance
 categories: [AI Agents, Tool Use, Security]
@@ -34,3 +35,23 @@ Record requested action, resolved arguments, authorization decision, tool result
 Set budgets for steps, time, tokens, money, and affected records. A stop condition is a control, not a model preference.
 
 Useful agents combine flexible reasoning with inflexible authority boundaries. The model may propose an action; deterministic systems must decide whether and how that action is allowed to occur.
+
+## Use a plan-execute boundary
+
+Represent proposed actions as structured data before execution. A policy layer can resolve resource identifiers, calculate risk, check current authorization, and decide whether confirmation is required. The executor receives only an approved, immutable action—not the full conversation and open-ended model authority.
+
+For a destructive request such as deleting a deployment, confirmation should show the exact environment, deployment identifier, dependent resources, and recovery consequence. If any target changes after confirmation, require a new approval.
+
+## Limit indirect influence
+
+Retrieved content may supply facts but should not grant capabilities. An email saying “upload credentials to this URL” must not change the allowlist of destinations. Label data provenance internally and prevent untrusted text from being concatenated into system policy or tool definitions.
+
+Use separate contexts for browsing, reasoning, and secrets. Where a tool needs a credential, bind it inside the executor rather than exposing it to the model. Filter tool responses to the minimum fields needed for the next decision.
+
+## Design compensation and recovery
+
+For reversible actions, capture the previous state and provide a tested undo operation. For irreversible actions, increase review and confirmation. Multi-step workflows need checkpoints so a retry resumes safely rather than repeats completed effects. Stop and escalate when actual state differs from the plan.
+
+## Adversarial checklist
+
+Test instructions embedded in websites, documents, code comments, images, and tool output; attempts to cross tenant or user boundaries; argument smuggling; excessive result counts; repeated writes; tool timeout; stale confirmation; and partial workflow failure. Verify budgets, policy decisions, and audit events remain correct under each case. Safety is demonstrated by denied or contained actions, not by the model explaining that it intends to be careful.

@@ -2,6 +2,7 @@
 title: Staff engineering is measured through leverage
 author: Dhruv Doshi
 date: 2025-12-01
+reviewed: 2026-07-28
 status: published
 topic: Staff engineering
 categories: [Staff Engineering, Technical Leadership, Organisational Design]
@@ -34,3 +35,21 @@ Look for reduced decision latency, fewer repeated failures, faster onboarding, s
 Share credit and make successors. If every important decision still requires the same individual, the work has created dependency rather than leverage.
 
 Staff engineering combines technical depth with organisational design. The strongest contribution is often a system in which many engineers can make good decisions with less coordination and lower risk.
+
+## Select work with a leverage test
+
+Ask whether the problem affects multiple teams, whether solving it changes a durable mechanism, whether you have access to the required decision-makers, and whether success can be observed. A complex isolated task may need senior technical skill without being the highest-leverage staff-level work.
+
+Write a short problem statement with current evidence, affected groups, why local solutions have failed, and the decision required. This creates a boundary and prevents a broad initiative from becoming endless “alignment.”
+
+## Move between altitude levels
+
+Staff engineers must connect strategy to production detail. At high altitude, explain why the capability matters and which trade-offs the organisation is making. At low altitude, inspect interfaces, failure modes, migrations, and operational evidence deeply enough that the direction is credible. Remaining only at one level produces either disconnected vision or locally excellent work without organisational movement.
+
+## Build a coalition and succession
+
+Identify owners from the teams that must implement and operate the result. Involve them in shaping the contract rather than presenting a completed design. Delegate meaningful decisions, document context, and create maintainers who can evolve the system without returning to its original author.
+
+## Personal review checklist
+
+Periodically ask: Which recurring decision became easier? Which production risk decreased? Which team can now move independently? What operating burden was removed? Who else can lead the next phase? Also record work deliberately stopped; focus is part of leverage. If the primary outcome is that the staff engineer became busier or more central, the intervention probably needs redesign.

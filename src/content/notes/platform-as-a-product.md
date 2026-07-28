@@ -2,6 +2,7 @@
 title: Design the platform as a product
 author: Dhruv Doshi
 date: 2022-04-01
+reviewed: 2026-07-28
 status: published
 topic: Platform architecture
 categories: [Platform Engineering, Developer Experience, Architecture]
@@ -38,3 +39,27 @@ Track the cost transferred to product teams as carefully as the cost removed fro
 Begin with one well-understood service archetype and make its path excellent. Publish ownership, service levels, known constraints, and a roadmap tied to user evidence. Expand only when the first path is reliable enough that teams recommend it to one another.
 
 A good platform does not hide engineering decisions. It packages the common ones, makes exceptional ones visible, and gives teams a dependable path from code to operation.
+
+## A concrete service contract
+
+Consider a platform capability called “production web service.” Its contract could accept a repository, runtime, owner, data classification, availability tier, and scaling range. In return it creates build and deployment workflows, workload identity, network policy, dashboards, alerts, a service catalogue entry, and a documented support path. The contract should identify what it does **not** provide: perhaps persistent databases, cross-region recovery, or public ingress without security review.
+
+That boundary gives teams enough information to decide whether the paved road fits. It also lets the platform team test the complete promise. A successful infrastructure plan is not sufficient if the deployment never becomes observable or the ownership record is missing.
+
+## Design the operating model
+
+Every platform capability needs an owner, support hours, service objectives, incident process, and upgrade policy. Decide how breaking changes are communicated and how long old versions remain supported. Make dependency status visible so product teams can distinguish an application failure from a platform failure.
+
+Use contribution paths carefully. Product teams may submit improvements, but the platform team still owns coherence, review, documentation, and long-term support. An internal open-source model without maintainers merely distributes responsibility ambiguously.
+
+## Common failure modes
+
+- **Portal-first delivery:** a polished front end masks unreliable or manual workflows.
+- **Mandatory adoption:** usage rises while workarounds and resentment remain invisible.
+- **Unlimited flexibility:** every option becomes supported, so upgrades become impossible.
+- **No migration funding:** a better platform exists, but teams cannot leave the old path.
+- **Platform as project:** funding ends at launch even though users need continuing operation.
+
+## Review checklist
+
+Before adding a capability, confirm that a named user problem exists, the interface and responsibilities are written, the full journey is automated and tested, operational ownership is funded, success measures include user effort, and a retirement or migration path exists. If those answers are weak, more technology will not make the platform a product.

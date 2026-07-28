@@ -2,6 +2,7 @@
 title: Zero Trust begins with service identity
 author: Dhruv Doshi
 date: 2023-04-01
+reviewed: 2026-07-28
 status: published
 topic: Platform architecture
 categories: [Zero Trust, Identity, Security Architecture]
@@ -32,3 +33,23 @@ Audit records should capture the decision inputs and policy version without leak
 Decide whether policy-engine or identity-provider failure fails closed, uses a bounded cache, or permits a narrowly defined degraded mode. The answer depends on the operation’s risk. Test clock skew, certificate expiry, revocation, stale policy, and regional isolation.
 
 Zero Trust is not “authenticate every packet.” It is a system of explicit identities, least-privilege decisions, protected context, and observable enforcement. Network controls still matter, but they become one layer rather than the definition of trust.
+
+## Build the trust chain
+
+A useful workload identity begins with something the runtime can attest: a cloud instance identity, Kubernetes service account, signed workload document, or hardware-backed key. An identity service validates that evidence and issues a short-lived credential for a named audience. The receiving service validates issuer, signature, audience, expiry, and relevant workload claims before policy evaluation.
+
+Every link needs an owner and rotation path. If the root issuer, signing key, admission system, or service-account binding is compromised, downstream mutual TLS alone will faithfully authenticate the wrong workload.
+
+## Separate control and data planes
+
+The control plane distributes identity, policy, keys, and trust configuration. The data plane enforces decisions on live requests. Decide how quickly a revoked identity or updated policy reaches every enforcement point, and measure propagation delay. A policy change that takes an unknown time to apply is not an effective emergency control.
+
+Cache only bounded decisions with expiry and enough context to avoid using an authorization result for a different resource or action. Highly sensitive writes may fail closed when fresh policy is unavailable; low-risk reads may use a short, known cache. Document this per operation.
+
+## Migration sequence
+
+Inventory service calls, assign workload identities, enable authentication in observe-only mode, compare expected and actual callers, then enforce one boundary at a time. Replace shared credentials and broad network rules only after workloads use their own identities. Maintain a tested break-glass path with narrow scope, short expiry, and complete auditing.
+
+## Verification checklist
+
+Test token replay against the wrong audience, expired and not-yet-valid credentials, clock skew, identity-provider outage, stale policy, forged forwarding headers, compromised workload identity, and cross-tenant requests. Confirm that logs can reconstruct who initiated the action, which workload executed it, what policy allowed it, and which resource changed.

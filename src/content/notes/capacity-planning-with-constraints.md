@@ -2,6 +2,7 @@
 title: Capacity planning begins with constraints
 author: Dhruv Doshi
 date: 2025-06-01
+reviewed: 2026-07-28
 status: published
 topic: Observability
 categories: [Capacity Planning, Performance, Reliability]
@@ -34,3 +35,23 @@ Create thresholds with lead time: when to tune, scale, repartition, request quot
 Test reduced-capacity states, including zone loss and dependency throttling. A system sized only for normal conditions may fail exactly when redundancy is needed.
 
 Capacity planning is an operating loop: measure demand, identify constraints, validate behavior, preserve recovery margin, and revisit assumptions. The output is not a spreadsheet. It is enough time and evidence to act before users discover the limit.
+
+## Use queueing signals
+
+Utilisation alone can look healthy while latency rises sharply near saturation. Track concurrency, queue wait, service time, rejection, and retry volume. Little’s Law—average items in a stable system equals arrival rate multiplied by average time—can help connect throughput, latency, and work in progress, provided the measured boundary and time window are consistent.
+
+Retries amplify demand during failure. Model retry policy, client timeouts, batch catch-up, and failover traffic as part of capacity rather than treating them as unusual. A dependency recovery can create a second spike when queued work is released.
+
+## Separate scaling horizons
+
+Application replicas may scale in seconds, nodes in minutes, database partitions in hours, and procurement or architecture changes in months. Maintain triggers for each horizon. Fast autoscaling cannot fix an exhausted regional IP range or a third-party quota that takes weeks to raise.
+
+Reserve enough capacity for maintenance and failure. If normal traffic consumes the capacity required to lose a zone, redundancy exists only on a diagram. Test failover while representative load is present.
+
+## Connect technical and financial limits
+
+For elastic systems, define the cost of meeting peak demand and a guardrail for runaway scaling. Track unit economics such as cost per transaction, active tenant, or processed gigabyte. A capacity change that lowers latency but multiplies unit cost needs an explicit product decision.
+
+## Planning checklist
+
+Record demand units, seasonal range, workload mix, constraint map, saturation behavior, headroom policy, scaling lead times, quotas, failover load, cost envelope, and owners. Review actual versus forecast, explain material error, and update the model. Forecast accuracy improves through a measured loop, not through increasingly detailed unsupported estimates.

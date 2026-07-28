@@ -2,6 +2,7 @@
 title: Evolve event contracts without breaking consumers
 author: Dhruv Doshi
 date: 2023-02-01
+reviewed: 2026-07-28
 status: published
 topic: Distributed systems
 categories: [Event Driven Architecture, Kafka, Schema Evolution]
@@ -32,3 +33,23 @@ Ordering should be promised only within a defined key and partition strategy. Co
 Reprocessing historical events can overload dependencies or apply obsolete logic. Version consumer behavior, isolate replay capacity, preserve original timestamps, and distinguish replay traffic in telemetry. Test schemas against representative historical records before deployment.
 
 Event-driven architecture reduces temporal coupling, not organisational responsibility. A durable event contract gives producers freedom to change implementation while giving consumers a fact they can continue to trust.
+
+## Separate event types
+
+A **domain event** records a business fact such as `InvoiceIssued`. An **integration event** is the stable representation intentionally shared outside the owning boundary. A **command** asks another component to perform work and may be refused. Mixing these meanings makes ownership unclear and encourages consumers to depend on internal state transitions.
+
+Publish only facts for which the producer is authoritative. If a service copies an event from another domain and republishes it as its own fact, consumers may no longer know which source to trust.
+
+## Define delivery behavior
+
+Document partition key, ordering scope, retention, retry behavior, duplicate expectations, maximum payload, and dead-letter handling. Ordering across a whole topic is expensive and often unnecessary; ordering per account or aggregate is usually more useful. Changing the partition key can change both ordering and load distribution, so treat it as a contract change.
+
+Consumers should persist their processing checkpoint with the resulting state change where possible. If they acknowledge first and write later, a crash can lose work. If they write first and acknowledge later, duplicates are expected and processing must be idempotent.
+
+## Govern without centralising every change
+
+Give each contract an owner and machine-readable schema. Automated compatibility checks should run in producer CI, while semantic review is required for changes to meaning, units, identifiers, privacy classification, or lifecycle. Maintain a consumer registry based on actual subscriptions and declared ownership.
+
+## Migration checklist
+
+Before changing an event, identify consumers and replay jobs, classify the change as additive or breaking, publish examples, test old and new schemas against representative records, define a dual-publish window, observe consumer migration, and specify removal criteria. After retirement, delete obsolete permissions, topics, transformations, and monitoring so the old contract does not remain an unowned production surface.

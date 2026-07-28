@@ -146,146 +146,146 @@
   </url>
   <url>
     <loc>https://doshidhruv.com/notes/measure-whether-an-internal-platform-creates-leverage/</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://doshidhruv.com/notes/staff-engineering-is-measured-through-leverage/</loc>
-    <lastmod>2025-12-01</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://doshidhruv.com/notes/architecture-governance-should-operate-through-evidence/</loc>
-    <lastmod>2025-10-01</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://doshidhruv.com/notes/technical-roadmaps-should-preserve-options/</loc>
-    <lastmod>2025-08-01</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://doshidhruv.com/notes/capacity-planning-begins-with-constraints/</loc>
-    <lastmod>2025-06-01</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://doshidhruv.com/notes/incident-command-is-a-coordination-system/</loc>
-    <lastmod>2025-04-01</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://doshidhruv.com/notes/plan-schema-evolution-as-a-production-migration/</loc>
-    <lastmod>2025-02-01</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://doshidhruv.com/notes/use-data-contracts-to-make-ownership-executable/</loc>
-    <lastmod>2024-12-01</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://doshidhruv.com/notes/design-safe-tool-use-for-ai-agents/</loc>
-    <lastmod>2024-10-01</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://doshidhruv.com/notes/build-ai-governance-into-the-delivery-control-plane/</loc>
-    <lastmod>2024-08-01</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://doshidhruv.com/notes/evaluate-llm-systems-as-systems/</loc>
-    <lastmod>2024-06-01</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://doshidhruv.com/notes/define-the-boundaries-of-a-production-rag-system/</loc>
-    <lastmod>2024-04-01</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://doshidhruv.com/notes/build-portable-boundaries-not-lowest-common-denominator-clouds/</loc>
-    <lastmod>2024-02-01</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://doshidhruv.com/notes/use-the-strangler-pattern-for-controlled-cloud-migration/</loc>
-    <lastmod>2023-12-01</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://doshidhruv.com/notes/treat-terraform-modules-as-versioned-interfaces/</loc>
-    <lastmod>2023-10-01</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://doshidhruv.com/notes/choose-kubernetes-tenancy-boundaries-deliberately/</loc>
-    <lastmod>2023-08-01</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://doshidhruv.com/notes/manage-secrets-without-creating-secret-sprawl/</loc>
-    <lastmod>2023-06-01</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://doshidhruv.com/notes/zero-trust-begins-with-service-identity/</loc>
-    <lastmod>2023-04-01</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://doshidhruv.com/notes/evolve-event-contracts-without-breaking-consumers/</loc>
-    <lastmod>2023-02-01</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://doshidhruv.com/notes/design-apis-for-safe-retries/</loc>
-    <lastmod>2022-12-01</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://doshidhruv.com/notes/service-level-objectives-are-decision-tools/</loc>
-    <lastmod>2022-10-01</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://doshidhruv.com/notes/treat-telemetry-as-a-production-contract/</loc>
-    <lastmod>2022-08-01</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://doshidhruv.com/notes/architecture-decision-records-that-remain-useful/</loc>
-    <lastmod>2022-06-01</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://doshidhruv.com/notes/design-the-platform-as-a-product/</loc>
-    <lastmod>2022-04-01</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>

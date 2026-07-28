@@ -2,6 +2,7 @@
 title: Build AI governance into the delivery control plane
 author: Dhruv Doshi
 date: 2024-08-01
+reviewed: 2026-07-28
 status: published
 topic: AI governance
 categories: [AI Governance, Platform Engineering, Risk Management]
@@ -34,3 +35,23 @@ Models and external services can change without an application commit. Track pro
 Record incidents and near misses in the same operational system as other production risks. Feed observed failures back into evaluation and policy.
 
 Governance is strongest when it makes safe delivery routine. The control plane should provide traceability and proportionate constraints while leaving product teams with a clear, supported path to ship useful systems.
+
+## Define evidence by lifecycle stage
+
+During discovery, record intended users, decision impact, data sources, and prohibited uses. Before development, assign a risk tier and control owner. Before release, attach evaluation results, threat model, privacy assessment, human-oversight design, rollback plan, and operational objectives. In production, retain version, incident, monitoring, and change evidence.
+
+This evidence should be addressable by stable identifiers. A deployed capability can then point to the exact model configuration, prompt, retrieval index, tool set, evaluation run, approval, and application version that produced it.
+
+## Separate policy from enforcement
+
+Policy states the required outcome—for example, sensitive data must not be sent to an unapproved model endpoint. Enforcement may occur through network controls, an AI gateway, data classification, CI policy, and runtime monitoring. Map each policy to one or more controls and each control to observable evidence.
+
+Avoid a single central gateway becoming an unreviewed source of broad access. The gateway itself needs workload identity, tenant isolation, rate limits, versioned policy, failure behavior, and objectives.
+
+## Operate exceptions
+
+An exception should name the unmet control, reason, affected system, compensating measures, approver, expiry, and remediation owner. Expired exceptions must fail visibly. Analyse repeated exceptions: they may reveal an impractical policy, missing platform capability, or risk the organisation has implicitly accepted without deciding.
+
+## Governance checklist
+
+Confirm complete system inventory, explicit owners, risk classification, evidence-linked releases, approved data and model boundaries, independent review for high-impact use, runtime disablement, incident handling, change triggers, and time-bounded exceptions. Measure time to satisfy controls, recurring failure reasons, overdue reviews, and production outcomes—not only how many systems received approval.

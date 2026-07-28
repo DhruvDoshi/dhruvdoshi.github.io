@@ -2,6 +2,7 @@
 title: Build portable boundaries, not lowest-common-denominator clouds
 author: Dhruv Doshi
 date: 2024-02-01
+reviewed: 2026-07-28
 status: published
 topic: Cloud architecture
 categories: [Multi Cloud, Portability, Architecture]
@@ -34,3 +35,23 @@ Identity, DNS, keys, CI, observability, and source control can remain hidden sin
 Account for duplicate skills, networking, security controls, vendor management, observability, data transfer, and slower adoption of native capabilities. Compare this recurring cost with the quantified risk or option the design addresses.
 
 Good portability protects a specific exit or recovery path. It does not pretend cloud platforms are interchangeable.
+
+## Classify the portability requirement
+
+There are several useful levels. **Data portability** means information can be exported in a documented format. **Build portability** means infrastructure and applications can be recreated elsewhere. **Operational portability** means teams can monitor, secure, and recover the workload in the alternate environment. **Traffic portability** means production demand can actually move within a stated objective. Each level requires more continuing investment.
+
+Name the recovery point and recovery time for any cross-cloud failover claim. If data replication is asynchronous, quantify acceptable loss. If the alternate environment is cold, include quota approval, image availability, DNS change, certificate issuance, and cache warming in the recovery test.
+
+## Preserve identity and data semantics
+
+Use stable internal identities and map them to provider-specific roles at the boundary. Avoid copying long-lived credentials between clouds. Keep data formats explicit, but account for database behavior, collation, consistency, extensions, and operational tooling—not only whether both systems speak SQL.
+
+Egress cost and replication lag are architectural constraints. A design that constantly moves large datasets to preserve theoretical choice may cost more and fail more often than a documented restore path.
+
+## Make provider use intentional
+
+Maintain a decision record for each provider-specific service. State the capability gained, the coupling introduced, the exit mechanism, and when that exit is worth testing. Some workloads should embrace a managed native service because its operational value exceeds switching value.
+
+## Review checklist
+
+Verify the business reason, required portability level, dependency map, identity model, data-copy behavior, DNS and certificate path, observability in both environments, capacity reservation, cost, skills, and tested recovery evidence. If the organisation has never exercised the alternate path, describe it as a plan—not as achieved resilience.
