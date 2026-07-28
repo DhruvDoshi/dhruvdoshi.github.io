@@ -10,6 +10,18 @@
   NODE_VERSION = "22"
 
 [[redirects]]
+  from = "https://blog.doshidhruv.com/posts/*"
+  to = "https://doshidhruv.com/notes/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://blog.doshidhruv.com/*"
+  to = "https://doshidhruv.com/notes"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200

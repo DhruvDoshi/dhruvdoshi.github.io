@@ -14,9 +14,10 @@ const Footer = () => (
         <span>{profile.location}</span>
       </div>
       <div className="site-footer__links">
+        <Link to="/notes">Technical notes</Link>
+        <Link to="/research">Research</Link>
         <a href="https://www.linkedin.com/in/dhruvdoshi25071999" target="_blank" rel="noreferrer">LinkedIn</a>
         <a href="https://github.com/DhruvDoshi" target="_blank" rel="noreferrer">GitHub</a>
-        <a href="https://blog.doshidhruv.com" target="_blank" rel="noreferrer">Writing</a>
         <Link to="/contact">Contact</Link>
       </div>
       <p className="site-footer__legal">© {new Date().getFullYear()} Dhruv Doshi</p>

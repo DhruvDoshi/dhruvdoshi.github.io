@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 import routes from '../../data/routes';
+import ThemeToggle from './ThemeToggle';
 
 const Navigation = () => {
   const [open, setOpen] = useState(false);
@@ -44,7 +45,10 @@ const Navigation = () => {
               {route.label}
             </NavLink>
           ))}
-          <Link className="nav-contact" to="/contact" onClick={closeMenu}>Start a conversation</Link>
+          <div className="site-navigation__actions">
+            <ThemeToggle />
+            <Link className="nav-contact" to="/contact" onClick={closeMenu}>Contact</Link>
+          </div>
         </nav>
       </div>
     </header>

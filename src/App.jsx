@@ -9,6 +9,9 @@ const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Index = lazy(() => import('./pages/Index'));
 const NotFound = lazy(() => import('./pages/NotFound'));
+const Note = lazy(() => import('./pages/Note'));
+const Notes = lazy(() => import('./pages/Notes'));
+const LegacyPostRedirect = lazy(() => import('./pages/LegacyPostRedirect'));
 const Projects = lazy(() => import('./pages/Projects'));
 const Resume = lazy(() => import('./pages/Resume'));
 const Research = lazy(() => import('./pages/Research'));
@@ -24,6 +27,11 @@ const App = () => (
         <Route path="/contact" element={<Contact />} />
         <Route path="/resume" element={<Resume />} />
         <Route path="/research" element={<Research />} />
+        <Route path="/notes" element={<Notes />} />
+        <Route path="/notes/:slug" element={<Note />} />
+        <Route path="/posts/:slug" element={<LegacyPostRedirect />} />
+        <Route path="/blog/*" element={<Notes />} />
+        <Route path="/blogs/*" element={<Notes />} />
         <Route path="/pictures" element={<Pictures />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

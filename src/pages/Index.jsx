@@ -7,11 +7,21 @@ import {
   impact,
   profile,
 } from '../data/profile';
+import { notes } from '../data/notes';
+
+const recentNotes = notes.slice(0, 4);
+
+const formatNoteDate = (date) => new Intl.DateTimeFormat('en-CA', {
+  month: 'short',
+  year: 'numeric',
+  timeZone: 'UTC',
+}).format(new Date(`${date}T00:00:00Z`));
 
 const Index = () => (
   <Main>
-    <section className="hero page-shell">
+    <section className="hero hero--compact page-shell">
       <div className="hero__copy">
+        <div className="hero__status"><span /> Available for staff-level conversations</div>
         <p className="eyebrow">Staff software developer · Enterprise architect · Toronto</p>
         <h1 data-testid="heading">I make complex systems easier to <em>ship.</em></h1>
         <p className="hero__lede">{profile.introduction}</p>
@@ -21,18 +31,15 @@ const Index = () => (
         </div>
       </div>
 
-      <aside className="system-map" aria-label="How Dhruv approaches engineering work">
-        <div className="system-map__header">
-          <span>Operating model</span>
-          <span>Staff / 01</span>
-        </div>
-        <ol>
-          <li><span>01</span><strong>Frame the problem</strong><small>Intent, constraints, risk</small></li>
-          <li><span>02</span><strong>Design the system</strong><small>Boundaries, data, failure modes</small></li>
-          <li><span>03</span><strong>Stay close to delivery</strong><small>Code, reviews, decisions</small></li>
-          <li><span>04</span><strong>Make it operable</strong><small>Telemetry, standards, ownership</small></li>
-        </ol>
-        <p>Architecture is useful when it improves the next engineering decision.</p>
+      <aside className="signal-panel" aria-label="Current engineering focus">
+        <div className="signal-panel__header"><span>Current focus</span><span>2026</span></div>
+        <dl>
+          <div><dt>Building</dt><dd>Enterprise architecture platforms</dd></div>
+          <div><dt>Scaling</dt><dd>Observable, vendor-neutral systems</dd></div>
+          <div><dt>Exploring</dt><dd>Governed AI and RAG workflows</dd></div>
+          <div><dt>Working from</dt><dd>Toronto, Canada</dd></div>
+        </dl>
+        <Link to="/about">How I work <span aria-hidden="true">↗</span></Link>
       </aside>
     </section>
 
@@ -47,13 +54,13 @@ const Index = () => (
       </div>
     </section>
 
-    <section className="section page-shell" id="selected-work">
-      <div className="section-heading">
+    <section className="section section--compact page-shell" id="selected-work">
+      <div className="compact-section-heading">
         <div>
           <p className="eyebrow">Selected work</p>
-          <h2>Platforms built for real constraints.</h2>
+          <h2>Systems built for real constraints</h2>
         </div>
-        <p>Enterprise scale, regulated environments, and systems that need to remain understandable after launch.</p>
+        <Link to="/projects">All case studies <span aria-hidden="true">↗</span></Link>
       </div>
 
       <div className="case-list">
@@ -77,12 +84,32 @@ const Index = () => (
       </div>
     </section>
 
-    <section className="section section--tinted">
+    <section className="home-notes section--tinted">
+      <div className="page-shell home-notes__layout">
+        <div className="home-notes__intro">
+          <p className="eyebrow">Technical notes</p>
+          <h2>Writing is part of the engineering work.</h2>
+          <p>{notes.length} notes across cloud architecture, blockchain systems, and machine learning.</p>
+          <Link className="button button--secondary" to="/notes">Browse the archive</Link>
+        </div>
+        <div className="home-note-list">
+          {recentNotes.map((note) => (
+            <Link to={`/notes/${note.slug}`} key={note.slug}>
+              <span>{note.topic}</span>
+              <strong>{note.title}</strong>
+              <small>{formatNoteDate(note.date)} · {note.readTime} min</small>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section className="section section--compact">
       <div className="page-shell">
-        <div className="section-heading">
+        <div className="compact-section-heading">
           <div>
             <p className="eyebrow">Technical range</p>
-            <h2>Broad enough to connect the system. Deep enough to build it.</h2>
+            <h2>Range with a reason</h2>
           </div>
         </div>
         <div className="capability-grid">
@@ -99,7 +126,7 @@ const Index = () => (
 
     <section className="contact-band page-shell">
       <p className="eyebrow">The next problem</p>
-      <h2>Looking for someone who can shape the architecture and still challenge the implementation?</h2>
+      <h2>Shape the architecture. Challenge the implementation.</h2>
       <div>
         <p>{profile.availability}</p>
         <Link className="button button--primary" to="/contact">Start a conversation</Link>

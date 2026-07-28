@@ -12,7 +12,19 @@
     <link rel="canonical" href="https://doshidhruv.com/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=Manrope:wght@400;500;600;650;700&amp;display=swap" rel="stylesheet" />
+    <script>
+      (() => {
+        const redirectedPath = sessionStorage.getItem('spa-redirect');
+        if (redirectedPath) {
+          sessionStorage.removeItem('spa-redirect');
+          history.replaceState(null, '', redirectedPath);
+        }
+        const stored = localStorage.getItem('theme');
+        const theme = stored || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=Instrument+Sans:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,400;6..72,500&amp;display=swap" rel="stylesheet" />
     <title>Dhruv Doshi — Staff Software Developer</title>
   </head>
   <body>

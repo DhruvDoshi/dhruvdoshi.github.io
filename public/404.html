@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex" />
+    <title>Loading…</title>
+    <script>
+      sessionStorage.setItem('spa-redirect', location.pathname + location.search + location.hash);
+      location.replace(location.origin + '/');
+    </script>
+  </head>
+  <body>
+    <p>Loading the requested page…</p>
+  </body>
+</html>
