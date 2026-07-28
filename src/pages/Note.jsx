@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
@@ -22,18 +22,6 @@ const Note = () => {
   const { slug } = useParams();
   const note = findNote(slug);
   const [copied, setCopied] = useState(false);
-  const [progress, setProgress] = useState(0);
-
-  useEffect(() => {
-    const updateProgress = () => {
-      const available = document.documentElement.scrollHeight - window.innerHeight;
-      setProgress(available > 0 ? Math.min(100, (window.scrollY / available) * 100) : 0);
-    };
-    updateProgress();
-    window.addEventListener('scroll', updateProgress, { passive: true });
-    return () => window.removeEventListener('scroll', updateProgress);
-  }, []);
-
   const headings = useMemo(() => note?.body
     .split('\n')
     .filter((line) => /^##\s+/.test(line))
@@ -55,13 +43,11 @@ const Note = () => {
 
   return (
     <Main title={note.title} description={note.excerpt} type="article" published={note.date}>
-      <div className="reading-progress" aria-hidden="true"><span style={{ width: `${progress}%` }} /></div>
       <article className="note-page page-shell">
         <header className="note-header">
           <Link className="note-back" to="/notes">← All notes</Link>
-          <p className="eyebrow">{note.topic}</p>
+          <p className="note-topic">{note.topic}</p>
           <h1 data-testid="heading">{note.title}</h1>
-          <p className="note-header__excerpt">{note.excerpt}</p>
           <div className="note-meta">
             <time dateTime={note.date}>{formatDate(note.date)}</time>
             <span>{note.readTime} min read</span>
@@ -70,18 +56,14 @@ const Note = () => {
         </header>
 
         <div className="note-layout">
-          <aside className="note-aside">
-            <div className="archive-note">
-              <strong>From the archive</strong>
-              <p>This note preserves an earlier stage of my technical writing. Dates and original arguments remain intact; formatting and titles were lightly refined.</p>
-            </div>
-            {headings.length > 1 && (
+          {headings.length > 1 && (
+            <aside className="note-aside">
               <nav aria-label="On this page">
                 <span>On this page</span>
                 {headings.map((heading) => <a href={`#${slugify(heading)}`} key={heading}>{heading}</a>)}
               </nav>
-            )}
-          </aside>
+            </aside>
+          )}
 
           <div className="article-prose">
             <ReactMarkdown

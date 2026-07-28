@@ -20,7 +20,6 @@ const formatNoteDate = (date) => new Intl.DateTimeFormat('en-CA', {
 const Index = () => (
   <Main>
     <header className="document-intro page-shell">
-      <p className="eyebrow">Toronto, Canada</p>
       <h1 data-testid="heading">Dhruv Doshi</h1>
       <p className="document-intro__role">Staff Software Developer and Enterprise Architect</p>
       <p className="document-intro__summary">{profile.introduction}</p>
@@ -33,7 +32,7 @@ const Index = () => (
     </header>
 
     <section className="document-section page-shell" aria-labelledby="scope-heading">
-      <header className="section-index"><h2 id="scope-heading">Current scope</h2></header>
+      <header className="section-index"><h2 id="scope-heading">Work at a glance</h2></header>
       <dl className="impact-strip__grid">
         {impact.map((item) => (
           <div className="impact-item" key={item.value}>
@@ -46,17 +45,13 @@ const Index = () => (
 
     <section className="document-section page-shell" id="selected-work">
       <header className="compact-section-heading">
-        <div>
-          <h2>Selected work</h2>
-          <p>Representative platform, observability, and product engineering work.</p>
-        </div>
+        <h2>Selected work</h2>
         <Link to="/projects">All work</Link>
       </header>
 
       <div className="case-list">
-        {caseStudies.map((study, index) => (
+        {caseStudies.map((study) => (
           <article className="case-row" key={study.slug}>
-            <div className="case-row__index">{index + 1}</div>
             <div className="case-row__content">
               <p className="case-row__meta">{study.eyebrow} · {study.status}</p>
               <h3>{study.title}</h3>
@@ -72,9 +67,8 @@ const Index = () => (
     <section className="document-section page-shell">
       <div className="home-notes__layout">
         <header className="home-notes__intro">
-          <h2>Technical notes</h2>
-          <p>{notes.length} notes on cloud architecture, blockchain systems, artificial intelligence, and machine learning.</p>
-          <Link to="/notes">Browse all notes</Link>
+          <h2>Notes</h2>
+          <Link to="/notes">All {notes.length} notes</Link>
         </header>
         <div className="home-note-list">
           {recentNotes.map((note) => (
@@ -89,25 +83,18 @@ const Index = () => (
     </section>
 
     <section className="document-section page-shell">
-      <header className="compact-section-heading"><h2>Technical capabilities</h2></header>
+      <header className="compact-section-heading"><h2>Engineering scope</h2></header>
       <div className="capability-grid">
         {capabilities.map((capability) => (
           <article className="capability-card" key={capability.title}>
             <h3>{capability.title}</h3>
             <p>{capability.description}</p>
-            <p className="capability-card__tools"><strong>Tools:</strong> {capability.tools.join(', ')}</p>
+            <p className="capability-card__tools">{capability.tools.join(' · ')}</p>
           </article>
         ))}
       </div>
     </section>
 
-    <section className="document-section contact-band page-shell">
-      <h2>Contact</h2>
-      <div>
-        <p>{profile.availability}</p>
-        <Link to="/contact">Contact details</Link>
-      </div>
-    </section>
   </Main>
 );
 

@@ -76,7 +76,8 @@ const llms = `# Dhruv Doshi
 
 - [Home](${origin}/): Profile and current scope
 - [Selected work](${origin}/projects): Platform engineering, observability, healthcare, and independent projects
-- [Experience](${origin}/resume): Professional experience, education, and technical capabilities
+- [Resume](${origin}/resume): Resume PDF, professional experience, education, and engineering scope
+- [Resume PDF](${origin}/resume/Dhruv-Doshi-Resume.pdf): Downloadable one-page resume
 - [Technical notes](${origin}/notes): Searchable writing archive
 - [Research](${origin}/research): Published work on decentralized cloud storage
 - [About](${origin}/about): Background and working principles
@@ -114,6 +115,7 @@ Discovery:
 - ${origin}/feed.xml
 - ${origin}/llms.txt
 - ${origin}/llms-full.txt
+- ${origin}/resume/Dhruv-Doshi-Resume.pdf
 
 Preferred attribution: Dhruv Doshi, followed by the canonical page URL.
 `;

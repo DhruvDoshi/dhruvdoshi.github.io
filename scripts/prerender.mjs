@@ -60,9 +60,9 @@ await writeRoute('/', {
 });
 
 await writeRoute('/notes', {
-  title: 'Technical notes',
+  title: 'Notes',
   description: 'Technical notes by Dhruv Doshi on cloud architecture, blockchain systems, artificial intelligence, and machine learning.',
-  content: page('Technical notes', `<p>${notes.length} articles, ordered by publication date.</p>${list(notes.map((note) => `<a href="/notes/${note.slug}">${escapeHtml(note.title)}</a> — <time datetime="${note.date}">${note.date}</time><br />${escapeHtml(note.excerpt)}`))}`),
+  content: page('Notes', list(notes.map((note) => `<time datetime="${note.date}">${note.date}</time> · <a href="/notes/${note.slug}">${escapeHtml(note.title)}</a> · ${escapeHtml(note.topic)} · ${note.readTime} min`))),
 });
 
 for (const note of notes) {
@@ -72,27 +72,27 @@ for (const note of notes) {
     description: note.excerpt,
     type: 'TechArticle',
     datePublished: note.date,
-    content: `<main class="page-shell note-page"><article><header class="note-header"><p><a href="/notes">All notes</a></p><p class="eyebrow">${escapeHtml(note.topic)}</p><h1>${escapeHtml(note.title)}</h1><p>${escapeHtml(note.excerpt)}</p><p><time datetime="${note.date}">${note.date}</time> · ${note.readTime} minute read</p></header><div class="note-layout"><aside class="note-aside"><strong>Archived technical note</strong></aside><div class="article-prose">${markdown}</div></div></article></main>`,
+    content: `<main class="page-shell note-page"><article><header class="note-header"><p><a href="/notes">All notes</a></p><p class="note-topic">${escapeHtml(note.topic)}</p><h1>${escapeHtml(note.title)}</h1><p><time datetime="${note.date}">${note.date}</time> · ${note.readTime} minute read</p></header><div class="note-layout"><div class="article-prose">${markdown}</div></div></article></main>`,
   });
 }
 
 await writeRoute('/projects', {
   title: 'Selected work',
   description: 'Selected platform engineering, distributed systems, observability, and product work by Dhruv Doshi.',
-  content: page('Selected software engineering work', caseStudies.map((item) => `<article id="${item.slug}"><h2>${escapeHtml(item.title)}</h2><p>${escapeHtml(item.summary)}</p>${list(item.details.map(escapeHtml))}<p><strong>Technologies:</strong> ${escapeHtml(item.technologies.join(', '))}</p></article>`).join('')),
+  content: page('Work', caseStudies.map((item) => `<article id="${item.slug}"><h2>${escapeHtml(item.title)}</h2><p>${escapeHtml(item.summary)}</p>${list(item.details.map(escapeHtml))}<p><strong>Technologies:</strong> ${escapeHtml(item.technologies.join(', '))}</p></article>`).join('')),
 });
 
 await writeRoute('/resume', {
-  title: 'Experience',
+  title: 'Resume',
   description: 'Professional experience, education, and technical capabilities of Dhruv Doshi.',
-  content: page('Professional experience', `${experience.map((item) => `<article><h2>${escapeHtml(item.role)}</h2><p><strong>${escapeHtml(item.company)}</strong> · ${escapeHtml(item.period)} · ${escapeHtml(item.location)}</p><p>${escapeHtml(item.summary)}</p>${list(item.highlights.map(escapeHtml))}</article>`).join('')}<h2>Education</h2>${list(education.map((item) => `${escapeHtml(item.credential)}, ${escapeHtml(item.institution)} — ${escapeHtml(item.detail)}`))}<h2>Capabilities</h2>${list(capabilities.map((item) => `<strong>${escapeHtml(item.title)}</strong>: ${escapeHtml(item.tools.join(', '))}`))}`),
+  content: page('Resume', `<p><a href="/resume/Dhruv-Doshi-Resume.pdf">Open resume PDF</a></p>${experience.map((item) => `<article><h2>${escapeHtml(item.role)}</h2><p><strong>${escapeHtml(item.company)}</strong> · ${escapeHtml(item.period)} · ${escapeHtml(item.location)}</p><p>${escapeHtml(item.summary)}</p>${list(item.highlights.map(escapeHtml))}</article>`).join('')}<h2>Education</h2>${list(education.map((item) => `${escapeHtml(item.credential)}, ${escapeHtml(item.institution)} — ${escapeHtml(item.detail)}`))}<h2>Engineering scope</h2>${list(capabilities.map((item) => `<strong>${escapeHtml(item.title)}</strong>: ${escapeHtml(item.description)}`))}`),
 });
 
 const staticRoutes = [
-  ['/about', 'About', 'About Dhruv Doshi', `<p>${escapeHtml(profile.introduction)}</p><p>Dhruv is based in Toronto and works across platform engineering, distributed systems, observability, enterprise architecture, and applied AI.</p>`],
-  ['/research', 'Research', 'Published research', '<h2>Decentralized Cloud Storage Based on Blockchain Networking</h2><p>A Springer Nature conference paper by Dhruv Doshi and Satvik Khara on attribute-based access control, blockchain security events, and untrusted cloud storage.</p><p><a href="https://link.springer.com/chapter/10.1007/978-3-030-49795-8_54">Read the paper on Springer</a></p>'],
-  ['/contact', 'Contact', 'Contact Dhruv Doshi', `<p>${escapeHtml(profile.availability)}</p><p>Email: <a href="mailto:${profile.email}">${profile.email}</a></p>`],
-  ['/pictures', 'Photo archive', 'Photo archive', '<p>Travel, milestones, people, and places outside software engineering work.</p>'],
+  ['/about', 'About', 'About', `<p>${escapeHtml(profile.introduction)}</p><p>Dhruv is based in Toronto and works across platform engineering, distributed systems, observability, enterprise architecture, and applied AI.</p>`],
+  ['/research', 'Research', 'Research', '<h2>Decentralized Cloud Storage Based on Blockchain Networking</h2><p>A Springer Nature conference paper by Dhruv Doshi and Satvik Khara on attribute-based access control, blockchain security events, and untrusted cloud storage.</p><p><a href="https://link.springer.com/chapter/10.1007/978-3-030-49795-8_54">Read the paper on Springer</a></p>'],
+  ['/contact', 'Contact', 'Contact', `<p>${escapeHtml(profile.availability)}</p><p>Email: <a href="mailto:${profile.email}">${profile.email}</a></p>`],
+  ['/pictures', 'Pictures', 'Pictures', '<p>Travel, milestones, people, and places outside software engineering work.</p>'],
 ];
 
 for (const [pathname, title, heading, body] of staticRoutes) {

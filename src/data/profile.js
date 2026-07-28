@@ -77,24 +77,24 @@ const caseStudies = [
 
 const capabilities = [
   {
-    title: 'Platform architecture',
-    description: 'Distributed systems, service boundaries, reusable platform primitives, reference architectures, and pragmatic governance.',
-    tools: ['AWS', 'GCP', 'Kubernetes', 'Terraform', 'Docker', 'CI/CD'],
+    title: 'Systems and platform design',
+    description: 'Distributed services, APIs, event-driven workflows, platform boundaries, architecture standards, and technical roadmaps.',
+    tools: ['Distributed systems', 'REST', 'GraphQL', 'Kafka', 'PostgreSQL', 'Redis'],
   },
   {
-    title: 'Application engineering',
-    description: 'Hands-on product delivery from interface and API design through data contracts, security decisions, and production operations.',
-    tools: ['TypeScript', 'JavaScript', 'Python', 'Go', 'React', 'Node.js'],
+    title: 'Product and application delivery',
+    description: 'Hands-on delivery across interfaces, backend services, data contracts, testing, deployment, and production support.',
+    tools: ['TypeScript', 'Node.js', 'React', 'Python', 'Go', 'SQL'],
   },
   {
-    title: 'Data & observability',
-    description: 'High-volume ingestion, vendor-neutral telemetry, traceable operations, and standards that engineering teams can adopt.',
-    tools: ['OpenTelemetry', 'Kafka', 'ELK', 'Prometheus', 'Airflow', 'Snowflake'],
+    title: 'Infrastructure and reliability',
+    description: 'Cloud platforms, infrastructure as code, high-volume telemetry, service reliability, incident response, and operational standards.',
+    tools: ['AWS', 'GCP', 'Kubernetes', 'Terraform', 'OpenTelemetry', 'Prometheus'],
   },
   {
-    title: 'AI systems & governance',
-    description: 'Responsible AI controls, RAG and agentic system patterns, model-risk boundaries, and secure enterprise adoption.',
-    tools: ['LLMs', 'RAG', 'LangChain', 'Vector databases', 'AI governance', 'IAM'],
+    title: 'Security and technical governance',
+    description: 'Identity, zero-trust integration, design reviews, ADRs, auditability, responsible AI controls, and regulated delivery.',
+    tools: ['IAM', 'OAuth', 'Zero Trust', 'ADRs', 'Design reviews', 'AI governance'],
   },
 ];
 

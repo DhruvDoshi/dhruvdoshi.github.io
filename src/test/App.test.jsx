@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
 
 import React from 'react';
@@ -21,27 +21,27 @@ const pages = [
   },
   {
     route: '/about',
-    heading: 'About Dhruv Doshi',
+    heading: 'About',
     component: About,
   },
   {
     route: '/projects',
-    heading: 'Selected software engineering work',
+    heading: 'Work',
     component: Projects,
   },
   {
     route: '/contact',
-    heading: 'Contact Dhruv Doshi',
+    heading: 'Contact',
     component: Contact,
   },
   {
     route: '/resume',
-    heading: 'Professional experience',
+    heading: 'Resume',
     component: Resume,
   },
   {
     route: '/notes',
-    heading: 'Technical notes',
+    heading: 'Notes',
     component: Notes,
   },
 ];
@@ -80,6 +80,25 @@ test('Renders a consolidated technical note', () => {
   );
 
   expect(screen.getByTestId('heading')).toHaveTextContent('Deep Learning Explained - From Basics to Advanced');
-  expect(screen.getByText('From the archive')).toBeInTheDocument();
+  expect(screen.getByText('AI & machine learning')).toBeInTheDocument();
   expect(screen.getAllByRole('img').length).toBeGreaterThan(0);
+});
+
+test('Filters notes from the first search control', () => {
+  renderWithRouter(<Notes />, { route: '/notes' });
+  fireEvent.change(screen.getByRole('searchbox', { name: 'Search notes' }), {
+    target: { value: 'cloud' },
+  });
+
+  expect(screen.getByText('16 of 35 notes')).toBeInTheDocument();
+});
+
+test('Provides the authored resume PDF instead of a print action', () => {
+  renderWithRouter(<Resume />, { route: '/resume' });
+
+  expect(screen.getByRole('link', { name: 'Open PDF' })).toHaveAttribute(
+    'href',
+    '/resume/Dhruv-Doshi-Resume.pdf',
+  );
+  expect(screen.queryByText('Print or save as PDF')).not.toBeInTheDocument();
 });

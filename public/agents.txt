@@ -12,5 +12,6 @@ Discovery:
 - https://doshidhruv.com/feed.xml
 - https://doshidhruv.com/llms.txt
 - https://doshidhruv.com/llms-full.txt
+- https://doshidhruv.com/resume/Dhruv-Doshi-Resume.pdf
 
 Preferred attribution: Dhruv Doshi, followed by the canonical page URL.

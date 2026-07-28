@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 
 import Main from '../layouts/Main';
-import { featuredNotes, notes, topics } from '../data/notes';
+import { notes, topics } from '../data/notes';
 
 const formatDate = (date) => new Intl.DateTimeFormat('en-CA', {
   month: 'short',
@@ -42,52 +42,22 @@ const Notes = () => {
 
   return (
     <Main
-      title="Technical notes"
+      title="Notes"
       description="Dhruv Doshi's technical notes on cloud architecture, blockchain systems, artificial intelligence, and machine learning."
     >
-      <section className="notes-hero page-shell">
-        <div>
-          <p className="eyebrow">2019—2022 archive</p>
-          <h1 data-testid="heading">Technical notes</h1>
-        </div>
-        <div className="notes-hero__summary">
-          <strong>{notes.length} notes</strong>
-          <p>Articles about cloud computing, distributed ledgers, artificial intelligence, and machine learning. Search by title, subject, or description.</p>
-        </div>
-      </section>
-
-      <section className="featured-notes page-shell" aria-labelledby="featured-notes-title">
-        <div className="compact-section-heading">
-          <p className="eyebrow">Featured</p>
-          <h2 id="featured-notes-title">Selected notes</h2>
-        </div>
-        <div className="featured-note-grid">
-          {featuredNotes.map((note) => (
-            <Link className="featured-note" to={`/notes/${note.slug}`} key={note.slug}>
-              <span>{note.topic}</span>
-              <h3>{note.title}</h3>
-              <p>{note.excerpt}</p>
-              <small>{formatDate(note.date)} · {note.readTime} min</small>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      <section className="notes-index page-shell" aria-labelledby="all-notes-title">
+      <section className="notes-index page-shell" aria-labelledby="notes-title">
         <div className="notes-toolbar">
-          <div>
-            <h2 id="all-notes-title">All notes</h2>
-          </div>
+          <h1 id="notes-title" data-testid="heading">Notes</h1>
           <label className="notes-search">
-            <span className="sr-only">Search technical notes</span>
+            <span className="sr-only">Search notes</span>
             <input
               ref={searchRef}
               type="search"
               value={query}
-              placeholder="Search notes"
+              placeholder="Search 35 notes"
               onChange={(event) => updateParam('q', event.target.value)}
             />
-            <kbd>/</kbd>
+            <kbd aria-hidden="true">/</kbd>
           </label>
         </div>
 
@@ -105,17 +75,18 @@ const Notes = () => {
           ))}
         </div>
 
-        <p className="notes-result-count" aria-live="polite">{filteredNotes.length} {filteredNotes.length === 1 ? 'note' : 'notes'}</p>
+        <p className="notes-result-count" aria-live="polite">
+          {filteredNotes.length === notes.length ? `${notes.length} notes` : `${filteredNotes.length} of ${notes.length} notes`}
+        </p>
         <div className="note-list">
           {filteredNotes.map((note) => (
             <Link className="note-row" to={`/notes/${note.slug}`} key={note.slug}>
               <time dateTime={note.date}>{formatDate(note.date)}</time>
               <div>
-                <span>{note.topic}</span>
                 <h3>{note.title}</h3>
-                <p>{note.excerpt}</p>
+                <span>{note.topic}</span>
               </div>
-              <small>{note.readTime} min <span aria-hidden="true">↗</span></small>
+              <small>{note.readTime} min</small>
             </Link>
           ))}
           {filteredNotes.length === 0 && (

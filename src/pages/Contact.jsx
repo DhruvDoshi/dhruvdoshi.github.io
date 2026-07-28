@@ -9,18 +9,14 @@ const Contact = () => (
   >
     <section className="contact-page page-shell">
       <div>
-        <p className="eyebrow">Contact</p>
-        <h1 data-testid="heading">Contact Dhruv Doshi</h1>
+        <h1 data-testid="heading">Contact</h1>
         <p>{profile.availability}</p>
       </div>
       <div className="contact-card">
-        <span className="contact-card__label">Best place to start</span>
         <a className="contact-card__email" href={`mailto:${profile.email}`}>{profile.email}</a>
-        <p>Share the context, the constraints, and what a good outcome looks like. I’ll respond with a useful next step.</p>
-        <a href={`mailto:${profile.email}?subject=Engineering%20conversation`}>Write an email</a>
+        <p>Include the context, constraints, and intended outcome.</p>
       </div>
       <div className="contact-page__social">
-        <span className="section-label">Elsewhere</span>
         <ContactIcons />
       </div>
     </section>

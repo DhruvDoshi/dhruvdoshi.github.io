@@ -6,7 +6,8 @@
 
 - [Home](https://doshidhruv.com/): Profile and current scope
 - [Selected work](https://doshidhruv.com/projects): Platform engineering, observability, healthcare, and independent projects
-- [Experience](https://doshidhruv.com/resume): Professional experience, education, and technical capabilities
+- [Resume](https://doshidhruv.com/resume): Resume PDF, professional experience, education, and engineering scope
+- [Resume PDF](https://doshidhruv.com/resume/Dhruv-Doshi-Resume.pdf): Downloadable one-page resume
 - [Technical notes](https://doshidhruv.com/notes): Searchable writing archive
 - [Research](https://doshidhruv.com/research): Published work on decentralized cloud storage
 - [About](https://doshidhruv.com/about): Background and working principles

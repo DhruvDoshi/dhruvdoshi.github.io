@@ -5,9 +5,8 @@ const Research = () => (
     title="Research"
     description="Published research by Dhruv Doshi in decentralised cloud storage, access control, and blockchain systems."
   >
-    <header className="page-hero page-shell">
-      <p className="eyebrow">Published research</p>
-      <h1 data-testid="heading">Published research</h1>
+    <header className="utility-page-header page-shell">
+      <h1 data-testid="heading">Research</h1>
       <p>My early research explored how decentralised ledgers and cryptographic access controls could make untrusted cloud storage more accountable.</p>
     </header>
 
@@ -19,7 +18,7 @@ const Research = () => (
       </div>
       <div className="publication__body">
         <div>
-          <p className="eyebrow">Conference paper</p>
+          <p>Conference paper</p>
           <h2>Decentralized Cloud Storage Based on Blockchain Networking</h2>
           <p className="publication__authors">Dhruv Doshi · Satvik Khara</p>
         </div>

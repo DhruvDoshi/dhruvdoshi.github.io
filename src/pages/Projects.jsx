@@ -6,36 +6,33 @@ const Projects = () => (
     title="Selected work"
     description="Selected platform engineering, distributed systems, observability, and product work by Dhruv Doshi."
   >
-    <header className="page-hero page-shell">
-      <p className="eyebrow">Work</p>
-      <h1 data-testid="heading">Selected software engineering work</h1>
+    <header className="utility-page-header page-shell">
+      <h1 data-testid="heading">Work</h1>
       <p>Platform engineering, distributed systems, observability, product development, and applied research.</p>
     </header>
 
     <section className="case-study-stack page-shell">
-      {caseStudies.map((study, index) => (
+      {caseStudies.map((study) => (
         <article className="case-study" id={study.slug} key={study.slug}>
           <header className="case-study__header">
-            <span className="case-study__number">Case study {index + 1}</span>
             <div>
-              <p className="eyebrow">{study.eyebrow}</p>
+              <p>{study.eyebrow}</p>
               <h2>{study.title}</h2>
             </div>
             <span>{study.status}</span>
           </header>
           <div className="case-study__body">
             <div>
-              <h3>The system</h3>
               <p className="case-study__summary">{study.summary}</p>
             </div>
             <div>
-              <h3>What I owned</h3>
+              <h3>Responsibilities</h3>
               <ul className="detail-list">
                 {study.details.map((detail) => <li key={detail}>{detail}</li>)}
               </ul>
             </div>
             <aside className="outcome-block">
-              <span>Outcome</span>
+              <strong>Outcome</strong>
               <p>{study.outcome}</p>
             </aside>
           </div>
@@ -44,18 +41,17 @@ const Projects = () => (
       ))}
     </section>
 
-    <section className="section section--tinted">
+    <section className="section">
       <div className="page-shell">
         <div className="section-heading">
           <div>
-            <p className="eyebrow">Additional work</p>
             <h2>Research and independent projects</h2>
           </div>
         </div>
         <div className="project-grid">
           {selectedProjects.map((project) => (
             <article className="project-card" key={project.title}>
-              <p className="eyebrow">{project.type}</p>
+              <p className="project-card__type">{project.type}</p>
               <h3>{project.title}</h3>
               <p>{project.description}</p>
               {project.link && <a href={project.link} target="_blank" rel="noreferrer">{project.linkLabel} <span aria-hidden="true">↗</span></a>}

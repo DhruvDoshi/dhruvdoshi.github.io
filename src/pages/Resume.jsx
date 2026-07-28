@@ -8,24 +8,28 @@ import {
 
 const Resume = () => (
   <Main
-    title="Experience"
+    title="Resume"
     description="Experience, education, and technical capabilities of Dhruv Doshi, Staff Software Developer and Enterprise Architect."
   >
-    <header className="page-hero page-shell resume-hero">
-      <div>
-        <p className="eyebrow">Experience</p>
-        <h1 data-testid="heading">Professional experience</h1>
-        <p>{profile.summary}</p>
-      </div>
+    <header className="utility-page-header page-shell">
+      <h1 data-testid="heading">Resume</h1>
+      <p>{profile.role} · {profile.location}</p>
       <div className="resume-actions">
-        <button type="button" onClick={() => window.print()}>Print or save as PDF</button>
-        <a href={`mailto:${profile.email}`}>Request a tailored résumé</a>
+        <a href="/resume/Dhruv-Doshi-Resume.pdf" target="_blank" rel="noreferrer">Open PDF</a>
+        <a href="/resume/Dhruv-Doshi-Resume.pdf" download>Download PDF</a>
+        <a href={`mailto:${profile.email}`}>Email</a>
       </div>
     </header>
 
-    <section className="resume-layout page-shell">
+    <section className="resume-document page-shell" aria-label="Resume PDF">
+      <object data="/resume/Dhruv-Doshi-Resume.pdf" type="application/pdf">
+        <p>PDF preview is unavailable. <a href="/resume/Dhruv-Doshi-Resume.pdf">Open the resume PDF</a>.</p>
+      </object>
+    </section>
+
+    <section className="resume-layout page-shell" aria-labelledby="experience-title">
       <div className="experience-list">
-        <div className="section-label">Professional experience</div>
+        <h2 id="experience-title">Experience</h2>
         {experience.map((item) => (
           <article className="experience-item" key={`${item.company}-${item.period}`}>
             <div className="experience-item__rail">
@@ -48,16 +52,17 @@ const Resume = () => (
 
       <aside className="resume-sidebar">
         <section>
-          <div className="section-label">Core capabilities</div>
+          <h2>Engineering scope</h2>
           {capabilities.map((capability) => (
             <div className="resume-capability" key={capability.title}>
               <h3>{capability.title}</h3>
-              <p>{capability.tools.join(', ')}</p>
+              <p>{capability.description}</p>
+              <span>{capability.tools.join(' · ')}</span>
             </div>
           ))}
         </section>
         <section>
-          <div className="section-label">Education</div>
+          <h2>Education</h2>
           {education.map((item) => (
             <div className="education-item" key={item.institution}>
               <h3>{item.credential}</h3>
