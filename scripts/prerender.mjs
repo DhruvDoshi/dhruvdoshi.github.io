@@ -30,7 +30,7 @@ const files = (await readdir(notesDir)).filter((file) => file.endsWith('.md'));
 const notes = (await Promise.all(files.map(async (file) => {
   const raw = await readFile(path.join(notesDir, file), 'utf8');
   return normalizeNote(file.replace(/\.md$/, ''), raw);
-}))).sort((a, b) => b.date.localeCompare(a.date));
+}))).filter((note) => note.status === 'published').sort((a, b) => b.date.localeCompare(a.date));
 const searchEntries = [
   ...guides.map((guide) => ({ title: guide.title, description: guide.description, href: `/guides/${guide.slug}`, kind: 'Guide', date: guide.reviewed, topics: guide.topics })),
   ...caseStudies.map((project) => ({ title: project.title, description: project.summary, href: `/projects#${project.slug}`, kind: 'Project', topics: project.topics })),

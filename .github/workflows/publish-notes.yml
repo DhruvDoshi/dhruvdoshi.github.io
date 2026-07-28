@@ -1,0 +1,69 @@
+name: Publish scheduled notes
+
+on:
+  schedule:
+    - cron: '15 13 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  publish:
+    name: Publish due notes
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Publish notes whose date has arrived
+        run: npm run publish:notes
+      - name: Detect published notes
+        id: changes
+        run: |
+          if git diff --quiet -- src/content/notes; then
+            echo "published=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "published=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Validate site
+        if: steps.changes.outputs.published == 'true'
+        env:
+          VITE_GA_TRACKING_ID: ${{ vars.GA_TRACKING_ID }}
+        run: npm run check
+      - name: Commit published notes
+        if: steps.changes.outputs.published == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/content/notes
+          git commit -m "Publish scheduled technical notes"
+          git push
+      - name: Configure Pages
+        if: steps.changes.outputs.published == 'true'
+        uses: actions/configure-pages@v6
+      - name: Upload Pages artifact
+        if: steps.changes.outputs.published == 'true'
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist
+      - name: Deploy to GitHub Pages
+        if: steps.changes.outputs.published == 'true'
+        id: deployment
+        uses: actions/deploy-pages@v5

@@ -15,6 +15,7 @@ import Resume from '../pages/Resume';
 import Search from '../pages/Search';
 import Guide from '../pages/Guide';
 import Topic from '../pages/Topic';
+import { notes } from '../data/notes';
 
 const pages = [
   {
@@ -94,6 +95,11 @@ test('Filters notes from the first search control', () => {
   });
 
   expect(screen.getByText('16 of 35 notes')).toBeInTheDocument();
+});
+
+test('Keeps scheduled notes out of public content', () => {
+  expect(notes).toHaveLength(35);
+  expect(notes.some((note) => note.title === 'Design the platform as a product')).toBe(false);
 });
 
 test('Provides the authored resume PDF instead of a print action', () => {

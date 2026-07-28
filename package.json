@@ -20,6 +20,7 @@
     "dev": "vite",
     "lint": "eslint . --max-warnings=0",
     "preview": "vite preview",
+    "publish:notes": "node scripts/publish-scheduled-notes.mjs",
     "start": "vite",
     "test": "vitest run",
     "validate:site": "node scripts/validate-site.mjs"

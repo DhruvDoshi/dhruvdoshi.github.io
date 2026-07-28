@@ -19,6 +19,7 @@ const notes = Object.entries(noteModules)
     const note = normalizeNote(sourceSlug, raw);
     return { ...note, featured: featuredSlugs.has(note.slug) };
   })
+  .filter((note) => note.status === 'published')
   .sort((a, b) => b.date.localeCompare(a.date));
 
 const topics = [...new Set(notes.map((note) => note.topic))];
