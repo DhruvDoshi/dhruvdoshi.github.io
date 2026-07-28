@@ -9,20 +9,21 @@ const Pictures = () => (
     title="Pictures"
     description="See more of Dhruv Doshi's Pictures."
   >
-    <article className="post" id="projects">
-      {/* <header>
-        <div className="title">
-          <h2 data-testid="heading"><Link to="/pictures">Pictures</Link></h2>
-          <p>A selection of pictures that I&apos;m not too ashamed of</p>
-        </div>
-      </header> */}
-      {data.map((pictures) => (
-        <Cell
-          data={pictures}
-          key={pictures.title}
-        />
-      ))}
-    </article>
+    <>
+      <section className="page-hero page-shell">
+        <p className="eyebrow">Away from the keyboard</p>
+        <h1 data-testid="heading">A life beyond the <em>architecture diagrams.</em></h1>
+        <p>Travel, milestones, and the people and places that make the work meaningful.</p>
+      </section>
+      <section className="picture-grid page-shell" aria-label="Photo journal">
+        {data.map((pictures) => (
+          <Cell
+            data={pictures}
+            key={pictures.title}
+          />
+        ))}
+      </section>
+    </>
   </Main>
 );
 

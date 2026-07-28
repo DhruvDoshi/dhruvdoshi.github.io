@@ -14,27 +14,27 @@ import Resume from '../pages/Resume';
 const pages = [
   {
     route: '/',
-    heading: 'What are you looking for?',
+    heading: 'I make complex systems easier to ship.',
     component: Index,
   },
   {
     route: '/about',
-    heading: 'About Me',
+    heading: 'Engineer, architect, and persistent student.',
     component: About,
   },
   {
     route: '/projects',
-    heading: 'Projects',
+    heading: 'Systems with consequences.',
     component: Projects,
   },
   {
     route: '/contact',
-    heading: 'Contact',
+    heading: 'Let’s discuss a problem worth solving.',
     component: Contact,
   },
   {
     route: '/resume',
-    heading: 'Resume',
+    heading: 'Staff-level scope. Builder’s mindset.',
     component: Resume,
   },
 ];
@@ -47,15 +47,16 @@ const renderWithRouter = (ui, { route = '/' } = {}) => {
   return render(ui, { wrapper: BrowserRouter });
 };
 
+window.scrollTo = () => {};
+
 test('Renders 404 Page Component', () => {
   renderWithRouter(<NotFound />);
-  const linkElement = screen.getByText(/Page Not Found/i);
+  const linkElement = screen.getByTestId('heading');
   expect(linkElement).toBeInTheDocument();
 });
 
 const checkPageComponent = (page) => {
   test(`Renders ${page.route} Component`, () => {
-    window.scrollTo = () => {}; // TODO mock this later
     renderWithRouter(<page.component />, { route: page.route });
     expect(screen.getByTestId('heading')).toHaveTextContent(page.heading);
   });

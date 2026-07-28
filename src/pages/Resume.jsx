@@ -1,56 +1,73 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-
 import Main from '../layouts/Main';
-
-import Education from '../components/Resume/Education';
-import Experience from '../components/Resume/Experience';
-import Certification from '../components/Resume/Certification';
-import Skills from '../components/Resume/Skills';
-import Courses from '../components/Resume/Courses';
-import References from '../components/Resume/References';
-
-import courses from '../data/resume/courses';
-import degrees from '../data/resume/degrees';
-import certidegree from '../data/resume/certidegree';
-import positions from '../data/resume/positions';
-import { skills, categories } from '../data/resume/skills';
-
-const sections = [
-  'Education',
-  'Experience',
-  'Certification',
-  'Skills',
-  'Courses',
-  'References',
-];
+import {
+  capabilities,
+  education,
+  experience,
+  profile,
+} from '../data/profile';
 
 const Resume = () => (
   <Main
-    title="Resume"
-    description="Dhruv Doshi's Resume."
+    title="Experience"
+    description="Experience, education, and technical capabilities of Dhruv Doshi, Staff Software Developer and Enterprise Architect."
   >
-    <article className="post" id="resume">
-      <header>
-        <div className="title">
-          <h2 data-testid="heading"><Link to="resume">Resume</Link></h2>
-          <div className="link-container">
-            {sections.map((sec) => (
-              <h4 key={sec}>
-                <a href={`#${sec.toLowerCase()}`}>{sec}</a>
-              </h4>))}
-          </div>
+    <header className="page-hero page-shell resume-hero">
+      <div>
+        <p className="eyebrow">Experience</p>
+        <h1 data-testid="heading">Staff-level scope. <em>Builder’s mindset.</em></h1>
+        <p>{profile.summary}</p>
+      </div>
+      <div className="resume-actions">
+        <button className="button button--secondary" type="button" onClick={() => window.print()}>Print / save as PDF</button>
+        <a className="button button--text" href={`mailto:${profile.email}`}>Request a tailored résumé <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
 
-        </div>
-      </header>
-      <Education data={degrees} />
-      <Experience data={positions} />
-      <Certification data={certidegree} />
-      <Skills skills={skills} categories={categories} />
-      <Courses data={courses} />
-      <References />
+    <section className="resume-layout page-shell">
+      <div className="experience-list">
+        <div className="section-label">Professional experience</div>
+        {experience.map((item) => (
+          <article className="experience-item" key={`${item.company}-${item.period}`}>
+            <div className="experience-item__rail">
+              <span>{item.period}</span>
+              <span>{item.location}</span>
+            </div>
+            <div className="experience-item__content">
+              <h2>{item.role}</h2>
+              <h3>{item.company}</h3>
+              <p>{item.summary}</p>
+              {item.highlights.length > 0 && (
+                <ul className="detail-list">
+                  {item.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
+                </ul>
+              )}
+            </div>
+          </article>
+        ))}
+      </div>
 
-    </article>
+      <aside className="resume-sidebar">
+        <section>
+          <div className="section-label">Core capabilities</div>
+          {capabilities.map((capability) => (
+            <div className="resume-capability" key={capability.title}>
+              <h3>{capability.title}</h3>
+              <p>{capability.tools.join(', ')}</p>
+            </div>
+          ))}
+        </section>
+        <section>
+          <div className="section-label">Education</div>
+          {education.map((item) => (
+            <div className="education-item" key={item.institution}>
+              <h3>{item.credential}</h3>
+              <p>{item.institution}</p>
+              <span>{item.detail}</span>
+            </div>
+          ))}
+        </section>
+      </aside>
+    </section>
   </Main>
 );
 

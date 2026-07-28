@@ -30,11 +30,9 @@
     "dayjs": "^1.11.21",
     "prop-types": "^15.8.1",
     "react": "^19.2.8",
-    "react-burger-menu": "^3.1.0",
     "react-dom": "^19.2.8",
     "react-ga4": "^3.0.1",
     "react-helmet-async": "^3.0.0",
-    "react-markdown": "^10.1.0",
     "react-router-dom": "^7.18.1"
   },
   "devDependencies": {

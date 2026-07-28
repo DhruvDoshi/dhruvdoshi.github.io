@@ -1,33 +1,8 @@
 const routes = [
-  {
-    index: true,
-    label: 'Dhruv Doshi',
-    path: '/',
-  },
-  {
-    label: 'About',
-    path: '/about',
-  },
-  {
-    label: 'Resume',
-    path: '/resume',
-  },
-  {
-    label: 'Projects',
-    path: '/projects',
-  },
-  {
-    label: 'Research',
-    path: '/research',
-  },
-  {
-    label: 'Pictures',
-    path: '/pictures',
-  },
-  // {
-  //   label: 'Contact',
-  //   path: '/contact',
-  // },
+  { label: 'Work', path: '/projects' },
+  { label: 'Experience', path: '/resume' },
+  { label: 'Research', path: '/research' },
+  { label: 'About', path: '/about' },
 ];
 
 export default routes;

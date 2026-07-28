@@ -1,6 +1,5 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Main from './layouts/Main'; // fallback for lazy pages
 import './static/css/main.scss'; // All of our styles
 
 // Every route - we lazy load so that each page can be chunked
@@ -13,13 +12,11 @@ const NotFound = lazy(() => import('./pages/NotFound'));
 const Projects = lazy(() => import('./pages/Projects'));
 const Resume = lazy(() => import('./pages/Resume'));
 const Research = lazy(() => import('./pages/Research'));
-// const Blogs = lazy(() => import('./pages/Blogs'));
-// const Travel = lazy(() => import('./pages/Travel'));
 const Pictures = lazy(() => import('./pages/Pictures'));
 
 const App = () => (
   <BrowserRouter basename={import.meta.env.BASE_URL}>
-    <Suspense fallback={<Main />}>
+    <Suspense fallback={<div className="route-loader" role="status">Loading page…</div>}>
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/about" element={<About />} />
@@ -27,9 +24,7 @@ const App = () => (
         <Route path="/contact" element={<Contact />} />
         <Route path="/resume" element={<Resume />} />
         <Route path="/research" element={<Research />} />
-        {/* <Route path="/blogs/" component={Blogs} /> */}
         <Route path="/pictures" element={<Pictures />} />
-        {/* <Route path="/travel/" component={Travel} /> */}
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>
