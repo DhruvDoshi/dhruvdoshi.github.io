@@ -55,6 +55,13 @@ body {
   flex-direction: column;
 }
 
+// The build emits readable HTML before React starts. Keep that temporary
+// wrapper out of the layout so the prerender and hydrated page occupy the same
+// boxes during a cold load.
+.prerendered-page {
+  display: contents;
+}
+
 #main-content {
   flex: 1 0 auto;
 }

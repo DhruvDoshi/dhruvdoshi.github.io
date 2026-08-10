@@ -1,13 +1,12 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router';
+import Index from './pages/Index';
 import './static/css/main.scss'; // All of our styles
 
-// Every route - we lazy load so that each page can be chunked
-// NOTE that some of these chunks are very small. We should optimize
-// which pages are lazy loaded in the future.
+// The homepage is part of the critical path. Less frequently visited routes
+// remain lazy-loaded so their content and Markdown renderer stay off it.
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
-const Index = lazy(() => import('./pages/Index'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 const Note = lazy(() => import('./pages/Note'));
 const Notes = lazy(() => import('./pages/Notes'));

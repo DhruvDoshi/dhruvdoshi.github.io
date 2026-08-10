@@ -11,14 +11,19 @@ import remarkGfm from 'remark-gfm';
 import { normalizeNote, slugify } from '../src/data/note-utils.js';
 import { guides } from '../src/data/guides.js';
 import { homepageGuideSlugs, homepageNoteSlugs } from '../src/data/homepage.js';
-import { caseStudies, capabilities, education, experience, profile, selectedProjects } from '../src/data/profile.js';
+import { caseStudies, capabilities, education, experience, impact, profile, selectedProjects } from '../src/data/profile.js';
+import routes from '../src/data/routes.js';
 import topicDescriptions from '../src/data/topic-definitions.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const distDir = path.join(root, 'dist');
 const notesDir = path.join(root, 'src/content/notes');
 const origin = 'https://doshidhruv.com';
-const template = await readFile(path.join(distDir, 'index.html'), 'utf8');
+const template = (await readFile(path.join(distDir, 'index.html'), 'utf8'))
+  // Cloudflare Rocket Loader otherwise postpones the app entry. Vite moves the
+  // module script into <head> and drops custom attributes from the source tag,
+  // so add the documented opt-out to the final generated HTML.
+  .replace('<script type="module" crossorigin', '<script data-cfasync="false" type="module" crossorigin');
 
 const escapeHtml = (value) => String(value)
   .replaceAll('&', '&amp;')
@@ -26,6 +31,21 @@ const escapeHtml = (value) => String(value)
   .replaceAll('>', '&gt;')
   .replaceAll('"', '&quot;')
   .replaceAll("'", '&#039;');
+
+const formatMonthYear = (date) => new Intl.DateTimeFormat('en-CA', {
+  month: 'short',
+  year: 'numeric',
+  timeZone: 'UTC',
+}).format(new Date(`${date}T00:00:00Z`));
+
+const renderSiteChrome = (content, pathname) => {
+  const main = content.includes('id="main-content"')
+    ? content
+    : content.replace('<main ', '<main id="main-content" ');
+  const navigation = routes.map((route) => `<a href="${route.path}"${pathname === route.path ? ' class="is-active"' : ''}>${escapeHtml(route.label)}</a>`).join('');
+
+  return `<a class="skip-link" href="#main-content">Skip to content</a><header class="site-header"><div class="site-header__inner page-shell"><a class="wordmark" href="/" aria-label="Dhruv Doshi, home"><span class="wordmark__name">Dhruv Doshi</span></a><nav class="site-navigation" id="site-navigation" aria-label="Primary navigation">${navigation}<a class="site-search-link" href="/search" aria-label="Search the site">Search <kbd aria-hidden="true">/</kbd></a><button class="theme-toggle" type="button">dark mode</button></nav></div></header>${main}<footer class="site-footer"><div class="page-shell site-footer__grid"><p><strong>Dhruv Doshi</strong> · ${escapeHtml(profile.location)} · <a href="mailto:${profile.email}">${profile.email}</a></p><div class="site-footer__links"><a href="/resume">Resume</a><a href="/notes">Notes</a><a href="/guides">Guides</a><a href="/topics">Topics</a><a href="/search">Search</a><a href="/research">Research</a><a href="https://www.linkedin.com/in/dhruvdoshi25071999">LinkedIn</a><a href="https://github.com/DhruvDoshi">GitHub</a></div><div class="site-footer__machine"><a href="/sitemap.xml">Sitemap</a><a href="/feed.xml">RSS</a><a href="/llms.txt">LLMs</a></div><p class="site-footer__legal">© ${new Date().getFullYear()} Dhruv Doshi</p></div></footer>`;
+};
 
 const files = (await readdir(notesDir)).filter((file) => file.endsWith('.md'));
 const notes = (await Promise.all(files.map(async (file) => {
@@ -66,7 +86,7 @@ const renderDocument = ({ breadcrumbs, title, description, pathname, content, ty
     .replace(/<meta name="description" content="[^"]*"\s*\/?>/, `<meta name="description" content="${escapeHtml(description)}" />`)
     .replace(/<link rel="canonical" href="[^"]*"\s*\/?>/, `<link rel="canonical" href="${canonical}" />`)
     .replace('</head>', `<meta property="og:title" content="${escapeHtml(pageTitle)}" /><meta property="og:description" content="${escapeHtml(description)}" /><meta property="og:url" content="${canonical}" /><meta property="og:type" content="${type === 'Article' ? 'article' : 'website'}" /><script type="application/ld+json">${JSON.stringify(schema).replaceAll('<', '\\u003c')}</script></head>`)
-    .replace('<div id="root"></div>', `<div id="root"><div class="prerendered-page">${content}</div></div>`);
+    .replace('<div id="root"></div>', `<div id="root"><div class="prerendered-page">${renderSiteChrome(content, pathname)}</div></div>`);
 };
 
 const writeRoute = async (pathname, options) => {
@@ -78,10 +98,12 @@ const writeRoute = async (pathname, options) => {
 const list = (items) => `<ul>${items.map((item) => `<li>${item}</li>`).join('')}</ul>`;
 const page = (heading, body) => `<main class="page-shell document-intro"><h1>${heading}</h1>${body}</main>`;
 
+const homepageContent = `<main id="main-content"><header class="document-intro page-shell"><h1>Dhruv Doshi</h1><p class="document-intro__role">${escapeHtml(profile.role)}</p><p class="document-intro__summary">${escapeHtml(profile.introduction)}</p><p class="document-intro__links"><a href="/resume">Experience</a><a href="/projects">Selected work</a><a href="/notes">Technical notes</a><a href="/guides">Technical guides</a><a href="mailto:${profile.email}">Email</a></p></header><section class="document-section page-shell" aria-labelledby="scope-heading"><header class="section-index"><h2 id="scope-heading">Work at a glance</h2></header><dl class="impact-strip__grid">${impact.map((item) => `<div class="impact-item"><dt>${escapeHtml(item.value)}</dt><dd>${escapeHtml(item.label)}</dd></div>`).join('')}</dl></section><section class="document-section page-shell" id="selected-work"><header class="compact-section-heading"><h2>Selected work</h2><a href="/projects">All work</a></header><div class="case-list">${caseStudies.map((study) => `<article class="case-row"><div class="case-row__content"><p class="case-row__meta">${escapeHtml(study.eyebrow)} · ${escapeHtml(study.status)}</p><h3>${escapeHtml(study.title)}</h3><p>${escapeHtml(study.summary)}</p><p class="case-row__tools"><strong>Technologies:</strong> ${escapeHtml(study.technologies.join(', '))}</p></div><a class="case-row__link" href="/projects#${study.slug}" aria-label="Read more about ${escapeHtml(study.title)}">Details</a></article>`).join('')}</div></section><section class="document-section page-shell"><div class="home-notes__layout"><header class="home-notes__intro"><h2>Guides</h2><a href="/topics">Browse topics</a></header><div class="home-note-list">${homepageGuides.map((guide) => `<a href="/guides/${guide.slug}"><strong>${escapeHtml(guide.title)}</strong><span>${escapeHtml(guide.topics[0])}</span><time datetime="${guide.reviewed}">Reviewed ${formatMonthYear(guide.reviewed)}</time></a>`).join('')}</div></div></section><section class="document-section page-shell"><div class="home-notes__layout"><header class="home-notes__intro"><h2>Notes</h2><a href="/notes">All notes</a></header><div class="home-note-list">${homepageNotes.map((note) => `<a href="/notes/${note.slug}"><strong>${escapeHtml(note.title)}</strong><span>${escapeHtml(note.topic)}</span><time datetime="${note.date}">${formatMonthYear(note.date)} · ${note.readTime} min</time></a>`).join('')}</div></div></section><section class="document-section page-shell"><header class="compact-section-heading"><h2>Engineering scope</h2></header><div class="capability-grid">${capabilities.map((capability) => `<article class="capability-card"><h3>${escapeHtml(capability.title)}</h3><div><p>${escapeHtml(capability.description)}</p><p class="capability-card__tools">${escapeHtml(capability.tools.join(' · '))}</p></div></article>`).join('')}</div></section></main>`;
+
 await writeRoute('/', {
   type: 'ProfilePage',
   description: 'Dhruv Doshi is a Staff Software Developer and Enterprise Architect working across AI systems, distributed platforms, OpenTelemetry, observability, cloud infrastructure, and secure enterprise architecture.',
-  content: page('Dhruv Doshi', `<p><strong>${profile.role}</strong></p><p>${profile.introduction}</p><h2>Selected work</h2>${list(caseStudies.map((item) => `<a href="/projects#${item.slug}">${escapeHtml(item.title)}</a> — ${escapeHtml(item.summary)}`))}<h2>Technical guides</h2>${list(homepageGuides.map((guide) => `<a href="/guides/${guide.slug}">${escapeHtml(guide.title)}</a>`))}<h2>Featured technical notes</h2>${list(homepageNotes.map((note) => `<a href="/notes/${note.slug}">${escapeHtml(note.title)}</a>`))}`),
+  content: homepageContent,
 });
 
 await writeRoute('/notes', {

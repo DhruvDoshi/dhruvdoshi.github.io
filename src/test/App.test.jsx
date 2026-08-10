@@ -16,6 +16,7 @@ import Search from '../pages/Search';
 import Guide from '../pages/Guide';
 import Topic from '../pages/Topic';
 import { featuredNotes, notes } from '../data/notes';
+import { homepageNotes } from '../data/homepage';
 
 const pages = [
   {
@@ -118,7 +119,7 @@ test('Positions the homepage around hands-on AI systems work without changing th
 });
 
 test('Surfaces a balanced, deliberately ordered set of homepage notes', () => {
-  expect(featuredNotes.map((note) => note.slug)).toEqual([
+  expect(homepageNotes.map((note) => note.slug)).toEqual([
     'production-rag-requires-retrieval-evidence-and-control',
     'finos-calm-and-architecture-as-code',
     'design-safe-tool-use-for-ai-agents',
@@ -126,6 +127,9 @@ test('Surfaces a balanced, deliberately ordered set of homepage notes', () => {
     'opentelemetry-pipeline-architecture-for-vendor-neutral-observability',
     'measure-whether-an-internal-platform-creates-leverage',
   ]);
+  expect(homepageNotes).toEqual(featuredNotes.map(({
+    slug, title, topic, date, readTime,
+  }) => ({ slug, title, topic, date, readTime })));
 });
 
 test('Links architecture and observability notes to selected work', () => {

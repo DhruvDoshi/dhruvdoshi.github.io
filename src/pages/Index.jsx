@@ -7,11 +7,7 @@ import {
   impact,
   profile,
 } from '../data/profile';
-import { homepageGuideSlugs } from '../data/homepage';
-import { featuredNotes, notes } from '../data/notes';
-import { guides } from '../data/guides';
-
-const homepageGuides = homepageGuideSlugs.map((slug) => guides.find((guide) => guide.slug === slug)).filter(Boolean);
+import { homepageGuides, homepageNotes } from '../data/homepage';
 
 const formatNoteDate = (date) => new Intl.DateTimeFormat('en-CA', {
   month: 'short',
@@ -77,7 +73,7 @@ const Index = () => (
           {homepageGuides.map((guide) => (
             <Link to={`/guides/${guide.slug}`} key={guide.slug}>
               <strong>{guide.title}</strong>
-              <span>{guide.topics[0]}</span>
+              <span>{guide.topic}</span>
               <time dateTime={guide.reviewed}>Reviewed {formatNoteDate(guide.reviewed)}</time>
             </Link>
           ))}
@@ -89,10 +85,10 @@ const Index = () => (
       <div className="home-notes__layout">
         <header className="home-notes__intro">
           <h2>Notes</h2>
-          <Link to="/notes">All {notes.length} notes</Link>
+          <Link to="/notes">All notes</Link>
         </header>
         <div className="home-note-list">
-          {featuredNotes.map((note) => (
+          {homepageNotes.map((note) => (
             <Link to={`/notes/${note.slug}`} key={note.slug}>
               <strong>{note.title}</strong>
               <span>{note.topic}</span>
