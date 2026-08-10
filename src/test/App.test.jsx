@@ -15,7 +15,7 @@ import Resume from '../pages/Resume';
 import Search from '../pages/Search';
 import Guide from '../pages/Guide';
 import Topic from '../pages/Topic';
-import { notes } from '../data/notes';
+import { featuredNotes, notes } from '../data/notes';
 
 const pages = [
   {
@@ -102,6 +102,30 @@ test('Publishes the historical note series while keeping scheduled content priva
   expect(notes.some((note) => note.title === 'Design the platform as a product')).toBe(true);
   expect(notes.some((note) => note.title === 'Architecture decision records that remain useful')).toBe(true);
   expect(notes.every((note) => note.status === 'published')).toBe(true);
+});
+
+test('Positions the homepage around hands-on AI systems work without changing the official role', () => {
+  renderWithRouter(<Index />, { route: '/' });
+
+  expect(screen.getByText('Staff Software Developer & Enterprise Architect')).toBeInTheDocument();
+  expect(screen.getByText(/AI systems, distributed platforms, observability/)).toBeInTheDocument();
+  expect([...document.querySelectorAll('.case-row h3')].map((heading) => heading.textContent)).toEqual([
+    'Architecture Solution Blueprint platform',
+    'Vendor-neutral observability platform',
+    'ASB Assist',
+    'Healthcare verification platform',
+  ]);
+});
+
+test('Surfaces a balanced, deliberately ordered set of homepage notes', () => {
+  expect(featuredNotes.map((note) => note.slug)).toEqual([
+    'production-rag-requires-retrieval-evidence-and-control',
+    'finos-calm-and-architecture-as-code',
+    'design-safe-tool-use-for-ai-agents',
+    'evaluate-llm-systems-as-systems',
+    'opentelemetry-pipeline-architecture-for-vendor-neutral-observability',
+    'measure-whether-an-internal-platform-creates-leverage',
+  ]);
 });
 
 test('Links architecture and observability notes to selected work', () => {

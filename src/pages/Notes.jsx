@@ -30,7 +30,7 @@ const Notes = () => {
   return (
     <Main
       title="Notes"
-      description="Dhruv Doshi's technical notes on cloud architecture, blockchain systems, artificial intelligence, and machine learning."
+      description="Technical notes by Dhruv Doshi on AI systems, agent security, distributed systems, observability, platform engineering, cloud architecture, and the blockchain archive."
       pageType="CollectionPage"
     >
       <section className="notes-index page-shell" aria-labelledby="notes-title">

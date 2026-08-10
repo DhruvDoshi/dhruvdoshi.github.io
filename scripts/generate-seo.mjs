@@ -87,12 +87,12 @@ const noteDirectory = notes.map((note) => `- [${note.title}](${pageUrl(`/notes/$
 const guideDirectory = guides.map((guide) => `- [${guide.title}](${pageUrl(`/guides/${guide.slug}`)}): ${guide.description} Last reviewed ${guide.reviewed}.`).join('\n');
 const llms = `# Dhruv Doshi
 
-> Staff Software Developer and Enterprise Architect in Toronto, Canada. This site documents professional experience, selected engineering work, published research, and technical writing.
+> Staff Software Developer and Enterprise Architect in Toronto, Canada. Building the infrastructure, controls, and platforms that make AI and distributed systems dependable in production.
 
 ## Primary pages
 
 - [Home](${origin}/): Profile and current scope
-- [Selected work](${pageUrl('/projects')}): Platform engineering, observability, healthcare, and independent projects
+- [Selected work](${pageUrl('/projects')}): AI systems, architecture automation, distributed platforms, observability, healthcare, and independent projects
 - [Resume](${pageUrl('/resume')}): Resume PDF, professional experience, education, and engineering scope
 - [Resume PDF](${origin}/resume/Dhruv-Doshi-Resume.pdf): Downloadable one-page resume
 - [Technical notes](${pageUrl('/notes')}): Searchable writing archive

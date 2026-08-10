@@ -10,6 +10,7 @@ import remarkGfm from 'remark-gfm';
 
 import { normalizeNote, slugify } from '../src/data/note-utils.js';
 import { guides } from '../src/data/guides.js';
+import { homepageGuideSlugs, homepageNoteSlugs } from '../src/data/homepage.js';
 import { caseStudies, capabilities, education, experience, profile, selectedProjects } from '../src/data/profile.js';
 import topicDescriptions from '../src/data/topic-definitions.js';
 
@@ -45,10 +46,12 @@ const topics = Object.entries(topicDescriptions).map(([name, description]) => ({
   description,
   entries: searchEntries.filter((entry) => entry.topics.includes(name)),
 })).filter((topic) => topic.entries.length > 0).sort((a, b) => a.name.localeCompare(b.name));
+const homepageGuides = homepageGuideSlugs.map((slug) => guides.find((guide) => guide.slug === slug)).filter(Boolean);
+const homepageNotes = homepageNoteSlugs.map((slug) => notes.find((note) => note.slug === slug)).filter(Boolean);
 
 const renderDocument = ({ breadcrumbs, title, description, pathname, content, type = 'WebPage', datePublished, dateModified }) => {
   const canonical = `${origin}${pathname === '/' ? '/' : `${pathname.replace(/\/$/, '')}/`}`;
-  const pageTitle = title ? `${title} | Dhruv Doshi` : 'Dhruv Doshi | Staff Software Developer and Enterprise Architect';
+  const pageTitle = title ? `${title} | Dhruv Doshi` : 'Dhruv Doshi | Staff Software Developer, Enterprise Architect & AI Systems Engineer';
   const person = { '@type': 'Person', '@id': `${origin}/#person`, name: 'Dhruv Doshi', url: `${origin}/`, jobTitle: 'Staff Software Developer and Enterprise Architect', address: { '@type': 'PostalAddress', addressLocality: 'Toronto', addressCountry: 'CA' }, sameAs: ['https://github.com/DhruvDoshi', 'https://www.linkedin.com/in/dhruvdoshi25071999'] };
   const website = { '@type': 'WebSite', '@id': `${origin}/#website`, url: `${origin}/`, name: 'Dhruv Doshi', author: { '@id': person['@id'] }, potentialAction: { '@type': 'SearchAction', target: `${origin}/search/?q={search_term_string}`, 'query-input': 'required name=search_term_string' } };
   const pageEntity = type === 'Article'
@@ -77,13 +80,13 @@ const page = (heading, body) => `<main class="page-shell document-intro"><h1>${h
 
 await writeRoute('/', {
   type: 'ProfilePage',
-  description: 'Dhruv Doshi is a Staff Software Developer and Enterprise Architect in Toronto working across platform engineering, distributed systems, observability, and applied AI.',
-  content: page('Dhruv Doshi', `<p><strong>${profile.role}</strong></p><p>${profile.introduction}</p><h2>Selected work</h2>${list(caseStudies.map((item) => `<a href="/projects#${item.slug}">${escapeHtml(item.title)}</a> — ${escapeHtml(item.summary)}`))}<h2>Technical guides</h2>${list(guides.map((guide) => `<a href="/guides/${guide.slug}">${escapeHtml(guide.title)}</a>`))}<h2>Recent technical notes</h2>${list(notes.slice(0, 8).map((note) => `<a href="/notes/${note.slug}">${escapeHtml(note.title)}</a>`))}`),
+  description: 'Dhruv Doshi is a Staff Software Developer and Enterprise Architect working across AI systems, distributed platforms, OpenTelemetry, observability, cloud infrastructure, and secure enterprise architecture.',
+  content: page('Dhruv Doshi', `<p><strong>${profile.role}</strong></p><p>${profile.introduction}</p><h2>Selected work</h2>${list(caseStudies.map((item) => `<a href="/projects#${item.slug}">${escapeHtml(item.title)}</a> — ${escapeHtml(item.summary)}`))}<h2>Technical guides</h2>${list(homepageGuides.map((guide) => `<a href="/guides/${guide.slug}">${escapeHtml(guide.title)}</a>`))}<h2>Featured technical notes</h2>${list(homepageNotes.map((note) => `<a href="/notes/${note.slug}">${escapeHtml(note.title)}</a>`))}`),
 });
 
 await writeRoute('/notes', {
   title: 'Notes',
-  description: 'Technical notes by Dhruv Doshi on cloud architecture, blockchain systems, artificial intelligence, and machine learning.',
+  description: 'Technical notes by Dhruv Doshi on AI systems, agent security, distributed systems, observability, platform engineering, cloud architecture, and the blockchain archive.',
   type: 'CollectionPage',
   content: page('Notes', list(notes.map((note) => `<time datetime="${note.date}">${note.date}</time> · <a href="/notes/${note.slug}">${escapeHtml(note.title)}</a> · ${escapeHtml(note.topic)} · ${note.readTime} min`))),
 });
@@ -152,7 +155,7 @@ for (const topic of topics) {
 
 await writeRoute('/projects', {
   title: 'Selected work',
-  description: 'Selected platform engineering, distributed systems, observability, and product work by Dhruv Doshi.',
+  description: 'Selected AI systems, platform engineering, distributed systems, observability, and product work by Dhruv Doshi.',
   type: 'CollectionPage',
   content: page('Work', `${caseStudies.map((item) => `<article id="${item.slug}"><h2>${escapeHtml(item.title)}</h2><p>${escapeHtml(item.summary)}</p>${list(item.details.map(escapeHtml))}<p><strong>Technologies:</strong> ${escapeHtml(item.technologies.join(', '))}</p>${list(item.relatedNotes.map((slug) => { const note = notes.find((candidate) => candidate.slug === slug); return note ? `<a href="/notes/${note.slug}">${escapeHtml(note.title)}</a>` : ''; }).filter(Boolean))}</article>`).join('')}<h2>Research and independent projects</h2>${selectedProjects.map((item) => `<article id="${item.slug}"><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.description)}</p></article>`).join('')}`),
 });
@@ -165,12 +168,12 @@ await writeRoute('/resume', {
 });
 
 const staticRoutes = [
-  ['/about', 'About', 'About', `<p>${escapeHtml(profile.introduction)}</p><p>Dhruv is based in Toronto and works across platform engineering, distributed systems, observability, enterprise architecture, and applied AI.</p>`, 'ProfilePage'],
-  ['/research', 'Research', 'Research', '<h2>Decentralized Cloud Storage Based on Blockchain Networking</h2><p>A Springer Nature conference paper by Dhruv Doshi and Satvik Khara on attribute-based access control, blockchain security events, and untrusted cloud storage.</p><p><a href="https://link.springer.com/chapter/10.1007/978-3-030-49795-8_54">Read the paper on Springer</a></p>', 'CollectionPage'],
-  ['/contact', 'Contact', 'Contact', `<p>${escapeHtml(profile.availability)}</p><p>Email: <a href="mailto:${profile.email}">${profile.email}</a></p>`],
-  ['/pictures', 'Pictures', 'Pictures', '<p>Travel, milestones, people, and places outside software engineering work.</p>', 'CollectionPage'],
+  ['/about', 'About', 'About', `<p>${escapeHtml(profile.introduction)}</p><p>Dhruv is based in Toronto and works across AI systems, distributed platforms, observability, enterprise architecture, and security.</p>`, 'ProfilePage', 'About Dhruv Doshi, a hands-on Staff Software Developer and Enterprise Architect working across AI systems, distributed platforms, observability, and security.'],
+  ['/research', 'Research', 'Research', '<h2>Decentralized Cloud Storage Based on Blockchain Networking</h2><p>A Springer Nature conference paper by Dhruv Doshi and Satvik Khara on attribute-based access control, blockchain security events, and untrusted cloud storage.</p><p><a href="https://link.springer.com/chapter/10.1007/978-3-030-49795-8_54">Read the paper on Springer</a></p>', 'CollectionPage', 'Published research by Dhruv Doshi on privacy-preserving decentralized storage and blockchain-based access control.'],
+  ['/contact', 'Contact', 'Contact', `<p>${escapeHtml(profile.availability)}</p><p>${escapeHtml(profile.consulting)}</p><p>Email: <a href="mailto:${profile.email}">${profile.email}</a></p>`, 'WebPage', 'Contact Dhruv Doshi about Staff-level AI systems, distributed platforms, observability, or selective architecture consulting.'],
+  ['/pictures', 'Pictures', 'Pictures', '<p>Travel, milestones, people, and places outside software engineering work.</p>', 'CollectionPage', 'Pictures from Dhruv Doshi’s travels, milestones, and life outside engineering.'],
 ];
 
-for (const [pathname, title, heading, body, type] of staticRoutes) {
-  await writeRoute(pathname, { title, type, description: `${heading}. Dhruv Doshi, Staff Software Developer and Enterprise Architect.`, content: page(heading, body) });
+for (const [pathname, title, heading, body, type, description] of staticRoutes) {
+  await writeRoute(pathname, { title, type, description, content: page(heading, body) });
 }

@@ -7,7 +7,7 @@ const About = () => (
   <Main
     title="About"
     pageType="ProfilePage"
-    description="About Dhruv Doshi, a Toronto-based Staff Software Developer and Enterprise Architect."
+    description="About Dhruv Doshi, a hands-on Staff Software Developer and Enterprise Architect working across AI systems, distributed platforms, observability, and security."
   >
     <header className="about-hero page-shell">
       <div className="about-hero__portrait">
@@ -18,7 +18,7 @@ const About = () => (
       </div>
       <div className="about-hero__copy">
         <h1 data-testid="heading">About</h1>
-        <p className="about-hero__lede">Software developer and enterprise architect based in Toronto.</p>
+        <p className="about-hero__lede">Hands-on Staff engineer and enterprise architect based in Toronto.</p>
         <p>{profile.introduction}</p>
       </div>
     </header>
@@ -50,7 +50,7 @@ const About = () => (
         <h2>Background and interests</h2>
       </div>
       <div>
-        <p>That has taken me from blockchain research and a Springer publication to graduate cloud-computing labs, enterprise observability, architecture automation, and applied AI.</p>
+        <p>That has taken me from blockchain research and a Springer publication to graduate cloud-computing labs, enterprise observability, architecture automation, and secure AI systems.</p>
         <p>Outside work, you’ll usually find me writing, playing chess, collecting coins, planning travel, or trying to improve my swimming.</p>
         <div className="button-row">
           <Link to="/notes">Read technical notes</Link>

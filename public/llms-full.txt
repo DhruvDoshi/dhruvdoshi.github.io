@@ -1,11 +1,11 @@
 # Dhruv Doshi
 
-> Staff Software Developer and Enterprise Architect in Toronto, Canada. This site documents professional experience, selected engineering work, published research, and technical writing.
+> Staff Software Developer and Enterprise Architect in Toronto, Canada. Building the infrastructure, controls, and platforms that make AI and distributed systems dependable in production.
 
 ## Primary pages
 
 - [Home](https://doshidhruv.com/): Profile and current scope
-- [Selected work](https://doshidhruv.com/projects/): Platform engineering, observability, healthcare, and independent projects
+- [Selected work](https://doshidhruv.com/projects/): AI systems, architecture automation, distributed platforms, observability, healthcare, and independent projects
 - [Resume](https://doshidhruv.com/resume/): Resume PDF, professional experience, education, and engineering scope
 - [Resume PDF](https://doshidhruv.com/resume/Dhruv-Doshi-Resume.pdf): Downloadable one-page resume
 - [Technical notes](https://doshidhruv.com/notes/): Searchable writing archive

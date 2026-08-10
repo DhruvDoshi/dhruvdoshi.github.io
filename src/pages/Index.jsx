@@ -7,10 +7,11 @@ import {
   impact,
   profile,
 } from '../data/profile';
-import { notes } from '../data/notes';
+import { homepageGuideSlugs } from '../data/homepage';
+import { featuredNotes, notes } from '../data/notes';
 import { guides } from '../data/guides';
 
-const recentNotes = notes.slice(0, 6);
+const homepageGuides = homepageGuideSlugs.map((slug) => guides.find((guide) => guide.slug === slug)).filter(Boolean);
 
 const formatNoteDate = (date) => new Intl.DateTimeFormat('en-CA', {
   month: 'short',
@@ -22,7 +23,7 @@ const Index = () => (
   <Main pageType="ProfilePage">
     <header className="document-intro page-shell">
       <h1 data-testid="heading">Dhruv Doshi</h1>
-      <p className="document-intro__role">Staff Software Developer and Enterprise Architect</p>
+      <p className="document-intro__role">{profile.role}</p>
       <p className="document-intro__summary">{profile.introduction}</p>
       <p className="document-intro__links">
         <Link to="/resume">Experience</Link>
@@ -73,7 +74,7 @@ const Index = () => (
           <Link to="/topics">Browse topics</Link>
         </header>
         <div className="home-note-list">
-          {guides.map((guide) => (
+          {homepageGuides.map((guide) => (
             <Link to={`/guides/${guide.slug}`} key={guide.slug}>
               <strong>{guide.title}</strong>
               <span>{guide.topics[0]}</span>
@@ -91,7 +92,7 @@ const Index = () => (
           <Link to="/notes">All {notes.length} notes</Link>
         </header>
         <div className="home-note-list">
-          {recentNotes.map((note) => (
+          {featuredNotes.map((note) => (
             <Link to={`/notes/${note.slug}`} key={note.slug}>
               <strong>{note.title}</strong>
               <span>{note.topic}</span>

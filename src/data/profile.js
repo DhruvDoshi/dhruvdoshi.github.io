@@ -3,9 +3,10 @@ const profile = {
   role: 'Staff Software Developer & Enterprise Architect',
   location: 'Toronto, Canada',
   email: 'work@doshidhruv.com',
-  summary: 'I design and build enterprise platforms that make complex architecture easier to govern, operate, and ship.',
-  introduction: 'My work sits where platform engineering, distributed systems, observability, and enterprise architecture meet. I stay close to the code, lead across teams, and turn ambiguous technical problems into systems people can use.',
-  availability: 'Open to staff-level platform, architecture, and applied AI conversations.',
+  summary: 'I build the infrastructure, controls, and platforms that make AI and distributed systems dependable in production.',
+  introduction: 'My work sits where AI systems, distributed platforms, observability, and enterprise architecture meet. I stay close to the code and build the infrastructure, controls, and platforms that turn complex technical ideas into dependable production systems.',
+  availability: 'Open to Staff, Senior Staff, Principal, and MTS conversations across AI systems, distributed platforms, and observability.',
+  consulting: 'I also work selectively with teams on AI platform architecture, secure agent systems, and high-scale observability.',
 };
 
 const impact = [
@@ -33,10 +34,11 @@ const caseStudies = [
     eyebrow: 'Platform engineering · RBC',
     title: 'Architecture Solution Blueprint platform',
     status: 'Production',
-    summary: 'Led the zero-to-one delivery of an enterprise platform that turns architecture patterns into real-time component recommendations and compliant solution blueprints.',
+    summary: 'Designed and led the zero-to-one delivery of an enterprise platform that turns 1,000+ architecture patterns into real-time service recommendations, solution blueprints, and automated architecture workflows.',
     outcome: 'Made repeatable architecture decisions available as a product instead of a manual review bottleneck.',
     details: [
       'Designed the rules-based recommendation and auto-certification engine.',
+      'Built the core recommendation logic and most of the production implementation.',
       'Mapped security, integration, infrastructure, and deployment patterns to enterprise services.',
       'Built for air-gapped, security-constrained enterprise environments.',
       'Led five engineers through ADRs, reviews, delivery, and stakeholder alignment.',
@@ -57,7 +59,7 @@ const caseStudies = [
     eyebrow: 'Distributed systems · RBC',
     title: 'Vendor-neutral observability platform',
     status: 'Institution-wide',
-    summary: 'Architected a log repatriation and routing platform designed to ingest 150 TB per day across more than 10,000 systems without coupling teams to one observability vendor.',
+    summary: 'Architected a vendor-neutral OpenTelemetry and telemetry-routing platform designed for approximately 150 TB/day across 10,000+ systems, enabling governed collection and routing without coupling teams to a single observability vendor.',
     outcome: 'Changed vendor routing from a point-to-point integration project into a configuration decision.',
     details: [
       'Defined OpenTelemetry schemas for institutional logs and metrics.',
@@ -81,11 +83,33 @@ const caseStudies = [
     ],
   },
   {
+    slug: 'asb-assist',
+    eyebrow: 'AI systems · RBC',
+    title: 'ASB Assist',
+    status: 'In development',
+    summary: 'Building an LLM and RAG architecture assistant that turns natural-language requirements into architecture recommendations and diagrams using retrieval, tool integration, evaluation, grounding controls, guardrails, and auditable workflows.',
+    outcome: 'Exploring how probabilistic model behaviour can operate behind deterministic enterprise controls, authorization boundaries, and human review.',
+    details: [
+      'Designing permission-aware retrieval and citation validation for architecture knowledge.',
+      'Building offline evaluation for recommendation quality, grounding, and failure behaviour.',
+      'Applying guardrails and approval boundaries before generated output can influence architecture decisions.',
+      'Exploring MCP and agent-gateway patterns for controlled tool access.',
+    ],
+    technologies: ['Python', 'LLMs', 'RAG', 'Evaluation', 'Tool integration'],
+    topics: ['AI governance', 'Platform architecture'],
+    relatedNotes: [
+      'production-rag-requires-retrieval-evidence-and-control',
+      'design-safe-tool-use-for-ai-agents',
+      'evaluate-llm-systems-as-systems',
+      'define-the-boundaries-of-a-production-rag-system',
+    ],
+  },
+  {
     slug: 'health-platform',
     eyebrow: 'Zero-to-one product · HealthCard',
     title: 'Healthcare verification platform',
     status: 'Acquired startup',
-    summary: 'Joined as the first engineer and built the application stack across the React client, Node.js APIs, verification layer, and AWS EKS deployment.',
+    summary: 'Joined as the first engineer and built the platform across React and TypeScript, Node.js APIs, verification workflows, document-classification integration, and AWS EKS in a regulated healthcare environment.',
     outcome: 'Established the technical foundation that supported a team growing to more than 20 engineers before acquisition.',
     details: [
       'Designed HIPAA-conscious data handling and audit logging.',
@@ -101,24 +125,24 @@ const caseStudies = [
 
 const capabilities = [
   {
-    title: 'Systems and platform design',
-    description: 'Distributed services, APIs, event-driven workflows, platform boundaries, architecture standards, and technical roadmaps.',
-    tools: ['Distributed systems', 'REST', 'GraphQL', 'Kafka', 'PostgreSQL', 'Redis'],
+    title: 'AI systems and agent infrastructure',
+    description: 'Retrieval, tool use, evaluation, grounding, guardrails, and auditable workflows for dependable AI systems.',
+    tools: ['LLM systems', 'RAG', 'Agents', 'MCP', 'Evaluation', 'Python'],
   },
   {
-    title: 'Product and application delivery',
-    description: 'Hands-on delivery across interfaces, backend services, data contracts, testing, deployment, and production support.',
-    tools: ['TypeScript', 'Node.js', 'React', 'Python', 'Go', 'SQL'],
+    title: 'Distributed systems and platforms',
+    description: 'Hands-on design and delivery across scalable services, event-driven workflows, APIs, data contracts, and platform boundaries.',
+    tools: ['Kafka', 'TypeScript', 'Node.js', 'Go', 'PostgreSQL', 'Redis'],
   },
   {
-    title: 'Infrastructure and reliability',
-    description: 'Cloud platforms, infrastructure as code, high-volume telemetry, service reliability, incident response, and operational standards.',
-    tools: ['AWS', 'GCP', 'Kubernetes', 'Terraform', 'OpenTelemetry', 'Prometheus'],
+    title: 'Observability and infrastructure',
+    description: 'High-volume telemetry, cloud platforms, infrastructure as code, distributed tracing, reliability, and production diagnostics.',
+    tools: ['OpenTelemetry', 'Vector', 'Fluent Bit', 'Kubernetes', 'Terraform', 'AWS'],
   },
   {
-    title: 'Security and technical governance',
-    description: 'Identity, zero-trust integration, design reviews, ADRs, auditability, responsible AI controls, and regulated delivery.',
-    tools: ['IAM', 'OAuth', 'Zero Trust', 'ADRs', 'Design reviews', 'AI governance'],
+    title: 'Security and governance',
+    description: 'Identity, authorization, zero-trust integration, architecture decisions, responsible AI controls, and regulated delivery.',
+    tools: ['IAM', 'OAuth/OIDC', 'Zero Trust', 'Auditability', 'ADRs', 'AI governance'],
   },
 ];
 
@@ -214,20 +238,6 @@ const selectedProjects = [
     linkLabel: null,
     topics: ['Distributed systems'],
     relatedNotes: ['what-are-cryptocurrency-exchanges', 'what-are-transaction-fees-in-blockchain'],
-  },
-  {
-    slug: 'asb-assist',
-    title: 'ASB Assist',
-    type: 'In development · Applied AI',
-    description: 'A natural-language architecture workflow that uses LLM and RAG patterns to generate compliant diagrams and recommend enterprise services on top of the blueprint platform.',
-    link: null,
-    linkLabel: null,
-    topics: ['AI governance', 'Platform architecture'],
-    relatedNotes: [
-      'production-rag-requires-retrieval-evidence-and-control',
-      'the-fundamentals-of-machine-learning',
-      'deep-learning-explained-from-basics-to-advanced',
-    ],
   },
 ];
 

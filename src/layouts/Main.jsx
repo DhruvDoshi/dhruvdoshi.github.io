@@ -10,7 +10,7 @@ import ScrollToTop from '../components/Template/ScrollToTop';
 const Main = ({ breadcrumbs, children, description, modified, pageType, published, title, type }) => {
   const { pathname } = useLocation();
   const canonical = `https://doshidhruv.com${pathname === '/' ? '/' : `${pathname.replace(/\/$/, '')}/`}`;
-  const pageTitle = title ? `${title} | Dhruv Doshi` : 'Dhruv Doshi | Staff Software Developer and Enterprise Architect';
+  const pageTitle = title ? `${title} | Dhruv Doshi` : 'Dhruv Doshi | Staff Software Developer, Enterprise Architect & AI Systems Engineer';
   const person = {
     '@type': 'Person',
     '@id': 'https://doshidhruv.com/#person',
@@ -19,7 +19,7 @@ const Main = ({ breadcrumbs, children, description, modified, pageType, publishe
     jobTitle: 'Staff Software Developer and Enterprise Architect',
     address: { '@type': 'PostalAddress', addressLocality: 'Toronto', addressCountry: 'CA' },
     sameAs: ['https://github.com/DhruvDoshi', 'https://www.linkedin.com/in/dhruvdoshi25071999'],
-    knowsAbout: ['Platform engineering', 'Distributed systems', 'Observability', 'Enterprise architecture', 'Applied artificial intelligence'],
+    knowsAbout: ['AI systems', 'Agentic AI', 'Distributed systems', 'Platform engineering', 'OpenTelemetry', 'Observability', 'Enterprise architecture', 'AI security and governance'],
   };
   const website = {
     '@type': 'WebSite',
@@ -78,7 +78,7 @@ const Main = ({ breadcrumbs, children, description, modified, pageType, publishe
     <HelmetProvider>
       <Analytics />
       <ScrollToTop />
-      <Helmet htmlAttributes={{ lang: 'en-CA' }} titleTemplate="%s | Dhruv Doshi" defaultTitle="Dhruv Doshi | Staff Software Developer and Enterprise Architect" defer={false}>
+      <Helmet htmlAttributes={{ lang: 'en-CA' }} titleTemplate="%s | Dhruv Doshi" defaultTitle="Dhruv Doshi | Staff Software Developer, Enterprise Architect & AI Systems Engineer" defer={false}>
         {title && <title>{title}</title>}
         <meta name="description" content={description} />
         <meta name="author" content="Dhruv Doshi" />
@@ -121,7 +121,7 @@ Main.defaultProps = {
   breadcrumbs: null,
   children: null,
   title: null,
-  description: 'Dhruv Doshi is a staff software developer and enterprise architect building platforms, distributed systems, and observability infrastructure.',
+  description: 'Dhruv Doshi is a Staff Software Developer and Enterprise Architect working across AI systems, distributed platforms, OpenTelemetry, observability, cloud infrastructure, and secure enterprise architecture.',
   modified: null,
   pageType: 'WebPage',
   published: null,

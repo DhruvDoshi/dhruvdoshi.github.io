@@ -21,12 +21,12 @@ RelatedNotes.propTypes = {
 const Projects = () => (
   <Main
     title="Selected work"
-    description="Selected platform engineering, distributed systems, observability, and product work by Dhruv Doshi."
+    description="Selected AI systems, platform engineering, distributed systems, observability, and product work by Dhruv Doshi."
     pageType="CollectionPage"
   >
     <header className="utility-page-header page-shell">
       <h1 data-testid="heading">Work</h1>
-      <p>Platform engineering, distributed systems, observability, product development, and applied research.</p>
+      <p>Hands-on work across AI systems, distributed platforms, observability, architecture automation, and regulated product engineering.</p>
     </header>
 
     <section className="case-study-stack page-shell">

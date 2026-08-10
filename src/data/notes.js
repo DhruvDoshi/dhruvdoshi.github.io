@@ -1,5 +1,6 @@
 import { normalizeNote, slugify } from './note-utils';
 import { guides } from './guides';
+import { homepageNoteSlugs } from './homepage';
 import { caseStudies, selectedProjects } from './profile';
 
 const noteModules = import.meta.glob('../content/notes/*.md', {
@@ -8,23 +9,17 @@ const noteModules = import.meta.glob('../content/notes/*.md', {
   query: '?raw',
 });
 
-const featuredSlugs = new Set([
-  'deep-learning-explained-from-basics-to-advanced',
-  'the-fundamentals-of-machine-learning',
-  'what-is-cloud-computing',
-]);
-
 const notes = Object.entries(noteModules)
   .map(([path, raw]) => {
     const sourceSlug = path.split('/').pop().replace(/\.md$/, '');
     const note = normalizeNote(sourceSlug, raw);
-    return { ...note, featured: featuredSlugs.has(note.slug) };
+    return { ...note, featured: homepageNoteSlugs.includes(note.slug) };
   })
   .filter((note) => note.status === 'published')
   .sort((a, b) => b.date.localeCompare(a.date));
 
 const topics = [...new Set(notes.map((note) => note.topic))];
-const featuredNotes = notes.filter((note) => note.featured);
+const featuredNotes = homepageNoteSlugs.map((slug) => notes.find((note) => note.slug === slug)).filter(Boolean);
 const findNote = (slug) => notes.find((note) => note.slug === slug || note.aliases.includes(slug));
 const relatedNotes = (note, limit = 4) => notes
   .filter((candidate) => candidate.slug !== note.slug)
