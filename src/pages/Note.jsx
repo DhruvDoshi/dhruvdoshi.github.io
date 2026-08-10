@@ -52,6 +52,9 @@ const Note = () => {
       type="article"
       published={note.date}
       modified={note.reviewed || note.date}
+      articleSection={note.topic}
+      keywords={[note.topic, ...note.categories]}
+      wordCount={note.wordCount}
       breadcrumbs={[
         { name: 'Notes', path: '/notes' },
         { name: note.title, path: `/notes/${note.slug}` },

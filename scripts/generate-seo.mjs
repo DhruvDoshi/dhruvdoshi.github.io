@@ -4,7 +4,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { guides } from '../src/data/guides.js';
-import { normalizeNote, slugify } from '../src/data/note-utils.js';
+import { normalizeNote, slugify, stripMarkup } from '../src/data/note-utils.js';
 import topicDescriptions from '../src/data/topic-definitions.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -58,9 +58,10 @@ ${pages.map(([pathname, lastmod, changefreq, priority]) => `  <url>
 `;
 
 const feedItems = [
-  ...guides.map((guide) => ({ title: guide.title, pathname: `/guides/${guide.slug}`, date: guide.published, category: guide.topics.join(', '), description: guide.description })),
-  ...notes.map((note) => ({ title: note.title, pathname: `/notes/${note.slug}`, date: note.date, category: note.topic, description: note.excerpt })),
+  ...guides.map((guide) => ({ title: guide.title, pathname: `/guides/${guide.slug}`, date: guide.published, modified: guide.reviewed, category: guide.topics.join(', '), description: guide.description, body: guide.body, tags: guide.topics, type: 'guide' })),
+  ...notes.map((note) => ({ title: note.title, pathname: `/notes/${note.slug}`, date: note.date, modified: note.reviewed || note.date, category: note.topic, description: note.excerpt, body: note.body, tags: [note.topic, ...note.categories], type: 'note' })),
 ].sort((a, b) => b.date.localeCompare(a.date));
+const feedLastModified = feedItems.reduce((latest, item) => (item.modified > latest ? item.modified : latest), '1970-01-01');
 
 const feed = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
@@ -69,7 +70,7 @@ const feed = `<?xml version="1.0" encoding="UTF-8"?>
     <link>${pageUrl('/notes')}</link>
     <description>Technical guides and notes on platform architecture, observability, cloud systems, artificial intelligence, machine learning, and distributed systems.</description>
     <language>en-ca</language>
-    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+    <lastBuildDate>${new Date(`${feedLastModified}T12:00:00Z`).toUTCString()}</lastBuildDate>
     <atom:link href="${origin}/feed.xml" rel="self" type="application/rss+xml" />
 ${feedItems.map((item) => `    <item>
       <title>${xml(item.title)}</title>
@@ -83,8 +84,49 @@ ${feedItems.map((item) => `    <item>
 </rss>
 `;
 
-const noteDirectory = notes.map((note) => `- [${note.title}](${pageUrl(`/notes/${note.slug}`)}): ${note.excerpt}`).join('\n');
-const guideDirectory = guides.map((guide) => `- [${guide.title}](${pageUrl(`/guides/${guide.slug}`)}): ${guide.description} Last reviewed ${guide.reviewed}.`).join('\n');
+const jsonFeed = `${JSON.stringify({
+  version: 'https://jsonfeed.org/version/1.1',
+  title: 'Dhruv Doshi — Technical Guides and Notes',
+  home_page_url: pageUrl('/notes'),
+  feed_url: `${origin}/feed.json`,
+  description: 'Technical guides and notes on AI systems, platform architecture, observability, cloud systems, staff engineering, and distributed systems.',
+  language: 'en-CA',
+  authors: [{ name: 'Dhruv Doshi', url: origin }],
+  items: feedItems.map((item) => ({
+    id: pageUrl(item.pathname),
+    url: pageUrl(item.pathname),
+    title: item.title,
+    summary: item.description,
+    content_text: stripMarkup(item.body),
+    date_published: `${item.date}T12:00:00Z`,
+    date_modified: `${item.modified}T12:00:00Z`,
+    tags: [...new Set(item.tags)],
+    authors: [{ name: 'Dhruv Doshi', url: origin }],
+  })),
+}, null, 2)}\n`;
+
+const contentEntries = feedItems.map((item) => ({
+  type: item.type,
+  title: item.title,
+  canonical: pageUrl(item.pathname),
+  datePublished: item.date,
+  dateModified: item.modified,
+  topics: [...new Set(item.tags)],
+  description: item.description,
+  contentMarkdown: item.body,
+  author: 'Dhruv Doshi',
+  language: 'en-CA',
+}));
+const contentIndex = `${JSON.stringify({
+  name: 'Dhruv Doshi technical content corpus',
+  canonical: origin,
+  generatedAt: generatedDate,
+  license: 'Copyright remains with the author. Indexing, retrieval, summarization, reproduction, and citation with attribution to the canonical URL are permitted.',
+  attribution: 'Dhruv Doshi, with a link to the canonical page URL.',
+  entries: contentEntries,
+}, null, 2)}\n`;
+const contentNdjson = `${contentEntries.map((entry) => JSON.stringify(entry)).join('\n')}\n`;
+
 const llms = `# Dhruv Doshi
 
 > Staff Software Developer and Enterprise Architect in Toronto, Canada. Building the infrastructure, controls, and platforms that make AI and distributed systems dependable in production.
@@ -107,18 +149,43 @@ const llms = `# Dhruv Doshi
 
 - [Sitemap](${origin}/sitemap.xml)
 - [RSS feed](${origin}/feed.xml)
+- [JSON feed](${origin}/feed.json)
+- [Full content index](${origin}/content-index.json)
+- [Streaming content index](${origin}/content-index.ndjson)
 - [Extended site context](${origin}/llms-full.txt)
 - [Agent guidance](${origin}/agents.txt)
 `;
 
 const llmsFull = `${llms}
-## Maintained technical guides
+## Full maintained technical guides
 
-${guideDirectory}
+${guides.map((guide) => `### ${guide.title}
 
-## Technical note directory
+Canonical: ${pageUrl(`/guides/${guide.slug}`)}
 
-${noteDirectory}
+Published: ${guide.published}
+
+Last reviewed: ${guide.reviewed}
+
+Topics: ${guide.topics.join(', ')}
+
+${guide.description}
+
+${guide.body}`).join('\n\n---\n\n')}
+
+## Full technical note corpus
+
+${notes.map((note) => `### ${note.title}
+
+Canonical: ${pageUrl(`/notes/${note.slug}`)}
+
+Published: ${note.date}
+
+Last reviewed: ${note.reviewed || note.date}
+
+Topic: ${note.topic}
+
+${note.body}`).join('\n\n---\n\n')}
 
 ## Citation
 
@@ -137,8 +204,11 @@ Public pages and technical notes may be indexed, summarized, quoted in short exc
 Discovery:
 - ${origin}/sitemap.xml
 - ${origin}/feed.xml
+- ${origin}/feed.json
 - ${origin}/llms.txt
 - ${origin}/llms-full.txt
+- ${origin}/content-index.json
+- ${origin}/content-index.ndjson
 - ${origin}/resume/Dhruv-Doshi-Resume.pdf
 
 Preferred attribution: Dhruv Doshi, followed by the canonical page URL.
@@ -157,44 +227,29 @@ const agentSkillsIndex = `${JSON.stringify({
   }],
 }, null, 2)}\n`;
 
-const robots = `# All search engines, AI crawlers, and user-directed agents may crawl this site.
-User-agent: *
-Content-Signal: ai-train=yes, search=yes, ai-input=yes
-Allow: /
+const contentSignal = 'search=yes, ai-input=yes, ai-train=yes, use=full';
+const explicitlyAllowedBots = [
+  'OAI-SearchBot',
+  'ChatGPT-User',
+  'GPTBot',
+  'Googlebot',
+  'Google-Extended',
+  'ClaudeBot',
+  'Claude-SearchBot',
+  'Claude-User',
+  'Bingbot',
+  'PerplexityBot',
+  'Perplexity-User',
+  'Applebot-Extended',
+  'CCBot',
+];
+const robotGroup = (agent) => `User-agent: ${agent}\nContent-Signal: ${contentSignal}\nAllow: /`;
+const robots = `# All search engines, AI crawlers, and user-directed agents may crawl, index, retrieve, summarize, and cite this site.
+# Full reuse still requires attribution to the canonical page URL.
+${robotGroup('*')}
 
-# Explicit AI discovery and citation crawlers.
-User-agent: OAI-SearchBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: GPTBot
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Claude-SearchBot
-Allow: /
-
-User-agent: Claude-User
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Perplexity-User
-Allow: /
-
-User-agent: Applebot-Extended
-Allow: /
-
-User-agent: CCBot
-Allow: /
+# Explicit AI discovery, grounding, training, and user-directed crawlers.
+${explicitlyAllowedBots.map(robotGroup).join('\n\n')}
 
 Sitemap: ${origin}/sitemap.xml
 `;
@@ -229,6 +284,9 @@ await mkdir(publicDir, { recursive: true });
 await Promise.all([
   writeFile(path.join(publicDir, 'sitemap.xml'), sitemap),
   writeFile(path.join(publicDir, 'feed.xml'), feed),
+  writeFile(path.join(publicDir, 'feed.json'), jsonFeed),
+  writeFile(path.join(publicDir, 'content-index.json'), contentIndex),
+  writeFile(path.join(publicDir, 'content-index.ndjson'), contentNdjson),
   writeFile(path.join(publicDir, 'llms.txt'), llms),
   writeFile(path.join(publicDir, 'llms-full.txt'), llmsFull),
   writeFile(path.join(publicDir, 'agents.txt'), agents),

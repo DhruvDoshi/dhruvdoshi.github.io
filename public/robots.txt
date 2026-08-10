@@ -1,40 +1,60 @@
-# All search engines, AI crawlers, and user-directed agents may crawl this site.
+# All search engines, AI crawlers, and user-directed agents may crawl, index, retrieve, summarize, and cite this site.
+# Full reuse still requires attribution to the canonical page URL.
 User-agent: *
-Content-Signal: ai-train=yes, search=yes, ai-input=yes
+Content-Signal: search=yes, ai-input=yes, ai-train=yes, use=full
 Allow: /
 
-# Explicit AI discovery and citation crawlers.
+# Explicit AI discovery, grounding, training, and user-directed crawlers.
 User-agent: OAI-SearchBot
+Content-Signal: search=yes, ai-input=yes, ai-train=yes, use=full
 Allow: /
 
 User-agent: ChatGPT-User
+Content-Signal: search=yes, ai-input=yes, ai-train=yes, use=full
 Allow: /
 
 User-agent: GPTBot
+Content-Signal: search=yes, ai-input=yes, ai-train=yes, use=full
+Allow: /
+
+User-agent: Googlebot
+Content-Signal: search=yes, ai-input=yes, ai-train=yes, use=full
 Allow: /
 
 User-agent: Google-Extended
+Content-Signal: search=yes, ai-input=yes, ai-train=yes, use=full
 Allow: /
 
 User-agent: ClaudeBot
+Content-Signal: search=yes, ai-input=yes, ai-train=yes, use=full
 Allow: /
 
 User-agent: Claude-SearchBot
+Content-Signal: search=yes, ai-input=yes, ai-train=yes, use=full
 Allow: /
 
 User-agent: Claude-User
+Content-Signal: search=yes, ai-input=yes, ai-train=yes, use=full
+Allow: /
+
+User-agent: Bingbot
+Content-Signal: search=yes, ai-input=yes, ai-train=yes, use=full
 Allow: /
 
 User-agent: PerplexityBot
+Content-Signal: search=yes, ai-input=yes, ai-train=yes, use=full
 Allow: /
 
 User-agent: Perplexity-User
+Content-Signal: search=yes, ai-input=yes, ai-train=yes, use=full
 Allow: /
 
 User-agent: Applebot-Extended
+Content-Signal: search=yes, ai-input=yes, ai-train=yes, use=full
 Allow: /
 
 User-agent: CCBot
+Content-Signal: search=yes, ai-input=yes, ai-train=yes, use=full
 Allow: /
 
 Sitemap: https://doshidhruv.com/sitemap.xml

@@ -39,3 +39,52 @@
     Access-Control-Allow-Origin = "*"
     Cache-Control = "public, max-age=3600"
     Content-Type = "text/markdown; charset=utf-8"
+
+[[headers]]
+  for = "/.well-known/markdown/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "public, max-age=3600"
+    Content-Type = "text/markdown; charset=utf-8"
+
+[[headers]]
+  for = "/llms.txt"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "public, max-age=3600"
+    Content-Type = "text/markdown; charset=utf-8"
+
+[[headers]]
+  for = "/llms-full.txt"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "public, max-age=3600"
+    Content-Type = "text/markdown; charset=utf-8"
+
+[[headers]]
+  for = "/agents.txt"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "public, max-age=3600"
+    Content-Type = "text/markdown; charset=utf-8"
+
+[[headers]]
+  for = "/content-index.json"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "public, max-age=3600"
+    Content-Type = "application/json; charset=utf-8"
+
+[[headers]]
+  for = "/content-index.ndjson"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "public, max-age=3600"
+    Content-Type = "application/x-ndjson; charset=utf-8"
+
+[[headers]]
+  for = "/feed.json"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "public, max-age=3600"
+    Content-Type = "application/feed+json; charset=utf-8"

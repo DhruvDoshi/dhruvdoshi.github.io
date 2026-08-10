@@ -7,10 +7,11 @@ import Footer from '../components/Template/Footer';
 import Navigation from '../components/Template/Navigation';
 import ScrollToTop from '../components/Template/ScrollToTop';
 
-const Main = ({ breadcrumbs, children, description, modified, pageType, published, title, type }) => {
+const Main = ({ articleSection, breadcrumbs, children, description, items = [], keywords = [], modified, pageType, published, title, type, wordCount }) => {
   const { pathname } = useLocation();
   const canonical = `https://doshidhruv.com${pathname === '/' ? '/' : `${pathname.replace(/\/$/, '')}/`}`;
   const pageTitle = title ? `${title} | Dhruv Doshi` : 'Dhruv Doshi | Staff Software Developer, Enterprise Architect & AI Systems Engineer';
+  const markdownPath = `/.well-known/markdown${pathname === '/' ? '' : `/${pathname.replace(/^\/+|\/+$/g, '')}`}/index.md`;
   const person = {
     '@type': 'Person',
     '@id': 'https://doshidhruv.com/#person',
@@ -18,7 +19,7 @@ const Main = ({ breadcrumbs, children, description, modified, pageType, publishe
     url: 'https://doshidhruv.com/',
     jobTitle: 'Staff Software Developer and Enterprise Architect',
     address: { '@type': 'PostalAddress', addressLocality: 'Toronto', addressCountry: 'CA' },
-    sameAs: ['https://github.com/DhruvDoshi', 'https://www.linkedin.com/in/dhruvdoshi25071999'],
+    sameAs: ['https://github.com/DhruvDoshi', 'https://www.linkedin.com/in/dhruvdoshi25071999', 'https://scholar.google.com/citations?user=Ri3ZDcIAAAAJ&hl=en'],
     knowsAbout: ['AI systems', 'Agentic AI', 'Distributed systems', 'Platform engineering', 'OpenTelemetry', 'Observability', 'Enterprise architecture', 'AI security and governance'],
   };
   const website = {
@@ -45,6 +46,13 @@ const Main = ({ breadcrumbs, children, description, modified, pageType, publishe
       author: { '@id': person['@id'] },
       publisher: { '@id': person['@id'] },
       isPartOf: { '@id': website['@id'] },
+      url: canonical,
+      inLanguage: 'en-CA',
+      isAccessibleForFree: true,
+      articleSection,
+      keywords,
+      wordCount,
+      about: keywords.map((name) => ({ '@type': 'Thing', name })),
     }
     : {
       '@type': pageType,
@@ -55,6 +63,18 @@ const Main = ({ breadcrumbs, children, description, modified, pageType, publishe
       isPartOf: { '@id': website['@id'] },
       author: { '@id': person['@id'] },
       ...(pageType === 'ProfilePage' ? { mainEntity: { '@id': person['@id'] } } : {}),
+      ...(pageType === 'CollectionPage' && items.length ? {
+        mainEntity: {
+          '@type': 'ItemList',
+          numberOfItems: items.length,
+          itemListElement: items.map((item, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            name: item.name,
+            url: `https://doshidhruv.com${item.path.replace(/\/$/, '')}/`,
+          })),
+        },
+      } : {}),
     };
   const breadcrumbItems = pathname === '/'
     ? []
@@ -85,6 +105,9 @@ const Main = ({ breadcrumbs, children, description, modified, pageType, publishe
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <link rel="canonical" href={canonical} />
         <link rel="alternate" type="application/rss+xml" title="Dhruv Doshi — Technical Notes" href="https://doshidhruv.com/feed.xml" />
+        <link rel="alternate" type="application/feed+json" title="Dhruv Doshi — Technical Guides and Notes" href="https://doshidhruv.com/feed.json" />
+        <link rel="alternate" type="text/markdown" title={`${pageTitle} — Markdown`} href={`https://doshidhruv.com${markdownPath}`} />
+        <link rel="describedby" type="application/json" href="https://doshidhruv.com/content-index.json" />
         <meta property="og:site_name" content="Dhruv Doshi" />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={description} />
@@ -107,25 +130,33 @@ const Main = ({ breadcrumbs, children, description, modified, pageType, publishe
 };
 
 Main.propTypes = {
+  articleSection: PropTypes.string,
   breadcrumbs: PropTypes.arrayOf(PropTypes.shape({ name: PropTypes.string, path: PropTypes.string })),
   children: PropTypes.node,
+  items: PropTypes.arrayOf(PropTypes.shape({ name: PropTypes.string, path: PropTypes.string })),
+  keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string,
   description: PropTypes.string,
   modified: PropTypes.string,
   pageType: PropTypes.oneOf(['WebPage', 'ProfilePage', 'CollectionPage']),
   published: PropTypes.string,
   type: PropTypes.string,
+  wordCount: PropTypes.number,
 };
 
 Main.defaultProps = {
+  articleSection: null,
   breadcrumbs: null,
   children: null,
+  items: [],
+  keywords: [],
   title: null,
   description: 'Dhruv Doshi is a Staff Software Developer and Enterprise Architect working across AI systems, distributed platforms, OpenTelemetry, observability, cloud infrastructure, and secure enterprise architecture.',
   modified: null,
   pageType: 'WebPage',
   published: null,
   type: 'website',
+  wordCount: null,
 };
 
 export default Main;

@@ -107,6 +107,7 @@ const normalizeNote = (sourceSlug, raw) => {
     status,
     title,
     topic: attributes.topic || getTopic(categories),
+    wordCount: words,
     year: date.slice(0, 4),
   };
 };

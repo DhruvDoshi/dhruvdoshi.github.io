@@ -33,6 +33,10 @@ const errors = [];
 for (const htmlFile of htmlFiles) {
   const html = await readFile(htmlFile, 'utf8');
   const route = routeForFile(htmlFile);
+  const markdownFile = path.join(distDir, '.well-known/markdown', path.relative(distDir, path.dirname(htmlFile)), 'index.md');
+  if (!await exists(markdownFile)) errors.push(`${route}: missing generated Markdown representation`);
+  if (!html.includes('rel="alternate" type="text/markdown"')) errors.push(`${route}: missing Markdown alternate link`);
+  if (!html.includes('rel="describedby" type="application/json" href="https://doshidhruv.com/content-index.json"')) errors.push(`${route}: missing content-index discovery link`);
   const attributes = [...html.matchAll(/\b(?:href|src)="([^"]+)"/g)].map((match) => match[1]);
 
   for (const value of attributes) {
@@ -83,6 +87,37 @@ for (const url of feedUrls) {
 }
 if (feedUrls.length === 0) errors.push('feed.xml: no entries found');
 
+const jsonFeed = JSON.parse(await readFile(path.join(distDir, 'feed.json'), 'utf8'));
+if (jsonFeed.version !== 'https://jsonfeed.org/version/1.1') errors.push('feed.json: unsupported or missing JSON Feed version');
+if (jsonFeed.items.length !== feedUrls.length) errors.push(`feed.json: expected ${feedUrls.length} items, found ${jsonFeed.items.length}`);
+for (const item of jsonFeed.items) {
+  if (!sitemapSet.has(item.url)) errors.push(`feed.json: ${item.url} is absent from sitemap.xml`);
+  if (!item.content_text || item.content_text.length < 100) errors.push(`feed.json: ${item.url} is missing full text`);
+}
+
+const contentIndex = JSON.parse(await readFile(path.join(distDir, 'content-index.json'), 'utf8'));
+const contentNdjson = (await readFile(path.join(distDir, 'content-index.ndjson'), 'utf8')).trim().split('\n').map((line) => JSON.parse(line));
+if (contentIndex.entries.length !== feedUrls.length) errors.push(`content-index.json: expected ${feedUrls.length} entries, found ${contentIndex.entries.length}`);
+if (contentNdjson.length !== contentIndex.entries.length) errors.push('content-index.ndjson: entry count does not match content-index.json');
+for (const entry of contentIndex.entries) {
+  if (!sitemapSet.has(entry.canonical)) errors.push(`content-index.json: ${entry.canonical} is absent from sitemap.xml`);
+  if (!entry.contentMarkdown || entry.contentMarkdown.length < 100) errors.push(`content-index.json: ${entry.canonical} is missing full Markdown`);
+}
+
+const llmsFull = await readFile(path.join(distDir, 'llms-full.txt'), 'utf8');
+for (const entry of contentIndex.entries) {
+  if (!llmsFull.includes(`Canonical: ${entry.canonical}`)) errors.push(`llms-full.txt: missing full entry for ${entry.canonical}`);
+}
+
+const robots = await readFile(path.join(distDir, 'robots.txt'), 'utf8');
+const allowedBots = ['*', 'OAI-SearchBot', 'ChatGPT-User', 'GPTBot', 'Googlebot', 'Google-Extended', 'ClaudeBot', 'Claude-SearchBot', 'Claude-User'];
+for (const agent of allowedBots) {
+  const escapedAgent = agent.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const group = robots.match(new RegExp(`User-agent: ${escapedAgent}\\n([\\s\\S]*?)(?=\\nUser-agent:|\\nSitemap:)`, 'i'))?.[1] || '';
+  if (!group.includes('Allow: /')) errors.push(`robots.txt: ${agent} is not explicitly allowed`);
+  if (!group.includes('search=yes') || !group.includes('ai-input=yes') || !group.includes('ai-train=yes') || !group.includes('use=full')) errors.push(`robots.txt: ${agent} is missing full content-use permission`);
+}
+
 const schemaRequirements = [
   ['/', ['Person', 'WebSite', 'ProfilePage']],
   ['/notes/', ['CollectionPage', 'BreadcrumbList']],
@@ -95,6 +130,12 @@ for (const [route, types] of schemaRequirements) {
   for (const type of types) {
     if (!html.includes(`"@type":"${type}"`)) errors.push(`${route}: structured data is missing ${type}`);
   }
+  if (types.includes('Article')) {
+    for (const property of ['articleSection', 'keywords', 'wordCount', 'isAccessibleForFree']) {
+      if (!html.includes(`"${property}"`)) errors.push(`${route}: structured data is missing ${property}`);
+    }
+  }
+  if (types.includes('CollectionPage') && !html.includes('"@type":"ItemList"')) errors.push(`${route}: structured data is missing ItemList`);
 }
 
 if (errors.length) {

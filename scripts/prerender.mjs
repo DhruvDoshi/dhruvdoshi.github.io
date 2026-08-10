@@ -8,7 +8,7 @@ import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
 
-import { normalizeNote, slugify } from '../src/data/note-utils.js';
+import { normalizeNote, slugify, stripMarkup } from '../src/data/note-utils.js';
 import { guides } from '../src/data/guides.js';
 import { homepageGuideSlugs, homepageNoteSlugs } from '../src/data/homepage.js';
 import { caseStudies, capabilities, education, experience, impact, profile, selectedProjects } from '../src/data/profile.js';
@@ -19,6 +19,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const distDir = path.join(root, 'dist');
 const notesDir = path.join(root, 'src/content/notes');
 const origin = 'https://doshidhruv.com';
+const pageUrl = (pathname) => `${origin}${pathname === '/' ? '/' : `${pathname.replace(/\/$/, '')}/`}`;
 const template = (await readFile(path.join(distDir, 'index.html'), 'utf8'))
   // Cloudflare Rocket Loader otherwise postpones the app entry. Vite moves the
   // module script into <head> and drops custom attributes from the source tag,
@@ -69,14 +70,15 @@ const topics = Object.entries(topicDescriptions).map(([name, description]) => ({
 const homepageGuides = homepageGuideSlugs.map((slug) => guides.find((guide) => guide.slug === slug)).filter(Boolean);
 const homepageNotes = homepageNoteSlugs.map((slug) => notes.find((note) => note.slug === slug)).filter(Boolean);
 
-const renderDocument = ({ breadcrumbs, title, description, pathname, content, type = 'WebPage', datePublished, dateModified }) => {
+const renderDocument = ({ articleSection, breadcrumbs, collectionItems = [], content, dateModified, datePublished, description, keywords = [], pathname, title, type = 'WebPage', wordCount }) => {
   const canonical = `${origin}${pathname === '/' ? '/' : `${pathname.replace(/\/$/, '')}/`}`;
+  const markdownPath = `/.well-known/markdown${pathname === '/' ? '' : `/${pathname.replace(/^\/+|\/+$/g, '')}`}/index.md`;
   const pageTitle = title ? `${title} | Dhruv Doshi` : 'Dhruv Doshi | Staff Software Developer, Enterprise Architect & AI Systems Engineer';
-  const person = { '@type': 'Person', '@id': `${origin}/#person`, name: 'Dhruv Doshi', url: `${origin}/`, jobTitle: 'Staff Software Developer and Enterprise Architect', address: { '@type': 'PostalAddress', addressLocality: 'Toronto', addressCountry: 'CA' }, sameAs: ['https://github.com/DhruvDoshi', 'https://www.linkedin.com/in/dhruvdoshi25071999'] };
+  const person = { '@type': 'Person', '@id': `${origin}/#person`, name: 'Dhruv Doshi', url: `${origin}/`, jobTitle: 'Staff Software Developer and Enterprise Architect', address: { '@type': 'PostalAddress', addressLocality: 'Toronto', addressCountry: 'CA' }, sameAs: ['https://github.com/DhruvDoshi', 'https://www.linkedin.com/in/dhruvdoshi25071999', 'https://scholar.google.com/citations?user=Ri3ZDcIAAAAJ&hl=en'] };
   const website = { '@type': 'WebSite', '@id': `${origin}/#website`, url: `${origin}/`, name: 'Dhruv Doshi', author: { '@id': person['@id'] }, potentialAction: { '@type': 'SearchAction', target: `${origin}/search/?q={search_term_string}`, 'query-input': 'required name=search_term_string' } };
   const pageEntity = type === 'Article'
-    ? { '@type': 'Article', '@id': `${canonical}#article`, headline: title, description, datePublished, dateModified: dateModified || datePublished, mainEntityOfPage: { '@id': canonical }, author: { '@id': person['@id'] }, publisher: { '@id': person['@id'] }, isPartOf: { '@id': website['@id'] } }
-    : { '@type': type, '@id': canonical, name: pageTitle, description, url: canonical, isPartOf: { '@id': website['@id'] }, author: { '@id': person['@id'] }, ...(type === 'ProfilePage' ? { mainEntity: { '@id': person['@id'] } } : {}) };
+    ? { '@type': 'Article', '@id': `${canonical}#article`, headline: title, description, datePublished, dateModified: dateModified || datePublished, mainEntityOfPage: { '@id': canonical }, author: { '@id': person['@id'] }, publisher: { '@id': person['@id'] }, isPartOf: { '@id': website['@id'] }, url: canonical, inLanguage: 'en-CA', isAccessibleForFree: true, articleSection, keywords, wordCount, about: keywords.map((name) => ({ '@type': 'Thing', name })) }
+    : { '@type': type, '@id': canonical, name: pageTitle, description, url: canonical, isPartOf: { '@id': website['@id'] }, author: { '@id': person['@id'] }, ...(type === 'ProfilePage' ? { mainEntity: { '@id': person['@id'] } } : {}), ...(type === 'CollectionPage' && collectionItems.length ? { mainEntity: { '@type': 'ItemList', numberOfItems: collectionItems.length, itemListElement: collectionItems.map((item, index) => ({ '@type': 'ListItem', position: index + 1, name: item.name, url: pageUrl(item.pathname) })) } } : {}) };
   const breadcrumbItems = pathname === '/' ? [] : [{ name: 'Home', path: '/' }, ...(breadcrumbs || [{ name: title, path: pathname }])];
   const breadcrumb = breadcrumbItems.length ? { '@type': 'BreadcrumbList', '@id': `${canonical}#breadcrumb`, itemListElement: breadcrumbItems.map((item, index) => ({ '@type': 'ListItem', position: index + 1, name: item.name, item: `${origin}${item.path === '/' ? '/' : `${item.path.replace(/\/$/, '')}/`}` })) } : null;
   const schema = { '@context': 'https://schema.org', '@graph': [person, website, pageEntity, ...(breadcrumb ? [breadcrumb] : [])] };
@@ -85,7 +87,7 @@ const renderDocument = ({ breadcrumbs, title, description, pathname, content, ty
     .replace(/<title>[\s\S]*?<\/title>/, `<title>${escapeHtml(pageTitle)}</title>`)
     .replace(/<meta name="description" content="[^"]*"\s*\/?>/, `<meta name="description" content="${escapeHtml(description)}" />`)
     .replace(/<link rel="canonical" href="[^"]*"\s*\/?>/, `<link rel="canonical" href="${canonical}" />`)
-    .replace('</head>', `<meta property="og:title" content="${escapeHtml(pageTitle)}" /><meta property="og:description" content="${escapeHtml(description)}" /><meta property="og:url" content="${canonical}" /><meta property="og:type" content="${type === 'Article' ? 'article' : 'website'}" /><script type="application/ld+json">${JSON.stringify(schema).replaceAll('<', '\\u003c')}</script></head>`)
+    .replace('</head>', `<meta property="og:title" content="${escapeHtml(pageTitle)}" /><meta property="og:description" content="${escapeHtml(description)}" /><meta property="og:url" content="${canonical}" /><meta property="og:type" content="${type === 'Article' ? 'article' : 'website'}" /><link rel="alternate" type="application/feed+json" title="Dhruv Doshi — Technical Guides and Notes" href="${origin}/feed.json" /><link rel="alternate" type="text/markdown" title="${escapeHtml(pageTitle)} — Markdown" href="${origin}${markdownPath}" /><link rel="describedby" type="application/json" href="${origin}/content-index.json" /><script type="application/ld+json">${JSON.stringify(schema).replaceAll('<', '\\u003c')}</script></head>`)
     .replace('<div id="root"></div>', `<div id="root"><div class="prerendered-page">${renderSiteChrome(content, pathname)}</div></div>`);
 };
 
@@ -110,6 +112,7 @@ await writeRoute('/notes', {
   title: 'Notes',
   description: 'Technical notes by Dhruv Doshi on AI systems, agent security, distributed systems, observability, platform engineering, cloud architecture, and the blockchain archive.',
   type: 'CollectionPage',
+  collectionItems: notes.map((note) => ({ name: note.title, pathname: `/notes/${note.slug}` })),
   content: page('Notes', list(notes.map((note) => `<time datetime="${note.date}">${note.date}</time> · <a href="/notes/${note.slug}">${escapeHtml(note.title)}</a> · ${escapeHtml(note.topic)} · ${note.readTime} min`))),
 });
 
@@ -125,6 +128,9 @@ for (const note of notes) {
     type: 'Article',
     datePublished: note.date,
     dateModified: note.reviewed || note.date,
+    articleSection: note.topic,
+    keywords: [...new Set([note.topic, ...note.categories])],
+    wordCount: note.wordCount,
     breadcrumbs: [{ name: 'Notes', path: '/notes' }, { name: note.title, path: `/notes/${note.slug}` }],
     content: `<main class="page-shell note-page"><article><header class="note-header"><p><a href="/notes">All notes</a></p><p class="note-topic"><a href="/topics/${slugify(note.topic)}">${escapeHtml(note.topic)}</a></p><h1>${escapeHtml(note.title)}</h1><p><time datetime="${note.date}">${note.date}</time> · ${note.readTime} minute read</p></header><div class="note-layout"><div class="article-prose">${markdown}</div></div>${relatedContent.length ? `<section><h2>Continue reading</h2>${list(relatedContent)}</section>` : ''}</article></main>`,
   });
@@ -141,6 +147,7 @@ await writeRoute('/guides', {
   title: 'Technical guides',
   description: 'Evergreen engineering guides by Dhruv Doshi on platform architecture, observability, AI governance, cloud migration, and staff engineering.',
   type: 'CollectionPage',
+  collectionItems: guides.map((guide) => ({ name: guide.title, pathname: `/guides/${guide.slug}` })),
   content: page('Technical guides', list(guides.map((guide) => `<time datetime="${guide.reviewed}">Reviewed ${guide.reviewed}</time> · <a href="/guides/${guide.slug}">${escapeHtml(guide.title)}</a> · ${escapeHtml(guide.description)}`))),
 });
 
@@ -153,6 +160,9 @@ for (const guide of guides) {
     type: 'Article',
     datePublished: guide.published,
     dateModified: guide.reviewed,
+    articleSection: guide.topics[0],
+    keywords: guide.topics,
+    wordCount: stripMarkup(guide.body).split(/\s+/).filter(Boolean).length,
     breadcrumbs: [{ name: 'Guides', path: '/guides' }, { name: guide.title, path: `/guides/${guide.slug}` }],
     content: `<main class="page-shell note-page"><article><header class="note-header"><p><a href="/guides">All guides</a></p><p class="note-topic">${escapeHtml(guide.topics.join(' · '))}</p><h1>${escapeHtml(guide.title)}</h1><p>${escapeHtml(guide.description)}</p><p>Published <time datetime="${guide.published}">${guide.published}</time> · Last reviewed <time datetime="${guide.reviewed}">${guide.reviewed}</time> · ${guide.readTime} minute read</p></header><div class="note-layout"><div class="article-prose">${markdown}</div></div><section><h2>Notes behind this guide</h2>${list(related.map((note) => `<a href="/notes/${note.slug}">${escapeHtml(note.title)}</a>`))}</section></article></main>`,
   });

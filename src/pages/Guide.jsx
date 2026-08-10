@@ -38,6 +38,9 @@ const Guide = () => {
       type="article"
       published={guide.published}
       modified={guide.reviewed}
+      articleSection={guide.topics[0]}
+      keywords={guide.topics}
+      wordCount={guide.body.split(/\s+/).filter(Boolean).length}
       breadcrumbs={[
         { name: 'Guides', path: '/guides' },
         { name: guide.title, path: `/guides/${guide.slug}` },

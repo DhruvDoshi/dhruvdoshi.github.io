@@ -32,6 +32,7 @@ const Notes = () => {
       title="Notes"
       description="Technical notes by Dhruv Doshi on AI systems, agent security, distributed systems, observability, platform engineering, cloud architecture, and the blockchain archive."
       pageType="CollectionPage"
+      items={notes.map((note) => ({ name: note.title, path: `/notes/${note.slug}` }))}
     >
       <section className="notes-index page-shell" aria-labelledby="notes-title">
         <div className="notes-toolbar">

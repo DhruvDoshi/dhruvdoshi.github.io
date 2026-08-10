@@ -1,10 +1,4 @@
-const discoveryLinks = [
-  '</llms.txt>; rel="describedby"; type="text/markdown"',
-  '</.well-known/agent-skills/index.json>; rel="describedby"; type="application/json"',
-  '</feed.xml>; rel="alternate"; type="application/rss+xml"',
-].join(', ');
-
-const contentSignal = 'ai-train=yes, search=yes, ai-input=yes';
+const contentSignal = 'search=yes, ai-input=yes, ai-train=yes, use=full';
 
 const unsupportedDiscoveryPaths = new Set([
   '/.well-known/api-catalog',
@@ -36,6 +30,17 @@ const markdownSourcePath = (pathname) => {
   const normalized = pathname === '/' ? '' : `/${pathname.replace(/^\/+|\/+$/g, '')}`;
   return `/.well-known/markdown${normalized}/index.md`;
 };
+
+const discoveryLinks = (pathname) => [
+  `<${pathname}>; rel="canonical"`,
+  `<${markdownSourcePath(pathname)}>; rel="alternate describedby"; type="text/markdown"`,
+  '</llms.txt>; rel="describedby"; type="text/markdown"',
+  '</content-index.json>; rel="describedby"; type="application/json"',
+  '</content-index.ndjson>; rel="describedby"; type="application/x-ndjson"',
+  '</.well-known/agent-skills/index.json>; rel="describedby"; type="application/json"',
+  '</feed.xml>; rel="alternate"; type="application/rss+xml"',
+  '</feed.json>; rel="alternate"; type="application/feed+json"',
+].join(', ');
 
 export default async (request, context) => {
   if (request.headers.get('x-agent-markdown-source') === '1') return context.next();
@@ -70,7 +75,7 @@ export default async (request, context) => {
       const headers = new Headers(sourceResponse.headers);
       headers.set('content-type', 'text/markdown; charset=utf-8');
       headers.set('content-signal', contentSignal);
-      headers.set('link', discoveryLinks);
+      headers.set('link', discoveryLinks(url.pathname));
       headers.set('x-markdown-tokens', String(Math.ceil(markdown.length / 4)));
       headers.delete('content-length');
       appendVary(headers, 'Accept');
@@ -83,7 +88,7 @@ export default async (request, context) => {
 
   if (headers.get('content-type')?.includes('text/html')) {
     headers.set('content-signal', contentSignal);
-    headers.set('link', discoveryLinks);
+    headers.set('link', discoveryLinks(url.pathname));
     appendVary(headers, 'Accept');
   }
 

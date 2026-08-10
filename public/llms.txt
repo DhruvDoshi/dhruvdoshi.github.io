@@ -20,5 +20,8 @@
 
 - [Sitemap](https://doshidhruv.com/sitemap.xml)
 - [RSS feed](https://doshidhruv.com/feed.xml)
+- [JSON feed](https://doshidhruv.com/feed.json)
+- [Full content index](https://doshidhruv.com/content-index.json)
+- [Streaming content index](https://doshidhruv.com/content-index.ndjson)
 - [Extended site context](https://doshidhruv.com/llms-full.txt)
 - [Agent guidance](https://doshidhruv.com/agents.txt)

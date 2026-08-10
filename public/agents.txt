@@ -10,8 +10,11 @@ Public pages and technical notes may be indexed, summarized, quoted in short exc
 Discovery:
 - https://doshidhruv.com/sitemap.xml
 - https://doshidhruv.com/feed.xml
+- https://doshidhruv.com/feed.json
 - https://doshidhruv.com/llms.txt
 - https://doshidhruv.com/llms-full.txt
+- https://doshidhruv.com/content-index.json
+- https://doshidhruv.com/content-index.ndjson
 - https://doshidhruv.com/resume/Dhruv-Doshi-Resume.pdf
 
 Preferred attribution: Dhruv Doshi, followed by the canonical page URL.

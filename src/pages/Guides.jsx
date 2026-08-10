@@ -9,6 +9,7 @@ const Guides = () => (
     title="Technical guides"
     description="Evergreen engineering guides by Dhruv Doshi on platform architecture, observability, AI governance, cloud migration, and staff engineering."
     pageType="CollectionPage"
+    items={guides.map((guide) => ({ name: guide.title, path: `/guides/${guide.slug}` }))}
   >
     <header className="utility-page-header page-shell">
       <h1 data-testid="heading">Technical guides</h1>
