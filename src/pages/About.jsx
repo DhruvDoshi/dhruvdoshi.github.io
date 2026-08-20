@@ -1,13 +1,14 @@
 import { Link } from 'react-router';
 
 import Main from '../layouts/Main';
+import TravelPlaces from '../components/About/TravelPlaces';
 import { profile } from '../data/profile';
 
 const About = () => (
   <Main
     title="About"
     pageType="ProfilePage"
-    description="About Dhruv Doshi, a hands-on Staff Software Developer and Enterprise Architect working across AI systems, distributed platforms, observability, and security."
+    description="About Dhruv Doshi: working principles, interests, and a travel map alongside his work across AI systems, distributed platforms, observability, and security."
   >
     <header className="about-hero page-shell">
       <div className="about-hero__portrait">
@@ -58,6 +59,8 @@ const About = () => (
         </div>
       </div>
     </section>
+
+    <TravelPlaces />
   </Main>
 );
 

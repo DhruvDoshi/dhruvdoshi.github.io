@@ -309,7 +309,6 @@ h3 {
 .travel-hero {
   display: grid;
   padding-block: 42px 32px;
-  border-bottom: 1px solid var(--strong-rule);
   grid-template-columns: minmax(0, 0.8fr) minmax(320px, 1.2fr);
   gap: 30px 64px;
 }
@@ -355,25 +354,13 @@ h3 {
 
 .travel-map {
   padding-block: 28px;
-  border-bottom: 1px solid var(--rule);
 }
 
 .travel-globe-wrap {
   position: relative;
-  overflow: hidden;
   width: min(1180px, calc(100vw - 28px));
   height: clamp(430px, 58vw, 650px);
-  border: 1px solid var(--strong-rule);
   margin-inline: auto;
-  background:
-    radial-gradient(circle at 50% 46%, rgba(205, 218, 229, 0.55), transparent 46%),
-    linear-gradient(145deg, #f6f8f9, #e7ecef);
-}
-
-[data-theme='dark'] .travel-globe-wrap {
-  background:
-    radial-gradient(circle at 50% 46%, rgba(75, 88, 101, 0.52), transparent 46%),
-    linear-gradient(145deg, #191b1d, #111315);
 }
 
 .travel-globe,

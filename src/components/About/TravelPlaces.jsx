@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-import Main from '../layouts/Main';
-import visitedPlaces, { countryCount } from '../data/travel';
+import visitedPlaces, { countryCount } from '../../data/travel';
 
 const GLOBE_SCRIPT = 'https://cdn.jsdelivr.net/npm/globe.gl@2.46.1/dist/globe.gl.min.js';
 const COUNTRIES_DATA = 'https://raw.githubusercontent.com/vasturiano/globe.gl/master/example/datasets/ne_110m_admin_0_countries.geojson';
@@ -167,17 +166,12 @@ const Globe = () => {
   );
 };
 
-const Travel = () => (
-  <Main
-    title="Places I’ve been"
-    pageType="CollectionPage"
-    description={`A travel map of ${visitedPlaces.length} cities across ${countryCount} countries visited by Dhruv Doshi.`}
-    items={visitedPlaces.map(({ city }) => ({ name: city, path: '/travel' }))}
-  >
+const TravelPlaces = () => (
+  <section className="about-travel" aria-labelledby="places-title">
     <header className="travel-hero page-shell">
       <div>
         <p className="eyebrow">Travel journal</p>
-        <h1 data-testid="heading">Places I’ve been</h1>
+        <h2 id="places-title">Places I’ve been</h2>
       </div>
       <div className="travel-hero__copy">
         <p>A growing map of cities that have been part of my story—from home bases to memorable stops along the way.</p>
@@ -188,10 +182,10 @@ const Travel = () => (
       </div>
     </header>
 
-    <section className="travel-map" aria-labelledby="travel-map-title">
+    <div className="travel-map" aria-labelledby="travel-map-title">
       <h2 className="sr-only" id="travel-map-title">Interactive travel map</h2>
       <Globe />
-    </section>
+    </div>
 
     <section className="travel-ledger page-shell" aria-labelledby="travel-ledger-title">
       <div>
@@ -211,7 +205,7 @@ const Travel = () => (
     <p className="travel-credit page-shell">
       Page idea inspired by <a href="https://sarthak.site" target="_blank" rel="noreferrer">Sarthak Aggarwal’s places page</a>.
     </p>
-  </Main>
+  </section>
 );
 
-export default Travel;
+export default TravelPlaces;

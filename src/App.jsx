@@ -20,7 +20,6 @@ const Projects = lazy(() => import('./pages/Projects'));
 const Resume = lazy(() => import('./pages/Resume'));
 const Research = lazy(() => import('./pages/Research'));
 const Pictures = lazy(() => import('./pages/Pictures'));
-const Travel = lazy(() => import('./pages/Travel'));
 
 const App = () => (
   <BrowserRouter basename={import.meta.env.BASE_URL}>
@@ -43,7 +42,6 @@ const App = () => (
         <Route path="/blog/*" element={<Notes />} />
         <Route path="/blogs/*" element={<Notes />} />
         <Route path="/pictures" element={<Pictures />} />
-        <Route path="/travel" element={<Travel />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>

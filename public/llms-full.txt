@@ -13,8 +13,7 @@
 - [Topics](https://doshidhruv.com/topics/): Subject index across notes, guides, work, research, and experience
 - [Site search](https://doshidhruv.com/search/): Search all public content
 - [Research](https://doshidhruv.com/research/): Published work on decentralized cloud storage
-- [About](https://doshidhruv.com/about/): Background and working principles
-- [Places](https://doshidhruv.com/travel/): Interactive map and list of cities visited
+- [About](https://doshidhruv.com/about/): Background, working principles, interests, and places visited
 - [Contact](https://doshidhruv.com/contact/): Contact information
 
 ## Machine-readable resources

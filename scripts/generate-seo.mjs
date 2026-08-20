@@ -41,7 +41,6 @@ const pages = [
   ['/about', generatedDate, 'monthly', '0.7'],
   ['/contact', generatedDate, 'yearly', '0.6'],
   ['/pictures', generatedDate, 'yearly', '0.4'],
-  ['/travel', generatedDate, 'yearly', '0.5'],
   ...guides.map((guide) => [`/guides/${guide.slug}`, guide.reviewed, 'monthly', '0.8']),
   ...topicPages.map((pathname) => [pathname, generatedDate, 'monthly', '0.7']),
   ...notes.map((note) => [`/notes/${note.slug}`, note.reviewed || note.date, note.reviewed ? 'monthly' : 'yearly', '0.7']),
@@ -143,8 +142,7 @@ const llms = `# Dhruv Doshi
 - [Topics](${pageUrl('/topics')}): Subject index across notes, guides, work, research, and experience
 - [Site search](${pageUrl('/search')}): Search all public content
 - [Research](${pageUrl('/research')}): Published work on decentralized cloud storage
-- [About](${pageUrl('/about')}): Background and working principles
-- [Places](${pageUrl('/travel')}): Interactive map and list of cities visited
+- [About](${pageUrl('/about')}): Background, working principles, interests, and places visited
 - [Contact](${pageUrl('/contact')}): Contact information
 
 ## Machine-readable resources
