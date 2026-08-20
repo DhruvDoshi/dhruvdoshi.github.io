@@ -433,14 +433,16 @@ h3 {
   display: grid;
   padding-block: 36px;
   border-bottom: 1px solid var(--rule);
-  grid-template-columns: minmax(0, 0.8fr) minmax(320px, 1.2fr);
+  grid-template-columns: minmax(150px, 0.45fr) minmax(0, 1.55fr);
   gap: 30px 64px;
 }
 
 .travel-place-list {
+  display: grid;
   margin: 0;
   padding: 0;
   border-top: 1px solid var(--strong-rule);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   list-style: none;
 }
 
@@ -1210,6 +1212,10 @@ h3 {
 
   .travel-place-list li {
     grid-template-columns: 30px minmax(0, 1fr);
+  }
+
+  .travel-place-list {
+    grid-template-columns: 1fr;
   }
 
   .travel-place-list li span:last-child {

@@ -79,10 +79,12 @@ pages.forEach((page) => checkPageComponent(page));
 test('Places the travel journal after the background and interests section', () => {
   renderWithRouter(<About />, { route: '/about' });
 
-  expect(screen.getByText('6', { selector: 'dt' })).toBeInTheDocument();
-  expect(screen.getByText('4', { selector: 'dt' })).toBeInTheDocument();
+  expect(screen.getByText('36', { selector: 'dt' })).toBeInTheDocument();
+  expect(screen.getByText('5', { selector: 'dt' })).toBeInTheDocument();
   expect(screen.getByText('Toronto')).toBeInTheDocument();
-  expect(screen.getByText('Dubai')).toBeInTheDocument();
+  expect(screen.getByText('Khardung La')).toBeInTheDocument();
+  expect(screen.getByText('Belgrade')).toBeInTheDocument();
+  expect(screen.getAllByText('Singapore')).toHaveLength(2);
   const headings = screen.getAllByRole('heading').map((heading) => heading.textContent);
   expect(headings.indexOf('Places I’ve been')).toBeGreaterThan(headings.indexOf('Background and interests'));
 });

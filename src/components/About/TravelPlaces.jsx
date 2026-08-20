@@ -88,7 +88,7 @@ const Globe = () => {
           .pointAltitude(0.012)
           .pointRadius(0.28)
           .pointResolution(14)
-          .pointLabel(({ city, country }) => `<div class="travel-tooltip"><strong>${city}</strong><span>${country}</span></div>`)
+          .pointLabel(({ place, country }) => `<div class="travel-tooltip"><strong>${place}</strong><span>${country}</span></div>`)
           .onPointClick(({ lat, lng }) => globe.pointOfView({ lat, lng, altitude: 1.35 }, 900));
 
         const applyTheme = () => {
@@ -152,7 +152,7 @@ const Globe = () => {
         ref={containerRef}
         className="travel-globe"
         role="img"
-        aria-label={`Interactive globe marking ${visitedPlaces.length} cities in ${countryCount} countries. Drag to rotate and scroll to zoom.`}
+        aria-label={`Interactive globe marking ${visitedPlaces.length} places in ${countryCount} countries. Drag to rotate and scroll to zoom.`}
       />
       {status === 'loading' && <p className="travel-globe__status" role="status">Drawing the globe…</p>}
       {status === 'error' && <p className="travel-globe__status">The interactive globe is unavailable. Every place is still listed below.</p>}
@@ -174,9 +174,9 @@ const TravelPlaces = () => (
         <h2 id="places-title">Places I’ve been</h2>
       </div>
       <div className="travel-hero__copy">
-        <p>A growing map of cities that have been part of my story—from home bases to memorable stops along the way.</p>
+        <p>A growing map of places that have been part of my story—from home bases to memorable stops along the way.</p>
         <dl className="travel-totals" aria-label="Travel totals">
-          <div><dt>{visitedPlaces.length}</dt><dd>cities</dd></div>
+          <div><dt>{visitedPlaces.length}</dt><dd>places</dd></div>
           <div><dt>{countryCount}</dt><dd>countries</dd></div>
         </dl>
       </div>
@@ -190,12 +190,12 @@ const TravelPlaces = () => (
     <section className="travel-ledger page-shell" aria-labelledby="travel-ledger-title">
       <div>
         <p className="eyebrow">The map, in words</p>
-        <h2 id="travel-ledger-title">City ledger</h2>
+        <h2 id="travel-ledger-title">Place ledger</h2>
       </div>
       <ol className="travel-place-list">
-        {visitedPlaces.map(({ city, country }) => (
-          <li key={`${city}-${country}`}>
-            <span>{city}</span>
+        {visitedPlaces.map(({ place, country }) => (
+          <li key={`${place}-${country}`}>
+            <span>{place}</span>
             <span>{country}</span>
           </li>
         ))}

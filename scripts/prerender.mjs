@@ -13,6 +13,7 @@ import { guides } from '../src/data/guides.js';
 import { homepageGuideSlugs, homepageNoteSlugs } from '../src/data/homepage.js';
 import { caseStudies, capabilities, education, experience, impact, profile, selectedProjects } from '../src/data/profile.js';
 import routes from '../src/data/routes.js';
+import visitedPlaces, { countryCount } from '../src/data/travel.js';
 import topicDescriptions from '../src/data/topic-definitions.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -200,7 +201,7 @@ await writeRoute('/resume', {
 });
 
 const staticRoutes = [
-  ['/about', 'About', 'About', `<p>${escapeHtml(profile.introduction)}</p><p>Dhruv is based in Toronto and works across AI systems, distributed platforms, observability, enterprise architecture, and security.</p><h2>Places I’ve been</h2><p>A travel map of 6 cities across 4 countries.</p><ul><li>Toronto, Canada</li><li>Mumbai, India</li><li>Ahmedabad, India</li><li>Delhi, India</li><li>Singapore, Singapore</li><li>Dubai, United Arab Emirates</li></ul><p>Page idea inspired by <a href="https://sarthak.site">Sarthak Aggarwal’s places page</a>.</p>`, 'ProfilePage', 'About Dhruv Doshi: working principles, interests, and a travel map alongside his work across AI systems, distributed platforms, observability, and security.'],
+  ['/about', 'About', 'About', `<p>${escapeHtml(profile.introduction)}</p><p>Dhruv is based in Toronto and works across AI systems, distributed platforms, observability, enterprise architecture, and security.</p><h2>Places I’ve been</h2><p>A travel map of ${visitedPlaces.length} places across ${countryCount} countries.</p><ul>${visitedPlaces.map(({ place, country }) => `<li>${escapeHtml(place)}, ${escapeHtml(country)}</li>`).join('')}</ul><p>Page idea inspired by <a href="https://sarthak.site">Sarthak Aggarwal’s places page</a>.</p>`, 'ProfilePage', 'About Dhruv Doshi: working principles, interests, and a travel map alongside his work across AI systems, distributed platforms, observability, and security.'],
   ['/research', 'Research', 'Research', '<h2>Decentralized Cloud Storage Based on Blockchain Networking</h2><p>A Springer Nature conference paper by Dhruv Doshi and Satvik Khara on attribute-based access control, blockchain security events, and untrusted cloud storage.</p><p><a href="https://link.springer.com/chapter/10.1007/978-3-030-49795-8_54">Read the paper on Springer</a></p>', 'CollectionPage', 'Published research by Dhruv Doshi on privacy-preserving decentralized storage and blockchain-based access control.'],
   ['/contact', 'Contact', 'Contact', `<p>${escapeHtml(profile.availability)}</p><p>${escapeHtml(profile.consulting)}</p><p>Email: <a href="mailto:${profile.email}">${profile.email}</a></p>`, 'WebPage', 'Contact Dhruv Doshi about Staff-level AI systems, distributed platforms, observability, or selective architecture consulting.'],
   ['/pictures', 'Pictures', 'Pictures', '<p>Travel, milestones, people, and places outside software engineering work.</p>', 'CollectionPage', 'Pictures from Dhruv Doshi’s travels, milestones, and life outside engineering.'],
