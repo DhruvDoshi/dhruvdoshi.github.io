@@ -15,6 +15,7 @@ import Resume from '../pages/Resume';
 import Search from '../pages/Search';
 import Guide from '../pages/Guide';
 import Topic from '../pages/Topic';
+import Travel from '../pages/Travel';
 import { featuredNotes, notes } from '../data/notes';
 import { homepageNotes } from '../data/homepage';
 
@@ -49,6 +50,11 @@ const pages = [
     heading: 'Notes',
     component: Notes,
   },
+  {
+    route: '/travel',
+    heading: 'Places I’ve been',
+    component: Travel,
+  },
 ];
 
 // Adds router to Page context and allows us to navigate to the
@@ -75,6 +81,15 @@ const checkPageComponent = (page) => {
 };
 
 pages.forEach((page) => checkPageComponent(page));
+
+test('Lists every travel location when the globe is unavailable', () => {
+  renderWithRouter(<Travel />, { route: '/travel' });
+
+  expect(screen.getByText('6', { selector: 'dt' })).toBeInTheDocument();
+  expect(screen.getByText('4', { selector: 'dt' })).toBeInTheDocument();
+  expect(screen.getByText('Toronto')).toBeInTheDocument();
+  expect(screen.getByText('Dubai')).toBeInTheDocument();
+});
 
 test('Renders a consolidated technical note', () => {
   renderWithRouter(

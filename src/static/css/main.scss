@@ -306,6 +306,184 @@ h3 {
   border-bottom: 1px solid var(--rule);
 }
 
+.travel-hero {
+  display: grid;
+  padding-block: 42px 32px;
+  border-bottom: 1px solid var(--strong-rule);
+  grid-template-columns: minmax(0, 0.8fr) minmax(320px, 1.2fr);
+  gap: 30px 64px;
+}
+
+.travel-hero h1,
+.travel-ledger h2 {
+  margin-bottom: 0;
+}
+
+.travel-hero__copy > p {
+  max-width: 55ch;
+  margin-bottom: 22px;
+  color: var(--muted);
+  font-size: 1.02rem;
+}
+
+.travel-totals {
+  display: flex;
+  margin: 0;
+  gap: 34px;
+}
+
+.travel-totals > div {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+}
+
+.travel-totals dt {
+  font-family: var(--mono);
+  font-size: 1.55rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.travel-totals dd {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.travel-map {
+  padding-block: 28px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.travel-globe-wrap {
+  position: relative;
+  overflow: hidden;
+  width: min(1180px, calc(100vw - 28px));
+  height: clamp(430px, 58vw, 650px);
+  border: 1px solid var(--strong-rule);
+  margin-inline: auto;
+  background:
+    radial-gradient(circle at 50% 46%, rgba(205, 218, 229, 0.55), transparent 46%),
+    linear-gradient(145deg, #f6f8f9, #e7ecef);
+}
+
+[data-theme='dark'] .travel-globe-wrap {
+  background:
+    radial-gradient(circle at 50% 46%, rgba(75, 88, 101, 0.52), transparent 46%),
+    linear-gradient(145deg, #191b1d, #111315);
+}
+
+.travel-globe,
+.travel-globe > div,
+.travel-globe canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.travel-globe canvas {
+  cursor: grab;
+}
+
+.travel-globe canvas:active {
+  cursor: grabbing;
+}
+
+.travel-globe__status,
+.travel-globe__control,
+.travel-globe__hint {
+  position: absolute;
+  z-index: 2;
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+}
+
+.travel-globe__status {
+  top: 16px;
+  left: 16px;
+  max-width: 38ch;
+  padding: 7px 9px;
+  border: 1px solid var(--rule);
+}
+
+.travel-globe__control {
+  top: 16px;
+  right: 16px;
+  padding: 7px 9px;
+  border: 1px solid var(--strong-rule);
+  cursor: pointer;
+}
+
+.travel-globe__hint {
+  right: 16px;
+  bottom: 16px;
+  padding: 6px 8px;
+  color: var(--muted);
+}
+
+.travel-tooltip {
+  display: grid;
+  padding: 7px 10px;
+  border: 1px solid #9ca7b1;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 6px 20px rgba(20, 27, 34, 0.18);
+  color: #171717;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.travel-tooltip span {
+  color: #5f5f5f;
+}
+
+.travel-ledger {
+  display: grid;
+  padding-block: 36px;
+  border-bottom: 1px solid var(--rule);
+  grid-template-columns: minmax(0, 0.8fr) minmax(320px, 1.2fr);
+  gap: 30px 64px;
+}
+
+.travel-place-list {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--strong-rule);
+  list-style: none;
+}
+
+.travel-place-list li {
+  display: grid;
+  padding-block: 10px;
+  border-bottom: 1px solid var(--rule);
+  counter-increment: places;
+  grid-template-columns: 34px minmax(0, 1fr) minmax(130px, 0.8fr);
+  gap: 12px;
+}
+
+.travel-place-list li::before {
+  content: counter(places, decimal-leading-zero);
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+}
+
+.travel-place-list li span:last-child {
+  color: var(--muted);
+}
+
+.travel-credit {
+  padding-block: 18px 32px;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
 .section-index,
 .compact-section-heading,
 .section-heading {
@@ -1029,8 +1207,26 @@ h3 {
   .publication__body,
   .contact-page,
   .about-hero,
-  .case-study__body {
+  .case-study__body,
+  .travel-hero,
+  .travel-ledger {
     grid-template-columns: 1fr;
+  }
+
+  .travel-globe-wrap {
+    height: min(520px, 108vw);
+  }
+
+  .travel-globe__hint {
+    display: none;
+  }
+
+  .travel-place-list li {
+    grid-template-columns: 30px minmax(0, 1fr);
+  }
+
+  .travel-place-list li span:last-child {
+    grid-column: 2;
   }
 
   .impact-item,

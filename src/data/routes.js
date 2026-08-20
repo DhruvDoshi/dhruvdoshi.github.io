@@ -4,6 +4,7 @@ const routes = [
   { label: 'Notes', path: '/notes' },
   { label: 'Guides', path: '/guides' },
   { label: 'Research', path: '/research' },
+  { label: 'Places', path: '/travel' },
   { label: 'About', path: '/about' },
   { label: 'Contact', path: '/contact' },
 ];
