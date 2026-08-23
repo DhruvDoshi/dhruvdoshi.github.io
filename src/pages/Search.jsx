@@ -32,14 +32,14 @@ const Search = () => {
   return (
     <Main
       title={query ? `Search: ${query}` : 'Search'}
-      description="Search Dhruv Doshi's technical notes, guides, projects, research, and professional experience."
+      description="Search Dhruv Doshi's technical notes, guides, projects, research, professional experience, and personal pages."
       pageType="CollectionPage"
     >
       <section className="search-page page-shell" aria-labelledby="search-title">
         <header className="search-page__header">
           <h1 id="search-title" data-testid="heading">Search</h1>
           <form role="search" onSubmit={(event) => event.preventDefault()}>
-            <label htmlFor="site-search">Search notes, guides, work, research, and experience</label>
+            <label htmlFor="site-search">Search the site</label>
             <div className="search-input-row">
               <input
                 id="site-search"

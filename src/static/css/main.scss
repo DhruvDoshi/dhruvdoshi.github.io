@@ -473,6 +473,100 @@ h3 {
   font-size: 0.78rem;
 }
 
+.investing-hero {
+  display: grid;
+  padding-block: 52px 42px;
+  border-bottom: 1px solid var(--strong-rule);
+  grid-template-columns: minmax(220px, 0.75fr) minmax(0, 1.25fr);
+  gap: 36px 68px;
+}
+
+.investing-hero h1 {
+  max-width: 9ch;
+  margin-bottom: 0;
+}
+
+.investing-hero__copy {
+  max-width: var(--measure);
+}
+
+.investing-hero__lede {
+  margin-bottom: 18px;
+  color: var(--text);
+  font-size: clamp(1.18rem, 2.5vw, 1.48rem);
+  font-weight: 650;
+  letter-spacing: -0.015em;
+  line-height: 1.4;
+}
+
+.investing-hero__copy > p:last-child {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.investment-section {
+  display: grid;
+  padding-block: 38px;
+  border-bottom: 1px solid var(--rule);
+  grid-template-columns: minmax(220px, 0.75fr) minmax(0, 1.25fr);
+  gap: 32px 68px;
+}
+
+.investment-section header {
+  display: grid;
+  align-content: start;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 10px;
+}
+
+.investment-section h2 {
+  margin: 0;
+  font-size: 1.12rem;
+}
+
+.investment-section__index {
+  padding-top: 0.2em;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+}
+
+.investment-section__body {
+  max-width: var(--measure);
+}
+
+.investment-section__body p:last-child {
+  margin-bottom: 0;
+}
+
+.investment-section blockquote {
+  padding: 4px 0 4px 20px;
+  border-left: 3px solid var(--text);
+  margin: 0 0 24px;
+  color: var(--text);
+  font-size: clamp(1.25rem, 3vw, 1.72rem);
+  font-weight: 700;
+  letter-spacing: -0.018em;
+  line-height: 1.35;
+}
+
+.investment-disclaimer {
+  display: grid;
+  padding-block: 24px 40px;
+  grid-template-columns: minmax(220px, 0.75fr) minmax(0, 1.25fr);
+  gap: 16px 68px;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.investment-disclaimer strong {
+  color: var(--text);
+}
+
+.investment-disclaimer p {
+  margin: 0;
+}
+
 .section-index,
 .compact-section-heading,
 .section-heading {
@@ -1200,6 +1294,16 @@ h3 {
   .travel-hero,
   .travel-ledger {
     grid-template-columns: 1fr;
+  }
+
+  .investing-hero,
+  .investment-section,
+  .investment-disclaimer {
+    grid-template-columns: 1fr;
+  }
+
+  .investing-hero h1 {
+    max-width: none;
   }
 
   .travel-globe-wrap {

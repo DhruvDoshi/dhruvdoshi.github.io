@@ -38,6 +38,7 @@ const pages = [
   ['/guides', generatedDate, 'monthly', '0.9'],
   ['/topics', generatedDate, 'monthly', '0.8'],
   ['/research', generatedDate, 'yearly', '0.8'],
+  ['/investing', '2026-08-23', 'monthly', '0.6'],
   ['/about', generatedDate, 'monthly', '0.7'],
   ['/contact', generatedDate, 'yearly', '0.6'],
   ['/pictures', generatedDate, 'yearly', '0.4'],
@@ -142,6 +143,7 @@ const llms = `# Dhruv Doshi
 - [Topics](${pageUrl('/topics')}): Subject index across notes, guides, work, research, and experience
 - [Site search](${pageUrl('/search')}): Search all public content
 - [Research](${pageUrl('/research')}): Published work on decentralized cloud storage
+- [Investment philosophy](${pageUrl('/investing')}): Personal framework for capital allocation, valuation, and risk
 - [About](${pageUrl('/about')}): Background, working principles, interests, and places visited
 - [Contact](${pageUrl('/contact')}): Contact information
 

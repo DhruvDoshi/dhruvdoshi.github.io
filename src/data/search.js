@@ -1,6 +1,7 @@
 import { guides } from './guides';
 import { notes } from './notes';
 import { caseStudies, experience, selectedProjects } from './profile';
+import { investingDescription, investingSearchText } from './investing';
 import { slugify, stripMarkup } from './note-utils';
 
 const topicSlug = (topic) => slugify(topic);
@@ -60,11 +61,23 @@ const researchEntries = [{
   searchText: 'Springer Nature smart contracts encryption cryptographic access control DCS-BBN',
 }];
 
+const investingEntries = [{
+  id: 'page-investing',
+  title: 'Investment philosophy',
+  description: investingDescription,
+  href: '/investing',
+  kind: 'Page',
+  date: '2026-08-23',
+  topics: [],
+  searchText: investingSearchText,
+}];
+
 const searchEntries = [
   ...guideEntries,
   ...projectEntries,
   ...experienceEntries,
   ...researchEntries,
+  ...investingEntries,
   ...noteEntries,
 ];
 

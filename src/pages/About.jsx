@@ -55,6 +55,7 @@ const About = () => (
         <p>Outside work, you’ll usually find me writing, playing chess, collecting coins, planning travel, or trying to improve my swimming.</p>
         <div className="button-row">
           <Link to="/notes">Read technical notes</Link>
+          <Link to="/investing">Investment philosophy</Link>
           <Link to="/contact">Contact me</Link>
         </div>
       </div>

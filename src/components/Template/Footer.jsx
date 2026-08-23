@@ -13,6 +13,7 @@ const Footer = () => (
         <Link to="/topics">Topics</Link>
         <Link to="/search">Search</Link>
         <Link to="/research">Research</Link>
+        <Link to="/investing">Investing</Link>
         <a href="https://www.linkedin.com/in/dhruvdoshi25071999" target="_blank" rel="noreferrer">LinkedIn</a>
         <a href="https://github.com/DhruvDoshi" target="_blank" rel="noreferrer">GitHub</a>
       </div>

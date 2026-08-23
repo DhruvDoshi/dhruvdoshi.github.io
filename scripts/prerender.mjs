@@ -11,6 +11,7 @@ import remarkGfm from 'remark-gfm';
 import { normalizeNote, slugify, stripMarkup } from '../src/data/note-utils.js';
 import { guides } from '../src/data/guides.js';
 import { homepageGuideSlugs, homepageNoteSlugs } from '../src/data/homepage.js';
+import { investmentSections, investingDescription, investingSearchText } from '../src/data/investing.js';
 import { caseStudies, capabilities, education, experience, impact, profile, selectedProjects } from '../src/data/profile.js';
 import routes from '../src/data/routes.js';
 import visitedPlaces, { countryCount } from '../src/data/travel.js';
@@ -46,7 +47,7 @@ const renderSiteChrome = (content, pathname) => {
     : content.replace('<main ', '<main id="main-content" ');
   const navigation = routes.map((route) => `<a href="${route.path}"${pathname === route.path ? ' class="is-active"' : ''}>${escapeHtml(route.label)}</a>`).join('');
 
-  return `<a class="skip-link" href="#main-content">Skip to content</a><header class="site-header"><div class="site-header__inner page-shell"><a class="wordmark" href="/" aria-label="Dhruv Doshi, home"><span class="wordmark__name">Dhruv Doshi</span></a><nav class="site-navigation" id="site-navigation" aria-label="Primary navigation">${navigation}<a class="site-search-link" href="/search" aria-label="Search the site">Search <kbd aria-hidden="true">/</kbd></a><button class="theme-toggle" type="button">dark mode</button></nav></div></header>${main}<footer class="site-footer"><div class="page-shell site-footer__grid"><p><strong>Dhruv Doshi</strong> · ${escapeHtml(profile.location)} · <a href="mailto:${profile.email}">${profile.email}</a></p><div class="site-footer__links"><a href="/resume">Resume</a><a href="/notes">Notes</a><a href="/guides">Guides</a><a href="/topics">Topics</a><a href="/search">Search</a><a href="/research">Research</a><a href="https://www.linkedin.com/in/dhruvdoshi25071999">LinkedIn</a><a href="https://github.com/DhruvDoshi">GitHub</a></div><div class="site-footer__machine"><a href="/sitemap.xml">Sitemap</a><a href="/feed.xml">RSS</a><a href="/llms.txt">LLMs</a></div><p class="site-footer__legal">© ${new Date().getFullYear()} Dhruv Doshi</p></div></footer>`;
+  return `<a class="skip-link" href="#main-content">Skip to content</a><header class="site-header"><div class="site-header__inner page-shell"><a class="wordmark" href="/" aria-label="Dhruv Doshi, home"><span class="wordmark__name">Dhruv Doshi</span></a><nav class="site-navigation" id="site-navigation" aria-label="Primary navigation">${navigation}<a class="site-search-link" href="/search" aria-label="Search the site">Search <kbd aria-hidden="true">/</kbd></a><button class="theme-toggle" type="button">dark mode</button></nav></div></header>${main}<footer class="site-footer"><div class="page-shell site-footer__grid"><p><strong>Dhruv Doshi</strong> · ${escapeHtml(profile.location)} · <a href="mailto:${profile.email}">${profile.email}</a></p><div class="site-footer__links"><a href="/resume">Resume</a><a href="/notes">Notes</a><a href="/guides">Guides</a><a href="/topics">Topics</a><a href="/search">Search</a><a href="/research">Research</a><a href="/investing">Investing</a><a href="https://www.linkedin.com/in/dhruvdoshi25071999">LinkedIn</a><a href="https://github.com/DhruvDoshi">GitHub</a></div><div class="site-footer__machine"><a href="/sitemap.xml">Sitemap</a><a href="/feed.xml">RSS</a><a href="/llms.txt">LLMs</a></div><p class="site-footer__legal">© ${new Date().getFullYear()} Dhruv Doshi</p></div></footer>`;
 };
 
 const files = (await readdir(notesDir)).filter((file) => file.endsWith('.md'));
@@ -60,6 +61,7 @@ const searchEntries = [
   ...selectedProjects.map((project) => ({ title: project.title, description: project.description, href: `/projects#${project.slug}`, kind: 'Project', topics: project.topics })),
   ...experience.map((item) => ({ title: `${item.role} — ${item.company}`, description: item.summary, href: `/resume#experience-${slugify(item.company)}`, kind: 'Experience', topics: item.company === 'Royal Bank of Canada' ? ['Platform architecture', 'Observability', 'AI governance', 'Staff engineering'] : ['Platform architecture'] })),
   { title: 'Decentralized Cloud Storage Based on Blockchain Networking', description: 'Published research on attribute-based access control, blockchain security events, and untrusted cloud storage.', href: '/research', kind: 'Research', date: '2020-01-01', topics: ['Distributed systems', 'Blockchain systems', 'Cloud architecture'] },
+  { title: 'Investment philosophy', description: investingDescription, href: '/investing', kind: 'Page', date: '2026-08-23', topics: [] },
   ...notes.map((note) => ({ title: note.title, description: note.excerpt, href: `/notes/${note.slug}`, kind: 'Note', date: note.date, topics: [note.topic] })),
 ];
 const topics = Object.entries(topicDescriptions).map(([name, description]) => ({
@@ -198,6 +200,18 @@ await writeRoute('/resume', {
   description: 'Professional experience, education, and technical capabilities of Dhruv Doshi.',
   type: 'ProfilePage',
   content: page('Resume', `<p><a href="/resume/Dhruv-Doshi-Resume.pdf">Open resume PDF</a></p>${experience.map((item) => `<article id="experience-${slugify(item.company)}"><h2>${escapeHtml(item.role)}</h2><p><strong>${escapeHtml(item.company)}</strong> · ${escapeHtml(item.period)} · ${escapeHtml(item.location)}</p><p>${escapeHtml(item.summary)}</p>${list(item.highlights.map(escapeHtml))}</article>`).join('')}<h2>Education</h2>${list(education.map((item) => `${escapeHtml(item.credential)}, ${escapeHtml(item.institution)} — ${escapeHtml(item.detail)}`))}<h2>Engineering scope</h2>${list(capabilities.map((item) => `<strong>${escapeHtml(item.title)}</strong>: ${escapeHtml(item.description)}`))}`),
+});
+
+await writeRoute('/investing', {
+  title: 'Investment philosophy',
+  description: investingDescription,
+  type: 'Article',
+  datePublished: '2026-08-23',
+  dateModified: '2026-08-23',
+  articleSection: 'Investing',
+  keywords: ['Investing', 'Capital allocation', 'Risk management', 'Valuation', 'Portfolio discipline'],
+  wordCount: investingSearchText.split(/\s+/).length,
+  content: `<main id="main-content" class="investing-page"><header class="investing-hero page-shell"><div><p class="eyebrow">Personal capital allocation</p><h1>Investment philosophy</h1></div><div class="investing-hero__copy"><p class="investing-hero__lede">A framework for compounding capital without accepting a meaningful risk of permanent ruin.</p><p>This is the discipline I want to apply while building capital: seek exceptional economics, demand an intelligent price, and continuously compare every holding with the alternatives.</p></div></header><div class="investment-manifesto">${investmentSections.map((section, index) => `<section class="investment-section page-shell" id="${section.id}"><header><span class="investment-section__index">${String(index + 1).padStart(2, '0')}</span><h2>${escapeHtml(section.title)}</h2></header><div class="investment-section__body">${section.emphasis ? `<blockquote>${escapeHtml(section.emphasis)}</blockquote>` : ''}${section.paragraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('')}</div></section>`).join('')}</div><aside class="investment-disclaimer page-shell"><strong>Personal framework, not investment advice.</strong><p>This page describes how I think about my own capital. It is not a recommendation to buy, sell, or hold any security.</p></aside></main>`,
 });
 
 const staticRoutes = [

@@ -15,6 +15,7 @@ import Resume from '../pages/Resume';
 import Search from '../pages/Search';
 import Guide from '../pages/Guide';
 import Topic from '../pages/Topic';
+import Investing from '../pages/Investing';
 import { featuredNotes, notes } from '../data/notes';
 import { homepageNotes } from '../data/homepage';
 
@@ -49,6 +50,11 @@ const pages = [
     heading: 'Notes',
     component: Notes,
   },
+  {
+    route: '/investing',
+    heading: 'Investment philosophy',
+    component: Investing,
+  },
 ];
 
 // Adds router to Page context and allows us to navigate to the
@@ -75,6 +81,15 @@ const checkPageComponent = (page) => {
 };
 
 pages.forEach((page) => checkPageComponent(page));
+
+test('Publishes the investment philosophy with its core risk and valuation rules', () => {
+  renderWithRouter(<Investing />, { route: '/investing' });
+
+  expect(screen.getByText(/permanent impairment, poor business economics/)).toBeInTheDocument();
+  expect(screen.getByText(/Quality is a prerequisite, not a substitute for valuation/)).toBeInTheDocument();
+  expect(screen.getByText('I prefer a believable 28% return to a fragile 31% forecast.')).toBeInTheDocument();
+  expect(screen.getByText(/not investment advice/i)).toBeInTheDocument();
+});
 
 test('Places the travel journal after the background and interests section', () => {
   renderWithRouter(<About />, { route: '/about' });
@@ -181,12 +196,21 @@ test('Provides the authored resume PDF instead of a print action', () => {
 
 test('Searches notes, guides, projects, research, and experience from one field', () => {
   renderWithRouter(<Search />, { route: '/search' });
-  fireEvent.change(screen.getByRole('searchbox', { name: 'Search notes, guides, work, research, and experience' }), {
+  fireEvent.change(screen.getByRole('searchbox', { name: 'Search the site' }), {
     target: { value: 'OpenTelemetry' },
   });
 
   expect(screen.getByText('Vendor-neutral observability platform')).toBeInTheDocument();
   expect(screen.getByText(/result.*for “OpenTelemetry”/)).toBeInTheDocument();
+});
+
+test('Includes the investment philosophy in site search', () => {
+  renderWithRouter(<Search />, { route: '/search' });
+  fireEvent.change(screen.getByRole('searchbox', { name: 'Search the site' }), {
+    target: { value: 'permanent ruin' },
+  });
+
+  expect(screen.getByText('Investment philosophy')).toBeInTheDocument();
 });
 
 test('Renders a maintained guide with review and source-note links', () => {
