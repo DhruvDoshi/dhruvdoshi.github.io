@@ -123,11 +123,11 @@ test('Filters notes from the first search control', () => {
     target: { value: 'cloud' },
   });
 
-  expect(screen.getByText(/of 83 notes$/)).toBeInTheDocument();
+  expect(screen.getByText(/of 107 notes$/)).toBeInTheDocument();
 });
 
 test('Publishes the historical note series while keeping scheduled content private', () => {
-  expect(notes).toHaveLength(83);
+  expect(notes).toHaveLength(107);
   expect(notes.some((note) => note.title === 'Design the platform as a product')).toBe(true);
   expect(notes.some((note) => note.title === 'Architecture decision records that remain useful')).toBe(true);
   expect(notes.every((note) => note.status === 'published')).toBe(true);
