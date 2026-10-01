@@ -54,7 +54,7 @@
     "node-html-markdown": "^2.0.0",
     "sass": "^1.102.0",
     "vite": "^8.1.5",
-    "vitest": "^4.1.10"
+    "vitest": "^4.1.11"
   },
   "overrides": {
     "undici": "^8.10.2"
