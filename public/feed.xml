@@ -8,12 +8,68 @@
     <lastBuildDate>Thu, 01 Oct 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://doshidhruv.com/feed.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>&quot;Active-active multi-region design: the honest trade-offs&quot;</title>
+      <link>https://doshidhruv.com/notes/active-active-multi-region-design-the-honest-trade-offs/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/active-active-multi-region-design-the-honest-trade-offs/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Distributed systems</category>
+      <description>Every few years a team decides it needs active active multi region, usually after an outage, with the requirement phrased as &quot;we can never go down.&quot; Active active is legitimate for a…</description>
+    </item>
+    <item>
+      <title>&quot;Agent orchestration patterns: planner-executor, routing, and supervision&quot;</title>
+      <link>https://doshidhruv.com/notes/agent-orchestration-patterns-planner-executor-routing-and-supervision/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/agent-orchestration-patterns-planner-executor-routing-and-supervision/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Enterprise AI</category>
+      <description>Most teams building AI agents start with a single agent loop: a model, a prompt, and a pile of tools. It works for the demo. It falls apart when the task is too long, too varied, or too…</description>
+    </item>
+    <item>
+      <title>&quot;AI red teaming: a practical playbook for enterprise teams&quot;</title>
+      <link>https://doshidhruv.com/notes/ai-red-teaming-a-practical-playbook-for-enterprise-teams/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/ai-red-teaming-a-practical-playbook-for-enterprise-teams/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>AI governance</category>
+      <description>AI red teaming is the practice of adversarially testing AI systems before attackers do. It borrows the name from cybersecurity red teams, and the analogy is useful but incomplete: you…</description>
+    </item>
+    <item>
+      <title>&quot;Third-party AI vendor risk management&quot;</title>
+      <link>https://doshidhruv.com/notes/third-party-ai-vendor-risk-management/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/third-party-ai-vendor-risk-management/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>AI governance</category>
+      <description>Enterprise AI systems are built on third party components: foundation model APIs, embedding services, vector database vendors, agent frameworks, evaluation platforms, annotation…</description>
+    </item>
+    <item>
       <title>Design APIs for agent consumers</title>
       <link>https://doshidhruv.com/notes/design-apis-for-agent-consumers/</link>
       <guid isPermaLink="true">https://doshidhruv.com/notes/design-apis-for-agent-consumers/</guid>
       <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
-      <category>API design</category>
+      <category>AI governance</category>
       <description>APIs were designed for human developers reading documentation. AI agents are becoming a significant consumer of the same interfaces, and they read APIs differently: they parse schemas…</description>
+    </item>
+    <item>
+      <title>API versioning strategy that survives contact with reality</title>
+      <link>https://doshidhruv.com/notes/api-versioning-strategy-that-survives-contact-with-reality/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/api-versioning-strategy-that-survives-contact-with-reality/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Platform architecture</category>
+      <description>The real goal of API versioning is not elegance. It is this: never break a consumer you don&apos;t know about. Internal services you can grep for callers. External APIs — public, partner, or…</description>
+    </item>
+    <item>
+      <title>&quot;Audit logging for AI systems: what to record and why&quot;</title>
+      <link>https://doshidhruv.com/notes/audit-logging-for-ai-systems-what-to-record-and-why/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/audit-logging-for-ai-systems-what-to-record-and-why/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>AI governance</category>
+      <description>AI systems make decisions and take actions that need to be explainable after the fact: why did the agent do that, what data did it use, who approved it, what exactly happened? Audit…</description>
+    </item>
+    <item>
+      <title>&quot;Caching strategy for distributed systems&quot;</title>
+      <link>https://doshidhruv.com/notes/caching-strategy-for-distributed-systems/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/caching-strategy-for-distributed-systems/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Distributed systems</category>
+      <description>Caching is the highest leverage performance tool in distributed systems and the most reliable source of subtle correctness bugs. Every cache is a bet: that serving slightly stale data…</description>
     </item>
     <item>
       <title>The Canadian public-sector technology landscape</title>
@@ -22,6 +78,30 @@
       <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
       <category>Public sector</category>
       <description>Canada&apos;s public sector technology landscape is large, fragmented, and full of opportunity for firms that understand how it actually buys and builds. Federal departments, provinces,…</description>
+    </item>
+    <item>
+      <title>&quot;Change data capture in production: log-based vs the alternatives&quot;</title>
+      <link>https://doshidhruv.com/notes/change-data-capture-in-production-log-based-vs-the-alternatives/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/change-data-capture-in-production-log-based-vs-the-alternatives/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Data engineering</category>
+      <description>Almost every data platform eventually needs to get rows out of a production database without breaking it. The analytical store needs fresh data, the search index needs updates, the…</description>
+    </item>
+    <item>
+      <title>&quot;Chaos engineering that survives the pilot&quot;</title>
+      <link>https://doshidhruv.com/notes/chaos-engineering-that-survives-the-pilot/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/chaos-engineering-that-survives-the-pilot/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>SRE</category>
+      <description>Chaos engineering has a pilot problem. A team runs a game day, kills some pods, finds a missing readiness probe, writes a triumphant blog style internal post — and eighteen months later…</description>
+    </item>
+    <item>
+      <title>&quot;Choosing a vector database: what actually differentiates them&quot;</title>
+      <link>https://doshidhruv.com/notes/choosing-a-vector-database-what-actually-differentiates-them/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/choosing-a-vector-database-what-actually-differentiates-them/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Enterprise AI</category>
+      <description>The vector database market has a marketing problem: every product claims to be the fastest, most scalable, most accurate option, and the benchmarks they publish are engineered to prove…</description>
     </item>
     <item>
       <title>Cloud cost attribution that survives contact with reality</title>
@@ -40,6 +120,30 @@
       <description>AI systems are data copies all the way down: training sets, vector indexes, caches, logs, evaluation sets, and backups. Each copy has its own lifecycle, and deletion requests — from…</description>
     </item>
     <item>
+      <title>&quot;Defending against prompt injection in production LLM systems&quot;</title>
+      <link>https://doshidhruv.com/notes/defending-against-prompt-injection-in-production-llm-systems/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/defending-against-prompt-injection-in-production-llm-systems/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>AI governance</category>
+      <description>Prompt injection is the defining security problem of LLM applications. It is not a bug that gets patched; it is a structural property of systems that mix instructions and data in the…</description>
+    </item>
+    <item>
+      <title>&quot;Design systems are a platform: treat them like one&quot;</title>
+      <link>https://doshidhruv.com/notes/design-systems-are-a-platform-treat-them-like-one/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/design-systems-are-a-platform-treat-them-like-one/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Frontend architecture</category>
+      <description>Most design systems die the same way: a burst of initial energy produces a component library, teams adopt it unevenly, the library drifts from the product, contributions stall, and…</description>
+    </item>
+    <item>
+      <title>&quot;Engineering metrics that matter: DORA, SPACE, and the ones in between&quot;</title>
+      <link>https://doshidhruv.com/notes/engineering-metrics-that-matter-dora-space-and-the-ones-in-between/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/engineering-metrics-that-matter-dora-space-and-the-ones-in-between/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Staff engineering</category>
+      <description>Every engineering organization measures something. Most measure the wrong things, confidently, on beautiful dashboards nobody acts on. Velocity is up; the engineers say everything is on…</description>
+    </item>
+    <item>
       <title>Sequence enterprise AI adoption by risk, not by hype</title>
       <link>https://doshidhruv.com/notes/sequence-enterprise-ai-adoption-by-risk-not-by-hype/</link>
       <guid isPermaLink="true">https://doshidhruv.com/notes/sequence-enterprise-ai-adoption-by-risk-not-by-hype/</guid>
@@ -48,11 +152,91 @@
       <description>Most enterprise AI programs fail in one of two ways: they start with the highest risk use case and stall in governance review, or they scatter dozens of disconnected pilots that never…</description>
     </item>
     <item>
+      <title>&quot;Envelope encryption and KMS design for application teams&quot;</title>
+      <link>https://doshidhruv.com/notes/envelope-encryption-and-kms-design-for-application-teams/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/envelope-encryption-and-kms-design-for-application-teams/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Cloud security</category>
+      <description>Every application team eventually faces the same requirement: encrypt sensitive data, manage the keys properly, rotate them, and prove it to an auditor. The naive approaches — a key in…</description>
+    </item>
+    <item>
+      <title>&quot;Evaluating AI agents: beyond task success rate&quot;</title>
+      <link>https://doshidhruv.com/notes/evaluating-ai-agents-beyond-task-success-rate/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/evaluating-ai-agents-beyond-task-success-rate/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>AI governance</category>
+      <description>Task success rate is the metric everyone reports and almost no one should rely on alone. It tells you whether the agent completed the task — not whether it completed it well, safely,…</description>
+    </item>
+    <item>
+      <title>&quot;Event-driven architecture pitfalls and how to avoid them&quot;</title>
+      <link>https://doshidhruv.com/notes/event-driven-architecture-pitfalls-and-how-to-avoid-them/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/event-driven-architecture-pitfalls-and-how-to-avoid-them/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Distributed systems</category>
+      <description>Event driven architecture has a seductive pitch: services decoupled in time and space, reacting to facts instead of calling each other. The pitch is not wrong. But the failure modes of…</description>
+    </item>
+    <item>
+      <title>&quot;Feature flag governance: flags as inventory, not litter&quot;</title>
+      <link>https://doshidhruv.com/notes/feature-flag-governance-flags-as-inventory-not-litter/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/feature-flag-governance-flags-as-inventory-not-litter/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Platform architecture</category>
+      <description>Every sufficiently mature codebase contains a graveyard of feature flags: new checkout flow v2 final , enable thing temp , johns experiment do not delete . Each was created for a good…</description>
+    </item>
+    <item>
+      <title>&quot;Feature stores: when your ML platform needs one&quot;</title>
+      <link>https://doshidhruv.com/notes/feature-stores-when-your-ml-platform-needs-one/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/feature-stores-when-your-ml-platform-needs-one/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Machine learning</category>
+      <description>Every ML team eventually hits the same wall: the model that worked in the notebook fails in production, and the root cause is features. Training used one definition of &quot;user&apos;s 30 day…</description>
+    </item>
+    <item>
+      <title>&quot;Fine-tuning vs RAG vs prompting: how to actually decide&quot;</title>
+      <link>https://doshidhruv.com/notes/fine-tuning-vs-rag-vs-prompting-how-to-actually-decide/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/fine-tuning-vs-rag-vs-prompting-how-to-actually-decide/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Enterprise AI</category>
+      <description>Teams building on LLMs face a recurring decision: should we fine tune a model, build retrieval augmented generation, or just engineer better prompts? The discourse around this is noisy…</description>
+    </item>
+    <item>
+      <title>&quot;FinOps for AI workloads: controlling GPU and inference spend&quot;</title>
+      <link>https://doshidhruv.com/notes/finops-for-ai-workloads-controlling-gpu-and-inference-spend/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/finops-for-ai-workloads-controlling-gpu-and-inference-spend/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Enterprise AI</category>
+      <description>AI workloads have a cost profile unlike anything else in the enterprise cloud bill: GPU compute that is expensive per hour and often poorly utilized, inference costs that scale with…</description>
+    </item>
+    <item>
+      <title>GitOps at scale: what works past the demo</title>
+      <link>https://doshidhruv.com/notes/gitops-at-scale-what-works-past-the-demo/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/gitops-at-scale-what-works-past-the-demo/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Platform architecture</category>
+      <description>The GitOps demo is compelling: commit to git, watch the agent sync it to the cluster. It takes a day to set up and about a year to discover what it doesn&apos;t do. This note is about that…</description>
+    </item>
+    <item>
+      <title>&quot;Guardrail architecture for LLM applications&quot;</title>
+      <link>https://doshidhruv.com/notes/guardrail-architecture-for-llm-applications/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/guardrail-architecture-for-llm-applications/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>AI governance</category>
+      <description>Guardrails are the controls that keep LLM applications within acceptable bounds: blocking disallowed content, enforcing policies, validating outputs, and constraining agent actions.…</description>
+    </item>
+    <item>
+      <title>&quot;Hiring bars for senior engineers: what the bar is really made of&quot;</title>
+      <link>https://doshidhruv.com/notes/hiring-bars-for-senior-engineers-what-the-bar-is-really-made-of/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/hiring-bars-for-senior-engineers-what-the-bar-is-really-made-of/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Engineering leadership</category>
+      <description>Every company claims a high hiring bar. Few can say what it&apos;s made of. Ask a hiring manager what distinguishes their senior bar from their mid level bar and you&apos;ll usually get vibes:…</description>
+    </item>
+    <item>
       <title>Incident review culture for AI systems</title>
       <link>https://doshidhruv.com/notes/incident-review-culture-for-ai-systems/</link>
       <guid isPermaLink="true">https://doshidhruv.com/notes/incident-review-culture-for-ai-systems/</guid>
       <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
-      <category>Reliability</category>
+      <category>AI governance</category>
       <description>Incident review for traditional software asks what the system did wrong. Incident review for AI systems must also ask what the system did confidently, plausibly, and incorrectly — and…</description>
     </item>
     <item>
@@ -60,8 +244,56 @@
       <link>https://doshidhruv.com/notes/the-internal-developer-platform-adoption-playbook/</link>
       <guid isPermaLink="true">https://doshidhruv.com/notes/the-internal-developer-platform-adoption-playbook/</guid>
       <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
-      <category>Platform engineering</category>
+      <category>Platform architecture</category>
       <description>Building an internal developer platform is an engineering problem. Getting engineers to use it is an organizational one. Most platform programs underinvest in adoption by an order of…</description>
+    </item>
+    <item>
+      <title>&quot;Lakehouse architecture: the decisions that actually matter&quot;</title>
+      <link>https://doshidhruv.com/notes/lakehouse-architecture-the-decisions-that-actually-matter/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/lakehouse-architecture-the-decisions-that-actually-matter/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Data engineering</category>
+      <description>The lakehouse pitch is seductive: one storage layer — cheap object storage — with warehouse grade reliability and query performance on top. ACID transactions, schema enforcement, time…</description>
+    </item>
+    <item>
+      <title>&quot;Legacy modernization in the public sector: constraints are the design&quot;</title>
+      <link>https://doshidhruv.com/notes/legacy-modernization-in-the-public-sector-constraints-are-the-design/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/legacy-modernization-in-the-public-sector-constraints-are-the-design/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Public sector</category>
+      <description>Private sector modernization advice assumes things that aren&apos;t true in government: that you can reorganize teams freely, that funding follows value, that downtime is a business…</description>
+    </item>
+    <item>
+      <title>&quot;Managing technical debt like a portfolio&quot;</title>
+      <link>https://doshidhruv.com/notes/managing-technical-debt-like-a-portfolio/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/managing-technical-debt-like-a-portfolio/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Staff engineering</category>
+      <description>&quot;Technical debt&quot; is the most overused and least managed concept in software engineering. Every team says they have it. Almost none can say how much, where it is, what it costs, or what…</description>
+    </item>
+    <item>
+      <title>&quot;Phishing-resistant authentication: MFA that actually holds up&quot;</title>
+      <link>https://doshidhruv.com/notes/phishing-resistant-authentication-mfa-that-actually-holds-up/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/phishing-resistant-authentication-mfa-that-actually-holds-up/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Identity</category>
+      <description>&quot;We have MFA&quot; is the most common false confidence in authentication. SMS codes, TOTP apps, and push approvals all count as multi factor, and all of them fail against a phishing page…</description>
+    </item>
+    <item>
+      <title>&quot;Micro-frontends: the narrow conditions where they pay off&quot;</title>
+      <link>https://doshidhruv.com/notes/micro-frontends-the-narrow-conditions-where-they-pay-off/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/micro-frontends-the-narrow-conditions-where-they-pay-off/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Frontend architecture</category>
+      <description>Micro frontends promise microservices&apos; organizational benefits for the UI: independent teams deploying independently. In practice, most adoptions buy the complexity of distributed…</description>
+    </item>
+    <item>
+      <title>&quot;Mobile release trains: CI/CD when the app store is your deploy target&quot;</title>
+      <link>https://doshidhruv.com/notes/mobile-release-trains-ci-cd-when-the-app-store-is-your-deploy-target/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/mobile-release-trains-ci-cd-when-the-app-store-is-your-deploy-target/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Mobile</category>
+      <description>Web teams deploy when they feel like it. Mobile teams deploy when Apple and Google let them. That asymmetry rewrites every assumption CI/CD makes: there is no rollback, no instant…</description>
     </item>
     <item>
       <title>Model risk management for LLM systems in regulated industries</title>
@@ -72,36 +304,148 @@
       <description>Regulated industries — banking, insurance, healthcare — have managed model risk for decades. Credit models, fraud models, and capital models all pass through validation functions that…</description>
     </item>
     <item>
+      <title>&quot;Network segmentation in cloud: VPC design that holds up&quot;</title>
+      <link>https://doshidhruv.com/notes/network-segmentation-in-cloud-vpc-design-that-holds-up/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/network-segmentation-in-cloud-vpc-design-that-holds-up/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Cloud security</category>
+      <description>Cloud networking gives you a green field and a dangerous amount of rope. There is no physical firewall to misconfigure — instead there are security groups, NACLs, route tables, and IAM…</description>
+    </item>
+    <item>
+      <title>&quot;OAuth 2.0 and OIDC in production: flows, tokens, and the mistakes that repeat&quot;</title>
+      <link>https://doshidhruv.com/notes/oauth-2-0-and-oidc-in-production-flows-tokens-and-the-mistakes-that-repeat/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/oauth-2-0-and-oidc-in-production-flows-tokens-and-the-mistakes-that-repeat/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Identity</category>
+      <description>OAuth 2.0 is an authorization framework that the industry uses for authentication anyway, usually by bolting OpenID Connect on top. The specs are readable, the libraries are mature, and…</description>
+    </item>
+    <item>
       <title>Observability for LLM applications</title>
       <link>https://doshidhruv.com/notes/observability-for-llm-applications/</link>
       <guid isPermaLink="true">https://doshidhruv.com/notes/observability-for-llm-applications/</guid>
       <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
-      <category>AI systems</category>
+      <category>Observability</category>
       <description>Traditional observability answers what the system did. LLM application observability must also answer what the system said, why it said it, what it cost, and whether it should have said…</description>
+    </item>
+    <item>
+      <title>&quot;Offline-first mobile architecture: sync, conflicts, and honesty&quot;</title>
+      <link>https://doshidhruv.com/notes/offline-first-mobile-architecture-sync-conflicts-and-honesty/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/offline-first-mobile-architecture-sync-conflicts-and-honesty/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Mobile</category>
+      <description>Mobile networks lie. They report full signal in elevators, drop mid request in parking garages, and throttle aggressively on congested cells. An app designed for reliable connectivity…</description>
+    </item>
+    <item>
+      <title>&quot;PII detection and redaction in AI data pipelines&quot;</title>
+      <link>https://doshidhruv.com/notes/pii-detection-and-redaction-in-ai-data-pipelines/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/pii-detection-and-redaction-in-ai-data-pipelines/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>AI governance</category>
+      <description>AI systems are PII magnets. They ingest documents full of personal data, process user inputs containing identifiers, generate outputs that recombine sensitive information, and log…</description>
     </item>
     <item>
       <title>Platform engineering for AI workloads</title>
       <link>https://doshidhruv.com/notes/platform-engineering-for-ai-workloads/</link>
       <guid isPermaLink="true">https://doshidhruv.com/notes/platform-engineering-for-ai-workloads/</guid>
       <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
-      <category>Platform engineering</category>
+      <category>Platform architecture</category>
       <description>AI workloads are becoming ordinary production workloads, but platforms built for stateless microservices handle them poorly. GPU scheduling, model serving, evaluation infrastructure,…</description>
+    </item>
+    <item>
+      <title>&quot;Platform team topologies: organizing for leverage, not tickets&quot;</title>
+      <link>https://doshidhruv.com/notes/platform-team-topologies-organizing-for-leverage-not-tickets/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/platform-team-topologies-organizing-for-leverage-not-tickets/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Engineering leadership</category>
+      <description>Every platform team starts with the same noble intent: build the paved road so product teams can move fast. And nearly every platform team ends up in the same place: a ticket queue.…</description>
+    </item>
+    <item>
+      <title>&quot;Policy as code with OPA: guardrails without gatekeepers&quot;</title>
+      <link>https://doshidhruv.com/notes/policy-as-code-with-opa-guardrails-without-gatekeepers/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/policy-as-code-with-opa-guardrails-without-gatekeepers/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Platform architecture</category>
+      <description>Most organizations enforce policy through people: a security review board that meets on Tuesdays, a Slack message asking &quot;can we deploy this?&quot;, a spreadsheet of approved images that is…</description>
+    </item>
+    <item>
+      <title>&quot;Procurement-friendly architecture: build systems that survive the RFP&quot;</title>
+      <link>https://doshidhruv.com/notes/procurement-friendly-architecture-build-systems-that-survive-the-rfp/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/procurement-friendly-architecture-build-systems-that-survive-the-rfp/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Public sector</category>
+      <description>In the private sector, architecture serves the product. In the public sector, architecture also serves the procurement — because every significant system will be bought, built, or…</description>
     </item>
     <item>
       <title>Progressive delivery for platform changes</title>
       <link>https://doshidhruv.com/notes/progressive-delivery-for-platform-changes/</link>
       <guid isPermaLink="true">https://doshidhruv.com/notes/progressive-delivery-for-platform-changes/</guid>
       <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
-      <category>Platform engineering</category>
+      <category>Platform architecture</category>
       <description>Platform changes are high blast radius by definition: a bad rollout of a shared build pipeline, service mesh configuration, or base image affects every team at once. Yet platform teams…</description>
+    </item>
+    <item>
+      <title>&quot;Push notification architecture at real scale&quot;</title>
+      <link>https://doshidhruv.com/notes/push-notification-architecture-at-real-scale/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/push-notification-architecture-at-real-scale/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Mobile</category>
+      <description>Push notifications look simple — your server calls a provider API, the phone buzzes — until the second million devices, the first incident where a notification storm wakes a continent,…</description>
     </item>
     <item>
       <title>RAG failure modes in production and how to contain them</title>
       <link>https://doshidhruv.com/notes/rag-failure-modes-in-production-and-how-to-contain-them/</link>
       <guid isPermaLink="true">https://doshidhruv.com/notes/rag-failure-modes-in-production-and-how-to-contain-them/</guid>
       <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
-      <category>AI systems</category>
+      <category>AI governance</category>
       <description>Retrieval augmented generation fails in production in ways that never appear in a demo. The demo uses a clean corpus, a cooperative user, and a forgiving evaluator. Production…</description>
+    </item>
+    <item>
+      <title>Rate limiting and quota design for shared platforms</title>
+      <link>https://doshidhruv.com/notes/rate-limiting-and-quota-design-for-shared-platforms/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/rate-limiting-and-quota-design-for-shared-platforms/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Platform architecture</category>
+      <description>Rate limiting is one of those topics where everyone uses the same words to mean different things, and then the design review goes sideways. Before algorithms and headers, get the…</description>
+    </item>
+    <item>
+      <title>&quot;RFC culture that actually decides&quot;</title>
+      <link>https://doshidhruv.com/notes/rfc-culture-that-actually-decides/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/rfc-culture-that-actually-decides/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Engineering leadership</category>
+      <description>Most engineering organizations have an RFC process. Few have an RFC culture. The difference: a process produces documents; a culture produces decisions. I&apos;ve seen RFC repos with…</description>
+    </item>
+    <item>
+      <title>&quot;Sagas for distributed transactions: choreography vs orchestration&quot;</title>
+      <link>https://doshidhruv.com/notes/sagas-for-distributed-transactions-choreography-vs-orchestration/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/sagas-for-distributed-transactions-choreography-vs-orchestration/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Distributed systems</category>
+      <description>The moment a business transaction crosses a service boundary, ACID stops applying. An order touches inventory, payment, fraud screening, and fulfillment — four services, four databases,…</description>
+    </item>
+    <item>
+      <title>&quot;Shadow AI: discovering and governing unsanctioned AI use&quot;</title>
+      <link>https://doshidhruv.com/notes/shadow-ai-discovering-and-governing-unsanctioned-ai-use/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/shadow-ai-discovering-and-governing-unsanctioned-ai-use/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Enterprise AI</category>
+      <description>Shadow AI is the use of AI tools and services without IT or security approval: employees pasting customer data into public chatbots, teams building workflows on unvetted AI APIs,…</description>
+    </item>
+    <item>
+      <title>&quot;SSO and SCIM: the enterprise identity lifecycle nobody designs for&quot;</title>
+      <link>https://doshidhruv.com/notes/sso-and-scim-the-enterprise-identity-lifecycle-nobody-designs-for/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/sso-and-scim-the-enterprise-identity-lifecycle-nobody-designs-for/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Identity</category>
+      <description>Enterprise buyers ask for SSO on the first sales call, and most engineering teams treat it as the whole identity problem. SSO is sign in — a single arrow pointing into your application.…</description>
+    </item>
+    <item>
+      <title>&quot;SSR, ISR, and edge rendering: choosing without the hype&quot;</title>
+      <link>https://doshidhruv.com/notes/ssr-isr-and-edge-rendering-choosing-without-the-hype/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/ssr-isr-and-edge-rendering-choosing-without-the-hype/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Frontend architecture</category>
+      <description>Every few years the frontend world rediscovers server rendering and declares client side rendering dead, then rediscovers its costs and declares SSR dead. The reality is boring and…</description>
     </item>
     <item>
       <title>The staff engineer operating cadence</title>
@@ -112,12 +456,44 @@
       <description>Staff engineering is often described through its outcomes — leverage, influence, technical direction — and rarely through its weekly reality. But the difference between a staff engineer…</description>
     </item>
     <item>
+      <title>&quot;Staff-plus archetypes: the four paths that actually exist&quot;</title>
+      <link>https://doshidhruv.com/notes/staff-plus-archetypes-the-four-paths-that-actually-exist/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/staff-plus-archetypes-the-four-paths-that-actually-exist/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Engineering leadership</category>
+      <description>Ask ten staff engineers what their job is and you&apos;ll get ten different answers — not because they&apos;re confused, but because staff plus isn&apos;t one job. It&apos;s a scope band containing several…</description>
+    </item>
+    <item>
+      <title>&quot;Stream processing design: state, time, and exactly-once&quot;</title>
+      <link>https://doshidhruv.com/notes/stream-processing-design-state-time-and-exactly-once/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/stream-processing-design-state-time-and-exactly-once/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Data engineering</category>
+      <description>Batch processing asks &quot;what happened?&quot; Stream processing asks &quot;what is happening, right now, and what should we do about it?&quot; The difference is not speed — it is that the input never…</description>
+    </item>
+    <item>
+      <title>&quot;Web performance budgets: make speed a release gate&quot;</title>
+      <link>https://doshidhruv.com/notes/web-performance-budgets-make-speed-a-release-gate/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/web-performance-budgets-make-speed-a-release-gate/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Frontend architecture</category>
+      <description>Every web team agrees performance matters and almost none treat it as a requirement. Features ship, bundles grow, images accumulate, third party scripts multiply, and performance…</description>
+    </item>
+    <item>
       <title>When to bring in enterprise AI consulting</title>
       <link>https://doshidhruv.com/notes/when-to-bring-in-enterprise-ai-consulting/</link>
       <guid isPermaLink="true">https://doshidhruv.com/notes/when-to-bring-in-enterprise-ai-consulting/</guid>
       <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
-      <category>Consulting</category>
+      <category>Enterprise AI</category>
       <description>Most organizations do not need an AI consultant. They need a clear problem, an empowered owner, and the patience to run the sequencing that works: low risk internal wins first, the…</description>
+    </item>
+    <item>
+      <title>Zero-downtime database migrations at scale</title>
+      <link>https://doshidhruv.com/notes/zero-downtime-database-migrations-at-scale/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/zero-downtime-database-migrations-at-scale/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Platform architecture</category>
+      <description>Most migration guides describe a single ALTER TABLE on a dev database and call it a strategy. In production, migrations are a concurrency problem: old code and new code run against the…</description>
     </item>
     <item>
       <title>Platform architecture: from standards to a usable product</title>

@@ -127,7 +127,61 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://doshidhruv.com/topics/cloud-security/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/topics/data-engineering/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://doshidhruv.com/topics/distributed-systems/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/topics/engineering-leadership/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/topics/enterprise-ai/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/topics/frontend-architecture/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/topics/identity/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/topics/machine-learning/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/topics/mobile/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/topics/public-sector/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -145,7 +199,37 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://doshidhruv.com/topics/sre/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://doshidhruv.com/topics/staff-engineering/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/active-active-multi-region-design-the-honest-trade-offs/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/agent-orchestration-patterns-planner-executor-routing-and-supervision/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/ai-red-teaming-a-practical-playbook-for-enterprise-teams/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/third-party-ai-vendor-risk-management/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -157,7 +241,43 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://doshidhruv.com/notes/api-versioning-strategy-that-survives-contact-with-reality/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/audit-logging-for-ai-systems-what-to-record-and-why/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/caching-strategy-for-distributed-systems/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://doshidhruv.com/notes/the-canadian-public-sector-technology-landscape/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/change-data-capture-in-production-log-based-vs-the-alternatives/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/chaos-engineering-that-survives-the-pilot/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/choosing-a-vector-database-what-actually-differentiates-them/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -175,7 +295,85 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://doshidhruv.com/notes/defending-against-prompt-injection-in-production-llm-systems/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/design-systems-are-a-platform-treat-them-like-one/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/engineering-metrics-that-matter-dora-space-and-the-ones-in-between/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://doshidhruv.com/notes/sequence-enterprise-ai-adoption-by-risk-not-by-hype/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/envelope-encryption-and-kms-design-for-application-teams/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/evaluating-ai-agents-beyond-task-success-rate/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/event-driven-architecture-pitfalls-and-how-to-avoid-them/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/feature-flag-governance-flags-as-inventory-not-litter/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/feature-stores-when-your-ml-platform-needs-one/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/fine-tuning-vs-rag-vs-prompting-how-to-actually-decide/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/finops-for-ai-workloads-controlling-gpu-and-inference-spend/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/gitops-at-scale-what-works-past-the-demo/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/guardrail-architecture-for-llm-applications/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/hiring-bars-for-senior-engineers-what-the-bar-is-really-made-of/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -193,7 +391,55 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://doshidhruv.com/notes/lakehouse-architecture-the-decisions-that-actually-matter/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/legacy-modernization-in-the-public-sector-constraints-are-the-design/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/managing-technical-debt-like-a-portfolio/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/phishing-resistant-authentication-mfa-that-actually-holds-up/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/micro-frontends-the-narrow-conditions-where-they-pay-off/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/mobile-release-trains-ci-cd-when-the-app-store-is-your-deploy-target/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://doshidhruv.com/notes/model-risk-management-for-llm-systems-in-regulated-industries/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/network-segmentation-in-cloud-vpc-design-that-holds-up/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/oauth-2-0-and-oidc-in-production-flows-tokens-and-the-mistakes-that-repeat/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -205,7 +451,37 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://doshidhruv.com/notes/offline-first-mobile-architecture-sync-conflicts-and-honesty/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/pii-detection-and-redaction-in-ai-data-pipelines/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://doshidhruv.com/notes/platform-engineering-for-ai-workloads/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/platform-team-topologies-organizing-for-leverage-not-tickets/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/policy-as-code-with-opa-guardrails-without-gatekeepers/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/procurement-friendly-architecture-build-systems-that-survive-the-rfp/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -217,7 +493,49 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://doshidhruv.com/notes/push-notification-architecture-at-real-scale/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://doshidhruv.com/notes/rag-failure-modes-in-production-and-how-to-contain-them/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/rate-limiting-and-quota-design-for-shared-platforms/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/rfc-culture-that-actually-decides/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/sagas-for-distributed-transactions-choreography-vs-orchestration/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/shadow-ai-discovering-and-governing-unsanctioned-ai-use/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/sso-and-scim-the-enterprise-identity-lifecycle-nobody-designs-for/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/ssr-isr-and-edge-rendering-choosing-without-the-hype/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -229,7 +547,31 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://doshidhruv.com/notes/staff-plus-archetypes-the-four-paths-that-actually-exist/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/stream-processing-design-state-time-and-exactly-once/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/web-performance-budgets-make-speed-a-release-gate/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://doshidhruv.com/notes/when-to-bring-in-enterprise-ai-consulting/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/zero-downtime-database-migrations-at-scale/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
