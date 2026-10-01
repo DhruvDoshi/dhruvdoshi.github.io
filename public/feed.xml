@@ -5,8 +5,120 @@
     <link>https://doshidhruv.com/notes/</link>
     <description>Technical guides and notes on platform architecture, observability, cloud systems, artificial intelligence, machine learning, and distributed systems.</description>
     <language>en-ca</language>
-    <lastBuildDate>Tue, 28 Jul 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://doshidhruv.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Design APIs for agent consumers</title>
+      <link>https://doshidhruv.com/notes/design-apis-for-agent-consumers/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/design-apis-for-agent-consumers/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>API design</category>
+      <description>APIs were designed for human developers reading documentation. AI agents are becoming a significant consumer of the same interfaces, and they read APIs differently: they parse schemas…</description>
+    </item>
+    <item>
+      <title>The Canadian public-sector technology landscape</title>
+      <link>https://doshidhruv.com/notes/the-canadian-public-sector-technology-landscape/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/the-canadian-public-sector-technology-landscape/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Public sector</category>
+      <description>Canada&apos;s public sector technology landscape is large, fragmented, and full of opportunity for firms that understand how it actually buys and builds. Federal departments, provinces,…</description>
+    </item>
+    <item>
+      <title>Cloud cost attribution that survives contact with reality</title>
+      <link>https://doshidhruv.com/notes/cloud-cost-attribution-that-survives-contact-with-reality/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/cloud-cost-attribution-that-survives-contact-with-reality/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Cloud architecture</category>
+      <description>Every organization wants to know what its cloud spend buys. Most cost attribution efforts produce dashboards that engineers ignore and finance distrusts. The gap is usually not tooling;…</description>
+    </item>
+    <item>
+      <title>Data retention and deletion in AI systems</title>
+      <link>https://doshidhruv.com/notes/data-retention-and-deletion-in-ai-systems/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/data-retention-and-deletion-in-ai-systems/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>AI governance</category>
+      <description>AI systems are data copies all the way down: training sets, vector indexes, caches, logs, evaluation sets, and backups. Each copy has its own lifecycle, and deletion requests — from…</description>
+    </item>
+    <item>
+      <title>Sequence enterprise AI adoption by risk, not by hype</title>
+      <link>https://doshidhruv.com/notes/sequence-enterprise-ai-adoption-by-risk-not-by-hype/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/sequence-enterprise-ai-adoption-by-risk-not-by-hype/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Enterprise AI</category>
+      <description>Most enterprise AI programs fail in one of two ways: they start with the highest risk use case and stall in governance review, or they scatter dozens of disconnected pilots that never…</description>
+    </item>
+    <item>
+      <title>Incident review culture for AI systems</title>
+      <link>https://doshidhruv.com/notes/incident-review-culture-for-ai-systems/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/incident-review-culture-for-ai-systems/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Reliability</category>
+      <description>Incident review for traditional software asks what the system did wrong. Incident review for AI systems must also ask what the system did confidently, plausibly, and incorrectly — and…</description>
+    </item>
+    <item>
+      <title>The internal developer platform adoption playbook</title>
+      <link>https://doshidhruv.com/notes/the-internal-developer-platform-adoption-playbook/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/the-internal-developer-platform-adoption-playbook/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Platform engineering</category>
+      <description>Building an internal developer platform is an engineering problem. Getting engineers to use it is an organizational one. Most platform programs underinvest in adoption by an order of…</description>
+    </item>
+    <item>
+      <title>Model risk management for LLM systems in regulated industries</title>
+      <link>https://doshidhruv.com/notes/model-risk-management-for-llm-systems-in-regulated-industries/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/model-risk-management-for-llm-systems-in-regulated-industries/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>AI governance</category>
+      <description>Regulated industries — banking, insurance, healthcare — have managed model risk for decades. Credit models, fraud models, and capital models all pass through validation functions that…</description>
+    </item>
+    <item>
+      <title>Observability for LLM applications</title>
+      <link>https://doshidhruv.com/notes/observability-for-llm-applications/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/observability-for-llm-applications/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>AI systems</category>
+      <description>Traditional observability answers what the system did. LLM application observability must also answer what the system said, why it said it, what it cost, and whether it should have said…</description>
+    </item>
+    <item>
+      <title>Platform engineering for AI workloads</title>
+      <link>https://doshidhruv.com/notes/platform-engineering-for-ai-workloads/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/platform-engineering-for-ai-workloads/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Platform engineering</category>
+      <description>AI workloads are becoming ordinary production workloads, but platforms built for stateless microservices handle them poorly. GPU scheduling, model serving, evaluation infrastructure,…</description>
+    </item>
+    <item>
+      <title>Progressive delivery for platform changes</title>
+      <link>https://doshidhruv.com/notes/progressive-delivery-for-platform-changes/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/progressive-delivery-for-platform-changes/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Platform engineering</category>
+      <description>Platform changes are high blast radius by definition: a bad rollout of a shared build pipeline, service mesh configuration, or base image affects every team at once. Yet platform teams…</description>
+    </item>
+    <item>
+      <title>RAG failure modes in production and how to contain them</title>
+      <link>https://doshidhruv.com/notes/rag-failure-modes-in-production-and-how-to-contain-them/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/rag-failure-modes-in-production-and-how-to-contain-them/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>AI systems</category>
+      <description>Retrieval augmented generation fails in production in ways that never appear in a demo. The demo uses a clean corpus, a cooperative user, and a forgiving evaluator. Production…</description>
+    </item>
+    <item>
+      <title>The staff engineer operating cadence</title>
+      <link>https://doshidhruv.com/notes/the-staff-engineer-operating-cadence/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/the-staff-engineer-operating-cadence/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Staff engineering</category>
+      <description>Staff engineering is often described through its outcomes — leverage, influence, technical direction — and rarely through its weekly reality. But the difference between a staff engineer…</description>
+    </item>
+    <item>
+      <title>When to bring in enterprise AI consulting</title>
+      <link>https://doshidhruv.com/notes/when-to-bring-in-enterprise-ai-consulting/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/when-to-bring-in-enterprise-ai-consulting/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Consulting</category>
+      <description>Most organizations do not need an AI consultant. They need a clear problem, an empowered owner, and the patience to run the sequencing that works: low risk internal wins first, the…</description>
+    </item>
     <item>
       <title>Platform architecture: from standards to a usable product</title>
       <link>https://doshidhruv.com/guides/platform-architecture/</link>

@@ -1,6 +1,14 @@
 https://blog.doshidhruv.com/posts/* https://doshidhruv.com/notes/:splat 301!
 https://blog.doshidhruv.com/* https://doshidhruv.com/notes 301!
 /posts/:splat /notes/:splat 301!
+/notes/api-design-for-agent-consumers /notes/design-apis-for-agent-consumers 301!
+/notes/canadian-public-sector-technology-landscape /notes/the-canadian-public-sector-technology-landscape 301!
+/notes/cloud-cost-attribution /notes/cloud-cost-attribution-that-survives-contact-with-reality 301!
+/notes/enterprise-ai-adoption-sequencing /notes/sequence-enterprise-ai-adoption-by-risk-not-by-hype 301!
+/notes/internal-developer-platform-adoption /notes/the-internal-developer-platform-adoption-playbook 301!
+/notes/model-risk-management-for-llm-systems /notes/model-risk-management-for-llm-systems-in-regulated-industries 301!
+/notes/rag-failure-modes-in-production /notes/rag-failure-modes-in-production-and-how-to-contain-them 301!
+/notes/staff-engineer-operating-cadence /notes/the-staff-engineer-operating-cadence 301!
 /notes/elastic-opentelemetry-support /notes/elastic-support-for-opentelemetry-and-managed-otlp-ingestion 301!
 /notes/dynatrace-opentelemetry-support /notes/dynatrace-support-for-opentelemetry-and-native-otlp 301!
 /notes/measuring-internal-platforms /notes/measure-whether-an-internal-platform-creates-leverage 301!
