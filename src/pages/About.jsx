@@ -52,6 +52,10 @@ const About = () => (
       </div>
       <div>
         <p>That has taken me from blockchain research and a Springer publication to graduate cloud-computing labs, enterprise observability, architecture automation, and secure AI systems.</p>
+        <p>
+          For enterprise AI, AI governance, and platform architecture engagements, I run{' '}
+          <a href="https://arihantgv.com">Arihant Global Ventures Inc.</a>, a Canadian technology consultancy.
+        </p>
         <p>Outside work, you’ll usually find me writing, playing chess, collecting coins, planning travel, or trying to improve my swimming.</p>
         <div className="button-row">
           <Link to="/notes">Read technical notes</Link>
