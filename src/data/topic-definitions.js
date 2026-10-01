@@ -4,6 +4,8 @@ const topicDescriptions = {
   'Blockchain systems': 'Distributed ledgers, cryptocurrency infrastructure, access control, and practical system constraints.',
   'Cloud architecture': 'Cloud service models, deployment patterns, migration decisions, resilience, and workload boundaries.',
   'Distributed systems': 'Systems that coordinate data, events, identity, and failure across multiple components or organisations.',
+  'Enterprise AI': 'Adoption strategy, production patterns, and operating discipline for AI systems in large organisations.',
+  'Public sector': 'Government technology, public-sector procurement, and modernization in Canada and beyond.',
   Observability: 'Telemetry contracts, collection, routing, operating signals, and vendor-neutral system design.',
   'Platform architecture': 'Paved roads, decision models, reusable contracts, governance, and enterprise platform delivery.',
   'Staff engineering': 'Technical direction, cross-team leverage, decision records, mentoring, and production-grounded leadership.',

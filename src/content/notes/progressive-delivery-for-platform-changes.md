@@ -4,7 +4,7 @@ author: Dhruv Doshi
 date: 2026-10-01
 reviewed: 2026-10-01
 status: published
-topic: Platform engineering
+topic: Platform architecture
 categories: [Platform Engineering, Delivery, Reliability]
 ---
 

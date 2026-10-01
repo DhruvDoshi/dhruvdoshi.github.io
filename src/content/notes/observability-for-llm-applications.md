@@ -4,7 +4,7 @@ author: Dhruv Doshi
 date: 2026-10-01
 reviewed: 2026-10-01
 status: published
-topic: AI systems
+topic: Observability
 categories: [Observability, LLM, Reliability]
 ---
 

@@ -4,7 +4,7 @@ author: Dhruv Doshi
 date: 2026-10-01
 reviewed: 2026-10-01
 status: published
-topic: Reliability
+topic: AI governance
 categories: [Incident Management, AI Systems, Engineering Culture]
 ---
 
