@@ -211,6 +211,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://doshidhruv.com/notes/accessibility-engineering/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://doshidhruv.com/notes/active-active-multi-region-design-the-honest-trade-offs/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
@@ -253,6 +259,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://doshidhruv.com/notes/battery-aware-mobile-design/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://doshidhruv.com/notes/caching-strategy-for-distributed-systems/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
@@ -289,7 +301,25 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://doshidhruv.com/notes/data-mesh-in-practice/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/data-quality-engineering/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://doshidhruv.com/notes/data-retention-and-deletion-in-ai-systems/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/dbt-at-scale/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -337,6 +367,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://doshidhruv.com/notes/exactly-once-semantics-in-streaming/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://doshidhruv.com/notes/feature-flag-governance-flags-as-inventory-not-litter/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
@@ -361,7 +397,31 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://doshidhruv.com/notes/frontend-build-systems-and-bundlers/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/frontend-state-management-at-scale/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/game-days-that-actually-work/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://doshidhruv.com/notes/gitops-at-scale-what-works-past-the-demo/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/graphql-vs-rest-honestly/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -421,13 +481,31 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://doshidhruv.com/notes/mobile-app-size-and-startup-performance/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://doshidhruv.com/notes/mobile-release-trains-ci-cd-when-the-app-store-is-your-deploy-target/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://doshidhruv.com/notes/mobile-testing-strategy/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://doshidhruv.com/notes/model-risk-management-for-llm-systems-in-regulated-industries/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/monorepo-decisions/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -452,6 +530,18 @@
   </url>
   <url>
     <loc>https://doshidhruv.com/notes/offline-first-mobile-architecture-sync-conflicts-and-honesty/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/on-call-health-and-sustainable-rotations/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/performance-management-for-engineers/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -511,7 +601,19 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://doshidhruv.com/notes/reorgs-without-breaking-things/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://doshidhruv.com/notes/rfc-culture-that-actually-decides/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/saas-multi-tenancy-models/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -524,6 +626,18 @@
   </url>
   <url>
     <loc>https://doshidhruv.com/notes/shadow-ai-discovering-and-governing-unsanctioned-ai-use/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/skip-level-meetings-that-work/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/slo-burn-rate-alerting/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -554,6 +668,12 @@
   </url>
   <url>
     <loc>https://doshidhruv.com/notes/stream-processing-design-state-time-and-exactly-once/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doshidhruv.com/notes/trunk-based-development/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

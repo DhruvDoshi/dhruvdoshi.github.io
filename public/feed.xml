@@ -8,6 +8,14 @@
     <lastBuildDate>Thu, 01 Oct 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://doshidhruv.com/feed.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>&quot;Accessibility engineering&quot;</title>
+      <link>https://doshidhruv.com/notes/accessibility-engineering/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/accessibility-engineering/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Frontend architecture</category>
+      <description>Accessibility is treated as a checklist item in most organizations: run the automated audit, fix the contrast ratios, ship it. That approach produces apps that pass audits and still do…</description>
+    </item>
+    <item>
       <title>&quot;Active-active multi-region design: the honest trade-offs&quot;</title>
       <link>https://doshidhruv.com/notes/active-active-multi-region-design-the-honest-trade-offs/</link>
       <guid isPermaLink="true">https://doshidhruv.com/notes/active-active-multi-region-design-the-honest-trade-offs/</guid>
@@ -64,6 +72,14 @@
       <description>AI systems make decisions and take actions that need to be explainable after the fact: why did the agent do that, what data did it use, who approved it, what exactly happened? Audit…</description>
     </item>
     <item>
+      <title>&quot;Battery-aware mobile design&quot;</title>
+      <link>https://doshidhruv.com/notes/battery-aware-mobile-design/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/battery-aware-mobile-design/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Mobile</category>
+      <description>Energy is the only resource your app consumes that the user feels in their body: a warm phone in the pocket, a dead battery at 4 PM, the low power mode scramble before a night out.…</description>
+    </item>
+    <item>
       <title>&quot;Caching strategy for distributed systems&quot;</title>
       <link>https://doshidhruv.com/notes/caching-strategy-for-distributed-systems/</link>
       <guid isPermaLink="true">https://doshidhruv.com/notes/caching-strategy-for-distributed-systems/</guid>
@@ -112,12 +128,36 @@
       <description>Every organization wants to know what its cloud spend buys. Most cost attribution efforts produce dashboards that engineers ignore and finance distrusts. The gap is usually not tooling;…</description>
     </item>
     <item>
+      <title>&quot;Data mesh in practice&quot;</title>
+      <link>https://doshidhruv.com/notes/data-mesh-in-practice/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/data-mesh-in-practice/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Data engineering</category>
+      <description>Data mesh arrived with a compelling diagnosis: the centralized data team is a bottleneck, domain knowledge lives with the teams that produce the data, and the monolithic data platform…</description>
+    </item>
+    <item>
+      <title>&quot;Data quality engineering&quot;</title>
+      <link>https://doshidhruv.com/notes/data-quality-engineering/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/data-quality-engineering/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Data engineering</category>
+      <description>Every data team has a story about the dashboard that was wrong for three weeks before anyone noticed. The numbers looked plausible — that is the insidious part. Nobody&apos;s pipeline…</description>
+    </item>
+    <item>
       <title>Data retention and deletion in AI systems</title>
       <link>https://doshidhruv.com/notes/data-retention-and-deletion-in-ai-systems/</link>
       <guid isPermaLink="true">https://doshidhruv.com/notes/data-retention-and-deletion-in-ai-systems/</guid>
       <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
       <category>AI governance</category>
       <description>AI systems are data copies all the way down: training sets, vector indexes, caches, logs, evaluation sets, and backups. Each copy has its own lifecycle, and deletion requests — from…</description>
+    </item>
+    <item>
+      <title>&quot;dbt at scale&quot;</title>
+      <link>https://doshidhruv.com/notes/dbt-at-scale/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/dbt-at-scale/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Data engineering</category>
+      <description>dbt projects do not fail at 50 models. They fail at 300, when the DAG no longer fits on a screen, a single ref chain takes forty minutes to rebuild, and nobody remembers whether stg…</description>
     </item>
     <item>
       <title>&quot;Defending against prompt injection in production LLM systems&quot;</title>
@@ -176,6 +216,14 @@
       <description>Event driven architecture has a seductive pitch: services decoupled in time and space, reacting to facts instead of calling each other. The pitch is not wrong. But the failure modes of…</description>
     </item>
     <item>
+      <title>&quot;Exactly-once semantics in streaming&quot;</title>
+      <link>https://doshidhruv.com/notes/exactly-once-semantics-in-streaming/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/exactly-once-semantics-in-streaming/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Data engineering</category>
+      <description>Ask a streaming team whether their pipeline is exactly once and you will usually get a confident yes followed by a description of a single config flag. That confidence is almost always…</description>
+    </item>
+    <item>
       <title>&quot;Feature flag governance: flags as inventory, not litter&quot;</title>
       <link>https://doshidhruv.com/notes/feature-flag-governance-flags-as-inventory-not-litter/</link>
       <guid isPermaLink="true">https://doshidhruv.com/notes/feature-flag-governance-flags-as-inventory-not-litter/</guid>
@@ -208,12 +256,44 @@
       <description>AI workloads have a cost profile unlike anything else in the enterprise cloud bill: GPU compute that is expensive per hour and often poorly utilized, inference costs that scale with…</description>
     </item>
     <item>
+      <title>&quot;Frontend build systems and bundlers&quot;</title>
+      <link>https://doshidhruv.com/notes/frontend-build-systems-and-bundlers/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/frontend-build-systems-and-bundlers/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Frontend architecture</category>
+      <description>Nobody chooses a build system because they love build systems. They choose one because the current one is slow, and then they discover that build tooling is a bundle of trade offs…</description>
+    </item>
+    <item>
+      <title>&quot;Frontend state management at scale&quot;</title>
+      <link>https://doshidhruv.com/notes/frontend-state-management-at-scale/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/frontend-state-management-at-scale/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Frontend architecture</category>
+      <description>Every large frontend codebase eventually develops a junk drawer: a global store that holds everything because nothing has a better home. User session next to a modal&apos;s open state next…</description>
+    </item>
+    <item>
+      <title>&quot;Game days that actually work&quot;</title>
+      <link>https://doshidhruv.com/notes/game-days-that-actually-work/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/game-days-that-actually-work/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>SRE</category>
+      <description>Most game days are theater. A team books a conference room, kills a database replica, watches the dashboard go green, declares victory, and learns nothing. The incident that actually…</description>
+    </item>
+    <item>
       <title>GitOps at scale: what works past the demo</title>
       <link>https://doshidhruv.com/notes/gitops-at-scale-what-works-past-the-demo/</link>
       <guid isPermaLink="true">https://doshidhruv.com/notes/gitops-at-scale-what-works-past-the-demo/</guid>
       <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
       <category>Platform architecture</category>
       <description>The GitOps demo is compelling: commit to git, watch the agent sync it to the cluster. It takes a day to set up and about a year to discover what it doesn&apos;t do. This note is about that…</description>
+    </item>
+    <item>
+      <title>&quot;GraphQL vs REST, honestly&quot;</title>
+      <link>https://doshidhruv.com/notes/graphql-vs-rest-honestly/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/graphql-vs-rest-honestly/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Distributed systems</category>
+      <description>The GraphQL versus REST debate has generated more heat than almost any other API argument, and most of it is misplaced. They are not competitors for the same job. GraphQL is a query…</description>
     </item>
     <item>
       <title>&quot;Guardrail architecture for LLM applications&quot;</title>
@@ -288,6 +368,14 @@
       <description>Micro frontends promise microservices&apos; organizational benefits for the UI: independent teams deploying independently. In practice, most adoptions buy the complexity of distributed…</description>
     </item>
     <item>
+      <title>&quot;Mobile app size and startup performance&quot;</title>
+      <link>https://doshidhruv.com/notes/mobile-app-size-and-startup-performance/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/mobile-app-size-and-startup-performance/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Mobile</category>
+      <description>Your app gets judged twice before it does anything useful: once on the store page, where the download size sits next to the install button, and once at launch, where the user stares at…</description>
+    </item>
+    <item>
       <title>&quot;Mobile release trains: CI/CD when the app store is your deploy target&quot;</title>
       <link>https://doshidhruv.com/notes/mobile-release-trains-ci-cd-when-the-app-store-is-your-deploy-target/</link>
       <guid isPermaLink="true">https://doshidhruv.com/notes/mobile-release-trains-ci-cd-when-the-app-store-is-your-deploy-target/</guid>
@@ -296,12 +384,28 @@
       <description>Web teams deploy when they feel like it. Mobile teams deploy when Apple and Google let them. That asymmetry rewrites every assumption CI/CD makes: there is no rollback, no instant…</description>
     </item>
     <item>
+      <title>&quot;Mobile testing strategy&quot;</title>
+      <link>https://doshidhruv.com/notes/mobile-testing-strategy/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/mobile-testing-strategy/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Mobile</category>
+      <description>Mobile testing is expensive in a way web testing is not, and the reason is structural: you cannot hotfix. When a web deploy breaks, you roll forward in minutes. When a mobile release…</description>
+    </item>
+    <item>
       <title>Model risk management for LLM systems in regulated industries</title>
       <link>https://doshidhruv.com/notes/model-risk-management-for-llm-systems-in-regulated-industries/</link>
       <guid isPermaLink="true">https://doshidhruv.com/notes/model-risk-management-for-llm-systems-in-regulated-industries/</guid>
       <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
       <category>AI governance</category>
       <description>Regulated industries — banking, insurance, healthcare — have managed model risk for decades. Credit models, fraud models, and capital models all pass through validation functions that…</description>
+    </item>
+    <item>
+      <title>&quot;Monorepo decisions&quot;</title>
+      <link>https://doshidhruv.com/notes/monorepo-decisions/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/monorepo-decisions/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Platform architecture</category>
+      <description>Monorepo versus polyrepo is one of those decisions teams treat as a fashion choice. It is not. It is a decision about your build system, your ownership model, and how much tooling tax…</description>
     </item>
     <item>
       <title>&quot;Network segmentation in cloud: VPC design that holds up&quot;</title>
@@ -334,6 +438,22 @@
       <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
       <category>Mobile</category>
       <description>Mobile networks lie. They report full signal in elevators, drop mid request in parking garages, and throttle aggressively on congested cells. An app designed for reliable connectivity…</description>
+    </item>
+    <item>
+      <title>&quot;On-call health and sustainable rotations&quot;</title>
+      <link>https://doshidhruv.com/notes/on-call-health-and-sustainable-rotations/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/on-call-health-and-sustainable-rotations/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>SRE</category>
+      <description>On call is where every reliability decision your organization makes gets cashed out. Architecture debt, monitoring gaps, deploys without safety nets, feature velocity without…</description>
+    </item>
+    <item>
+      <title>&quot;Performance management for engineers&quot;</title>
+      <link>https://doshidhruv.com/notes/performance-management-for-engineers/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/performance-management-for-engineers/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Engineering leadership</category>
+      <description>Most engineers become managers because they were good at building systems. Then they discover that performance management is the system they understand least, has the fewest dashboards,…</description>
     </item>
     <item>
       <title>&quot;PII detection and redaction in AI data pipelines&quot;</title>
@@ -408,12 +528,28 @@
       <description>Rate limiting is one of those topics where everyone uses the same words to mean different things, and then the design review goes sideways. Before algorithms and headers, get the…</description>
     </item>
     <item>
+      <title>&quot;Reorgs without breaking things&quot;</title>
+      <link>https://doshidhruv.com/notes/reorgs-without-breaking-things/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/reorgs-without-breaking-things/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Engineering leadership</category>
+      <description>Every engineering leader eventually faces the reorg: the moment when the current team topology no longer fits the work, and redrawing the boxes looks like the answer. Reorgs have a…</description>
+    </item>
+    <item>
       <title>&quot;RFC culture that actually decides&quot;</title>
       <link>https://doshidhruv.com/notes/rfc-culture-that-actually-decides/</link>
       <guid isPermaLink="true">https://doshidhruv.com/notes/rfc-culture-that-actually-decides/</guid>
       <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
       <category>Engineering leadership</category>
       <description>Most engineering organizations have an RFC process. Few have an RFC culture. The difference: a process produces documents; a culture produces decisions. I&apos;ve seen RFC repos with…</description>
+    </item>
+    <item>
+      <title>&quot;SaaS multi-tenancy models&quot;</title>
+      <link>https://doshidhruv.com/notes/saas-multi-tenancy-models/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/saas-multi-tenancy-models/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Cloud architecture</category>
+      <description>Every SaaS product eventually faces the tenancy question: do tenants share infrastructure, get their own, or land somewhere in between? The answer shapes your cost structure, your…</description>
     </item>
     <item>
       <title>&quot;Sagas for distributed transactions: choreography vs orchestration&quot;</title>
@@ -430,6 +566,22 @@
       <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
       <category>Enterprise AI</category>
       <description>Shadow AI is the use of AI tools and services without IT or security approval: employees pasting customer data into public chatbots, teams building workflows on unvetted AI APIs,…</description>
+    </item>
+    <item>
+      <title>&quot;Skip-level meetings that work&quot;</title>
+      <link>https://doshidhruv.com/notes/skip-level-meetings-that-work/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/skip-level-meetings-that-work/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Engineering leadership</category>
+      <description>Skip level meetings — a senior leader meeting directly with the people two or more levels down, skipping the managers in between — are one of the most awkward rituals in management.…</description>
+    </item>
+    <item>
+      <title>&quot;SLO burn rate alerting&quot;</title>
+      <link>https://doshidhruv.com/notes/slo-burn-rate-alerting/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/slo-burn-rate-alerting/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>SRE</category>
+      <description>Most alerting answers the wrong question. It asks &quot;is the error rate high right now?&quot; when the question that matters is &quot;are we consuming our error budget fast enough that the SLO is at…</description>
     </item>
     <item>
       <title>&quot;SSO and SCIM: the enterprise identity lifecycle nobody designs for&quot;</title>
@@ -470,6 +622,14 @@
       <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
       <category>Data engineering</category>
       <description>Batch processing asks &quot;what happened?&quot; Stream processing asks &quot;what is happening, right now, and what should we do about it?&quot; The difference is not speed — it is that the input never…</description>
+    </item>
+    <item>
+      <title>&quot;Trunk-based development&quot;</title>
+      <link>https://doshidhruv.com/notes/trunk-based-development/</link>
+      <guid isPermaLink="true">https://doshidhruv.com/notes/trunk-based-development/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Platform architecture</category>
+      <description>Every team eventually has the branching argument. One side waves the merge conflict scars of long lived feature branches; the other side waves the production incidents of &quot;we merged…</description>
     </item>
     <item>
       <title>&quot;Web performance budgets: make speed a release gate&quot;</title>
